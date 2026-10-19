@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LearningApp Wireframes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* Theme: soft lavender-grey, white cards, deep purple type, violet gradient accents (ref: GEL Guided E-learning) */
+:root{
+  --bg:#e9e8ee;--screen:#efeef3;--card:#fafafc;--line:#e1dfe8;
+  --ink:#2e1760;--tx:#3d3557;--mut:#9a95ab;
+  --vio:#a24cf0;--vio2:#c98bff;--pink:#f0a0d8;--teal:#4cc3d9;
+  --grad:linear-gradient(135deg,var(--vio) 0%,var(--vio2) 100%);
+  --glow:0 10px 24px -8px rgba(162,76,240,.6);
+  --sh:0 2px 10px rgba(46,23,96,.06);
+  --r:18px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:14px;font-weight:500}
+#bar{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;padding:10px;background:#fff;color:var(--mut);font-size:13px}
+#bar select{padding:6px 10px;font:inherit;border:1px solid var(--line);border-radius:10px;color:var(--ink)}
+#cur{font-weight:700;color:var(--ink)}
+#phone{width:360px;height:760px;margin:20px auto;background:var(--screen);border:10px solid #111;border-radius:46px;overflow:hidden;position:relative;box-shadow:0 30px 60px -20px rgba(0,0,0,.35)}
+.screen{display:none;height:100%;flex-direction:column}
+.screen.on{display:flex}
+.body{flex:1;overflow-y:auto;padding:18px;display:flex;flex-direction:column;gap:14px}
+.top{padding:18px 18px 6px;font-weight:800;font-size:20px;color:var(--ink);display:flex;align-items:center;gap:10px;letter-spacing:-.2px}
+h1,h2,h3,p{margin:0;color:var(--ink)}
+h1{font-size:28px;font-weight:800;letter-spacing:-.5px}
+h2{font-size:18px;font-weight:800}
+h3{font-size:13px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.6px}
+.mut{color:var(--mut);font-size:12px;font-weight:600}
+.center{text-align:center}
+.spacer{flex:1}
+.row{display:flex;gap:10px;align-items:center}
+.row>*{flex:1}
+.box{background:linear-gradient(135deg,#e6dcf7,#f3e9fb);border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:#b7a6d6;font-size:12px;min-height:60px}
+.box.sq{width:44px;height:44px;min-height:0;flex:none;border-radius:14px}
+.card{background:var(--card);border-radius:var(--r);padding:14px 16px;display:flex;flex-direction:column;gap:6px;box-shadow:var(--sh)}
+.card[data-go]{cursor:pointer;transition:transform .15s}
+.card[data-go]:hover{transform:translateY(-2px)}
+button,.btn{font:inherit;font-weight:700;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:14px;text-align:center;cursor:pointer;display:block;width:100%;letter-spacing:.3px}
+.btn.pri,button.pri{background:var(--grad);color:#fff;border:none;box-shadow:var(--glow);text-transform:uppercase;font-weight:800;letter-spacing:1px}
+.btn.link{background:none;border:none;color:var(--vio);padding:6px}
+.opt{background:var(--card);border:2px solid transparent;border-radius:16px;padding:14px 16px;cursor:pointer;font-weight:600;color:var(--tx);box-shadow:var(--sh)}
+.opt.sel{border-color:var(--vio);color:var(--ink);font-weight:800;background:#f6eefe}
+.chip{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;font-weight:700;color:var(--ink);box-shadow:var(--sh)}
+.chip.sel{background:var(--grad);color:#fff;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px;min-height:50px;padding:10px;border-bottom:2px dashed var(--line)}
+input[type=text],input[type=time],select.f{width:100%;padding:13px 16px;border:1px solid var(--line);border-radius:16px;font:inherit;background:var(--card);color:var(--ink)}
+input:focus{outline:2px solid var(--vio2);border-color:transparent}
+.prog{height:8px;background:#e2dcef;border-radius:99px;overflow:hidden;flex:1}
+.prog i{display:block;height:100%;background:var(--grad);border-radius:99px}
+.fb{display:none;padding:14px 16px;border-radius:var(--r);background:#eafaf1;color:#1f7a4d}
+.fb.on{display:block}
+.fb h2{color:#1f7a4d}
+.nav{display:flex;background:var(--screen);padding:6px 4px 14px}
+.nav a{flex:1;text-align:center;padding:6px 2px;font-size:10px;font-weight:700;color:var(--mut);cursor:pointer;text-decoration:none;text-transform:uppercase;letter-spacing:.5px}
+.nav a b{display:block;margin:0 auto 4px;width:22px;height:22px;border-radius:7px;background:#d6d2e0}
+.nav a.on{color:var(--ink)}
+.nav a.on b{background:var(--ink)}
+.tag{font-size:11px;background:#efe4fd;border-radius:99px;padding:3px 9px;color:var(--vio);font-weight:700;text-transform:none;letter-spacing:0}
+.lesson{display:flex;gap:10px;align-items:center;padding:14px 16px;border-radius:16px;background:var(--card);cursor:pointer;font-weight:700;color:var(--ink);box-shadow:var(--sh)}
+.lesson.locked{background:transparent;box-shadow:none;border:1px dashed #d4cfe0;color:#bbb5c9;cursor:default}
+.lesson .st{margin-left:auto;font-size:11px;color:var(--vio);font-weight:800;text-transform:uppercase}
+.lesson.locked .st{color:#bbb5c9}
+.bubble{max-width:80%;padding:11px 14px;border-radius:18px 18px 18px 6px;background:var(--card);box-shadow:var(--sh);color:var(--tx)}
+.bubble.me{align-self:flex-end;background:var(--grad);color:#fff;border-radius:18px 18px 6px 18px}
+.corr{font-size:12px;background:#fff6e6;color:#8a5a00;padding:9px 12px;border-radius:14px;align-self:flex-end;max-width:90%}
+.chart{display:flex;align-items:flex-end;gap:10px;height:130px;padding:12px;border-radius:var(--r);background:var(--card);box-shadow:var(--sh)}
+.chart div{flex:1;background:var(--grad);border-radius:10px;display:flex;align-items:flex-end;justify-content:center;font-size:10px;color:#fff;font-weight:700;padding-bottom:4px}
+.days{display:flex;gap:10px;padding:0 12px;font-size:10px;color:var(--mut);font-weight:700;text-transform:uppercase}
+.days span{flex:1;text-align:center}
+.mic{width:110px;height:110px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;background:var(--grad);border:none;cursor:pointer;font-size:12px;font-weight:800;color:#fff;padding:0;box-shadow:var(--glow)}
+.mic.rec{background:linear-gradient(135deg,#f05a8c,#ff9bb8);box-shadow:0 0 0 10px rgba(240,90,140,.15),0 0 0 22px rgba(240,90,140,.08)}
+.flip{min-height:240px;justify-content:center;text-align:center;cursor:pointer}
+.stats{display:flex;gap:10px}.stats .card{flex:1}
+.stats b{font-size:26px;font-weight:800;color:var(--ink)}
+/* home: ring stat cards + week strip */
+.ring{width:30px;height:30px;border-radius:50%;background:conic-gradient(var(--vio) 0 65%,var(--pink) 65% 80%,#e2dcef 80%);-webkit-mask:radial-gradient(circle,transparent 9px,#000 10px);mask:radial-gradient(circle,transparent 9px,#000 10px);margin-left:auto;flex:none}
+.ring.teal{background:conic-gradient(var(--teal) 0 70%,#e2dcef 70%)}
+.statline{display:flex;align-items:flex-end;gap:4px}
+.week{display:flex;justify-content:space-between;text-align:center;font-size:10px;font-weight:700;color:var(--mut);text-transform:uppercase}
+.week span{flex:1;padding:8px 0;border-radius:99px;display:flex;flex-direction:column;gap:4px;position:relative}
+.week b{font-size:17px;color:#a9a4b8}
+.week .on{border:1.5px solid #cfc9dc;color:var(--ink)}.week .on b{color:var(--ink)}
+.week .dot::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--vio);position:absolute;bottom:2px;left:50%;transform:translateX(-50%)}
+.hero{text-align:center;display:flex;flex-direction:column;gap:8px;padding:6px 8px}
+.hero h2{text-transform:uppercase;font-size:22px;letter-spacing:-.2px}
+.hide{display:none!important}
+@media(max-width:400px){#phone{width:100%;height:calc(100vh - 56px);min-height:560px;margin:0;border-radius:0;border-width:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<div id="bar">
+  <label>Jump to screen: <select id="jump"></select></label>
+  <span>Current: <span id="cur"></span></span>
+</div>
+
+<div id="phone">
+
+<!-- 1 Welcome -->
+<section class="screen" id="welcome" data-name="1. Welcome">
+  <div class="body">
+    <div class="spacer"></div>
+    <div class="box" style="height:140px">[logo]</div>
+    <h1 class="center">[App name]</h1>
+    <p class="center mut">Learn a language in minutes a day.</p>
+    <div class="spacer"></div>
+    <div class="btn pri" data-go="languages">Get started</div>
+    <div class="btn" data-go="home">I have an account</div>
+  </div>
+</section>
+
+<!-- 2 Languages -->
+<section class="screen" id="languages" data-name="2. Languages">
+  <div class="top">Choose languages</div>
+  <div class="body">
+    <h3>Your main language</h3>
+    <div data-group="main">
+      <div class="opt sel">English</div><div class="opt" style="margin-top:6px">Spanish</div><div class="opt" style="margin-top:6px">French</div><div class="opt" style="margin-top:6px">Japanese</div><div class="opt" style="margin-top:6px">Vietnamese</div>
+    </div>
+    <h3>Language to learn</h3>
+    <div data-group="learn">
+      <div class="opt">English</div><div class="opt sel" style="margin-top:6px">Spanish</div><div class="opt" style="margin-top:6px">French</div><div class="opt" style="margin-top:6px">Japanese</div><div class="opt" style="margin-top:6px">Vietnamese</div>
+    </div>
+    <div class="btn pri" data-go="placement">Continue</div>
+  </div>
+</section>
+
+<!-- 3 Placement -->
+<section class="screen" id="placement" data-name="3. Placement quiz">
+  <div class="top"><div class="prog"><i style="width:20%"></i></div><span class="mut">1 / 5</span></div>
+  <div class="body">
+    <h2>What does "Buenos días" mean?</h2>
+    <div data-group="pq">
+      <div class="opt">Good night</div><div class="opt" style="margin-top:6px">Good morning</div><div class="opt" style="margin-top:6px">Thank you</div><div class="opt" style="margin-top:6px">See you later</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="btn link" data-go="goal">Skip, I'm a beginner</div>
+    <div class="btn pri" data-go="goal">Next</div>
+  </div>
+</section>
+
+<!-- 4 Goal -->
+<section class="screen" id="goal" data-name="4. Daily goal">
+  <div class="top">Daily goal</div>
+  <div class="body">
+    <h3>How much time per day?</h3>
+    <div data-group="goal">
+      <div class="opt">5 min <span class="mut">casual</span></div><div class="opt sel" style="margin-top:6px">10 min <span class="mut">regular</span></div><div class="opt" style="margin-top:6px">20 min <span class="mut">serious</span></div>
+    </div>
+    <h3>Reminder time</h3>
+    <input type="time" value="19:00">
+    <div class="spacer"></div>
+    <div class="btn pri" data-go="home">Start learning</div>
+  </div>
+</section>
+
+<!-- 5 Home -->
+<section class="screen" id="home" data-name="5. Home" data-nav="home">
+  <div class="top">Hi there <span class="spacer"></span><div class="box sq" style="border-radius:50%;width:40px;height:40px">[pfp]</div></div>
+  <div class="body">
+    <div class="stats">
+      <div class="card"><span class="mut">Daily goal</span><div class="statline"><b>7</b><span class="mut">/10 min</span><span class="ring"></span></div></div>
+      <div class="card"><span class="mut">Day streak</span><div class="statline"><b>5</b><span class="mut">340 XP</span><span class="ring teal"></span></div></div>
+    </div>
+    <div class="week"><span class="dot">Mon<b>6</b></span><span>Tue<b>7</b></span><span class="dot">Wed<b>8</b></span><span class="on">Thu<b>9</b></span><span>Fri<b>10</b></span><span>Sat<b>11</b></span><span>Sun<b>12</b></span></div>
+    <div class="hero"><h2>Ready to learn?</h2><p class="mut">Today: Greetings 2 &middot; 30% done</p><div class="btn pri" data-go="exercise-mc" style="margin-top:6px">Continue lesson</div></div>
+    <div class="row">
+      <div class="card" data-go="review"><h2>12</h2><span class="mut">Cards due</span></div>
+      <div class="card" data-go="speak"><h2>Speak</h2><span class="mut">Pronunciation</span></div>
+    </div>
+  </div>
+  <!--NAV-->
+</section>
+
+<!-- 6 Learn -->
+<section class="screen" id="learn" data-name="6. Learn" data-nav="learn">
+  <div class="top">Learn</div>
+  <div class="body">
+    <h3>Greetings <span class="tag">A1</span></h3>
+    <div class="lesson" data-go="exercise-mc">Hello &amp; goodbye <span class="st">Done</span></div>
+    <div class="lesson" data-go="exercise-mc">Introducing yourself <span class="st">Start</span></div>
+    <h3>Food <span class="tag">A1</span></h3>
+    <div class="lesson" data-go="exercise-mc">At the café <span class="st">Start</span></div>
+    <div class="lesson locked">Ordering dinner <span class="st">Locked</span></div>
+    <h3>Travel <span class="tag">A2</span></h3>
+    <div class="lesson locked">At the airport <span class="st">Locked</span></div>
+    <div class="lesson locked">Asking directions <span class="st">Locked</span></div>
+    <h3>Work <span class="tag">B1</span></h3>
+    <div class="lesson locked">Meetings <span class="st">Locked</span></div>
+    <div class="lesson locked">Emails <span class="st">Locked</span></div>
+  </div>
+  <!--NAV-->
+</section>
+
+<!-- 7 Exercises -->
+<section class="screen" id="exercise-mc" data-name="7a. Exercise: multiple choice">
+  <!--EXHEAD-->
+  <div class="body">
+    <h3>Choose the correct translation</h3>
+    <h2>"Good morning"</h2>
+    <div data-group="mc">
+      <div class="opt">Buenas noches</div><div class="opt" style="margin-top:6px" data-ok="1">Buenos días</div><div class="opt" style="margin-top:6px">Gracias</div><div class="opt" style="margin-top:6px">Adiós</div>
+    </div>
+    <div class="spacer"></div>
+    <div class="fb" id="mc-fb"><b>Correct!</b> (sample) <span class="mut">Incorrect would read: "Correct answer: Buenos días"</span></div>
+    <div class="btn pri" id="mc-check">Check</div>
+    <div class="btn pri hide" id="mc-next" data-go="exercise-fill">Continue</div>
+  </div>
+</section>
+
+<section class="screen" id="exercise-fill" data-name="7b. Exercise: fill in the blank">
+  <!--EXHEAD-->
+  <div class="body">
+    <h3>Fill in the blank</h3>
+    <h2>Yo ____ un café, por favor.</h2>
+    <input type="text" placeholder="Type the missing word">
+    <div class="spacer"></div>
+    <div class="btn pri" data-go="exercise-order">Continue</div>
+  </div>
+</section>
+
+<section class="screen" id="exercise-order" data-name="7c. Exercise: word ordering">
+  <!--EXHEAD-->
+  <div class="body">
+    <h3>Put the words in order</h3>
+    <h2>"I would like some water"</h2>
+    <div class="chips" id="ord-ans"></div>
+    <div class="chips" id="ord-pool" style="border:none">
+      <span class="chip">agua</span><span class="chip">Quisiera</span><span class="chip">un</span><span class="chip">poco</span><span class="chip">de</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="btn pri" data-go="exercise-listen">Continue</div>
+  </div>
+</section>
+
+<section class="screen" id="exercise-listen" data-name="7d. Exercise: listening">
+  <!--EXHEAD-->
+  <div class="body">
+    <h3>Type what you hear</h3>
+    <div class="box" style="height:100px">[icon: play audio]</div>
+    <div class="btn">Play slower</div>
+    <input type="text" placeholder="Type here">
+    <div class="spacer"></div>
+    <div class="btn pri" data-go="exercise-translate">Continue</div>
+  </div>
+</section>
+
+<section class="screen" id="exercise-translate" data-name="7e. Exercise: translate">
+  <!--EXHEAD-->
+  <div class="body">
+    <h3>Translate this sentence</h3>
+    <h2>"Where is the train station?"</h2>
+    <input type="text" placeholder="Your translation">
+    <div class="spacer"></div>
+    <div class="btn pri" data-go="lesson-done">Continue</div>
+  </div>
+</section>
+
+<section class="screen" id="lesson-done" data-name="7f. Lesson complete">
+  <div class="body">
+    <div class="spacer"></div>
+    <div class="box" style="height:120px">[celebration image]</div>
+    <h1 class="center">Lesson complete!</h1>
+    <div class="stats"><div class="card"><b>+15</b><span class="mut">XP earned</span></div><div class="card"><b>86%</b><span class="mut">accuracy</span></div></div>
+    <div class="spacer"></div>
+    <div class="btn pri" data-go="home">Continue</div>
+  </div>
+</section>
+
+<!-- 8 Review -->
+<section class="screen" id="review" data-name="8. Review flashcards" data-nav="review">
+  <div class="top">Review <span class="spacer"></span><span class="mut">3 / 12</span></div>
+  <div class="body">
+    <div class="card flip" id="card">
+      <div id="front"><div class="box" style="height:100px;margin-bottom:10px">[image]</div><h1>la manzana</h1></div>
+      <div id="back" class="hide"><h2>apple</h2><p class="mut" style="margin:8px 0">"Me gusta la manzana." – I like the apple.</p><div class="box" style="height:44px">[icon: audio]</div></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="btn pri" id="show">Show answer</div>
+    <div class="row hide" id="grades"><button>Again</button><button>Hard</button><button>Good</button><button>Easy</button></div>
+  </div>
+  <!--NAV-->
+</section>
+
+<!-- 9 Speak -->
+<section class="screen" id="speak" data-name="9. Speak" data-nav="speak">
+  <div class="top">Speak</div>
+  <div class="body">
+    <div class="card center"><span class="mut">Say this sentence</span><h2>"¿Dónde está el baño?"</h2></div>
+    <div class="mic" id="mic">[mic]</div>
+    <p class="center mut" id="miclabel">Tap to record</p>
+    <div class="card"><span class="mut">What you said</span><p>"¿Dónde está el baño?"</p></div>
+    <div class="card"><span class="mut">Pronunciation score</span><h2>82 / 100</h2></div>
+    <div class="row"><button>Try again</button><button class="pri">Next</button></div>
+    <div class="card" data-go="ai-chat"><h3>AI conversation (optional)</h3><span class="mut">Role-play real situations</span></div>
+  </div>
+  <!--NAV-->
+</section>
+
+<!-- 10 AI chat -->
+<section class="screen" id="ai-chat" data-name="10. AI chat">
+  <div class="top"><span data-go="speak" style="cursor:pointer">&larr; Back</span> AI conversation</div>
+  <div class="body">
+    <div class="card mut">On-device AI — available if your phone supports it</div>
+    <div class="bubble">¡Hola! ¿Qué desea pedir?</div>
+    <div class="bubble me">Yo quiero una cerveza y una paella.</div>
+    <div class="corr"><b>Correction:</b> "Yo quiero" → "Quisiera" sounds more polite. <br>Tip: use "una paella", not "un paella".</div>
+    <div class="bubble">Muy bien. ¿Algo más?</div>
+    <div class="spacer"></div>
+    <div class="row"><input type="text" placeholder="Type your reply" style="flex:4"><button style="flex:1">Send</button></div>
+  </div>
+</section>
+
+<!-- 11 Progress -->
+<section class="screen" id="progress" data-name="11. Progress" data-nav="progress">
+  <div class="top">Profile &amp; progress <span class="spacer"></span><span data-go="settings" style="text-decoration:underline;cursor:pointer;font-weight:400">Settings</span></div>
+  <div class="body">
+    <div class="stats"><div class="card"><b>248</b><span class="mut">words learned</span></div><div class="card"><b>87%</b><span class="mut">accuracy</span></div><div class="card"><b>5</b><span class="mut">day streak</span></div></div>
+    <h3>Last 7 days (minutes)</h3>
+    <div class="chart"><div style="height:40%">8</div><div style="height:70%">14</div><div style="height:55%">11</div><div style="height:100%">20</div><div style="height:30%">6</div><div style="height:85%">17</div><div style="height:50%">10</div></div>
+    <div class="days"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div>
+    <div class="btn" data-go="settings">Settings</div>
+  </div>
+  <!--NAV-->
+</section>
+
+<!-- 12 Settings -->
+<section class="screen" id="settings" data-name="12. Settings">
+  <div class="top"><span data-go="progress" style="cursor:pointer">&larr; Back</span> Settings</div>
+  <div class="body">
+    <h3>Main language</h3>
+    <select class="f"><option>English</option><option>Spanish</option><option>French</option><option>Japanese</option><option>Vietnamese</option></select>
+    <h3>Learning language</h3>
+    <select class="f"><option>Spanish</option><option>English</option><option>French</option><option>Japanese</option><option>Vietnamese</option></select>
+    <h3>Daily goal</h3>
+    <select class="f"><option>5 min</option><option selected>10 min</option><option>20 min</option></select>
+    <h3>Reminder time</h3>
+    <input type="time" value="19:00">
+    <h3>On-device AI</h3>
+    <div class="card"><span class="mut">Optional. Needed for AI chat and grammar correction.</span><div class="btn" id="aibtn">Download model (~1 GB)</div></div>
+    <h3>Account</h3>
+    <div class="btn">Sign in with Google</div>
+    <div class="btn">Sign in with email</div>
+    <div class="btn link" data-go="progress">Back</div>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var screens=[].slice.call(document.querySelectorAll('.screen'));
+  var jump=document.getElementById('jump'),cur=document.getElementById('cur');
+  var navItems=[['home','Home'],['learn','Learn'],['review','Review'],['speak','Speak'],['progress','Profile']];
+
+  // inject shared bottom nav and exercise header
+  screens.forEach(function(s){
+    var n=s.dataset.nav;
+    if(n){
+      var html='<div class="nav">'+navItems.map(function(i){
+        return '<a data-go="'+i[0]+'"'+(i[0]===n?' class="on"':'')+'><b></b>'+i[1]+'</a>';}).join('')+'</div>';
+      s.innerHTML=s.innerHTML.replace('<!--NAV-->',html);
+    }
+    if(s.id.indexOf('exercise-')===0){
+      var idx=['mc','fill','order','listen','translate'].indexOf(s.id.slice(9))+1;
+      s.innerHTML=s.innerHTML.replace('<!--EXHEAD-->','<div class="top"><span data-go="home" style="cursor:pointer;font-size:18px">&times;</span><div class="prog"><i style="width:'+idx*20+'%"></i></div></div>');
+    }
+    var o=document.createElement('option');o.value=s.id;o.textContent=s.dataset.name;jump.appendChild(o);
+  });
+
+  function show(id){
+    if(!document.getElementById(id))id='welcome';
+    screens.forEach(function(s){s.classList.toggle('on',s.id===id);});
+    var s=document.getElementById(id);
+    jump.value=id;cur.textContent=s.dataset.name;
+    var b=s.querySelector('.body');if(b)b.scrollTop=0;
+    resetState(s);
+  }
+  function resetState(s){
+    if(s.id==='exercise-mc'){document.getElementById('mc-fb').classList.remove('on');document.getElementById('mc-check').classList.remove('hide');document.getElementById('mc-next').classList.add('hide');}
+    if(s.id==='review')resetCard();
+  }
+  function resetCard(){
+    document.getElementById('front').classList.remove('hide');document.getElementById('back').classList.add('hide');
+    document.getElementById('show').classList.remove('hide');document.getElementById('grades').classList.add('hide');
+  }
+  function go(id){ if(location.hash==='#'+id)show(id); else location.hash=id; }
+
+  window.addEventListener('hashchange',function(){show(location.hash.slice(1));});
+  jump.addEventListener('change',function(){go(jump.value);});
+
+  document.addEventListener('click',function(e){
+    var t=e.target;
+    var g=t.closest('[data-go]');
+    var grp=t.closest('[data-group] > .opt');
+    if(grp){[].forEach.call(grp.parentNode.children,function(c){c.classList.remove('sel');});grp.classList.add('sel');}
+    var chip=t.closest('.chip');
+    if(chip){var p=chip.parentNode.id==='ord-pool'?document.getElementById('ord-ans'):document.getElementById('ord-pool');p.appendChild(chip);}
+    if(t.closest('#mc-check')){document.getElementById('mc-fb').classList.add('on');document.getElementById('mc-check').classList.add('hide');document.getElementById('mc-next').classList.remove('hide');return;}
+    if(t.closest('#show')||t.closest('#card')){
+      document.getElementById('front').classList.add('hide');document.getElementById('back').classList.remove('hide');
+      document.getElementById('show').classList.add('hide');document.getElementById('grades').classList.remove('hide');return;}
+    if(t.closest('#grades button')){resetCard();return;}
+    var mic=t.closest('#mic');
+    if(mic){mic.classList.toggle('rec');var r=mic.classList.contains('rec');mic.textContent=r?'[recording]':'[mic]';document.getElementById('miclabel').textContent=r?'Recording...':'Tap to record';return;}
+    if(t.closest('#aibtn')){var a=document.getElementById('aibtn');a.textContent=a.dataset.d?'Download model (~1 GB)':'Model downloaded (tap to remove)';a.dataset.d=a.dataset.d?'':'1';return;}
+    if(g&&!g.classList.contains('locked'))go(g.dataset.go);
+  });
+
+  show(location.hash.slice(1)||'welcome');
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+{
+  "lang": "es",
+  "version": 1,
+  "words": [
+    {
+      "id": "es_hola",
+      "text": "hola",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "¡Hola! ¿Qué tal?",
+      "translations": {
+        "en": { "text": "hello", "example": "Hi! How are you?" }
+      }
+    },
+    {
+      "id": "es_adios",
+      "text": "adiós",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "¡Adiós, hasta mañana!",
+      "translations": {
+        "en": { "text": "goodbye", "example": "Goodbye, see you tomorrow!" }
+      }
+    },
+    {
+      "id": "es_buenos_dias",
+      "text": "buenos días",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "Buenos días, ¿cómo está usted?",
+      "translations": {
+        "en": { "text": "good morning", "example": "Good morning, how are you?" }
+      }
+    },
+    {
+      "id": "es_buenas_noches",
+      "text": "buenas noches",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "Buenas noches, que duermas bien.",
+      "translations": {
+        "en": { "text": "good night", "example": "Good night, sleep well." }
+      }
+    },
+    {
+      "id": "es_gracias",
+      "text": "gracias",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "Muchas gracias por tu ayuda.",
+      "translations": {
+        "en": { "text": "thank you", "example": "Thank you very much for your help." }
+      }
+    },
+    {
+      "id": "es_por_favor",
+      "text": "por favor",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "Un café, por favor.",
+      "translations": {
+        "en": { "text": "please", "example": "A coffee, please." }
+      }
+    },
+    {
+      "id": "es_perdon",
+      "text": "perdón",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "Perdón, ¿dónde está el baño?",
+      "translations": {
+        "en": { "text": "sorry / excuse me", "example": "Excuse me, where is the bathroom?" }
+      }
+    },
+    {
+      "id": "es_bienvenido",
+      "text": "bienvenido",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "¡Bienvenido a mi casa!",
+      "translations": {
+        "en": { "text": "welcome", "example": "Welcome to my home!" }
+      }
+    },
+    {
+      "id": "es_hasta_luego",
+      "text": "hasta luego",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "Hasta luego, nos vemos pronto.",
+      "translations": {
+        "en": { "text": "see you later", "example": "See you later, see you soon." }
+      }
+    },
+    {
+      "id": "es_de_nada",
+      "text": "de nada",
+      "topic": "greetings",
+      "level": "A1",
+      "example": "—Gracias. —De nada.",
+      "translations": {
+        "en": { "text": "you're welcome", "example": "\"Thanks.\" \"You're welcome.\"" }
+      }
+    },
+    {
+      "id": "es_el_pan",
+      "text": "el pan",
+      "topic": "food",
+      "level": "A1",
+      "example": "Quiero pan con queso.",
+      "translations": {
+        "en": { "text": "bread", "example": "I want bread with cheese." }
+      }
+    },
+    {
+      "id": "es_el_agua",
+      "text": "el agua",
+      "topic": "food",
+      "level": "A1",
+      "example": "¿Me das un vaso de agua?",
+      "translations": {
+        "en": { "text": "water", "example": "Can you give me a glass of water?" }
+      }
+    },
+    {
+      "id": "es_la_leche",
+      "text": "la leche",
+      "topic": "food",
+      "level": "A1",
+      "example": "Bebo leche por la mañana.",
+      "translations": {
+        "en": { "text": "milk", "example": "I drink milk in the morning." }
+      }
+    },
+    {
+      "id": "es_la_manzana",
+      "text": "la manzana",
+      "topic": "food",
+      "level": "A1",
+      "example": "La manzana es roja.",
+      "translations": {
+        "en": { "text": "apple", "example": "The apple is red." }
+      }
+    },
+    {
+      "id": "es_el_queso",
+      "text": "el queso",
+      "topic": "food",
+      "level": "A1",
+      "example": "Me gusta el queso.",
+      "translations": {
+        "en": { "text": "cheese", "example": "I like cheese." }
+      }
+    },
+    {
+      "id": "es_el_pollo",
+      "text": "el pollo",
+      "topic": "food",
+      "level": "A1",
+      "example": "Hoy comemos pollo con arroz.",
+      "translations": {
+        "en": { "text": "chicken", "example": "Today we eat chicken with rice." }
+      }
+    },
+    {
+      "id": "es_el_arroz",
+      "text": "el arroz",
+      "topic": "food",
+      "level": "A1",
+      "example": "El arroz está muy bueno.",
+      "translations": {
+        "en": { "text": "rice", "example": "The rice is very good." }
+      }
+    },
+    {
+      "id": "es_el_cafe",
+      "text": "el café",
+      "topic": "food",
+      "level": "A1",
+      "example": "Quiero un café con leche.",
+      "translations": {
+        "en": { "text": "coffee", "example": "I want a coffee with milk." }
+      }
+    },
+    {
+      "id": "es_la_carne",
+      "text": "la carne",
+      "topic": "food",
+      "level": "A1",
+      "example": "No como carne.",
+      "translations": {
+        "en": { "text": "meat", "example": "I don't eat meat." }
+      }
+    },
+    {
+      "id": "es_el_pescado",
+      "text": "el pescado",
+      "topic": "food",
+      "level": "A1",
+      "example": "El pescado está fresco.",
+      "translations": {
+        "en": { "text": "fish", "example": "The fish is fresh." }
+      }
+    },
+    {
+      "id": "es_el_hotel",
+      "text": "el hotel",
+      "topic": "travel",
+      "level": "A1",
+      "example": "El hotel está cerca de la playa.",
+      "translations": {
+        "en": { "text": "hotel", "example": "The hotel is near the beach." }
+      }
+    },
+    {
+      "id": "es_el_aeropuerto",
+      "text": "el aeropuerto",
+      "topic": "travel",
+      "level": "A1",
+      "example": "Vamos al aeropuerto en taxi.",
+      "translations": {
+        "en": { "text": "airport", "example": "We go to the airport by taxi." }
+      }
+    },
+    {
+      "id": "es_el_billete",
+      "text": "el billete",
+      "topic": "travel",
+      "level": "A1",
+      "example": "¿Dónde compro el billete?",
+      "translations": {
+        "en": { "text": "ticket", "example": "Where do I buy the ticket?" }
+      }
+    },
+    {
+      "id": "es_la_maleta",
+      "text": "la maleta",
+      "topic": "travel",
+      "level": "A1",
+      "example": "Mi maleta es muy pesada.",
+      "translations": {
+        "en": { "text": "suitcase", "example": "My suitcase is very heavy." }
+      }
+    },
+    {
+      "id": "es_el_tren",
+      "text": "el tren",
+      "topic": "travel",
+      "level": "A1",
+      "example": "El tren sale a las ocho.",
+      "translations": {
+        "en": { "text": "train", "example": "The train leaves at eight." }
+      }
+    },
+    {
+      "id": "es_el_autobus",
+      "text": "el autobús",
+      "topic": "travel",
+      "level": "A1",
+      "example": "Tomo el autobús al trabajo.",
+      "translations": {
+        "en": { "text": "bus", "example": "I take the bus to work." }
+      }
+    },
+    {
+      "id": "es_la_calle",
+      "text": "la calle",
+      "topic": "travel",
+      "level": "A1",
+      "example": "La calle es muy larga.",
+      "translations": {
+        "en": { "text": "street", "example": "The street is very long." }
+      }
+    },
+    {
+      "id": "es_el_mapa",
+      "text": "el mapa",
+      "topic": "travel",
+      "level": "A1",
+      "example": "Necesito un mapa de la ciudad.",
+      "translations": {
+        "en": { "text": "map", "example": "I need a map of the city." }
+      }
+    },
+    {
+      "id": "es_el_taxi",
+      "text": "el taxi",
+      "topic": "travel",
+      "level": "A1",
+      "example": "¿Puede llamar a un taxi?",
+      "translations": {
+        "en": { "text": "taxi", "example": "Can you call a taxi?" }
+      }
+    },
+    {
+      "id": "es_la_estacion",
+      "text": "la estación",
+      "topic": "travel",
+      "level": "A1",
+      "example": "¿Dónde está la estación?",
+      "translations": {
+        "en": { "text": "station", "example": "Where is the station?" }
+      }
+    },
+    {
+      "id": "es_la_casa",
+      "text": "la casa",
+      "topic": "home",
+      "level": "A1",
+      "example": "Mi casa es pequeña.",
+      "translations": {
+        "en": { "text": "house", "example": "My house is small." }
+      }
+    },
+    {
+      "id": "es_la_cocina",
+      "text": "la cocina",
+      "topic": "home",
+      "level": "A1",
+      "example": "Mi madre está en la cocina.",
+      "translations": {
+        "en": { "text": "kitchen", "example": "My mother is in the kitchen." }
+      }
+    },
+    {
+      "id": "es_la_puerta",
+      "text": "la puerta",
+      "topic": "home",
+      "level": "A1",
+      "example": "Por favor, cierra la puerta.",
+      "translations": {
+        "en": { "text": "door", "example": "Please close the door." }
+      }
+    },
+    {
+      "id": "es_la_ventana",
+      "text": "la ventana",
+      "topic": "home",
+      "level": "A1",
+      "example": "Abro la ventana por la mañana.",
+      "translations": {
+        "en": { "text": "window", "example": "I open the window in the morning." }
+      }
+    },
+    {
+      "id": "es_la_mesa",
+      "text": "la mesa",
+      "topic": "home",
+      "level": "A1",
+      "example": "El libro está sobre la mesa.",
+      "translations": {
+        "en": { "text": "table", "example": "The book is on the table." }
+      }
+    },
+    {
+      "id": "es_la_silla",
+      "text": "la silla",
+      "topic": "home",
+      "level": "A1",
+      "example": "Siéntate en la silla.",
+      "translations": {
+        "en": { "text": "chair", "example": "Sit on the chair." }
+      }
+    },
+    {
+      "id": "es_la_cama",
+      "text": "la cama",
+      "topic": "home",
+      "level": "A1",
+      "example": "La cama es muy cómoda.",
+      "translations": {
+        "en": { "text": "bed", "example": "The bed is very comfortable." }
+      }
+    },
+    {
+      "id": "es_el_bano",
+      "text": "el baño",
+      "topic": "home",
+      "level": "A1",
+      "example": "¿Dónde está el baño?",
+      "translations": {
+        "en": { "text": "bathroom", "example": "Where is the bathroom?" }
+      }
+    },
+    {
+      "id": "es_el_sofa",
+      "text": "el sofá",
+      "topic": "home",
+      "level": "A1",
+      "example": "El gato duerme en el sofá.",
+      "translations": {
+        "en": { "text": "sofa", "example": "The cat sleeps on the sofa." }
+      }
+    },
+    {
+      "id": "es_la_habitacion",
+      "text": "la habitación",
+      "topic": "home",
+      "level": "A1",
+      "example": "Mi habitación es grande.",
+      "translations": {
+        "en": { "text": "room", "example": "My room is big." }
+      }
+    },
+    {
+      "id": "es_el_amigo",
+      "text": "el amigo",
+      "topic": "people",
+      "level": "A1",
+      "example": "Mi amigo es muy simpático.",
+      "translations": {
+        "en": { "text": "friend", "example": "My friend is very nice." }
+      }
+    },
+    {
+      "id": "es_la_familia",
+      "text": "la familia",
+      "topic": "people",
+      "level": "A1",
+      "example": "Mi familia es grande.",
+      "translations": {
+        "en": { "text": "family", "example": "My family is big." }
+      }
+    },
+    {
+      "id": "es_el_nino",
+      "text": "el niño",
+      "topic": "people",
+      "level": "A1",
+      "example": "El niño juega en el parque.",
+      "translations": {
+        "en": { "text": "boy / child", "example": "The boy plays in the park." }
+      }
+    },
+    {
+      "id": "es_la_mujer",
+      "text": "la mujer",
+      "topic": "people",
+      "level": "A1",
+      "example": "La mujer lee un libro.",
+      "translations": {
+        "en": { "text": "woman", "example": "The woman reads a book." }
+      }
+    },
+    {
+      "id": "es_el_hombre",
+      "text": "el hombre",
+      "topic": "people",
+      "level": "A1",
+      "example": "El hombre habla con su hijo.",
+      "translations": {
+        "en": { "text": "man", "example": "The man talks with his son." }
+      }
+    },
+    {
+      "id": "es_el_padre",
+      "text": "el padre",
+      "topic": "people",
+      "level": "A1",
+      "example": "Mi padre trabaja en un banco.",
+      "translations": {
+        "en": { "text": "father", "example": "My father works at a bank." }
+      }
+    },
+    {
+      "id": "es_la_madre",
+      "text": "la madre",
+      "topic": "people",
+      "level": "A1",
+      "example": "Mi madre cocina muy bien.",
+      "translations": {
+        "en": { "text": "mother", "example": "My mother cooks very well." }
+      }
+    },
+    {
+      "id": "es_el_hermano",
+      "text": "el hermano",
+      "topic": "people",
+      "level": "A1",
+      "example": "Tengo un hermano mayor.",
+      "translations": {
+        "en": { "text": "brother", "example": "I have an older brother." }
+      }
+    },
+    {
+      "id": "es_la_hermana",
+      "text": "la hermana",
+      "topic": "people",
+      "level": "A1",
+      "example": "Mi hermana estudia medicina.",
+      "translations": {
+        "en": { "text": "sister", "example": "My sister studies medicine." }
+      }
+    },
+    {
+      "id": "es_el_profesor",
+      "text": "el profesor",
+      "topic": "people",
+      "level": "A1",
+      "example": "El profesor explica la lección.",
+      "translations": {
+        "en": { "text": "teacher", "example": "The teacher explains the lesson." }
+      }
+    }
+  ]
+}

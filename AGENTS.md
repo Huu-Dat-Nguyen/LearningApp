@@ -77,7 +77,7 @@ report/     # reports and docs
 
 ## Milestones
 1. Spec + wireframes — done 2026-10-19 (`wireframes/index.html`, see `wireframes/README.md`).
-2. Flashcards with spaced repetition (one language). Plan: `report/milestone-2-plan.md` in the OneDrive folder. Step 1 (project setup, theme, nav shell) done 2026-10-19.
+2. Flashcards with spaced repetition (one language). Plan: `report/milestone-2-plan.md` in the OneDrive folder. Step 1 (project setup, theme, nav shell) and step 2 (data layer: Room tables `words`, `word_translations`, `user_words`, `review_log`; `ContentSeeder` loads `assets/content/<lang>/words.json` on app start, re-importing when its `version` goes up; `WordRepository`; 50 Spanish A1 words) done 2026-10-19.
 3. Lessons + exercises + progress.
 4. Speaking practice.
 5. On-device AI spike (conversation + correction); keep or move out of scope.
@@ -89,7 +89,7 @@ Solo project (one developer). Keep scope small, prefer managed services (Firebas
 ## Build and run
 - Repo: `C:\Users\nguye\repos\LearningApp` (this folder). The OneDrive folder keeps reports only.
 - JDK: Android Studio's bundled one. In bash: `export JAVA_HOME="/c/Program Files/Android/Android Studio/jbr"`.
-- Build: `./gradlew :app:assembleDebug` · Tests: `./gradlew test`
+- Build: `./gradlew :app:assembleDebug` · Unit tests: `./gradlew :app:testDebugUnitTest` · Device tests (emulator running): `./gradlew :app:connectedDebugAndroidTest`
 - Emulator: AVD `Medium_Phone_API_37.0` (start it in a Terminal tab, not a session-bound task).
 - Install: `adb install -r app/build/outputs/apk/debug/app-debug.apk` (adb in `%LOCALAPPDATA%\Android\Sdk\platform-tools`).
 - Stack: AGP 9.4 (built-in Kotlin), Compose BOM 2026.02, Hilt 2.60, Room 2.8, KSP 2.3, Navigation 2.10 (type-safe routes). Versions in `gradle/libs.versions.toml`.

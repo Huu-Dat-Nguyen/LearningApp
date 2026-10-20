@@ -22,20 +22,31 @@ class AndroidSpeechInput @Inject constructor(
     override val isAvailable: Boolean
         get() = SpeechRecognizer.isRecognitionAvailable(context)
 
-    override fun start(langTag: String, onEvent: (SpeechEvent) -> Unit) {
+    override fun start(langTag: String, onEvent: (SpeechEvent) -> Unit) = start(langTag, onEvent, preferOffline = true)
+
+    private fun start(langTag: String, onEvent: (SpeechEvent) -> Unit, preferOffline: Boolean) {
         if (!isAvailable) {
             onEvent(SpeechEvent.Error(SpeechError.NotAvailable))
             return
         }
         val r = recognizer ?: SpeechRecognizer.createSpeechRecognizer(context).also { recognizer = it }
-        r.setRecognitionListener(Listener(onEvent))
+        r.setRecognitionListener(
+            Listener { event ->
+                // No offline language pack on this phone: try once more with online recognition.
+                if (preferOffline && event == SpeechEvent.Error(SpeechError.NotAvailable)) {
+                    start(langTag, onEvent, preferOffline = false)
+                } else {
+                    onEvent(event)
+                }
+            }
+        )
         val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
             putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
             putExtra(RecognizerIntent.EXTRA_LANGUAGE, langTag)
             putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
             putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
             // Use the on-device model when one is installed; free and works offline.
-            putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, true)
+            putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, preferOffline)
         }
         r.startListening(intent)
     }

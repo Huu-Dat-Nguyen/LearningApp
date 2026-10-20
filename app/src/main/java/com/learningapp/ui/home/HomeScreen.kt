@@ -44,6 +44,8 @@ fun HomeScreen(
     onReview: () -> Unit,
     onSpeak: () -> Unit,
     cardsDue: Int = 12,
+    /** Title of the next lesson; null when all lessons are done. */
+    nextLessonTitle: String? = "Greetings 2",
 ) {
     val today = LocalDate.now()
     val monday = today.with(DayOfWeek.MONDAY)
@@ -73,9 +75,12 @@ fun HomeScreen(
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             Text("READY TO LEARN?", style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
-            Text("Today: Greetings 2 · 30% done", style = MaterialTheme.typography.labelMedium)
+            Text(
+                if (nextLessonTitle != null) "Next lesson: $nextLessonTitle" else "All lessons done. Keep reviewing!",
+                style = MaterialTheme.typography.labelMedium,
+            )
             Spacer(Modifier.size(4.dp))
-            GradientButton("Continue lesson", onContinueLesson)
+            GradientButton(if (nextLessonTitle != null) "Continue lesson" else "See lessons", onContinueLesson)
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             AppCard(Modifier.weight(1f), onClick = onReview) {

@@ -47,6 +47,9 @@ import com.learningapp.domain.srs.Grade
 import com.learningapp.domain.srs.Sm2Scheduler
 import com.learningapp.ui.components.AppCard
 import com.learningapp.ui.components.GradientButton
+import com.learningapp.ui.components.MessageCard
+import com.learningapp.ui.components.Speaker
+import com.learningapp.ui.components.rememberSpeaker
 import com.learningapp.ui.theme.BodyText
 import com.learningapp.ui.theme.CardBg
 import com.learningapp.ui.theme.Ink
@@ -225,21 +228,5 @@ private fun RowScope.GradeButton(grade: Grade, days: Int, onGrade: (Grade) -> Un
     ) {
         Text(grade.name, style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 0.3.sp), color = if (primary) Color.White else Ink)
         Text(interval, style = MaterialTheme.typography.labelMedium, color = if (primary) Color.White.copy(alpha = 0.85f) else Muted)
-    }
-}
-
-@Composable
-private fun MessageCard(title: String, body: String, button: String, onClick: () -> Unit) {
-    AppCard(Modifier.fillMaxWidth()) {
-        Column(
-            Modifier.fillMaxWidth().padding(vertical = 18.dp),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-        ) {
-            Text(title, style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
-            Text(body, style = MaterialTheme.typography.bodyMedium, color = BodyText, textAlign = TextAlign.Center)
-            Spacer(Modifier.size(6.dp))
-            GradientButton(button, onClick)
-        }
     }
 }

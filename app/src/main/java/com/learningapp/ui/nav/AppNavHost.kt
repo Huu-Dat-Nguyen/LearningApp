@@ -32,6 +32,7 @@ import androidx.navigation.compose.rememberNavController
 import com.learningapp.ui.home.HomeScreen
 import com.learningapp.ui.home.HomeViewModel
 import com.learningapp.ui.learn.LearnScreen
+import com.learningapp.ui.lesson.LessonScreen
 import com.learningapp.ui.profile.ProfileScreen
 import com.learningapp.ui.review.ReviewScreen
 import com.learningapp.ui.speak.SpeakScreen
@@ -62,19 +63,30 @@ fun AppNavHost() {
         restoreState = true
     }
 
+    // Lessons are full screen: no bottom bar.
+    val onTab = tabs.any { current?.hasRoute(it.routeClass) == true }
+
     Scaffold(
         containerColor = ScreenBg,
         bottomBar = {
-            BottomBar(selected = { tab -> current?.hasRoute(tab.routeClass) == true }, onSelect = { go(it.route) })
+            if (onTab) BottomBar(selected = { tab -> current?.hasRoute(tab.routeClass) == true }, onSelect = { go(it.route) })
         },
     ) { padding ->
         NavHost(nav, startDestination = HomeRoute, modifier = Modifier.padding(padding)) {
             composable<HomeRoute> {
                 val home: HomeViewModel = hiltViewModel()
                 val cardsDue by home.cardsDue.collectAsStateWithLifecycle()
-                HomeScreen(onContinueLesson = { go(LearnRoute) }, onReview = { go(ReviewRoute) }, onSpeak = { go(SpeakRoute) }, cardsDue = cardsDue)
+                val next by home.nextLesson.collectAsStateWithLifecycle()
+                HomeScreen(
+                    onContinueLesson = { next?.let { nav.navigate(LessonRoute(it.id)) } ?: go(LearnRoute) },
+                    onReview = { go(ReviewRoute) },
+                    onSpeak = { go(SpeakRoute) },
+                    cardsDue = cardsDue,
+                    nextLessonTitle = next?.title,
+                )
             }
-            composable<LearnRoute> { LearnScreen() }
+            composable<LearnRoute> { LearnScreen(onOpenLesson = { nav.navigate(LessonRoute(it)) }) }
+            composable<LessonRoute> { LessonScreen(onClose = { nav.popBackStack() }) }
             composable<ReviewRoute> { ReviewScreen(onDone = { go(HomeRoute) }) }
             composable<SpeakRoute> { SpeakScreen() }
             composable<ProfileRoute> { ProfileScreen() }

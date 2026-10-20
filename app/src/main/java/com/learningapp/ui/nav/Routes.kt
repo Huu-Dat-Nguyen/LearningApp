@@ -8,3 +8,4 @@ import kotlinx.serialization.Serializable
 @Serializable object ReviewRoute
 @Serializable object SpeakRoute
 @Serializable object ProfileRoute
+@Serializable data class LessonRoute(val lessonId: String)

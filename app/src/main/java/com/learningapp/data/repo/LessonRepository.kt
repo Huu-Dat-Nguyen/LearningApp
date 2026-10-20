@@ -69,7 +69,7 @@ class LessonRepository @Inject constructor(
     private val activityDao: ActivityDao,
     private val prefs: UserPrefs,
     private val clock: Clock,
-) {
+) : LessonStore {
     private fun today(): LocalDate = LocalDate.now(clock)
 
     /** Units in order; the first unfinished lesson is Next, everything after it Locked. */
@@ -83,7 +83,7 @@ class LessonRepository @Inject constructor(
     suspend fun nextLesson(): LessonItem? =
         units().first().flatMap { it.lessons }.firstOrNull { it.state == LessonState.Next }
 
-    suspend fun lesson(id: String): LessonData? {
+    override suspend fun lesson(id: String): LessonData? {
         val entity = lessonDao.lesson(id) ?: return null
         val main = prefs.mainLang.first()
         val unitWordIds = lessonDao.lessonsInUnit(entity.unitId).flatMap { LessonParser.wordIds(it) }.distinct()
@@ -103,7 +103,7 @@ class LessonRepository @Inject constructor(
      * Saves a finished lesson: best result, today's XP/answers, and adds the lesson's
      * new words to the flashcards as if answered Good (so they come back tomorrow).
      */
-    suspend fun completeLesson(result: LessonResult, lessonWordIds: List<String>) {
+    override suspend fun completeLesson(result: LessonResult, lessonWordIds: List<String>) {
         val now = clock.millis()
         val day = today()
         val target = prefs.targetLang.first()

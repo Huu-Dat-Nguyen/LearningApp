@@ -1,5 +1,7 @@
 package com.learningapp.di
 
+import com.learningapp.data.repo.LessonRepository
+import com.learningapp.data.repo.LessonStore
 import com.learningapp.data.repo.ReviewRepository
 import com.learningapp.data.repo.WordRepository
 import dagger.Binds
@@ -12,4 +14,7 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepoModule {
     @Binds
     abstract fun reviewRepository(repo: WordRepository): ReviewRepository
+
+    @Binds
+    abstract fun lessonStore(repo: LessonRepository): LessonStore
 }

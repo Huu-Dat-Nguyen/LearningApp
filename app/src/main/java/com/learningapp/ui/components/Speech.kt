@@ -1,4 +1,4 @@
-package com.learningapp.ui.review
+package com.learningapp.ui.components
 
 import android.speech.tts.TextToSpeech
 import androidx.compose.runtime.Composable
@@ -20,8 +20,11 @@ class Speaker {
     var missingVoice by mutableStateOf(false)
         internal set
 
-    fun speak(text: String) {
-        if (ready) tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, text)
+    /** [slow] plays at 60% speed, for listening exercises. */
+    fun speak(text: String, slow: Boolean = false) {
+        if (!ready) return
+        tts?.setSpeechRate(if (slow) 0.6f else 1f)
+        tts?.speak(text, TextToSpeech.QUEUE_FLUSH, null, text)
     }
 }
 

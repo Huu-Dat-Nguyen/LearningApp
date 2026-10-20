@@ -67,18 +67,25 @@ Based on [GEL – Guided E-learning](https://dribbble.com/shots/25344541-GEL-Gui
 - `UserWord` — user_id, word_id, ease, interval, due_date
 - `Attempt` — user_id, exercise_id, correct, time_ms, created_at
 
-## Project structure (planned)
+## Project structure
 ```
-app/        # Android app (Kotlin, Compose)
-content/    # lessons and word lists per language (JSON), bundled as assets
-wireframes/ # clickable grey-box HTML wireframes (milestone 1)
-report/     # reports and docs
+app/src/main/assets/content/<lang>/  # words.json, lessons.json (each with its own "version")
+app/src/main/java/com/learningapp/
+  data/content  # JSON parsing + ContentSeeder (imports on app start)
+  data/db       # Room v2: words, translations, user_words, review_log, lessons, lesson_progress, daily_activity
+  data/repo     # WordRepository, LessonRepository, ProgressRepository, UserPrefs (+ ReviewRepository/LessonStore interfaces for tests)
+  domain/srs    # SM-2 scheduler
+  domain/lesson # exercise types, AnswerChecker, ExerciseBuilder, LessonSession
+  ui/           # home, learn, lesson, review, profile (Progress), components, nav, theme
+app/schemas/    # exported Room schemas (needed for migration tests)
+wireframes/     # clickable HTML wireframes (milestone 1)
 ```
+Reports and plans (`report/`) live in the OneDrive folder.
 
 ## Milestones
 1. Spec + wireframes — done 2026-10-19 (`wireframes/index.html`, see `wireframes/README.md`).
-2. Flashcards with spaced repetition (one language). Plan: `report/milestone-2-plan.md` in the OneDrive folder. Step 1 (project setup, theme, nav shell) and step 2 (data layer: Room tables `words`, `word_translations`, `user_words`, `review_log`; `ContentSeeder` loads `assets/content/<lang>/words.json` on app start, re-importing when its `version` goes up; `WordRepository`; 50 Spanish A1 words) done 2026-10-19. Step 3 (SM-2 scheduler: `domain/srs/Grade.kt`, `Sm2Scheduler.kt` with `review()`, `previewIntervals()`, `formatInterval()`; pure Kotlin, JVM tests in `Sm2SchedulerTest`) done 2026-10-20. Step 4 (flashcard review: `ui/review/ReviewViewModel` builds the queue (due first, then up to 10 new/day), Again re-queues at the end of the session; `ReviewScreen` with flip animation, TextToSpeech in the target language (`Speech.kt`; manifest `<queries>` for TTS), grade buttons showing next interval; `HomeViewModel` gives the live cards-due count; `ReviewRepository` interface so `ReviewViewModelTest` uses a fake) done 2026-10-20. **Milestone 2 done 2026-10-20:** 22 unit + 5 device tests pass; on the emulator 10 new cards reviewed (Again re-queued, 10 → 11), progress and due dates kept after an app restart. Known: a brand-new card gets 1 day for every grade (standard SM-2), so Good and Easy feel the same the first time.
-3. Lessons + exercises + progress.
+2. Flashcards with spaced repetition — **done 2026-10-20** (plan: `report/milestone-2-plan.md`). 50 Spanish A1 words; SM-2 scheduling; review screen with flip, text-to-speech and grade buttons showing the next interval; due cards first, then up to 10 new a day; Again re-queues in the session. Known: a brand-new card gets 1 day for every grade (standard SM-2).
+3. Lessons + exercises + progress — **done 2026-10-20** (plan: `report/milestone-3-plan.md`). 10 lessons (5 units × 2), each with multiple choice, fill in the blank, word order, listen and translate; lessons unlock in order; wrong answers come back once at the end; a missing accent counts as right with a note; finishing a lesson adds its words to the flashcards. XP = 10 per lesson + 1 per first-try correct + 1 per flashcard; streak counts days with XP; study time counted while a lesson or review is open. Home and the Progress tab show real numbers. Checked: 53 unit + 8 device tests pass (incl. Room v1→v2 migration); on the emulator a lesson with one wrong answer and two missing accents gave +16 XP / 86%, and all progress survived an app restart.
 4. Speaking practice.
 5. On-device AI spike (conversation + correction); keep or move out of scope.
 6. Beta release on Google Play (internal/closed testing).

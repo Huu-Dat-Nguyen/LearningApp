@@ -56,6 +56,7 @@ import com.learningapp.ui.components.AppCard
 import com.learningapp.ui.components.GradientButton
 import com.learningapp.ui.components.MessageCard
 import com.learningapp.ui.components.Speaker
+import com.learningapp.ui.components.TrackStudyTime
 import com.learningapp.ui.components.rememberSpeaker
 import com.learningapp.ui.theme.BodyText
 import com.learningapp.ui.theme.CardBg
@@ -77,6 +78,7 @@ private val WrongInk = Color(0xFFB4234A)
 fun LessonScreen(onClose: () -> Unit, viewModel: LessonViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val speaker = rememberSpeaker(state.targetLang)
+    TrackStudyTime()
     Column(
         Modifier.fillMaxSize().statusBarsPadding().navigationBarsPadding().imePadding().padding(18.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),

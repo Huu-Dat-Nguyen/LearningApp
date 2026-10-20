@@ -77,12 +77,14 @@ fun AppNavHost() {
                 val home: HomeViewModel = hiltViewModel()
                 val cardsDue by home.cardsDue.collectAsStateWithLifecycle()
                 val next by home.nextLesson.collectAsStateWithLifecycle()
+                val summary by home.summary.collectAsStateWithLifecycle()
                 HomeScreen(
                     onContinueLesson = { next?.let { nav.navigate(LessonRoute(it.id)) } ?: go(LearnRoute) },
                     onReview = { go(ReviewRoute) },
                     onSpeak = { go(SpeakRoute) },
                     cardsDue = cardsDue,
                     nextLessonTitle = next?.title,
+                    summary = summary,
                 )
             }
             composable<LearnRoute> { LearnScreen(onOpenLesson = { nav.navigate(LessonRoute(it)) }) }

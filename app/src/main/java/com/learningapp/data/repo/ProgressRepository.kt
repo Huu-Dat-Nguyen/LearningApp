@@ -2,7 +2,11 @@ package com.learningapp.data.repo
 
 import com.learningapp.data.db.ActivityDao
 import com.learningapp.data.db.DailyActivityEntity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.first
@@ -56,8 +60,15 @@ class ProgressRepository @Inject constructor(
 ) {
     fun today(): LocalDate = LocalDate.now(clock)
 
+    private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
+
     suspend fun addActivity(xp: Int = 0, seconds: Long = 0, answered: Int = 0, correct: Int = 0) {
         activityDao.add(today().toEpochDay(), prefs.targetLang.first(), xp, seconds, answered, correct)
+    }
+
+    /** Adds study time without waiting; safe to call while a screen is closing. */
+    fun recordSeconds(seconds: Long) {
+        if (seconds > 0) scope.launch { addActivity(seconds = seconds) }
     }
 
     @OptIn(ExperimentalCoroutinesApi::class)

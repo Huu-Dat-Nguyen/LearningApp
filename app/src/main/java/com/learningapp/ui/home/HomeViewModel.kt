@@ -5,6 +5,8 @@ import androidx.lifecycle.viewModelScope
 import com.learningapp.data.repo.LessonItem
 import com.learningapp.data.repo.LessonRepository
 import com.learningapp.data.repo.LessonState
+import com.learningapp.data.repo.ProgressRepository
+import com.learningapp.data.repo.ProgressSummary
 import com.learningapp.data.repo.WordRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
@@ -14,7 +16,15 @@ import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(repo: WordRepository, lessons: LessonRepository) : ViewModel() {
+class HomeViewModel @Inject constructor(
+    repo: WordRepository,
+    lessons: LessonRepository,
+    progress: ProgressRepository,
+) : ViewModel() {
+    /** Null while loading. */
+    val summary: StateFlow<ProgressSummary?> = progress.summary()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
     val cardsDue: StateFlow<Int> = repo.dueCount()
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), 0)
 

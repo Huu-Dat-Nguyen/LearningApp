@@ -49,6 +49,7 @@ import com.learningapp.ui.components.AppCard
 import com.learningapp.ui.components.GradientButton
 import com.learningapp.ui.components.MessageCard
 import com.learningapp.ui.components.Speaker
+import com.learningapp.ui.components.TrackStudyTime
 import com.learningapp.ui.components.rememberSpeaker
 import com.learningapp.ui.theme.BodyText
 import com.learningapp.ui.theme.CardBg
@@ -65,6 +66,7 @@ import java.util.Locale
 fun ReviewScreen(onDone: () -> Unit, viewModel: ReviewViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val speaker = rememberSpeaker(state.targetLang)
+    TrackStudyTime()
     ReviewContent(state, speaker, onFlip = viewModel::flip, onGrade = viewModel::grade, onDone = onDone)
 }
 

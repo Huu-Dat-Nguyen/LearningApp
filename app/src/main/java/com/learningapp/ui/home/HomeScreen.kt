@@ -23,6 +23,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.learningapp.data.repo.ProgressSummary
 import com.learningapp.ui.components.AppCard
 import com.learningapp.ui.components.GradientButton
 import com.learningapp.ui.components.StatCard
@@ -36,8 +37,7 @@ import java.time.LocalDate
 import java.time.format.TextStyle
 import java.util.Locale
 
-// Stats are placeholders until progress tracking exists (milestone 3);
-// cardsDue comes from HomeViewModel (Room).
+// All numbers come from HomeViewModel (Room); defaults are for the preview.
 @Composable
 fun HomeScreen(
     onContinueLesson: () -> Unit,
@@ -46,11 +46,14 @@ fun HomeScreen(
     cardsDue: Int = 12,
     /** Title of the next lesson; null when all lessons are done. */
     nextLessonTitle: String? = "Greetings 2",
+    summary: ProgressSummary? = null,
 ) {
-    val today = LocalDate.now()
+    val today = summary?.today ?: LocalDate.now()
     val monday = today.with(DayOfWeek.MONDAY)
     val week = (0..6).map { monday.plusDays(it.toLong()) }
         .map { it.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault()) to it.dayOfMonth }
+    val practiced = summary?.week.orEmpty().mapIndexedNotNull { i, d -> if (d.active) i else null }.toSet()
+    val streak = summary?.streak ?: 0
 
     Column(
         Modifier
@@ -65,10 +68,17 @@ fun HomeScreen(
             Box(Modifier.size(40.dp).clip(CircleShape).background(TagBg)) // profile picture placeholder
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            StatCard("Daily goal", "7", "/10 min", 0.7f, Pink, Modifier.weight(1f))
-            StatCard("Day streak", "5", "340 XP", 0.7f, Teal, Modifier.weight(1f))
+            StatCard(
+                "Daily goal", "${summary?.todayMinutes ?: 0}", "/${summary?.dailyGoalMinutes ?: 10} min",
+                summary?.goalProgress ?: 0f, Pink, Modifier.weight(1f),
+            )
+            // Ring fills over a week of streak.
+            StatCard(
+                "Day streak", "$streak", "${summary?.totalXp ?: 0} XP",
+                (streak / 7f).coerceAtMost(1f), Teal, Modifier.weight(1f),
+            )
         }
-        WeekStrip(week, todayIndex = today.dayOfWeek.value - 1, practiced = setOf(0, 2))
+        WeekStrip(week, todayIndex = today.dayOfWeek.value - 1, practiced = practiced)
         Column(
             Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 6.dp),
             horizontalAlignment = Alignment.CenterHorizontally,

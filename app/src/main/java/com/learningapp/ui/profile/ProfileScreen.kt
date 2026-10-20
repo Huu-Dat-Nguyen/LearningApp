@@ -1,7 +1,120 @@
 package com.learningapp.ui.profile
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.learningapp.ui.components.PlaceholderScreen
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.lifecycle.viewModelScope
+import com.learningapp.data.repo.ProgressRepository
+import com.learningapp.data.repo.ProgressSummary
+import com.learningapp.ui.components.AppCard
+import com.learningapp.ui.theme.Ink
+import com.learningapp.ui.theme.Muted
+import com.learningapp.ui.theme.Track
+import com.learningapp.ui.theme.VioletGradient
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.stateIn
+import java.time.format.TextStyle
+import java.util.Locale
+import javax.inject.Inject
+import kotlin.math.roundToInt
+
+@HiltViewModel
+class ProgressViewModel @Inject constructor(progress: ProgressRepository) : ViewModel() {
+    val summary: StateFlow<ProgressSummary?> = progress.summary()
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+}
 
 @Composable
-fun ProfileScreen() = PlaceholderScreen("Progress", "Progress stats and settings arrive in milestone 3.")
+fun ProfileScreen(viewModel: ProgressViewModel = hiltViewModel()) {
+    val summary by viewModel.summary.collectAsStateWithLifecycle()
+    Column(
+        Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(18.dp),
+        verticalArrangement = Arrangement.spacedBy(14.dp),
+    ) {
+        Text("Progress", style = MaterialTheme.typography.titleLarge)
+        val s = summary ?: return@Column
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Stat("${s.streak}", "day streak", Modifier.weight(1f))
+            Stat("${s.totalXp}", "total XP", Modifier.weight(1f))
+        }
+        Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Stat("${s.wordsStarted}", "words learned", Modifier.weight(1f))
+            Stat(s.accuracy7d?.let { "${(it * 100).roundToInt()}%" } ?: "–", "accuracy (7 days)", Modifier.weight(1f))
+        }
+        AppCard(Modifier.fillMaxWidth()) {
+            Text("XP, last 7 days", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
+            XpChart(s)
+        }
+        AppCard(Modifier.fillMaxWidth()) {
+            Text("Today", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
+            Text("${s.todayMinutes} of ${s.dailyGoalMinutes} min studied", style = MaterialTheme.typography.bodyLarge, color = Ink)
+            Box(Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(99.dp)).background(Track)) {
+                Box(Modifier.fillMaxWidth(s.goalProgress).height(8.dp).clip(RoundedCornerShape(99.dp)).background(VioletGradient))
+            }
+        }
+    }
+}
+
+@Composable
+private fun Stat(value: String, label: String, modifier: Modifier) {
+    AppCard(modifier) {
+        Text(value, fontSize = 26.sp, fontWeight = FontWeight.ExtraBold, color = Ink)
+        Text(label, style = MaterialTheme.typography.labelMedium)
+    }
+}
+
+/** Bars scaled to the best day; a small stub shows days with no XP. */
+@Composable
+private fun XpChart(s: ProgressSummary) {
+    val max = (s.last7.maxOfOrNull { it.xp } ?: 0).coerceAtLeast(1)
+    Row(
+        Modifier.fillMaxWidth().height(150.dp).padding(top = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(8.dp),
+        verticalAlignment = Alignment.Bottom,
+    ) {
+        s.last7.forEach { day ->
+            val label = day.date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault())
+            Column(
+                Modifier.weight(1f).fillMaxHeight().semantics(mergeDescendants = true) { contentDescription = "$label ${day.xp} XP" },
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Bottom,
+            ) {
+                if (day.xp > 0) Text("${day.xp}", style = MaterialTheme.typography.labelSmall, color = Muted)
+                val fraction = (day.xp.toFloat() / max).coerceIn(0.04f, 1f)
+                Box(
+                    Modifier.fillMaxWidth().fillMaxHeight(fraction * 0.75f).clip(RoundedCornerShape(8.dp))
+                        .then(if (day.xp > 0) Modifier.background(VioletGradient) else Modifier.background(Track)),
+                )
+                Text(label.uppercase(), style = MaterialTheme.typography.labelSmall, color = if (day.date == s.today) Ink else Muted, modifier = Modifier.padding(top = 4.dp))
+            }
+        }
+    }
+}

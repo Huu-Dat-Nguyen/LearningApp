@@ -1,5 +1,6 @@
 package com.learningapp.data.repo
 
+import com.learningapp.data.db.ActivityDao
 import com.learningapp.data.db.CardRow
 import com.learningapp.data.db.ReviewLogEntity
 import com.learningapp.data.db.UserWordEntity
@@ -16,6 +17,7 @@ import javax.inject.Singleton
 @Singleton
 class WordRepository @Inject constructor(
     private val dao: WordDao,
+    private val activityDao: ActivityDao,
     private val prefs: UserPrefs,
     private val clock: Clock,
 ) : ReviewRepository {
@@ -52,5 +54,11 @@ class WordRepository @Inject constructor(
             newIntervalDays = newState.intervalDays,
         )
         dao.saveReview(newState, log)
+        // 1 XP per card, so flashcard-only days still count for the streak. Again counts as not correct.
+        activityDao.add(today().toEpochDay(), newState.targetLang, xp = REVIEW_XP, answered = 1, correct = if (grade == 0) 0 else 1)
+    }
+
+    companion object {
+        const val REVIEW_XP = 1
     }
 }

@@ -37,7 +37,7 @@ import java.time.format.TextStyle
 import java.util.Locale
 
 // Stats are placeholders until progress tracking exists (milestone 3);
-// the cards-due count gets wired to Room in step 5.
+// cardsDue comes from HomeViewModel (Room).
 @Composable
 fun HomeScreen(
     onContinueLesson: () -> Unit,

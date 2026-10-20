@@ -21,6 +21,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.foundation.clickable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
@@ -28,6 +30,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.learningapp.ui.home.HomeScreen
+import com.learningapp.ui.home.HomeViewModel
 import com.learningapp.ui.learn.LearnScreen
 import com.learningapp.ui.profile.ProfileScreen
 import com.learningapp.ui.review.ReviewScreen
@@ -66,7 +69,11 @@ fun AppNavHost() {
         },
     ) { padding ->
         NavHost(nav, startDestination = HomeRoute, modifier = Modifier.padding(padding)) {
-            composable<HomeRoute> { HomeScreen(onContinueLesson = { go(LearnRoute) }, onReview = { go(ReviewRoute) }, onSpeak = { go(SpeakRoute) }) }
+            composable<HomeRoute> {
+                val home: HomeViewModel = hiltViewModel()
+                val cardsDue by home.cardsDue.collectAsStateWithLifecycle()
+                HomeScreen(onContinueLesson = { go(LearnRoute) }, onReview = { go(ReviewRoute) }, onSpeak = { go(SpeakRoute) }, cardsDue = cardsDue)
+            }
             composable<LearnRoute> { LearnScreen() }
             composable<ReviewRoute> { ReviewScreen(onDone = { go(HomeRoute) }) }
             composable<SpeakRoute> { SpeakScreen() }

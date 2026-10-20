@@ -89,8 +89,14 @@ Reports and plans (`report/`) live in the OneDrive folder.
 2. Flashcards with spaced repetition — **done 2026-10-20** (plan: `report/milestone-2-plan.md`). 50 Spanish A1 words; SM-2 scheduling; review screen with flip, text-to-speech and grade buttons showing the next interval; due cards first, then up to 10 new a day; Again re-queues in the session. Known: a brand-new card gets 1 day for every grade (standard SM-2).
 3. Lessons + exercises + progress — **done 2026-10-20** (plan: `report/milestone-3-plan.md`). 10 lessons (5 units × 2), each with multiple choice, fill in the blank, word order, listen and translate; lessons unlock in order; wrong answers come back once at the end; a missing accent counts as right with a note; finishing a lesson adds its words to the flashcards. XP = 10 per lesson + 1 per first-try correct + 1 per flashcard; streak counts days with XP; study time counted while a lesson or review is open. Home and the Progress tab show real numbers. Checked: 53 unit + 8 device tests pass (incl. Room v1→v2 migration); on the emulator a lesson with one wrong answer and two missing accents gave +16 XP / 86%, and all progress survived an app restart.
 4. Speaking practice — **done 2026-10-20** (plan: `report/milestone-4-plan.md`). Speak tab: sentences from started words and finished lessons (lesson 1 as fallback), playback normal/slow, phone speech recognition (`data/speech/AndroidSpeechInput`, prefers on-device, retries online when no offline pack), word-level score (`domain/speech/PronunciationScorer`: right / close / missed, 0–100), XP 2/1 once per sentence per day, mic permission with settings link, listen-only mode without recognition. Room v3 adds `speak_practice`. Checked: 72 unit + 9 device tests pass; on the emulator the permission prompt, listening state and "didn't catch that" path work. **Not checked:** real recognition and scoring with a voice (the emulator has no voice input) — try on a real phone.
-5. On-device AI spike (conversation + correction); keep or move out of scope.
-6. Beta release on Google Play (internal/closed testing).
+5. On-device AI spike (conversation + correction); keep or move out of scope. **Paused 2026-10-20, waiting on the user:** a real Android phone over USB with USB debugging (Gemini Nano isn't on the emulator), and — only if the phone has no Gemini Nano — the Gemma model file after the user accepts the Gemma license (Kaggle/Hugging Face; token in an env var, never in chat). Decisions: Nano or Gemma first (suggested: Nano), and whether a ~1 GB optional in-app download is OK.
+6. Beta release on Google Play (internal/closed testing). Needs a Google Play developer account (user's).
+
+## Status and open items (2026-10-20)
+- Done: milestones 1–4, all committed; 72 unit + 9 device tests pass.
+- Not built yet from the MVP list: onboarding (language pick + placement quiz), Settings (change languages, daily goal, reminder time), daily reminders (WorkManager + notifications), sign-in/sync (Firebase). These need nothing from the user.
+- Not checked: real speech recognition with a voice (needs a phone).
+- Small items: Plus Jakarta Sans font file, real tab icons, a native-speaker check of the Spanish content, maybe a longer first gap for Easy on new cards.
 
 ## Team
 Solo project (one developer). Keep scope small, prefer managed services (Firebase) over custom backend.
@@ -107,4 +113,5 @@ Solo project (one developer). Keep scope small, prefer managed services (Firebas
 ## Rules for agents
 - Keep secrets in env vars (`.env`, never committed).
 - Keep the git repo outside OneDrive (`C:\Users\nguye\repos\LearningApp`).
-- Lesson content lives in `content/`, not hard-coded.
+- Words and lessons live in `app/src/main/assets/content/<lang>/`, not hard-coded; bump the file's `version` to re-import.
+- Room: add a new schema version with an `AutoMigration` and a migration device test; never edit an exported schema.

@@ -6,6 +6,8 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Room
 import com.learningapp.data.db.AppDatabase
+import com.learningapp.data.db.ActivityDao
+import com.learningapp.data.db.LessonDao
 import com.learningapp.data.db.WordDao
 import dagger.Module
 import dagger.Provides
@@ -27,6 +29,12 @@ object DataModule {
 
     @Provides
     fun wordDao(db: AppDatabase): WordDao = db.wordDao()
+
+    @Provides
+    fun lessonDao(db: AppDatabase): LessonDao = db.lessonDao()
+
+    @Provides
+    fun activityDao(db: AppDatabase): ActivityDao = db.activityDao()
 
     @Provides @Singleton
     fun dataStore(@ApplicationContext context: Context): DataStore<Preferences> = context.dataStore

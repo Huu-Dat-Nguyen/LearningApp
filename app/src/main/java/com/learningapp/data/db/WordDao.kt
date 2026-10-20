@@ -84,6 +84,18 @@ interface WordDao {
         insertLog(log)
     }
 
+    /** Words with their main-language translation, in content order (review state left empty). */
+    @Query(
+        """
+        SELECT w.id AS wordId, w.text, w.example, t.text AS translation, t.example AS translationExample,
+               NULL AS easeFactor, NULL AS intervalDays, NULL AS repetitions, NULL AS lapses, NULL AS dueEpochDay
+        FROM words w JOIN word_translations t ON t.wordId = w.id AND t.lang = :mainLang
+        WHERE w.id IN (:ids)
+        ORDER BY w.sortOrder
+        """
+    )
+    suspend fun cardsByIds(ids: List<String>, mainLang: String): List<CardRow>
+
     @Query("SELECT * FROM user_words WHERE wordId = :wordId")
     suspend fun userWord(wordId: String): UserWordEntity?
 }

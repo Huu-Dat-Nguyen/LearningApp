@@ -1,0 +1,636 @@
+{
+  "lang": "es",
+  "version": 1,
+  "units": [
+    {
+      "id": "es_u1",
+      "topic": "greetings",
+      "level": "A1",
+      "title": {
+        "en": "Greetings"
+      },
+      "lessons": [
+        {
+          "id": "es_u1_l1",
+          "title": {
+            "en": "Hello & goodbye"
+          },
+          "words": [
+            "es_hola",
+            "es_adios",
+            "es_buenos_dias",
+            "es_buenas_noches",
+            "es_gracias"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_hola"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_buenos_dias"
+            },
+            {
+              "type": "fill",
+              "sentence": "Buenos ___, ¿cómo está?",
+              "answer": "días",
+              "hint": {
+                "en": "Good morning, how are you?"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Hola, buenos días, ¿cómo estás?",
+              "translation": {
+                "en": "Hello, good morning, how are you?"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Buenas noches",
+              "translation": {
+                "en": "Good night"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_gracias"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Goodbye!"
+              },
+              "answers": [
+                "Adiós"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u1_l2",
+          "title": {
+            "en": "Please & thanks"
+          },
+          "words": [
+            "es_por_favor",
+            "es_perdon",
+            "es_bienvenido",
+            "es_hasta_luego",
+            "es_de_nada"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_por_favor"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_perdon"
+            },
+            {
+              "type": "fill",
+              "sentence": "Un café, por ___.",
+              "answer": "favor",
+              "hint": {
+                "en": "A coffee, please."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Perdón, ¿dónde está el baño?",
+              "translation": {
+                "en": "Excuse me, where is the bathroom?"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Bienvenido a casa",
+              "translation": {
+                "en": "Welcome home"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_hasta_luego"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "You're welcome."
+              },
+              "answers": [
+                "De nada"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u2",
+      "topic": "food",
+      "level": "A1",
+      "title": {
+        "en": "Food"
+      },
+      "lessons": [
+        {
+          "id": "es_u2_l1",
+          "title": {
+            "en": "Basic foods"
+          },
+          "words": [
+            "es_el_pan",
+            "es_el_agua",
+            "es_la_leche",
+            "es_la_manzana",
+            "es_el_queso"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_pan"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_leche"
+            },
+            {
+              "type": "fill",
+              "sentence": "Me gusta el ___.",
+              "answer": "queso",
+              "hint": {
+                "en": "I like cheese."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Quiero pan con queso",
+              "translation": {
+                "en": "I want bread with cheese"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Un vaso de agua",
+              "translation": {
+                "en": "A glass of water"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_queso"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The apple"
+              },
+              "answers": [
+                "La manzana"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u2_l2",
+          "title": {
+            "en": "Meals & drinks"
+          },
+          "words": [
+            "es_el_pollo",
+            "es_el_arroz",
+            "es_el_cafe",
+            "es_la_carne",
+            "es_el_pescado"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_pollo"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_cafe"
+            },
+            {
+              "type": "fill",
+              "sentence": "Hoy comemos pollo con ___.",
+              "answer": "arroz",
+              "hint": {
+                "en": "Today we eat chicken with rice."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "No como carne",
+              "translation": {
+                "en": "I don't eat meat"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Un café, por favor",
+              "translation": {
+                "en": "A coffee, please"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_pescado"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The fish"
+              },
+              "answers": [
+                "El pescado"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u3",
+      "topic": "travel",
+      "level": "A1",
+      "title": {
+        "en": "Travel"
+      },
+      "lessons": [
+        {
+          "id": "es_u3_l1",
+          "title": {
+            "en": "At the airport"
+          },
+          "words": [
+            "es_el_hotel",
+            "es_el_aeropuerto",
+            "es_el_billete",
+            "es_la_maleta",
+            "es_el_tren"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_hotel"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_billete"
+            },
+            {
+              "type": "fill",
+              "sentence": "El ___ sale a las ocho.",
+              "answer": "tren",
+              "hint": {
+                "en": "The train leaves at eight."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "¿Dónde está el aeropuerto?",
+              "translation": {
+                "en": "Where is the airport?"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Mi maleta es pesada",
+              "translation": {
+                "en": "My suitcase is heavy"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_maleta"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The ticket"
+              },
+              "answers": [
+                "El billete"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u3_l2",
+          "title": {
+            "en": "Getting around"
+          },
+          "words": [
+            "es_el_autobus",
+            "es_la_calle",
+            "es_el_mapa",
+            "es_el_taxi",
+            "es_la_estacion"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_autobus"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_mapa"
+            },
+            {
+              "type": "fill",
+              "sentence": "¿Dónde está la ___?",
+              "answer": "estación",
+              "hint": {
+                "en": "Where is the station?"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tomo el autobús al trabajo",
+              "translation": {
+                "en": "I take the bus to work"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "La calle es larga",
+              "translation": {
+                "en": "The street is long"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_taxi"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The map"
+              },
+              "answers": [
+                "El mapa"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u4",
+      "topic": "home",
+      "level": "A1",
+      "title": {
+        "en": "At home"
+      },
+      "lessons": [
+        {
+          "id": "es_u4_l1",
+          "title": {
+            "en": "Around the house"
+          },
+          "words": [
+            "es_la_casa",
+            "es_la_cocina",
+            "es_la_puerta",
+            "es_la_ventana",
+            "es_la_mesa"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_la_casa"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_puerta"
+            },
+            {
+              "type": "fill",
+              "sentence": "Mi madre está en la ___.",
+              "answer": "cocina",
+              "hint": {
+                "en": "My mother is in the kitchen."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Por favor, cierra la puerta",
+              "translation": {
+                "en": "Please close the door"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Mi casa es pequeña",
+              "translation": {
+                "en": "My house is small"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_mesa"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The window"
+              },
+              "answers": [
+                "La ventana"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u4_l2",
+          "title": {
+            "en": "Rooms & furniture"
+          },
+          "words": [
+            "es_la_silla",
+            "es_la_cama",
+            "es_el_bano",
+            "es_el_sofa",
+            "es_la_habitacion"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_la_silla"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_cama"
+            },
+            {
+              "type": "fill",
+              "sentence": "Mi ___ es grande.",
+              "answer": "habitación",
+              "hint": {
+                "en": "My room is big."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "La cama es muy cómoda",
+              "translation": {
+                "en": "The bed is very comfortable"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "¿Dónde está el baño?",
+              "translation": {
+                "en": "Where is the bathroom?"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_sofa"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The chair"
+              },
+              "answers": [
+                "La silla"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u5",
+      "topic": "people",
+      "level": "A1",
+      "title": {
+        "en": "People"
+      },
+      "lessons": [
+        {
+          "id": "es_u5_l1",
+          "title": {
+            "en": "Friends & family"
+          },
+          "words": [
+            "es_el_amigo",
+            "es_la_familia",
+            "es_el_nino",
+            "es_la_mujer",
+            "es_el_hombre"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_amigo"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_familia"
+            },
+            {
+              "type": "fill",
+              "sentence": "El ___ habla con su hijo.",
+              "answer": "hombre",
+              "hint": {
+                "en": "The man talks with his son."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Mi amigo es simpático",
+              "translation": {
+                "en": "My friend is nice"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "La mujer lee un libro",
+              "translation": {
+                "en": "The woman reads a book"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_mujer"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The boy"
+              },
+              "answers": [
+                "El niño"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u5_l2",
+          "title": {
+            "en": "Parents & siblings"
+          },
+          "words": [
+            "es_el_padre",
+            "es_la_madre",
+            "es_el_hermano",
+            "es_la_hermana",
+            "es_el_profesor"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_padre"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_hermano"
+            },
+            {
+              "type": "fill",
+              "sentence": "Mi ___ cocina muy bien.",
+              "answer": "madre",
+              "hint": {
+                "en": "My mother cooks very well."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tengo un hermano mayor",
+              "translation": {
+                "en": "I have an older brother"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Mi hermana estudia",
+              "translation": {
+                "en": "My sister studies"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_profesor"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "My father"
+              },
+              "answers": [
+                "Mi padre"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

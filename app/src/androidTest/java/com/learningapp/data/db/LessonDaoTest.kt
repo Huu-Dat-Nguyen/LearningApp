@@ -61,6 +61,19 @@ class LessonDaoTest {
     }
 
     @Test
+    fun migrationFrom2KeepsLessonProgress() {
+        helper.createDatabase("migration-test-2", 2).use { v2 ->
+            v2.execSQL("INSERT INTO lesson_progress (lessonId, firstCompletedAtMs, lastCompletedAtMs, bestAccuracy, attempts, xpEarned) VALUES ('es_u1_l1',1,1,0.86,1,16)")
+            v2.execSQL("INSERT INTO daily_activity (epochDay, lang, xp, activeSeconds, answered, correct) VALUES (100,'es',16,60,8,7)")
+        }
+        helper.runMigrationsAndValidate("migration-test-2", 3, true).use { v3 ->
+            v3.query("SELECT xpEarned FROM lesson_progress").use { c -> assertTrue(c.moveToFirst()); assertEquals(16, c.getInt(0)) }
+            v3.query("SELECT xp FROM daily_activity").use { c -> assertTrue(c.moveToFirst()); assertEquals(16, c.getInt(0)) }
+            v3.query("SELECT COUNT(*) FROM speak_practice").use { c -> c.moveToFirst(); assertEquals(0, c.getInt(0)) }
+        }
+    }
+
+    @Test
     fun migrationFrom1KeepsReviewProgress() {
         helper.createDatabase("migration-test", 1).use { v1 ->
             v1.execSQL("INSERT INTO words (id, lang, text, example, topic, level, sortOrder) VALUES ('es_hola','es','hola','¡Hola!','greetings','A1',0)")

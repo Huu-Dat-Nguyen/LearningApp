@@ -6,6 +6,8 @@ import com.learningapp.data.repo.ReviewRepository
 import com.learningapp.data.repo.SpeakRepository
 import com.learningapp.data.repo.SpeakStore
 import com.learningapp.data.repo.WordRepository
+import com.learningapp.data.speech.AndroidSpeechInput
+import com.learningapp.domain.speech.SpeechInput
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -22,4 +24,8 @@ abstract class RepoModule {
 
     @Binds
     abstract fun speakStore(repo: SpeakRepository): SpeakStore
+
+    // Not a singleton: each Speak screen gets its own recognizer and releases it.
+    @Binds
+    abstract fun speechInput(impl: AndroidSpeechInput): SpeechInput
 }

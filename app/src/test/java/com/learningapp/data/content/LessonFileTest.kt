@@ -52,6 +52,31 @@ class LessonFileTest {
     }
 
     @Test
+    fun everyLessonBuildsAndItsOwnAnswersPass() {
+        val words = ContentParser.parse(File("src/main/assets/content/es/words.json").readText(Charsets.UTF_8)).words
+        lessons.units.forEach { unit ->
+            val unitWordIds = unit.lessons.flatMap { it.words }.toSet()
+            val cards = words.filter { it.id in unitWordIds }.map {
+                com.learningapp.data.db.CardRow(it.id, it.text, it.example, it.translations.getValue("en").text, "", null, null, null, null, null)
+            }
+            val builder = com.learningapp.domain.lesson.ExerciseBuilder(cards, "en", kotlin.random.Random(1))
+            unit.lessons.forEach { l ->
+                val built = builder.build(l.exercises)
+                assertEquals("${l.id} all built", l.exercises.size, built.size)
+                built.forEach { ex ->
+                    if (ex is com.learningapp.domain.lesson.Exercise.MultipleChoice) assertEquals("${l.id} mc options", 4, ex.options.size)
+                    val answer = when (ex) {
+                        is com.learningapp.domain.lesson.Exercise.MultipleChoice -> com.learningapp.domain.lesson.Answer.Choice(ex.correctIndex)
+                        is com.learningapp.domain.lesson.Exercise.WordOrder -> com.learningapp.domain.lesson.Answer.Chips(ex.answer)
+                        else -> com.learningapp.domain.lesson.Answer.Text(ex.solution)
+                    }
+                    assertTrue("${l.id} ${ex.solution}", com.learningapp.domain.lesson.AnswerChecker.check(ex, answer).isCorrect)
+                }
+            }
+        }
+    }
+
+    @Test
     fun entitiesRoundTrip() {
         val entities = LessonParser.toEntities(lessons)
         assertEquals((0 until 10).toList(), entities.map { it.sortOrder })

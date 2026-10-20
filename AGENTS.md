@@ -77,7 +77,7 @@ report/     # reports and docs
 
 ## Milestones
 1. Spec + wireframes — done 2026-10-19 (`wireframes/index.html`, see `wireframes/README.md`).
-2. Flashcards with spaced repetition (one language). Plan: `report/milestone-2-plan.md` in the OneDrive folder. Step 1 (project setup, theme, nav shell) and step 2 (data layer: Room tables `words`, `word_translations`, `user_words`, `review_log`; `ContentSeeder` loads `assets/content/<lang>/words.json` on app start, re-importing when its `version` goes up; `WordRepository`; 50 Spanish A1 words) done 2026-10-19.
+2. Flashcards with spaced repetition (one language). Plan: `report/milestone-2-plan.md` in the OneDrive folder. Step 1 (project setup, theme, nav shell) and step 2 (data layer: Room tables `words`, `word_translations`, `user_words`, `review_log`; `ContentSeeder` loads `assets/content/<lang>/words.json` on app start, re-importing when its `version` goes up; `WordRepository`; 50 Spanish A1 words) done 2026-10-19. Step 3 (SM-2 scheduler: `domain/srs/Grade.kt`, `Sm2Scheduler.kt` with `review()`, `previewIntervals()`, `formatInterval()`; pure Kotlin, JVM tests in `Sm2SchedulerTest`) done 2026-10-20. Next: step 4, flashcard review screen + ViewModel.
 3. Lessons + exercises + progress.
 4. Speaking practice.
 5. On-device AI spike (conversation + correction); keep or move out of scope.

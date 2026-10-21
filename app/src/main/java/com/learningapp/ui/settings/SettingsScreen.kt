@@ -1,5 +1,8 @@
 package com.learningapp.ui.settings
 
+import com.learningapp.R
+import androidx.compose.ui.res.painterResource
+import androidx.compose.material3.Icon
 import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
@@ -81,7 +84,7 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
             Box(
                 Modifier.size(36.dp).clip(CircleShape).clickable(onClick = onBack).semantics { contentDescription = "Back" },
                 contentAlignment = Alignment.Center,
-            ) { Text("←", fontSize = 22.sp, color = Ink, fontWeight = FontWeight.Bold) }
+            ) { Icon(painterResource(R.drawable.ic_arrow_back), contentDescription = null, tint = Ink) }
             Text("Settings", style = MaterialTheme.typography.titleLarge)
         }
         val st = s ?: return@Column
@@ -186,6 +189,7 @@ private val LICENSES = listOf(
     "Dagger / Hilt" to "Apache 2.0",
     "Kotlin, kotlinx.coroutines, kotlinx.serialization" to "Apache 2.0",
     "Material icons" to "Apache 2.0",
+    "Plus Jakarta Sans font (Tokotype)" to "SIL Open Font License 1.1",
 )
 
 @Composable

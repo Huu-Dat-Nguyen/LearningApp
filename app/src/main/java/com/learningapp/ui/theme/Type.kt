@@ -1,13 +1,22 @@
 package com.learningapp.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.learningapp.R
 
-// TODO: switch to Plus Jakarta Sans (res/font) once the font files are added.
-private val AppFont = FontFamily.Default
+/** Plus Jakarta Sans (SIL OFL 1.1, licences/PlusJakartaSans-OFL.txt): one variable font, one entry per weight we use. */
+@OptIn(ExperimentalTextApi::class)
+private val AppFont = FontFamily(
+    listOf(400, 500, 600, 700, 800).map { w ->
+        Font(R.font.plus_jakarta_sans, FontWeight(w), variationSettings = FontVariation.Settings(FontVariation.weight(w)))
+    }
+)
 
 /** Text styles with the theme's colours baked in, so Text() looks right in light and dark. */
 fun appTypography(c: AppColors) = Typography(

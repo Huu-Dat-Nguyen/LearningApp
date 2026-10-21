@@ -1,5 +1,9 @@
 package com.learningapp.ui.nav
 
+import com.learningapp.R
+import androidx.compose.ui.res.painterResource
+import androidx.compose.material3.Icon
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -43,14 +47,14 @@ import com.learningapp.ui.theme.Muted
 import com.learningapp.ui.theme.ScreenBg
 import kotlin.reflect.KClass
 
-private data class Tab(val label: String, val route: Any, val routeClass: KClass<*>)
+private data class Tab(val label: String, val route: Any, val routeClass: KClass<*>, @DrawableRes val icon: Int)
 
 private val tabs = listOf(
-    Tab("Home", HomeRoute, HomeRoute::class),
-    Tab("Learn", LearnRoute, LearnRoute::class),
-    Tab("Review", ReviewRoute, ReviewRoute::class),
-    Tab("Speak", SpeakRoute, SpeakRoute::class),
-    Tab("Profile", ProfileRoute, ProfileRoute::class),
+    Tab("Home", HomeRoute, HomeRoute::class, R.drawable.ic_tab_home),
+    Tab("Learn", LearnRoute, LearnRoute::class, R.drawable.ic_tab_learn),
+    Tab("Review", ReviewRoute, ReviewRoute::class, R.drawable.ic_tab_review),
+    Tab("Speak", SpeakRoute, SpeakRoute::class, R.drawable.ic_mic),
+    Tab("Profile", ProfileRoute, ProfileRoute::class, R.drawable.ic_tab_progress),
 )
 
 @Composable
@@ -119,8 +123,7 @@ private fun BottomBar(selected: (Tab) -> Boolean, onSelect: (Tab) -> Unit) {
                     .padding(vertical = 6.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                // Placeholder icon square until real icons are added.
-                Box(Modifier.size(22.dp).clip(RoundedCornerShape(7.dp)).background(if (on) Ink else appColors.navIdle))
+                Icon(painterResource(tab.icon), contentDescription = null, tint = if (on) Ink else Muted, modifier = Modifier.size(24.dp))
                 Text(
                     tab.label.uppercase(),
                     style = MaterialTheme.typography.labelSmall,

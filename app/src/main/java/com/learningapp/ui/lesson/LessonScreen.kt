@@ -96,7 +96,7 @@ private fun TopBar(progress: Float, onClose: () -> Unit) {
         Box(
             Modifier.size(36.dp).clip(CircleShape).clickable(onClick = onClose).semantics { contentDescription = "Close lesson" },
             contentAlignment = Alignment.Center,
-        ) { Text("✕", fontSize = 18.sp, color = Muted, fontWeight = FontWeight.Bold) }
+        ) { Icon(painterResource(R.drawable.ic_close), contentDescription = null, tint = Muted) }
         Box(Modifier.weight(1f).height(8.dp).clip(CircleShape).background(Track)) {
             Box(Modifier.fillMaxWidth(progress.coerceIn(0f, 1f)).height(8.dp).clip(CircleShape).background(VioletGradient))
         }

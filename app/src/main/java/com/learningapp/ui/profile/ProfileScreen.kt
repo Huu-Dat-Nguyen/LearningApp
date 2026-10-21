@@ -1,5 +1,8 @@
 package com.learningapp.ui.profile
 
+import com.learningapp.R
+import androidx.compose.ui.res.painterResource
+import androidx.compose.material3.Icon
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.size
@@ -70,7 +73,7 @@ fun ProfileScreen(onOpenSettings: () -> Unit, viewModel: ProgressViewModel = hil
                 Modifier.size(40.dp).clip(CircleShape).background(TagBg).clickable(onClick = onOpenSettings)
                     .semantics { contentDescription = "Settings" },
                 contentAlignment = Alignment.Center,
-            ) { Text("⚙", fontSize = 20.sp, color = Violet) }
+            ) { Icon(painterResource(R.drawable.ic_settings), contentDescription = null, tint = Violet, modifier = Modifier.size(22.dp)) }
         }
         val s = summary ?: return@Column
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {

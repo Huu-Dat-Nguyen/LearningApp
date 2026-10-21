@@ -92,9 +92,11 @@ Reports and plans (`report/`) live in the OneDrive folder.
 5. On-device AI spike (conversation + correction); keep or move out of scope. **Paused 2026-10-20, waiting on the user:** a real Android phone over USB with USB debugging (Gemini Nano isn't on the emulator), and — only if the phone has no Gemini Nano — the Gemma model file after the user accepts the Gemma license (Kaggle/Hugging Face; token in an env var, never in chat). Decisions: Nano or Gemma first (suggested: Nano), and whether a ~1 GB optional in-app download is OK.
 6. Beta release on Google Play (internal/closed testing). Needs a Google Play developer account (user's).
 
-## Status and open items (2026-10-20)
-- Done: milestones 1–4, all committed; 72 unit + 9 device tests pass.
-- Not built yet from the MVP list: onboarding (language pick + placement quiz), Settings (change languages, daily goal, reminder time), daily reminders (WorkManager + notifications), sign-in/sync (Firebase). These need nothing from the user.
+## Status and open items (2026-10-21)
+- Working through `report/full-app-plan.md` (OneDrive): everything except AI, phases A–E.
+- **Phase A done 2026-10-21:** onboarding (`ui/onboarding`: languages, placement quiz → start unit, "tested out" lessons = progress row with attempts 0; existing installs skip it), Settings (`ui/settings`, gear on Progress), daily reminder (`reminder/Reminders.kt`: WorkManager job kept in sync with prefs from `LearningApp`, skipped if XP today, POST_NOTIFICATIONS asked when turned on). 86 unit + 10 device tests pass; checked on the emulator, including a forced reminder.
+- Done before: milestones 1–4.
+- Sign-in/sync (Phase D) needs the user's Firebase project.
 - Not checked: real speech recognition with a voice (needs a phone).
 - Small items: Plus Jakarta Sans font file, real tab icons, a native-speaker check of the Spanish content, maybe a longer first gap for Easy on new cards.
 

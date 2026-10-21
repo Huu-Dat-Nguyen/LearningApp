@@ -35,6 +35,7 @@ import com.learningapp.ui.learn.LearnScreen
 import com.learningapp.ui.lesson.LessonScreen
 import com.learningapp.ui.profile.ProfileScreen
 import com.learningapp.ui.review.ReviewScreen
+import com.learningapp.ui.settings.SettingsScreen
 import com.learningapp.ui.speak.SpeakScreen
 import com.learningapp.ui.theme.Ink
 import com.learningapp.ui.theme.Muted
@@ -91,7 +92,8 @@ fun AppNavHost() {
             composable<LessonRoute> { LessonScreen(onClose = { nav.popBackStack() }) }
             composable<ReviewRoute> { ReviewScreen(onDone = { go(HomeRoute) }) }
             composable<SpeakRoute> { SpeakScreen() }
-            composable<ProfileRoute> { ProfileScreen() }
+            composable<ProfileRoute> { ProfileScreen(onOpenSettings = { nav.navigate(SettingsRoute) }) }
+            composable<SettingsRoute> { SettingsScreen(onBack = { nav.popBackStack() }) }
         }
     }
 }

@@ -1,6 +1,11 @@
 package com.learningapp.ui.profile
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
+import com.learningapp.ui.theme.TagBg
+import com.learningapp.ui.theme.Violet
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -53,13 +58,20 @@ class ProgressViewModel @Inject constructor(progress: ProgressRepository) : View
 }
 
 @Composable
-fun ProfileScreen(viewModel: ProgressViewModel = hiltViewModel()) {
+fun ProfileScreen(onOpenSettings: () -> Unit, viewModel: ProgressViewModel = hiltViewModel()) {
     val summary by viewModel.summary.collectAsStateWithLifecycle()
     Column(
         Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(18.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
-        Text("Progress", style = MaterialTheme.typography.titleLarge)
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Text("Progress", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
+            Box(
+                Modifier.size(40.dp).clip(CircleShape).background(TagBg).clickable(onClick = onOpenSettings)
+                    .semantics { contentDescription = "Settings" },
+                contentAlignment = Alignment.Center,
+            ) { Text("⚙", fontSize = 20.sp, color = Violet) }
+        }
         val s = summary ?: return@Column
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Stat("${s.streak}", "day streak", Modifier.weight(1f))

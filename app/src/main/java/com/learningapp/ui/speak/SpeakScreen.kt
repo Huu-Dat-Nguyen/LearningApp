@@ -57,14 +57,12 @@ import com.learningapp.ui.components.Speaker
 import com.learningapp.ui.components.TrackStudyTime
 import com.learningapp.ui.components.rememberSpeaker
 import com.learningapp.ui.theme.Ink
+import com.learningapp.ui.theme.appColors
 import com.learningapp.ui.theme.Muted
 import com.learningapp.ui.theme.TagBg
 import com.learningapp.ui.theme.Violet
 import com.learningapp.ui.theme.VioletGradient
 
-private val RightInk = Color(0xFF1F7A4D)
-private val CloseInk = Color(0xFFB7791F)
-private val MissedInk = Color(0xFFB4234A)
 
 @Composable
 fun SpeakScreen(viewModel: SpeakViewModel = hiltViewModel()) {
@@ -169,13 +167,13 @@ private fun MicButton(listening: Boolean, level: Float, onClick: () -> Unit) {
     val pulse by animateFloatAsState(if (listening) 1f + level * 0.25f else 1f, label = "mic")
     Box(Modifier.fillMaxWidth().padding(vertical = 8.dp), contentAlignment = Alignment.Center) {
         if (listening) {
-            Box(Modifier.size(132.dp).scale(pulse).clip(CircleShape).background(Color(0x22F05A8C)))
+            Box(Modifier.size(132.dp).scale(pulse).clip(CircleShape).background(appColors.recording.copy(alpha = 0.15f)))
         }
         Box(
             Modifier
                 .size(110.dp)
                 .clip(CircleShape)
-                .then(if (listening) Modifier.background(Color(0xFFF05A8C)) else Modifier.background(VioletGradient))
+                .then(if (listening) Modifier.background(appColors.recording) else Modifier.background(VioletGradient))
                 .clickable(onClick = onClick)
                 .semantics { contentDescription = if (listening) "Stop recording" else "Start recording" },
             contentAlignment = Alignment.Center,
@@ -196,7 +194,7 @@ private fun ResultCard(score: SpeechScore, xp: Int) {
                 Text(
                     w.text,
                     style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
-                    color = when (w.mark) { WordMark.Right -> RightInk; WordMark.Close -> CloseInk; WordMark.Missed -> MissedInk },
+                    color = when (w.mark) { WordMark.Right -> appColors.rightInk; WordMark.Close -> appColors.closeInk; WordMark.Missed -> appColors.wrongInk },
                 )
             }
         }

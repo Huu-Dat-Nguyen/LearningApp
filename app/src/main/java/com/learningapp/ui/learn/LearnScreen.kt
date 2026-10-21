@@ -31,6 +31,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.learningapp.data.repo.LessonItem
 import com.learningapp.data.repo.LessonState
 import com.learningapp.ui.theme.CardBg
+import com.learningapp.ui.theme.appColors
 import com.learningapp.ui.theme.Ink
 import com.learningapp.ui.theme.Muted
 import com.learningapp.ui.theme.TagBg
@@ -72,7 +73,7 @@ private fun LessonRow(lesson: LessonItem, onClick: () -> Unit) {
         Modifier
             .fillMaxWidth()
             .then(
-                if (locked) Modifier.border(1.dp, Color(0xFFD4CFE0), shape)
+                if (locked) Modifier.border(1.dp, appColors.lockedBorder, shape)
                 else Modifier.shadow(2.dp, shape, ambientColor = Ink.copy(alpha = 0.1f), spotColor = Ink.copy(alpha = 0.1f)).background(CardBg, shape)
             )
             .clip(shape)
@@ -83,13 +84,13 @@ private fun LessonRow(lesson: LessonItem, onClick: () -> Unit) {
         Text(
             lesson.title,
             style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold),
-            color = if (locked) Color(0xFFBBB5C9) else Ink,
+            color = if (locked) appColors.lockedText else Ink,
             modifier = Modifier.weight(1f),
         )
         val (label, color) = when (lesson.state) {
             LessonState.Done -> (if (lesson.testedOut) "TESTED OUT" else "DONE · ${((lesson.bestAccuracy ?: 0.0) * 100).roundToInt()}%") to Muted
             LessonState.Next -> "START" to Violet
-            LessonState.Locked -> "LOCKED" to Color(0xFFBBB5C9)
+            LessonState.Locked -> "LOCKED" to appColors.lockedText
         }
         Text(label, style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.ExtraBold), color = color)
     }

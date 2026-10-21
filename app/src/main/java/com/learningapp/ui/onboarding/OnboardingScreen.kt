@@ -53,6 +53,7 @@ import com.learningapp.ui.components.GradientButton
 import com.learningapp.ui.components.OutlineButton
 import com.learningapp.ui.components.rememberNotificationPermission
 import com.learningapp.ui.theme.BodyText
+import com.learningapp.ui.theme.appColors
 import com.learningapp.ui.theme.CardBg
 import com.learningapp.ui.theme.Ink
 import com.learningapp.ui.theme.Muted
@@ -131,7 +132,7 @@ private fun LanguageOption(name: String, native: String, selected: Boolean, enab
         Modifier
             .fillMaxWidth()
             .clip(shape)
-            .background(if (selected) Color(0xFFF6EEFE) else if (enabled) CardBg else Color.Transparent)
+            .background(if (selected) appColors.selectedBg else if (enabled) CardBg else Color.Transparent)
             .border(if (selected) 2.dp else 1.dp, if (selected) Violet else if (enabled) Color.Transparent else Track, shape)
             .clickable(enabled = enabled, onClick = onClick)
             .padding(horizontal = 16.dp, vertical = 14.dp),

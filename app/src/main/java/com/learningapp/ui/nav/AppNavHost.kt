@@ -38,6 +38,7 @@ import com.learningapp.ui.review.ReviewScreen
 import com.learningapp.ui.settings.SettingsScreen
 import com.learningapp.ui.speak.SpeakScreen
 import com.learningapp.ui.theme.Ink
+import com.learningapp.ui.theme.appColors
 import com.learningapp.ui.theme.Muted
 import com.learningapp.ui.theme.ScreenBg
 import kotlin.reflect.KClass
@@ -119,7 +120,7 @@ private fun BottomBar(selected: (Tab) -> Boolean, onSelect: (Tab) -> Unit) {
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 // Placeholder icon square until real icons are added.
-                Box(Modifier.size(22.dp).clip(RoundedCornerShape(7.dp)).background(if (on) Ink else Color(0xFFD6D2E0)))
+                Box(Modifier.size(22.dp).clip(RoundedCornerShape(7.dp)).background(if (on) Ink else appColors.navIdle))
                 Text(
                     tab.label.uppercase(),
                     style = MaterialTheme.typography.labelSmall,

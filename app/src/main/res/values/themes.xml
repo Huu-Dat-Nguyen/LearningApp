@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.LearningApp" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.LearningApp" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Matches the Compose screen background so launch doesn't flash a different colour. -->
+        <item name="android:windowBackground">@color/screen_bg</item>
+    </style>
 </resources>

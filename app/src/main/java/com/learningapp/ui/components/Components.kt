@@ -30,6 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.learningapp.ui.theme.CardBg
+import com.learningapp.ui.theme.appColors
 import com.learningapp.ui.theme.Ink
 import com.learningapp.ui.theme.Muted
 import com.learningapp.ui.theme.Track
@@ -93,9 +94,10 @@ fun AppCard(
 /** Thin progress ring, like the stat cards in the reference design. */
 @Composable
 fun ProgressRing(progress: Float, color: Color, modifier: Modifier = Modifier) {
+    val track = Track
     Canvas(modifier.size(30.dp)) {
         val stroke = Stroke(width = 6.dp.toPx(), cap = StrokeCap.Round)
-        drawArc(Track, 0f, 360f, useCenter = false, style = stroke)
+        drawArc(track, 0f, 360f, useCenter = false, style = stroke)
         drawArc(color, -90f, 360f * progress.coerceIn(0f, 1f), useCenter = false, style = stroke)
     }
 }
@@ -125,13 +127,13 @@ fun WeekStrip(days: List<Pair<String, Int>>, todayIndex: Int, practiced: Set<Int
                 modifier = Modifier
                     .weight(1f)
                     .clip(CircleShape)
-                    .then(if (isToday) Modifier.border(1.5.dp, Color(0xFFCFC9DC), CircleShape) else Modifier)
+                    .then(if (isToday) Modifier.border(1.5.dp, appColors.todayBorder, CircleShape) else Modifier)
                     .padding(vertical = 8.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(4.dp),
             ) {
                 Text(name.uppercase(), style = MaterialTheme.typography.labelSmall, color = if (isToday) Ink else Muted)
-                Text("$date", fontSize = 17.sp, fontWeight = FontWeight.ExtraBold, color = if (isToday) Ink else Color(0xFFA9A4B8))
+                Text("$date", fontSize = 17.sp, fontWeight = FontWeight.ExtraBold, color = if (isToday) Ink else appColors.dateMuted)
                 Box(Modifier.size(4.dp).clip(CircleShape).background(if (i in practiced) Violet else Color.Transparent))
             }
         }

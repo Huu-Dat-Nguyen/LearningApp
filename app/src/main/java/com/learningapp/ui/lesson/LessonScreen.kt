@@ -59,6 +59,7 @@ import com.learningapp.ui.components.Speaker
 import com.learningapp.ui.components.TrackStudyTime
 import com.learningapp.ui.components.rememberSpeaker
 import com.learningapp.ui.theme.BodyText
+import com.learningapp.ui.theme.appColors
 import com.learningapp.ui.theme.CardBg
 import com.learningapp.ui.theme.Ink
 import com.learningapp.ui.theme.Line
@@ -69,10 +70,6 @@ import com.learningapp.ui.theme.Violet
 import com.learningapp.ui.theme.VioletGradient
 import kotlin.math.roundToInt
 
-private val RightBg = Color(0xFFEAFAF1)
-private val RightInk = Color(0xFF1F7A4D)
-private val WrongBg = Color(0xFFFDECEF)
-private val WrongInk = Color(0xFFB4234A)
 
 @Composable
 fun LessonScreen(onClose: () -> Unit, viewModel: LessonViewModel = hiltViewModel()) {
@@ -168,7 +165,7 @@ private fun OptionCard(text: String, selected: Boolean, enabled: Boolean, onClic
         Modifier
             .fillMaxWidth()
             .clip(shape)
-            .background(if (selected) Color(0xFFF6EEFE) else CardBg)
+            .background(if (selected) appColors.selectedBg else CardBg)
             .border(2.dp, if (selected) Violet else Color.Transparent, shape)
             .clickable(enabled = enabled, onClick = onClick)
             .padding(horizontal = 16.dp, vertical = 16.dp),
@@ -255,13 +252,13 @@ private fun CheckButton(enabled: Boolean, onClick: () -> Unit) {
 private fun FeedbackPanel(result: CheckResult, ex: Exercise) {
     val right = result.isCorrect
     Column(
-        Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(if (right) RightBg else WrongBg).padding(16.dp),
+        Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(if (right) appColors.rightBg else appColors.wrongBg).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        Text(if (right) "Correct!" else "Not quite", style = MaterialTheme.typography.titleMedium, color = if (right) RightInk else WrongInk)
-        result.note?.let { Text(it, style = MaterialTheme.typography.bodyMedium, color = RightInk) }
-        if (!right) Text("Answer: ${ex.solution}", style = MaterialTheme.typography.bodyMedium, color = WrongInk)
-        if (!right) Text("You'll see this one again at the end.", style = MaterialTheme.typography.labelMedium, color = WrongInk.copy(alpha = 0.8f))
+        Text(if (right) "Correct!" else "Not quite", style = MaterialTheme.typography.titleMedium, color = if (right) appColors.rightInk else appColors.wrongInk)
+        result.note?.let { Text(it, style = MaterialTheme.typography.bodyMedium, color = appColors.rightInk) }
+        if (!right) Text("Answer: ${ex.solution}", style = MaterialTheme.typography.bodyMedium, color = appColors.wrongInk)
+        if (!right) Text("You'll see this one again at the end.", style = MaterialTheme.typography.labelMedium, color = appColors.wrongInk.copy(alpha = 0.8f))
     }
 }
 

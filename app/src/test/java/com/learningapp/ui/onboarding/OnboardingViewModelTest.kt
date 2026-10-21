@@ -103,6 +103,6 @@ class OnboardingViewModelTest {
     @Test
     fun spanishContentIsLearnableFromEnglish() {
         val file = ContentParser.parse(File("src/main/assets/content/es/words.json").readText(Charsets.UTF_8))
-        assertEquals(setOf("en"), ContentCatalog.mainLanguagesOf(file))
+        assertEquals(setOf("en", "fr", "ja", "vi"), ContentCatalog.mainLanguagesOf(file))
     }
 }

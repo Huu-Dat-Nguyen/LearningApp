@@ -1,6 +1,6 @@
 {
   "lang": "es",
-  "version": 2,
+  "version": 3,
   "words": [
     {
       "id": "es_hola",
@@ -9,7 +9,22 @@
       "level": "A1",
       "example": "¡Hola! ¿Qué tal?",
       "translations": {
-        "en": { "text": "hello", "example": "Hi! How are you?" }
+        "en": {
+          "text": "hello",
+          "example": "Hi! How are you?"
+        },
+        "fr": {
+          "text": "bonjour",
+          "example": "Salut ! Ça va ?"
+        },
+        "ja": {
+          "text": "こんにちは",
+          "example": "やあ！元気？"
+        },
+        "vi": {
+          "text": "xin chào",
+          "example": "Chào bạn! Bạn khỏe không?"
+        }
       }
     },
     {
@@ -19,7 +34,22 @@
       "level": "A1",
       "example": "¡Adiós, hasta mañana!",
       "translations": {
-        "en": { "text": "goodbye", "example": "Goodbye, see you tomorrow!" }
+        "en": {
+          "text": "goodbye",
+          "example": "Goodbye, see you tomorrow!"
+        },
+        "fr": {
+          "text": "au revoir",
+          "example": "Au revoir, à demain !"
+        },
+        "ja": {
+          "text": "さようなら",
+          "example": "さようなら、また明日！"
+        },
+        "vi": {
+          "text": "tạm biệt",
+          "example": "Tạm biệt, hẹn mai gặp lại!"
+        }
       }
     },
     {
@@ -29,7 +59,22 @@
       "level": "A1",
       "example": "Buenos días, ¿cómo está usted?",
       "translations": {
-        "en": { "text": "good morning", "example": "Good morning, how are you?" }
+        "en": {
+          "text": "good morning",
+          "example": "Good morning, how are you?"
+        },
+        "fr": {
+          "text": "bonjour (le matin)",
+          "example": "Bonjour, comment allez-vous ?"
+        },
+        "ja": {
+          "text": "おはよう",
+          "example": "おはようございます、お元気ですか？"
+        },
+        "vi": {
+          "text": "chào buổi sáng",
+          "example": "Chào buổi sáng, bạn khỏe không ạ?"
+        }
       }
     },
     {
@@ -39,7 +84,22 @@
       "level": "A1",
       "example": "Buenas noches, que duermas bien.",
       "translations": {
-        "en": { "text": "good night", "example": "Good night, sleep well." }
+        "en": {
+          "text": "good night",
+          "example": "Good night, sleep well."
+        },
+        "fr": {
+          "text": "bonne nuit",
+          "example": "Bonne nuit, dors bien."
+        },
+        "ja": {
+          "text": "おやすみ",
+          "example": "おやすみなさい、ぐっすり眠ってね。"
+        },
+        "vi": {
+          "text": "chúc ngủ ngon",
+          "example": "Chúc ngủ ngon, ngủ thật ngon nhé."
+        }
       }
     },
     {
@@ -49,7 +109,22 @@
       "level": "A1",
       "example": "Muchas gracias por tu ayuda.",
       "translations": {
-        "en": { "text": "thank you", "example": "Thank you very much for your help." }
+        "en": {
+          "text": "thank you",
+          "example": "Thank you very much for your help."
+        },
+        "fr": {
+          "text": "merci",
+          "example": "Merci beaucoup pour ton aide."
+        },
+        "ja": {
+          "text": "ありがとう",
+          "example": "手伝ってくれて、どうもありがとう。"
+        },
+        "vi": {
+          "text": "cảm ơn",
+          "example": "Cảm ơn bạn rất nhiều vì đã giúp."
+        }
       }
     },
     {
@@ -59,7 +134,22 @@
       "level": "A1",
       "example": "Un café, por favor.",
       "translations": {
-        "en": { "text": "please", "example": "A coffee, please." }
+        "en": {
+          "text": "please",
+          "example": "A coffee, please."
+        },
+        "fr": {
+          "text": "s'il vous plaît",
+          "example": "Un café, s'il vous plaît."
+        },
+        "ja": {
+          "text": "お願いします",
+          "example": "コーヒーをお願いします。"
+        },
+        "vi": {
+          "text": "làm ơn",
+          "example": "Làm ơn cho một ly cà phê."
+        }
       }
     },
     {
@@ -69,7 +159,22 @@
       "level": "A1",
       "example": "Perdón, ¿dónde está el baño?",
       "translations": {
-        "en": { "text": "sorry / excuse me", "example": "Excuse me, where is the bathroom?" }
+        "en": {
+          "text": "sorry / excuse me",
+          "example": "Excuse me, where is the bathroom?"
+        },
+        "fr": {
+          "text": "pardon / excusez-moi",
+          "example": "Excusez-moi, où sont les toilettes ?"
+        },
+        "ja": {
+          "text": "すみません",
+          "example": "すみません、トイレはどこですか？"
+        },
+        "vi": {
+          "text": "xin lỗi",
+          "example": "Xin lỗi, nhà vệ sinh ở đâu?"
+        }
       }
     },
     {
@@ -79,7 +184,22 @@
       "level": "A1",
       "example": "¡Bienvenido a mi casa!",
       "translations": {
-        "en": { "text": "welcome", "example": "Welcome to my home!" }
+        "en": {
+          "text": "welcome",
+          "example": "Welcome to my home!"
+        },
+        "fr": {
+          "text": "bienvenue",
+          "example": "Bienvenue chez moi !"
+        },
+        "ja": {
+          "text": "ようこそ",
+          "example": "わが家へようこそ！"
+        },
+        "vi": {
+          "text": "chào mừng",
+          "example": "Chào mừng đến nhà tôi!"
+        }
       }
     },
     {
@@ -89,7 +209,22 @@
       "level": "A1",
       "example": "Hasta luego, nos vemos pronto.",
       "translations": {
-        "en": { "text": "see you later", "example": "See you later, see you soon." }
+        "en": {
+          "text": "see you later",
+          "example": "See you later, see you soon."
+        },
+        "fr": {
+          "text": "à plus tard",
+          "example": "À plus tard, à bientôt."
+        },
+        "ja": {
+          "text": "また後で",
+          "example": "また後でね、すぐに会おう。"
+        },
+        "vi": {
+          "text": "hẹn gặp lại",
+          "example": "Hẹn gặp lại, chúng ta sẽ sớm gặp nhau."
+        }
       }
     },
     {
@@ -99,7 +234,22 @@
       "level": "A1",
       "example": "—Gracias. —De nada.",
       "translations": {
-        "en": { "text": "you're welcome", "example": "\"Thanks.\" \"You're welcome.\"" }
+        "en": {
+          "text": "you're welcome",
+          "example": "\"Thanks.\" \"You're welcome.\""
+        },
+        "fr": {
+          "text": "de rien",
+          "example": "« Merci. » « De rien. »"
+        },
+        "ja": {
+          "text": "どういたしまして",
+          "example": "「ありがとう。」「どういたしまして。」"
+        },
+        "vi": {
+          "text": "không có gì",
+          "example": "“Cảm ơn.” “Không có gì.”"
+        }
       }
     },
     {
@@ -109,7 +259,22 @@
       "level": "A1",
       "example": "Quiero pan con queso.",
       "translations": {
-        "en": { "text": "bread", "example": "I want bread with cheese." }
+        "en": {
+          "text": "bread",
+          "example": "I want bread with cheese."
+        },
+        "fr": {
+          "text": "le pain",
+          "example": "Je veux du pain avec du fromage."
+        },
+        "ja": {
+          "text": "パン",
+          "example": "チーズをのせたパンが食べたいです。"
+        },
+        "vi": {
+          "text": "bánh mì",
+          "example": "Tôi muốn bánh mì với phô mai."
+        }
       }
     },
     {
@@ -119,7 +284,22 @@
       "level": "A1",
       "example": "¿Me das un vaso de agua?",
       "translations": {
-        "en": { "text": "water", "example": "Can you give me a glass of water?" }
+        "en": {
+          "text": "water",
+          "example": "Can you give me a glass of water?"
+        },
+        "fr": {
+          "text": "l'eau",
+          "example": "Tu me donnes un verre d'eau ?"
+        },
+        "ja": {
+          "text": "水",
+          "example": "水を一杯もらえますか？"
+        },
+        "vi": {
+          "text": "nước",
+          "example": "Bạn cho tôi một ly nước được không?"
+        }
       }
     },
     {
@@ -129,7 +309,22 @@
       "level": "A1",
       "example": "Bebo leche por la mañana.",
       "translations": {
-        "en": { "text": "milk", "example": "I drink milk in the morning." }
+        "en": {
+          "text": "milk",
+          "example": "I drink milk in the morning."
+        },
+        "fr": {
+          "text": "le lait",
+          "example": "Je bois du lait le matin."
+        },
+        "ja": {
+          "text": "牛乳",
+          "example": "朝、牛乳を飲みます。"
+        },
+        "vi": {
+          "text": "sữa",
+          "example": "Tôi uống sữa vào buổi sáng."
+        }
       }
     },
     {
@@ -139,7 +334,22 @@
       "level": "A1",
       "example": "La manzana es roja.",
       "translations": {
-        "en": { "text": "apple", "example": "The apple is red." }
+        "en": {
+          "text": "apple",
+          "example": "The apple is red."
+        },
+        "fr": {
+          "text": "la pomme",
+          "example": "La pomme est rouge."
+        },
+        "ja": {
+          "text": "りんご",
+          "example": "りんごは赤いです。"
+        },
+        "vi": {
+          "text": "quả táo",
+          "example": "Quả táo màu đỏ."
+        }
       }
     },
     {
@@ -149,7 +359,22 @@
       "level": "A1",
       "example": "Me gusta el queso.",
       "translations": {
-        "en": { "text": "cheese", "example": "I like cheese." }
+        "en": {
+          "text": "cheese",
+          "example": "I like cheese."
+        },
+        "fr": {
+          "text": "le fromage",
+          "example": "J'aime le fromage."
+        },
+        "ja": {
+          "text": "チーズ",
+          "example": "私はチーズが好きです。"
+        },
+        "vi": {
+          "text": "phô mai",
+          "example": "Tôi thích phô mai."
+        }
       }
     },
     {
@@ -159,7 +384,22 @@
       "level": "A1",
       "example": "Hoy comemos pollo con arroz.",
       "translations": {
-        "en": { "text": "chicken", "example": "Today we eat chicken with rice." }
+        "en": {
+          "text": "chicken",
+          "example": "Today we eat chicken with rice."
+        },
+        "fr": {
+          "text": "le poulet",
+          "example": "Aujourd'hui, nous mangeons du poulet avec du riz."
+        },
+        "ja": {
+          "text": "鶏肉",
+          "example": "今日は鶏肉とごはんを食べます。"
+        },
+        "vi": {
+          "text": "thịt gà",
+          "example": "Hôm nay chúng tôi ăn thịt gà với cơm."
+        }
       }
     },
     {
@@ -169,7 +409,22 @@
       "level": "A1",
       "example": "El arroz está muy bueno.",
       "translations": {
-        "en": { "text": "rice", "example": "The rice is very good." }
+        "en": {
+          "text": "rice",
+          "example": "The rice is very good."
+        },
+        "fr": {
+          "text": "le riz",
+          "example": "Le riz est très bon."
+        },
+        "ja": {
+          "text": "ごはん",
+          "example": "ごはんはとてもおいしいです。"
+        },
+        "vi": {
+          "text": "cơm",
+          "example": "Cơm rất ngon."
+        }
       }
     },
     {
@@ -179,7 +434,22 @@
       "level": "A1",
       "example": "Quiero un café con leche.",
       "translations": {
-        "en": { "text": "coffee", "example": "I want a coffee with milk." }
+        "en": {
+          "text": "coffee",
+          "example": "I want a coffee with milk."
+        },
+        "fr": {
+          "text": "le café",
+          "example": "Je veux un café au lait."
+        },
+        "ja": {
+          "text": "コーヒー",
+          "example": "ミルク入りのコーヒーがほしいです。"
+        },
+        "vi": {
+          "text": "cà phê",
+          "example": "Tôi muốn một ly cà phê sữa."
+        }
       }
     },
     {
@@ -189,7 +459,22 @@
       "level": "A1",
       "example": "No como carne.",
       "translations": {
-        "en": { "text": "meat", "example": "I don't eat meat." }
+        "en": {
+          "text": "meat",
+          "example": "I don't eat meat."
+        },
+        "fr": {
+          "text": "la viande",
+          "example": "Je ne mange pas de viande."
+        },
+        "ja": {
+          "text": "肉",
+          "example": "私は肉を食べません。"
+        },
+        "vi": {
+          "text": "thịt",
+          "example": "Tôi không ăn thịt."
+        }
       }
     },
     {
@@ -199,7 +484,22 @@
       "level": "A1",
       "example": "El pescado está fresco.",
       "translations": {
-        "en": { "text": "fish", "example": "The fish is fresh." }
+        "en": {
+          "text": "fish",
+          "example": "The fish is fresh."
+        },
+        "fr": {
+          "text": "le poisson",
+          "example": "Le poisson est frais."
+        },
+        "ja": {
+          "text": "魚",
+          "example": "魚は新鮮です。"
+        },
+        "vi": {
+          "text": "cá",
+          "example": "Cá rất tươi."
+        }
       }
     },
     {
@@ -209,7 +509,22 @@
       "level": "A1",
       "example": "El hotel está cerca de la playa.",
       "translations": {
-        "en": { "text": "hotel", "example": "The hotel is near the beach." }
+        "en": {
+          "text": "hotel",
+          "example": "The hotel is near the beach."
+        },
+        "fr": {
+          "text": "l'hôtel",
+          "example": "L'hôtel est près de la plage."
+        },
+        "ja": {
+          "text": "ホテル",
+          "example": "ホテルは海のそばにあります。"
+        },
+        "vi": {
+          "text": "khách sạn",
+          "example": "Khách sạn ở gần bãi biển."
+        }
       }
     },
     {
@@ -219,7 +534,22 @@
       "level": "A1",
       "example": "Vamos al aeropuerto en taxi.",
       "translations": {
-        "en": { "text": "airport", "example": "We go to the airport by taxi." }
+        "en": {
+          "text": "airport",
+          "example": "We go to the airport by taxi."
+        },
+        "fr": {
+          "text": "l'aéroport",
+          "example": "Nous allons à l'aéroport en taxi."
+        },
+        "ja": {
+          "text": "空港",
+          "example": "タクシーで空港へ行きます。"
+        },
+        "vi": {
+          "text": "sân bay",
+          "example": "Chúng tôi đi taxi đến sân bay."
+        }
       }
     },
     {
@@ -229,7 +559,22 @@
       "level": "A1",
       "example": "¿Dónde compro el billete?",
       "translations": {
-        "en": { "text": "ticket", "example": "Where do I buy the ticket?" }
+        "en": {
+          "text": "ticket",
+          "example": "Where do I buy the ticket?"
+        },
+        "fr": {
+          "text": "le billet",
+          "example": "Où est-ce que j'achète le billet ?"
+        },
+        "ja": {
+          "text": "切符",
+          "example": "切符はどこで買いますか？"
+        },
+        "vi": {
+          "text": "vé",
+          "example": "Tôi mua vé ở đâu?"
+        }
       }
     },
     {
@@ -239,7 +584,22 @@
       "level": "A1",
       "example": "Mi maleta es muy pesada.",
       "translations": {
-        "en": { "text": "suitcase", "example": "My suitcase is very heavy." }
+        "en": {
+          "text": "suitcase",
+          "example": "My suitcase is very heavy."
+        },
+        "fr": {
+          "text": "la valise",
+          "example": "Ma valise est très lourde."
+        },
+        "ja": {
+          "text": "スーツケース",
+          "example": "私のスーツケースはとても重いです。"
+        },
+        "vi": {
+          "text": "vali",
+          "example": "Vali của tôi rất nặng."
+        }
       }
     },
     {
@@ -249,7 +609,22 @@
       "level": "A1",
       "example": "El tren sale a las ocho.",
       "translations": {
-        "en": { "text": "train", "example": "The train leaves at eight." }
+        "en": {
+          "text": "train",
+          "example": "The train leaves at eight."
+        },
+        "fr": {
+          "text": "le train",
+          "example": "Le train part à huit heures."
+        },
+        "ja": {
+          "text": "電車",
+          "example": "電車は八時に出ます。"
+        },
+        "vi": {
+          "text": "tàu hỏa",
+          "example": "Tàu hỏa khởi hành lúc tám giờ."
+        }
       }
     },
     {
@@ -259,7 +634,22 @@
       "level": "A1",
       "example": "Tomo el autobús al trabajo.",
       "translations": {
-        "en": { "text": "bus", "example": "I take the bus to work." }
+        "en": {
+          "text": "bus",
+          "example": "I take the bus to work."
+        },
+        "fr": {
+          "text": "le bus",
+          "example": "Je prends le bus pour aller au travail."
+        },
+        "ja": {
+          "text": "バス",
+          "example": "バスで仕事に行きます。"
+        },
+        "vi": {
+          "text": "xe buýt",
+          "example": "Tôi đi xe buýt đến chỗ làm."
+        }
       }
     },
     {
@@ -269,7 +659,22 @@
       "level": "A1",
       "example": "La calle es muy larga.",
       "translations": {
-        "en": { "text": "street", "example": "The street is very long." }
+        "en": {
+          "text": "street",
+          "example": "The street is very long."
+        },
+        "fr": {
+          "text": "la rue",
+          "example": "La rue est très longue."
+        },
+        "ja": {
+          "text": "道",
+          "example": "その道はとても長いです。"
+        },
+        "vi": {
+          "text": "đường phố",
+          "example": "Con đường rất dài."
+        }
       }
     },
     {
@@ -279,7 +684,22 @@
       "level": "A1",
       "example": "Necesito un mapa de la ciudad.",
       "translations": {
-        "en": { "text": "map", "example": "I need a map of the city." }
+        "en": {
+          "text": "map",
+          "example": "I need a map of the city."
+        },
+        "fr": {
+          "text": "la carte",
+          "example": "J'ai besoin d'un plan de la ville."
+        },
+        "ja": {
+          "text": "地図",
+          "example": "街の地図が必要です。"
+        },
+        "vi": {
+          "text": "bản đồ",
+          "example": "Tôi cần một tấm bản đồ thành phố."
+        }
       }
     },
     {
@@ -289,7 +709,22 @@
       "level": "A1",
       "example": "¿Puede llamar a un taxi?",
       "translations": {
-        "en": { "text": "taxi", "example": "Can you call a taxi?" }
+        "en": {
+          "text": "taxi",
+          "example": "Can you call a taxi?"
+        },
+        "fr": {
+          "text": "le taxi",
+          "example": "Pouvez-vous appeler un taxi ?"
+        },
+        "ja": {
+          "text": "タクシー",
+          "example": "タクシーを呼んでもらえますか？"
+        },
+        "vi": {
+          "text": "taxi",
+          "example": "Bạn có thể gọi giúp tôi một chiếc taxi không?"
+        }
       }
     },
     {
@@ -299,7 +734,22 @@
       "level": "A1",
       "example": "¿Dónde está la estación?",
       "translations": {
-        "en": { "text": "station", "example": "Where is the station?" }
+        "en": {
+          "text": "station",
+          "example": "Where is the station?"
+        },
+        "fr": {
+          "text": "la gare",
+          "example": "Où est la gare ?"
+        },
+        "ja": {
+          "text": "駅",
+          "example": "駅はどこですか？"
+        },
+        "vi": {
+          "text": "nhà ga",
+          "example": "Nhà ga ở đâu?"
+        }
       }
     },
     {
@@ -309,7 +759,22 @@
       "level": "A1",
       "example": "Mi casa es pequeña.",
       "translations": {
-        "en": { "text": "house", "example": "My house is small." }
+        "en": {
+          "text": "house",
+          "example": "My house is small."
+        },
+        "fr": {
+          "text": "la maison",
+          "example": "Ma maison est petite."
+        },
+        "ja": {
+          "text": "家",
+          "example": "私の家は小さいです。"
+        },
+        "vi": {
+          "text": "nhà",
+          "example": "Nhà tôi nhỏ."
+        }
       }
     },
     {
@@ -319,7 +784,22 @@
       "level": "A1",
       "example": "Mi madre está en la cocina.",
       "translations": {
-        "en": { "text": "kitchen", "example": "My mother is in the kitchen." }
+        "en": {
+          "text": "kitchen",
+          "example": "My mother is in the kitchen."
+        },
+        "fr": {
+          "text": "la cuisine",
+          "example": "Ma mère est dans la cuisine."
+        },
+        "ja": {
+          "text": "台所",
+          "example": "母は台所にいます。"
+        },
+        "vi": {
+          "text": "nhà bếp",
+          "example": "Mẹ tôi đang ở trong nhà bếp."
+        }
       }
     },
     {
@@ -329,7 +809,22 @@
       "level": "A1",
       "example": "Por favor, cierra la puerta.",
       "translations": {
-        "en": { "text": "door", "example": "Please close the door." }
+        "en": {
+          "text": "door",
+          "example": "Please close the door."
+        },
+        "fr": {
+          "text": "la porte",
+          "example": "Ferme la porte, s'il te plaît."
+        },
+        "ja": {
+          "text": "ドア",
+          "example": "ドアを閉めてください。"
+        },
+        "vi": {
+          "text": "cửa ra vào",
+          "example": "Làm ơn đóng cửa lại."
+        }
       }
     },
     {
@@ -339,7 +834,22 @@
       "level": "A1",
       "example": "Abro la ventana por la mañana.",
       "translations": {
-        "en": { "text": "window", "example": "I open the window in the morning." }
+        "en": {
+          "text": "window",
+          "example": "I open the window in the morning."
+        },
+        "fr": {
+          "text": "la fenêtre",
+          "example": "J'ouvre la fenêtre le matin."
+        },
+        "ja": {
+          "text": "窓",
+          "example": "朝、窓を開けます。"
+        },
+        "vi": {
+          "text": "cửa sổ",
+          "example": "Tôi mở cửa sổ vào buổi sáng."
+        }
       }
     },
     {
@@ -349,7 +859,22 @@
       "level": "A1",
       "example": "El libro está sobre la mesa.",
       "translations": {
-        "en": { "text": "table", "example": "The book is on the table." }
+        "en": {
+          "text": "table",
+          "example": "The book is on the table."
+        },
+        "fr": {
+          "text": "la table",
+          "example": "Le livre est sur la table."
+        },
+        "ja": {
+          "text": "テーブル",
+          "example": "本はテーブルの上にあります。"
+        },
+        "vi": {
+          "text": "cái bàn",
+          "example": "Quyển sách ở trên bàn."
+        }
       }
     },
     {
@@ -359,7 +884,22 @@
       "level": "A1",
       "example": "Siéntate en la silla.",
       "translations": {
-        "en": { "text": "chair", "example": "Sit on the chair." }
+        "en": {
+          "text": "chair",
+          "example": "Sit on the chair."
+        },
+        "fr": {
+          "text": "la chaise",
+          "example": "Assieds-toi sur la chaise."
+        },
+        "ja": {
+          "text": "いす",
+          "example": "いすに座ってください。"
+        },
+        "vi": {
+          "text": "cái ghế",
+          "example": "Hãy ngồi lên ghế."
+        }
       }
     },
     {
@@ -369,7 +909,22 @@
       "level": "A1",
       "example": "La cama es muy cómoda.",
       "translations": {
-        "en": { "text": "bed", "example": "The bed is very comfortable." }
+        "en": {
+          "text": "bed",
+          "example": "The bed is very comfortable."
+        },
+        "fr": {
+          "text": "le lit",
+          "example": "Le lit est très confortable."
+        },
+        "ja": {
+          "text": "ベッド",
+          "example": "ベッドはとても快適です。"
+        },
+        "vi": {
+          "text": "cái giường",
+          "example": "Cái giường rất thoải mái."
+        }
       }
     },
     {
@@ -379,7 +934,22 @@
       "level": "A1",
       "example": "¿Dónde está el baño?",
       "translations": {
-        "en": { "text": "bathroom", "example": "Where is the bathroom?" }
+        "en": {
+          "text": "bathroom",
+          "example": "Where is the bathroom?"
+        },
+        "fr": {
+          "text": "la salle de bain",
+          "example": "Où est la salle de bain ?"
+        },
+        "ja": {
+          "text": "トイレ",
+          "example": "トイレはどこですか？"
+        },
+        "vi": {
+          "text": "nhà vệ sinh",
+          "example": "Nhà vệ sinh ở đâu?"
+        }
       }
     },
     {
@@ -389,7 +959,22 @@
       "level": "A1",
       "example": "El gato duerme en el sofá.",
       "translations": {
-        "en": { "text": "sofa", "example": "The cat sleeps on the sofa." }
+        "en": {
+          "text": "sofa",
+          "example": "The cat sleeps on the sofa."
+        },
+        "fr": {
+          "text": "le canapé",
+          "example": "Le chat dort sur le canapé."
+        },
+        "ja": {
+          "text": "ソファ",
+          "example": "猫はソファで寝ています。"
+        },
+        "vi": {
+          "text": "ghế sofa",
+          "example": "Con mèo ngủ trên ghế sofa."
+        }
       }
     },
     {
@@ -399,7 +984,22 @@
       "level": "A1",
       "example": "Mi habitación es grande.",
       "translations": {
-        "en": { "text": "room", "example": "My room is big." }
+        "en": {
+          "text": "room",
+          "example": "My room is big."
+        },
+        "fr": {
+          "text": "la chambre",
+          "example": "Ma chambre est grande."
+        },
+        "ja": {
+          "text": "部屋",
+          "example": "私の部屋は広いです。"
+        },
+        "vi": {
+          "text": "phòng",
+          "example": "Phòng của tôi rộng."
+        }
       }
     },
     {
@@ -409,7 +1009,22 @@
       "level": "A1",
       "example": "Mi amigo es muy simpático.",
       "translations": {
-        "en": { "text": "friend", "example": "My friend is very nice." }
+        "en": {
+          "text": "friend",
+          "example": "My friend is very nice."
+        },
+        "fr": {
+          "text": "l'ami",
+          "example": "Mon ami est très sympa."
+        },
+        "ja": {
+          "text": "友達",
+          "example": "私の友達はとても親切です。"
+        },
+        "vi": {
+          "text": "bạn",
+          "example": "Bạn tôi rất dễ mến."
+        }
       }
     },
     {
@@ -419,7 +1034,22 @@
       "level": "A1",
       "example": "Mi familia es grande.",
       "translations": {
-        "en": { "text": "family", "example": "My family is big." }
+        "en": {
+          "text": "family",
+          "example": "My family is big."
+        },
+        "fr": {
+          "text": "la famille",
+          "example": "Ma famille est grande."
+        },
+        "ja": {
+          "text": "家族",
+          "example": "私の家族は大家族です。"
+        },
+        "vi": {
+          "text": "gia đình",
+          "example": "Gia đình tôi đông người."
+        }
       }
     },
     {
@@ -429,7 +1059,22 @@
       "level": "A1",
       "example": "El niño juega en el parque.",
       "translations": {
-        "en": { "text": "boy / child", "example": "The boy plays in the park." }
+        "en": {
+          "text": "boy / child",
+          "example": "The boy plays in the park."
+        },
+        "fr": {
+          "text": "le garçon / l'enfant",
+          "example": "Le garçon joue dans le parc."
+        },
+        "ja": {
+          "text": "男の子",
+          "example": "男の子は公園で遊んでいます。"
+        },
+        "vi": {
+          "text": "cậu bé / đứa trẻ",
+          "example": "Cậu bé chơi trong công viên."
+        }
       }
     },
     {
@@ -439,7 +1084,22 @@
       "level": "A1",
       "example": "La mujer lee un libro.",
       "translations": {
-        "en": { "text": "woman", "example": "The woman reads a book." }
+        "en": {
+          "text": "woman",
+          "example": "The woman reads a book."
+        },
+        "fr": {
+          "text": "la femme",
+          "example": "La femme lit un livre."
+        },
+        "ja": {
+          "text": "女の人",
+          "example": "女の人は本を読んでいます。"
+        },
+        "vi": {
+          "text": "người phụ nữ",
+          "example": "Người phụ nữ đang đọc sách."
+        }
       }
     },
     {
@@ -449,7 +1109,22 @@
       "level": "A1",
       "example": "El hombre habla con su hijo.",
       "translations": {
-        "en": { "text": "man", "example": "The man talks with his son." }
+        "en": {
+          "text": "man",
+          "example": "The man talks with his son."
+        },
+        "fr": {
+          "text": "l'homme",
+          "example": "L'homme parle avec son fils."
+        },
+        "ja": {
+          "text": "男の人",
+          "example": "男の人は息子と話しています。"
+        },
+        "vi": {
+          "text": "người đàn ông",
+          "example": "Người đàn ông nói chuyện với con trai."
+        }
       }
     },
     {
@@ -459,7 +1134,22 @@
       "level": "A1",
       "example": "Mi padre trabaja en un banco.",
       "translations": {
-        "en": { "text": "father", "example": "My father works at a bank." }
+        "en": {
+          "text": "father",
+          "example": "My father works at a bank."
+        },
+        "fr": {
+          "text": "le père",
+          "example": "Mon père travaille dans une banque."
+        },
+        "ja": {
+          "text": "父",
+          "example": "父は銀行で働いています。"
+        },
+        "vi": {
+          "text": "bố",
+          "example": "Bố tôi làm việc ở ngân hàng."
+        }
       }
     },
     {
@@ -469,7 +1159,22 @@
       "level": "A1",
       "example": "Mi madre cocina muy bien.",
       "translations": {
-        "en": { "text": "mother", "example": "My mother cooks very well." }
+        "en": {
+          "text": "mother",
+          "example": "My mother cooks very well."
+        },
+        "fr": {
+          "text": "la mère",
+          "example": "Ma mère cuisine très bien."
+        },
+        "ja": {
+          "text": "母",
+          "example": "母は料理がとても上手です。"
+        },
+        "vi": {
+          "text": "mẹ",
+          "example": "Mẹ tôi nấu ăn rất ngon."
+        }
       }
     },
     {
@@ -479,7 +1184,22 @@
       "level": "A1",
       "example": "Tengo un hermano mayor.",
       "translations": {
-        "en": { "text": "brother", "example": "I have an older brother." }
+        "en": {
+          "text": "brother",
+          "example": "I have an older brother."
+        },
+        "fr": {
+          "text": "le frère",
+          "example": "J'ai un grand frère."
+        },
+        "ja": {
+          "text": "兄",
+          "example": "私には兄がいます。"
+        },
+        "vi": {
+          "text": "anh trai",
+          "example": "Tôi có một người anh trai."
+        }
       }
     },
     {
@@ -489,7 +1209,22 @@
       "level": "A1",
       "example": "Mi hermana estudia medicina.",
       "translations": {
-        "en": { "text": "sister", "example": "My sister studies medicine." }
+        "en": {
+          "text": "sister",
+          "example": "My sister studies medicine."
+        },
+        "fr": {
+          "text": "la sœur",
+          "example": "Ma sœur étudie la médecine."
+        },
+        "ja": {
+          "text": "姉",
+          "example": "姉は医学を勉強しています。"
+        },
+        "vi": {
+          "text": "chị gái",
+          "example": "Chị gái tôi học y."
+        }
       }
     },
     {
@@ -499,7 +1234,22 @@
       "level": "A1",
       "example": "El profesor explica la lección.",
       "translations": {
-        "en": { "text": "teacher", "example": "The teacher explains the lesson." }
+        "en": {
+          "text": "teacher",
+          "example": "The teacher explains the lesson."
+        },
+        "fr": {
+          "text": "le professeur",
+          "example": "Le professeur explique la leçon."
+        },
+        "ja": {
+          "text": "先生",
+          "example": "先生は授業を説明します。"
+        },
+        "vi": {
+          "text": "giáo viên",
+          "example": "Giáo viên giảng bài."
+        }
       }
     },
     {
@@ -509,7 +1259,22 @@
       "level": "A1",
       "example": "Tengo un hermano, solo uno.",
       "translations": {
-        "en": { "text": "one", "example": "I have one brother, only one." }
+        "en": {
+          "text": "one",
+          "example": "I have one brother, only one."
+        },
+        "fr": {
+          "text": "un",
+          "example": "J'ai un frère, un seul."
+        },
+        "ja": {
+          "text": "一",
+          "example": "私には兄弟が一人だけいます。"
+        },
+        "vi": {
+          "text": "một",
+          "example": "Tôi có một người anh em, chỉ một thôi."
+        }
       }
     },
     {
@@ -519,7 +1284,22 @@
       "level": "A1",
       "example": "Quiero dos manzanas, por favor.",
       "translations": {
-        "en": { "text": "two", "example": "I want two apples, please." }
+        "en": {
+          "text": "two",
+          "example": "I want two apples, please."
+        },
+        "fr": {
+          "text": "deux",
+          "example": "Je veux deux pommes, s'il vous plaît."
+        },
+        "ja": {
+          "text": "二",
+          "example": "りんごを二つください。"
+        },
+        "vi": {
+          "text": "hai",
+          "example": "Làm ơn cho tôi hai quả táo."
+        }
       }
     },
     {
@@ -529,7 +1309,22 @@
       "level": "A1",
       "example": "Tres amigos vienen a cenar.",
       "translations": {
-        "en": { "text": "three", "example": "Three friends are coming to dinner." }
+        "en": {
+          "text": "three",
+          "example": "Three friends are coming to dinner."
+        },
+        "fr": {
+          "text": "trois",
+          "example": "Trois amis viennent dîner."
+        },
+        "ja": {
+          "text": "三",
+          "example": "三人の友達が夕食に来ます。"
+        },
+        "vi": {
+          "text": "ba",
+          "example": "Ba người bạn đến ăn tối."
+        }
       }
     },
     {
@@ -539,7 +1334,22 @@
       "level": "A1",
       "example": "Hay cuatro sillas en la cocina.",
       "translations": {
-        "en": { "text": "four", "example": "There are four chairs in the kitchen." }
+        "en": {
+          "text": "four",
+          "example": "There are four chairs in the kitchen."
+        },
+        "fr": {
+          "text": "quatre",
+          "example": "Il y a quatre chaises dans la cuisine."
+        },
+        "ja": {
+          "text": "四",
+          "example": "台所にいすが四つあります。"
+        },
+        "vi": {
+          "text": "bốn",
+          "example": "Trong bếp có bốn cái ghế."
+        }
       }
     },
     {
@@ -549,7 +1359,22 @@
       "level": "A1",
       "example": "Tengo cinco euros en el bolsillo.",
       "translations": {
-        "en": { "text": "five", "example": "I have five euros in my pocket." }
+        "en": {
+          "text": "five",
+          "example": "I have five euros in my pocket."
+        },
+        "fr": {
+          "text": "cinq",
+          "example": "J'ai cinq euros dans ma poche."
+        },
+        "ja": {
+          "text": "五",
+          "example": "ポケットに五ユーロあります。"
+        },
+        "vi": {
+          "text": "năm",
+          "example": "Tôi có năm euro trong túi."
+        }
       }
     },
     {
@@ -559,7 +1384,22 @@
       "level": "A1",
       "example": "Son las diez de la noche.",
       "translations": {
-        "en": { "text": "ten", "example": "It is ten at night." }
+        "en": {
+          "text": "ten",
+          "example": "It is ten at night."
+        },
+        "fr": {
+          "text": "dix",
+          "example": "Il est dix heures du soir."
+        },
+        "ja": {
+          "text": "十",
+          "example": "今は夜の十時です。"
+        },
+        "vi": {
+          "text": "mười",
+          "example": "Bây giờ là mười giờ tối."
+        }
       }
     },
     {
@@ -569,7 +1409,22 @@
       "level": "A1",
       "example": "Mi madre tiene veinte libros.",
       "translations": {
-        "en": { "text": "twenty", "example": "My mother has twenty books." }
+        "en": {
+          "text": "twenty",
+          "example": "My mother has twenty books."
+        },
+        "fr": {
+          "text": "vingt",
+          "example": "Ma mère a vingt livres."
+        },
+        "ja": {
+          "text": "二十",
+          "example": "母は本を二十冊持っています。"
+        },
+        "vi": {
+          "text": "hai mươi",
+          "example": "Mẹ tôi có hai mươi quyển sách."
+        }
       }
     },
     {
@@ -579,7 +1434,22 @@
       "level": "A1",
       "example": "La camisa cuesta cien euros.",
       "translations": {
-        "en": { "text": "one hundred", "example": "The shirt costs one hundred euros." }
+        "en": {
+          "text": "one hundred",
+          "example": "The shirt costs one hundred euros."
+        },
+        "fr": {
+          "text": "cent",
+          "example": "La chemise coûte cent euros."
+        },
+        "ja": {
+          "text": "百",
+          "example": "そのシャツは百ユーロです。"
+        },
+        "vi": {
+          "text": "một trăm",
+          "example": "Chiếc áo sơ mi giá một trăm euro."
+        }
       }
     },
     {
@@ -589,7 +1459,22 @@
       "level": "A1",
       "example": "Es el primero de mayo.",
       "translations": {
-        "en": { "text": "first", "example": "It is the first of May." }
+        "en": {
+          "text": "first",
+          "example": "It is the first of May."
+        },
+        "fr": {
+          "text": "premier",
+          "example": "C'est le premier mai."
+        },
+        "ja": {
+          "text": "一番目",
+          "example": "五月一日です。"
+        },
+        "vi": {
+          "text": "thứ nhất",
+          "example": "Hôm nay là ngày mồng một tháng Năm."
+        }
       }
     },
     {
@@ -599,7 +1484,22 @@
       "level": "A1",
       "example": "¿Cuál es tu número de teléfono?",
       "translations": {
-        "en": { "text": "number", "example": "What is your phone number?" }
+        "en": {
+          "text": "number",
+          "example": "What is your phone number?"
+        },
+        "fr": {
+          "text": "le numéro",
+          "example": "Quel est ton numéro de téléphone ?"
+        },
+        "ja": {
+          "text": "番号",
+          "example": "あなたの電話番号は何番ですか？"
+        },
+        "vi": {
+          "text": "số",
+          "example": "Số điện thoại của bạn là gì?"
+        }
       }
     },
     {
@@ -609,7 +1509,22 @@
       "level": "A1",
       "example": "Hoy es un día muy bonito.",
       "translations": {
-        "en": { "text": "day", "example": "Today is a very nice day." }
+        "en": {
+          "text": "day",
+          "example": "Today is a very nice day."
+        },
+        "fr": {
+          "text": "le jour",
+          "example": "Aujourd'hui, c'est une très belle journée."
+        },
+        "ja": {
+          "text": "日",
+          "example": "今日はとてもいい日です。"
+        },
+        "vi": {
+          "text": "ngày",
+          "example": "Hôm nay là một ngày rất đẹp."
+        }
       }
     },
     {
@@ -619,7 +1534,22 @@
       "level": "A1",
       "example": "Una semana tiene siete días.",
       "translations": {
-        "en": { "text": "week", "example": "A week has seven days." }
+        "en": {
+          "text": "week",
+          "example": "A week has seven days."
+        },
+        "fr": {
+          "text": "la semaine",
+          "example": "Une semaine a sept jours."
+        },
+        "ja": {
+          "text": "週",
+          "example": "一週間は七日です。"
+        },
+        "vi": {
+          "text": "tuần",
+          "example": "Một tuần có bảy ngày."
+        }
       }
     },
     {
@@ -629,7 +1559,22 @@
       "level": "A1",
       "example": "Este mes viajo a Madrid.",
       "translations": {
-        "en": { "text": "month", "example": "This month I am traveling to Madrid." }
+        "en": {
+          "text": "month",
+          "example": "This month I am traveling to Madrid."
+        },
+        "fr": {
+          "text": "le mois",
+          "example": "Ce mois-ci, je voyage à Madrid."
+        },
+        "ja": {
+          "text": "月",
+          "example": "今月はマドリードへ旅行します。"
+        },
+        "vi": {
+          "text": "tháng",
+          "example": "Tháng này tôi đi du lịch Madrid."
+        }
       }
     },
     {
@@ -639,7 +1584,22 @@
       "level": "A1",
       "example": "Hoy trabajo en casa.",
       "translations": {
-        "en": { "text": "today", "example": "Today I work at home." }
+        "en": {
+          "text": "today",
+          "example": "Today I work at home."
+        },
+        "fr": {
+          "text": "aujourd'hui",
+          "example": "Aujourd'hui, je travaille à la maison."
+        },
+        "ja": {
+          "text": "今日",
+          "example": "今日は家で仕事をします。"
+        },
+        "vi": {
+          "text": "hôm nay",
+          "example": "Hôm nay tôi làm việc ở nhà."
+        }
       }
     },
     {
@@ -649,7 +1609,22 @@
       "level": "A1",
       "example": "Mañana voy al mercado.",
       "translations": {
-        "en": { "text": "tomorrow", "example": "Tomorrow I am going to the market." }
+        "en": {
+          "text": "tomorrow",
+          "example": "Tomorrow I am going to the market."
+        },
+        "fr": {
+          "text": "demain",
+          "example": "Demain, je vais au marché."
+        },
+        "ja": {
+          "text": "明日",
+          "example": "明日は市場に行きます。"
+        },
+        "vi": {
+          "text": "ngày mai",
+          "example": "Ngày mai tôi đi chợ."
+        }
       }
     },
     {
@@ -659,7 +1634,22 @@
       "level": "A1",
       "example": "Ayer comí pescado con arroz.",
       "translations": {
-        "en": { "text": "yesterday", "example": "Yesterday I ate fish with rice." }
+        "en": {
+          "text": "yesterday",
+          "example": "Yesterday I ate fish with rice."
+        },
+        "fr": {
+          "text": "hier",
+          "example": "Hier, j'ai mangé du poisson avec du riz."
+        },
+        "ja": {
+          "text": "昨日",
+          "example": "昨日は魚とごはんを食べました。"
+        },
+        "vi": {
+          "text": "hôm qua",
+          "example": "Hôm qua tôi ăn cá với cơm."
+        }
       }
     },
     {
@@ -669,7 +1659,22 @@
       "level": "A1",
       "example": "¿Qué hora es ahora?",
       "translations": {
-        "en": { "text": "hour", "example": "What time is it now?" }
+        "en": {
+          "text": "hour",
+          "example": "What time is it now?"
+        },
+        "fr": {
+          "text": "l'heure",
+          "example": "Quelle heure est-il maintenant ?"
+        },
+        "ja": {
+          "text": "時間",
+          "example": "今、何時ですか？"
+        },
+        "vi": {
+          "text": "giờ",
+          "example": "Bây giờ là mấy giờ?"
+        }
       }
     },
     {
@@ -679,7 +1684,22 @@
       "level": "A1",
       "example": "El lunes empiezo las clases.",
       "translations": {
-        "en": { "text": "Monday", "example": "On Monday I start classes." }
+        "en": {
+          "text": "Monday",
+          "example": "On Monday I start classes."
+        },
+        "fr": {
+          "text": "lundi",
+          "example": "Lundi, je commence les cours."
+        },
+        "ja": {
+          "text": "月曜日",
+          "example": "月曜日に授業が始まります。"
+        },
+        "vi": {
+          "text": "thứ Hai",
+          "example": "Thứ Hai tôi bắt đầu đi học."
+        }
       }
     },
     {
@@ -689,7 +1709,22 @@
       "level": "A1",
       "example": "El domingo visito a mi familia.",
       "translations": {
-        "en": { "text": "Sunday", "example": "On Sunday I visit my family." }
+        "en": {
+          "text": "Sunday",
+          "example": "On Sunday I visit my family."
+        },
+        "fr": {
+          "text": "dimanche",
+          "example": "Le dimanche, je rends visite à ma famille."
+        },
+        "ja": {
+          "text": "日曜日",
+          "example": "日曜日は家族に会いに行きます。"
+        },
+        "vi": {
+          "text": "Chủ nhật",
+          "example": "Chủ nhật tôi đi thăm gia đình."
+        }
       }
     },
     {
@@ -699,7 +1734,22 @@
       "level": "A1",
       "example": "Me levanto temprano todos los días.",
       "translations": {
-        "en": { "text": "early", "example": "I get up early every day." }
+        "en": {
+          "text": "early",
+          "example": "I get up early every day."
+        },
+        "fr": {
+          "text": "tôt",
+          "example": "Je me lève tôt tous les jours."
+        },
+        "ja": {
+          "text": "早く",
+          "example": "私は毎日早く起きます。"
+        },
+        "vi": {
+          "text": "sớm",
+          "example": "Ngày nào tôi cũng dậy sớm."
+        }
       }
     },
     {
@@ -709,7 +1759,22 @@
       "level": "A2",
       "example": "La tienda abre a las nueve.",
       "translations": {
-        "en": { "text": "shop", "example": "The shop opens at nine." }
+        "en": {
+          "text": "shop",
+          "example": "The shop opens at nine."
+        },
+        "fr": {
+          "text": "le magasin",
+          "example": "Le magasin ouvre à neuf heures."
+        },
+        "ja": {
+          "text": "店",
+          "example": "店は九時に開きます。"
+        },
+        "vi": {
+          "text": "cửa hàng",
+          "example": "Cửa hàng mở cửa lúc chín giờ."
+        }
       }
     },
     {
@@ -719,7 +1784,22 @@
       "level": "A2",
       "example": "Compro fruta en el mercado.",
       "translations": {
-        "en": { "text": "market", "example": "I buy fruit at the market." }
+        "en": {
+          "text": "market",
+          "example": "I buy fruit at the market."
+        },
+        "fr": {
+          "text": "le marché",
+          "example": "J'achète des fruits au marché."
+        },
+        "ja": {
+          "text": "市場",
+          "example": "市場で果物を買います。"
+        },
+        "vi": {
+          "text": "chợ",
+          "example": "Tôi mua trái cây ở chợ."
+        }
       }
     },
     {
@@ -729,7 +1809,22 @@
       "level": "A2",
       "example": "¿Cuál es el precio del pan?",
       "translations": {
-        "en": { "text": "price", "example": "What is the price of the bread?" }
+        "en": {
+          "text": "price",
+          "example": "What is the price of the bread?"
+        },
+        "fr": {
+          "text": "le prix",
+          "example": "Quel est le prix du pain ?"
+        },
+        "ja": {
+          "text": "値段",
+          "example": "パンの値段はいくらですか？"
+        },
+        "vi": {
+          "text": "giá",
+          "example": "Giá bánh mì là bao nhiêu?"
+        }
       }
     },
     {
@@ -739,7 +1834,22 @@
       "level": "A2",
       "example": "Este abrigo es muy barato.",
       "translations": {
-        "en": { "text": "cheap", "example": "This coat is very cheap." }
+        "en": {
+          "text": "cheap",
+          "example": "This coat is very cheap."
+        },
+        "fr": {
+          "text": "bon marché",
+          "example": "Ce manteau est très bon marché."
+        },
+        "ja": {
+          "text": "安い",
+          "example": "このコートはとても安いです。"
+        },
+        "vi": {
+          "text": "rẻ",
+          "example": "Chiếc áo khoác này rất rẻ."
+        }
       }
     },
     {
@@ -749,7 +1859,22 @@
       "level": "A2",
       "example": "Ese reloj es demasiado caro.",
       "translations": {
-        "en": { "text": "expensive", "example": "That watch is too expensive." }
+        "en": {
+          "text": "expensive",
+          "example": "That watch is too expensive."
+        },
+        "fr": {
+          "text": "cher",
+          "example": "Cette montre est trop chère."
+        },
+        "ja": {
+          "text": "高い",
+          "example": "その時計は高すぎます。"
+        },
+        "vi": {
+          "text": "đắt",
+          "example": "Chiếc đồng hồ đó đắt quá."
+        }
       }
     },
     {
@@ -759,7 +1884,22 @@
       "level": "A2",
       "example": "Quiero comprar un regalo.",
       "translations": {
-        "en": { "text": "to buy", "example": "I want to buy a gift." }
+        "en": {
+          "text": "to buy",
+          "example": "I want to buy a gift."
+        },
+        "fr": {
+          "text": "acheter",
+          "example": "Je veux acheter un cadeau."
+        },
+        "ja": {
+          "text": "買う",
+          "example": "プレゼントを買いたいです。"
+        },
+        "vi": {
+          "text": "mua",
+          "example": "Tôi muốn mua một món quà."
+        }
       }
     },
     {
@@ -769,7 +1909,22 @@
       "level": "A2",
       "example": "No tengo mucho dinero hoy.",
       "translations": {
-        "en": { "text": "money", "example": "I don't have much money today." }
+        "en": {
+          "text": "money",
+          "example": "I don't have much money today."
+        },
+        "fr": {
+          "text": "l'argent",
+          "example": "Je n'ai pas beaucoup d'argent aujourd'hui."
+        },
+        "ja": {
+          "text": "お金",
+          "example": "今日はあまりお金がありません。"
+        },
+        "vi": {
+          "text": "tiền",
+          "example": "Hôm nay tôi không có nhiều tiền."
+        }
       }
     },
     {
@@ -779,7 +1934,22 @@
       "level": "A2",
       "example": "Necesito una bolsa para la fruta.",
       "translations": {
-        "en": { "text": "bag", "example": "I need a bag for the fruit." }
+        "en": {
+          "text": "bag",
+          "example": "I need a bag for the fruit."
+        },
+        "fr": {
+          "text": "le sac",
+          "example": "J'ai besoin d'un sac pour les fruits."
+        },
+        "ja": {
+          "text": "袋",
+          "example": "果物を入れる袋が必要です。"
+        },
+        "vi": {
+          "text": "túi",
+          "example": "Tôi cần một cái túi đựng trái cây."
+        }
       }
     },
     {
@@ -789,7 +1959,22 @@
       "level": "A2",
       "example": "¿Puedo pagar con tarjeta?",
       "translations": {
-        "en": { "text": "card", "example": "Can I pay by card?" }
+        "en": {
+          "text": "card",
+          "example": "Can I pay by card?"
+        },
+        "fr": {
+          "text": "la carte",
+          "example": "Je peux payer par carte ?"
+        },
+        "ja": {
+          "text": "カード",
+          "example": "カードで払えますか？"
+        },
+        "vi": {
+          "text": "thẻ",
+          "example": "Tôi có thể trả bằng thẻ không?"
+        }
       }
     },
     {
@@ -799,7 +1984,22 @@
       "level": "A2",
       "example": "Me gusta esta camiseta azul.",
       "translations": {
-        "en": { "text": "T-shirt", "example": "I like this blue T-shirt." }
+        "en": {
+          "text": "T-shirt",
+          "example": "I like this blue T-shirt."
+        },
+        "fr": {
+          "text": "le T-shirt",
+          "example": "J'aime ce T-shirt bleu."
+        },
+        "ja": {
+          "text": "Tシャツ",
+          "example": "この青いTシャツが好きです。"
+        },
+        "vi": {
+          "text": "áo phông",
+          "example": "Tôi thích chiếc áo phông xanh này."
+        }
       }
     },
     {
@@ -809,7 +2009,22 @@
       "level": "A2",
       "example": "¿Qué tiempo hace hoy?",
       "translations": {
-        "en": { "text": "weather", "example": "What is the weather like today?" }
+        "en": {
+          "text": "weather",
+          "example": "What is the weather like today?"
+        },
+        "fr": {
+          "text": "le temps (météo)",
+          "example": "Quel temps fait-il aujourd'hui ?"
+        },
+        "ja": {
+          "text": "天気",
+          "example": "今日はどんな天気ですか？"
+        },
+        "vi": {
+          "text": "thời tiết",
+          "example": "Hôm nay thời tiết thế nào?"
+        }
       }
     },
     {
@@ -819,7 +2034,22 @@
       "level": "A2",
       "example": "Hoy hace sol en la playa.",
       "translations": {
-        "en": { "text": "sun", "example": "Today it is sunny at the beach." }
+        "en": {
+          "text": "sun",
+          "example": "Today it is sunny at the beach."
+        },
+        "fr": {
+          "text": "le soleil",
+          "example": "Aujourd'hui, il y a du soleil à la plage."
+        },
+        "ja": {
+          "text": "太陽",
+          "example": "今日は海岸で日が照っています。"
+        },
+        "vi": {
+          "text": "mặt trời",
+          "example": "Hôm nay trời nắng ở bãi biển."
+        }
       }
     },
     {
@@ -829,7 +2059,22 @@
       "level": "A2",
       "example": "La lluvia cae sobre la ciudad.",
       "translations": {
-        "en": { "text": "rain", "example": "The rain falls over the city." }
+        "en": {
+          "text": "rain",
+          "example": "The rain falls over the city."
+        },
+        "fr": {
+          "text": "la pluie",
+          "example": "La pluie tombe sur la ville."
+        },
+        "ja": {
+          "text": "雨",
+          "example": "雨が街に降っています。"
+        },
+        "vi": {
+          "text": "mưa",
+          "example": "Mưa rơi trên thành phố."
+        }
       }
     },
     {
@@ -839,7 +2084,22 @@
       "level": "A2",
       "example": "Hay una nube grande en el cielo.",
       "translations": {
-        "en": { "text": "cloud", "example": "There is a big cloud in the sky." }
+        "en": {
+          "text": "cloud",
+          "example": "There is a big cloud in the sky."
+        },
+        "fr": {
+          "text": "le nuage",
+          "example": "Il y a un gros nuage dans le ciel."
+        },
+        "ja": {
+          "text": "雲",
+          "example": "空に大きな雲があります。"
+        },
+        "vi": {
+          "text": "đám mây",
+          "example": "Có một đám mây lớn trên trời."
+        }
       }
     },
     {
@@ -849,7 +2109,22 @@
       "level": "A2",
       "example": "Hoy hay mucho viento.",
       "translations": {
-        "en": { "text": "wind", "example": "Today it is very windy." }
+        "en": {
+          "text": "wind",
+          "example": "Today it is very windy."
+        },
+        "fr": {
+          "text": "le vent",
+          "example": "Aujourd'hui, il y a beaucoup de vent."
+        },
+        "ja": {
+          "text": "風",
+          "example": "今日は風が強いです。"
+        },
+        "vi": {
+          "text": "gió",
+          "example": "Hôm nay gió rất to."
+        }
       }
     },
     {
@@ -859,7 +2134,22 @@
       "level": "A2",
       "example": "Los niños juegan en la nieve.",
       "translations": {
-        "en": { "text": "snow", "example": "The children play in the snow." }
+        "en": {
+          "text": "snow",
+          "example": "The children play in the snow."
+        },
+        "fr": {
+          "text": "la neige",
+          "example": "Les enfants jouent dans la neige."
+        },
+        "ja": {
+          "text": "雪",
+          "example": "子どもたちは雪の中で遊んでいます。"
+        },
+        "vi": {
+          "text": "tuyết",
+          "example": "Bọn trẻ chơi trong tuyết."
+        }
       }
     },
     {
@@ -869,7 +2159,22 @@
       "level": "A2",
       "example": "En verano hace mucho calor.",
       "translations": {
-        "en": { "text": "heat", "example": "In summer it is very hot." }
+        "en": {
+          "text": "heat",
+          "example": "In summer it is very hot."
+        },
+        "fr": {
+          "text": "la chaleur",
+          "example": "En été, il fait très chaud."
+        },
+        "ja": {
+          "text": "暑さ",
+          "example": "夏はとても暑いです。"
+        },
+        "vi": {
+          "text": "cái nóng",
+          "example": "Mùa hè trời rất nóng."
+        }
       }
     },
     {
@@ -879,7 +2184,22 @@
       "level": "A2",
       "example": "En invierno hace mucho frío.",
       "translations": {
-        "en": { "text": "cold", "example": "In winter it is very cold." }
+        "en": {
+          "text": "cold",
+          "example": "In winter it is very cold."
+        },
+        "fr": {
+          "text": "le froid",
+          "example": "En hiver, il fait très froid."
+        },
+        "ja": {
+          "text": "寒さ",
+          "example": "冬はとても寒いです。"
+        },
+        "vi": {
+          "text": "cái lạnh",
+          "example": "Mùa đông trời rất lạnh."
+        }
       }
     },
     {
@@ -889,7 +2209,22 @@
       "level": "A2",
       "example": "Esta noche hay una tormenta.",
       "translations": {
-        "en": { "text": "storm", "example": "Tonight there is a storm." }
+        "en": {
+          "text": "storm",
+          "example": "Tonight there is a storm."
+        },
+        "fr": {
+          "text": "l'orage",
+          "example": "Ce soir, il y a un orage."
+        },
+        "ja": {
+          "text": "嵐",
+          "example": "今夜は嵐が来ます。"
+        },
+        "vi": {
+          "text": "cơn bão",
+          "example": "Tối nay có bão."
+        }
       }
     },
     {
@@ -899,7 +2234,22 @@
       "level": "A2",
       "example": "El cielo está nublado hoy.",
       "translations": {
-        "en": { "text": "cloudy", "example": "The sky is cloudy today." }
+        "en": {
+          "text": "cloudy",
+          "example": "The sky is cloudy today."
+        },
+        "fr": {
+          "text": "nuageux",
+          "example": "Le ciel est nuageux aujourd'hui."
+        },
+        "ja": {
+          "text": "曇り",
+          "example": "今日は空が曇っています。"
+        },
+        "vi": {
+          "text": "nhiều mây",
+          "example": "Hôm nay trời nhiều mây."
+        }
       }
     },
     {
@@ -909,7 +2259,22 @@
       "level": "A2",
       "example": "Me gusta leer por la noche.",
       "translations": {
-        "en": { "text": "to read", "example": "I like to read at night." }
+        "en": {
+          "text": "to read",
+          "example": "I like to read at night."
+        },
+        "fr": {
+          "text": "lire",
+          "example": "J'aime lire le soir."
+        },
+        "ja": {
+          "text": "読む",
+          "example": "夜に本を読むのが好きです。"
+        },
+        "vi": {
+          "text": "đọc",
+          "example": "Tôi thích đọc sách vào buổi tối."
+        }
       }
     },
     {
@@ -919,7 +2284,22 @@
       "level": "A2",
       "example": "Este libro es muy interesante.",
       "translations": {
-        "en": { "text": "book", "example": "This book is very interesting." }
+        "en": {
+          "text": "book",
+          "example": "This book is very interesting."
+        },
+        "fr": {
+          "text": "le livre",
+          "example": "Ce livre est très intéressant."
+        },
+        "ja": {
+          "text": "本",
+          "example": "この本はとてもおもしろいです。"
+        },
+        "vi": {
+          "text": "quyển sách",
+          "example": "Quyển sách này rất thú vị."
+        }
       }
     },
     {
@@ -929,7 +2309,22 @@
       "level": "A2",
       "example": "Escucho música en el autobús.",
       "translations": {
-        "en": { "text": "music", "example": "I listen to music on the bus." }
+        "en": {
+          "text": "music",
+          "example": "I listen to music on the bus."
+        },
+        "fr": {
+          "text": "la musique",
+          "example": "J'écoute de la musique dans le bus."
+        },
+        "ja": {
+          "text": "音楽",
+          "example": "バスの中で音楽を聞きます。"
+        },
+        "vi": {
+          "text": "âm nhạc",
+          "example": "Tôi nghe nhạc trên xe buýt."
+        }
       }
     },
     {
@@ -939,7 +2334,22 @@
       "level": "A2",
       "example": "Mi hermana sabe bailar muy bien.",
       "translations": {
-        "en": { "text": "to dance", "example": "My sister knows how to dance very well." }
+        "en": {
+          "text": "to dance",
+          "example": "My sister knows how to dance very well."
+        },
+        "fr": {
+          "text": "danser",
+          "example": "Ma sœur sait très bien danser."
+        },
+        "ja": {
+          "text": "踊る",
+          "example": "姉はとても上手に踊れます。"
+        },
+        "vi": {
+          "text": "nhảy",
+          "example": "Chị gái tôi nhảy rất giỏi."
+        }
       }
     },
     {
@@ -949,7 +2359,22 @@
       "level": "A2",
       "example": "Me encanta cantar en la ducha.",
       "translations": {
-        "en": { "text": "to sing", "example": "I love to sing in the shower." }
+        "en": {
+          "text": "to sing",
+          "example": "I love to sing in the shower."
+        },
+        "fr": {
+          "text": "chanter",
+          "example": "J'adore chanter sous la douche."
+        },
+        "ja": {
+          "text": "歌う",
+          "example": "シャワーを浴びながら歌うのが大好きです。"
+        },
+        "vi": {
+          "text": "hát",
+          "example": "Tôi rất thích hát trong lúc tắm."
+        }
       }
     },
     {
@@ -959,7 +2384,22 @@
       "level": "A2",
       "example": "¿Qué deporte practicas tú?",
       "translations": {
-        "en": { "text": "sport", "example": "What sport do you play?" }
+        "en": {
+          "text": "sport",
+          "example": "What sport do you play?"
+        },
+        "fr": {
+          "text": "le sport",
+          "example": "Quel sport pratiques-tu ?"
+        },
+        "ja": {
+          "text": "スポーツ",
+          "example": "あなたはどんなスポーツをしますか？"
+        },
+        "vi": {
+          "text": "thể thao",
+          "example": "Bạn chơi môn thể thao nào?"
+        }
       }
     },
     {
@@ -969,7 +2409,22 @@
       "level": "A2",
       "example": "Juego al fútbol con mis amigos.",
       "translations": {
-        "en": { "text": "soccer", "example": "I play soccer with my friends." }
+        "en": {
+          "text": "soccer",
+          "example": "I play soccer with my friends."
+        },
+        "fr": {
+          "text": "le football",
+          "example": "Je joue au football avec mes amis."
+        },
+        "ja": {
+          "text": "サッカー",
+          "example": "友達とサッカーをします。"
+        },
+        "vi": {
+          "text": "bóng đá",
+          "example": "Tôi chơi bóng đá với bạn bè."
+        }
       }
     },
     {
@@ -979,7 +2434,22 @@
       "level": "A2",
       "example": "Los domingos voy a nadar.",
       "translations": {
-        "en": { "text": "to swim", "example": "On Sundays I go swimming." }
+        "en": {
+          "text": "to swim",
+          "example": "On Sundays I go swimming."
+        },
+        "fr": {
+          "text": "nager",
+          "example": "Le dimanche, je vais nager."
+        },
+        "ja": {
+          "text": "泳ぐ",
+          "example": "日曜日は泳ぎに行きます。"
+        },
+        "vi": {
+          "text": "bơi",
+          "example": "Chủ nhật tôi đi bơi."
+        }
       }
     },
     {
@@ -989,7 +2459,22 @@
       "level": "A2",
       "example": "Mi padre quiere pintar la casa.",
       "translations": {
-        "en": { "text": "to paint", "example": "My father wants to paint the house." }
+        "en": {
+          "text": "to paint",
+          "example": "My father wants to paint the house."
+        },
+        "fr": {
+          "text": "peindre",
+          "example": "Mon père veut peindre la maison."
+        },
+        "ja": {
+          "text": "塗る",
+          "example": "父は家を塗りたいと思っています。"
+        },
+        "vi": {
+          "text": "sơn",
+          "example": "Bố tôi muốn sơn nhà."
+        }
       }
     },
     {
@@ -999,7 +2484,22 @@
       "level": "A2",
       "example": "Este juego es muy divertido.",
       "translations": {
-        "en": { "text": "game", "example": "This game is very fun." }
+        "en": {
+          "text": "game",
+          "example": "This game is very fun."
+        },
+        "fr": {
+          "text": "le jeu",
+          "example": "Ce jeu est très amusant."
+        },
+        "ja": {
+          "text": "ゲーム",
+          "example": "このゲームはとても楽しいです。"
+        },
+        "vi": {
+          "text": "trò chơi",
+          "example": "Trò chơi này rất vui."
+        }
       }
     }
   ]

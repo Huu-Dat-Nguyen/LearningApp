@@ -1,0 +1,1604 @@
+{
+  "lang": "vi",
+  "version": 1,
+  "units": [
+    {
+      "id": "vi_u1",
+      "topic": "greetings",
+      "level": "A1",
+      "title": {
+        "en": "Greetings",
+        "es": "Saludos",
+        "fr": "Salutations",
+        "ja": "あいさつ"
+      },
+      "lessons": [
+        {
+          "id": "vi_u1_l1",
+          "title": {
+            "en": "Hello & goodbye",
+            "es": "Hola y adiós",
+            "fr": "Bonjour et au revoir",
+            "ja": "こんにちはとさようなら"
+          },
+          "words": [
+            "vi_xin_chao",
+            "vi_tam_biet",
+            "vi_chao_buoi_sang",
+            "vi_chuc_ngu_ngon",
+            "vi_cam_on"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_xin_chao"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_chao_buoi_sang"
+            },
+            {
+              "type": "fill",
+              "sentence": "Xin ___, tôi là Nam.",
+              "answer": "chào",
+              "hint": {
+                "en": "Hello, I am Nam.",
+                "es": "Hola, soy Nam.",
+                "fr": "Bonjour, je suis Nam.",
+                "ja": "こんにちは、私はナムです。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Chào buổi sáng, bạn khỏe không?",
+              "translation": {
+                "en": "Good morning, how are you?",
+                "es": "Buenos días, ¿cómo estás?",
+                "fr": "Bonjour, comment vas-tu ?",
+                "ja": "おはよう、お元気ですか？"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Chúc ngủ ngon",
+              "translation": {
+                "en": "Good night",
+                "es": "Buenas noches",
+                "fr": "Bonne nuit",
+                "ja": "おやすみなさい"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_cam_on"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Goodbye!",
+                "es": "¡Adiós!",
+                "fr": "Au revoir !",
+                "ja": "さようなら！"
+              },
+              "answers": [
+                "Tạm biệt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u1_l2",
+          "title": {
+            "en": "Please & thanks",
+            "es": "Por favor y gracias",
+            "fr": "S'il vous plaît et merci",
+            "ja": "お願いとお礼"
+          },
+          "words": [
+            "vi_lam_on",
+            "vi_xin_loi",
+            "vi_chao_mung",
+            "vi_hen_gap_lai",
+            "vi_khong_co_gi"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_lam_on"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_xin_loi"
+            },
+            {
+              "type": "fill",
+              "sentence": "Xin lỗi, nhà vệ sinh ở ___?",
+              "answer": "đâu",
+              "hint": {
+                "en": "Excuse me, where is the bathroom?",
+                "es": "Perdón, ¿dónde está el baño?",
+                "fr": "Pardon, où sont les toilettes ?",
+                "ja": "すみません、トイレはどこですか？"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Hẹn gặp lại bạn ngày mai",
+              "translation": {
+                "en": "See you again tomorrow",
+                "es": "Hasta mañana, nos vemos",
+                "fr": "À demain, on se revoit",
+                "ja": "また明日会いましょう"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Chào mừng bạn",
+              "translation": {
+                "en": "Welcome",
+                "es": "Bienvenido",
+                "fr": "Bienvenue",
+                "ja": "ようこそ"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_hen_gap_lai"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "You're welcome.",
+                "es": "De nada.",
+                "fr": "De rien.",
+                "ja": "どういたしまして。"
+              },
+              "answers": [
+                "Không có gì"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u2",
+      "topic": "food",
+      "level": "A1",
+      "title": {
+        "en": "Food",
+        "es": "Comida",
+        "fr": "Nourriture",
+        "ja": "食べ物"
+      },
+      "lessons": [
+        {
+          "id": "vi_u2_l1",
+          "title": {
+            "en": "Basic foods",
+            "es": "Comidas básicas",
+            "fr": "Aliments de base",
+            "ja": "基本の食べ物"
+          },
+          "words": [
+            "vi_banh_mi",
+            "vi_nuoc",
+            "vi_sua",
+            "vi_tao",
+            "vi_pho_mai"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_banh_mi"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_nuoc"
+            },
+            {
+              "type": "fill",
+              "sentence": "Tôi ăn ___ mì mỗi sáng.",
+              "answer": "bánh",
+              "hint": {
+                "en": "I eat bread every morning.",
+                "es": "Como pan cada mañana.",
+                "fr": "Je mange du pain chaque matin.",
+                "ja": "私は毎朝パンを食べます。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tôi muốn uống một ly sữa",
+              "translation": {
+                "en": "I want to drink a glass of milk",
+                "es": "Quiero beber un vaso de leche",
+                "fr": "Je veux boire un verre de lait",
+                "ja": "牛乳を一杯飲みたいです"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Táo và phô mai",
+              "translation": {
+                "en": "Apples and cheese",
+                "es": "Manzanas y queso",
+                "fr": "Des pommes et du fromage",
+                "ja": "りんごとチーズ"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_sua"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I like apples.",
+                "es": "Me gustan las manzanas.",
+                "fr": "J'aime les pommes.",
+                "ja": "私はりんごが好きです。"
+              },
+              "answers": [
+                "Tôi thích táo",
+                "Tôi thích quả táo"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u2_l2",
+          "title": {
+            "en": "Meals & drinks",
+            "es": "Comidas y bebidas",
+            "fr": "Repas et boissons",
+            "ja": "食事と飲み物"
+          },
+          "words": [
+            "vi_thit_ga",
+            "vi_com",
+            "vi_ca_phe",
+            "vi_thit",
+            "vi_ca"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_thit_ga"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_com"
+            },
+            {
+              "type": "fill",
+              "sentence": "Tôi ăn ___ với thịt gà.",
+              "answer": "cơm",
+              "hint": {
+                "en": "I eat rice with chicken.",
+                "es": "Como arroz con pollo.",
+                "fr": "Je mange du riz avec du poulet.",
+                "ja": "私は鶏肉とご飯を食べます。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tôi uống cà phê buổi sáng",
+              "translation": {
+                "en": "I drink coffee in the morning",
+                "es": "Bebo café por la mañana",
+                "fr": "Je bois du café le matin",
+                "ja": "私は朝コーヒーを飲みます"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Cá và thịt",
+              "translation": {
+                "en": "Fish and meat",
+                "es": "Pescado y carne",
+                "fr": "Du poisson et de la viande",
+                "ja": "魚と肉"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_ca_phe"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I eat fish.",
+                "es": "Como pescado.",
+                "fr": "Je mange du poisson.",
+                "ja": "私は魚を食べます。"
+              },
+              "answers": [
+                "Tôi ăn cá"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u3",
+      "topic": "travel",
+      "level": "A1",
+      "title": {
+        "en": "Travel",
+        "es": "Viajes",
+        "fr": "Voyage",
+        "ja": "旅行"
+      },
+      "lessons": [
+        {
+          "id": "vi_u3_l1",
+          "title": {
+            "en": "At the airport",
+            "es": "En el aeropuerto",
+            "fr": "À l'aéroport",
+            "ja": "空港で"
+          },
+          "words": [
+            "vi_khach_san",
+            "vi_san_bay",
+            "vi_ve",
+            "vi_vali",
+            "vi_tau_hoa"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_khach_san"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_san_bay"
+            },
+            {
+              "type": "fill",
+              "sentence": "Tôi mua hai ___ tàu hỏa.",
+              "answer": "vé",
+              "hint": {
+                "en": "I buy two train tickets.",
+                "es": "Compro dos billetes de tren.",
+                "fr": "J'achète deux billets de train.",
+                "ja": "電車の切符を二枚買います。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Khách sạn ở gần sân bay",
+              "translation": {
+                "en": "The hotel is near the airport",
+                "es": "El hotel está cerca del aeropuerto",
+                "fr": "L'hôtel est près de l'aéroport",
+                "ja": "ホテルは空港の近くにあります"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Vali của tôi",
+              "translation": {
+                "en": "My suitcase",
+                "es": "Mi maleta",
+                "fr": "Ma valise",
+                "ja": "私のスーツケース"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_ve"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Where is the airport?",
+                "es": "¿Dónde está el aeropuerto?",
+                "fr": "Où est l'aéroport ?",
+                "ja": "空港はどこですか？"
+              },
+              "answers": [
+                "Sân bay ở đâu"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u3_l2",
+          "title": {
+            "en": "Getting around",
+            "es": "Moverse",
+            "fr": "Se déplacer",
+            "ja": "移動"
+          },
+          "words": [
+            "vi_xe_buyt",
+            "vi_duong",
+            "vi_ban_do",
+            "vi_taxi",
+            "vi_nha_ga"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_xe_buyt"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_ban_do"
+            },
+            {
+              "type": "fill",
+              "sentence": "Nhà ___ ở bên kia đường.",
+              "answer": "ga",
+              "hint": {
+                "en": "The station is across the street.",
+                "es": "La estación está al otro lado de la calle.",
+                "fr": "La gare est de l'autre côté de la rue.",
+                "ja": "駅は道の向こう側にあります。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tôi đi taxi đến nhà ga",
+              "translation": {
+                "en": "I take a taxi to the station",
+                "es": "Voy en taxi a la estación",
+                "fr": "Je prends un taxi pour aller à la gare",
+                "ja": "私はタクシーで駅に行きます"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Xe buýt số năm",
+              "translation": {
+                "en": "Bus number five",
+                "es": "El autobús número cinco",
+                "fr": "Le bus numéro cinq",
+                "ja": "5番のバス"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_taxi"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I need a map.",
+                "es": "Necesito un mapa.",
+                "fr": "J'ai besoin d'une carte.",
+                "ja": "地図が必要です。"
+              },
+              "answers": [
+                "Tôi cần bản đồ",
+                "Tôi cần một bản đồ"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u4",
+      "topic": "home",
+      "level": "A1",
+      "title": {
+        "en": "At home",
+        "es": "En casa",
+        "fr": "À la maison",
+        "ja": "家"
+      },
+      "lessons": [
+        {
+          "id": "vi_u4_l1",
+          "title": {
+            "en": "Around the house",
+            "es": "Por la casa",
+            "fr": "Dans la maison",
+            "ja": "家の中"
+          },
+          "words": [
+            "vi_nha",
+            "vi_bep",
+            "vi_cua",
+            "vi_cua_so",
+            "vi_ban_table"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_nha"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_bep"
+            },
+            {
+              "type": "fill",
+              "sentence": "Mẹ nấu ăn trong ___.",
+              "answer": "bếp",
+              "hint": {
+                "en": "Mom cooks in the kitchen.",
+                "es": "Mamá cocina en la cocina.",
+                "fr": "Maman cuisine dans la cuisine.",
+                "ja": "母は台所で料理します。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Nhà tôi có hai cửa sổ",
+              "translation": {
+                "en": "My house has two windows",
+                "es": "Mi casa tiene dos ventanas",
+                "fr": "Ma maison a deux fenêtres",
+                "ja": "私の家には窓が二つあります"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Cái bàn lớn",
+              "translation": {
+                "en": "The big table",
+                "es": "La mesa grande",
+                "fr": "La grande table",
+                "ja": "大きいテーブル"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_cua_so"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "My house is big.",
+                "es": "Mi casa es grande.",
+                "fr": "Ma maison est grande.",
+                "ja": "私の家は大きいです。"
+              },
+              "answers": [
+                "Nhà tôi lớn",
+                "Nhà tôi to"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u4_l2",
+          "title": {
+            "en": "Rooms & furniture",
+            "es": "Habitaciones y muebles",
+            "fr": "Pièces et meubles",
+            "ja": "部屋と家具"
+          },
+          "words": [
+            "vi_ghe",
+            "vi_giuong",
+            "vi_phong_tam",
+            "vi_ghe_sofa",
+            "vi_phong"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_giuong"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_phong_tam"
+            },
+            {
+              "type": "fill",
+              "sentence": "Tôi ngủ trên ___.",
+              "answer": "giường",
+              "hint": {
+                "en": "I sleep on the bed.",
+                "es": "Duermo en la cama.",
+                "fr": "Je dors dans le lit.",
+                "ja": "私はベッドで寝ます。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Phòng tắm ở bên trái",
+              "translation": {
+                "en": "The bathroom is on the left",
+                "es": "El baño está a la izquierda",
+                "fr": "La salle de bain est à gauche",
+                "ja": "お風呂場は左側にあります"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Ghế sofa mới",
+              "translation": {
+                "en": "The new sofa",
+                "es": "El sofá nuevo",
+                "fr": "Le nouveau canapé",
+                "ja": "新しいソファ"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_ghe_sofa"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "My room",
+                "es": "Mi habitación",
+                "fr": "Ma chambre",
+                "ja": "私の部屋"
+              },
+              "answers": [
+                "Phòng của tôi",
+                "Phòng tôi"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u5",
+      "topic": "people",
+      "level": "A1",
+      "title": {
+        "en": "People",
+        "es": "Personas",
+        "fr": "Les gens",
+        "ja": "人々"
+      },
+      "lessons": [
+        {
+          "id": "vi_u5_l1",
+          "title": {
+            "en": "Friends & family",
+            "es": "Amigos y familia",
+            "fr": "Amis et famille",
+            "ja": "友達と家族"
+          },
+          "words": [
+            "vi_ban",
+            "vi_gia_dinh",
+            "vi_dua_tre",
+            "vi_phu_nu",
+            "vi_dan_ong"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_ban"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_gia_dinh"
+            },
+            {
+              "type": "fill",
+              "sentence": "Gia đình tôi có bốn ___.",
+              "answer": "người",
+              "hint": {
+                "en": "My family has four people.",
+                "es": "Mi familia tiene cuatro personas.",
+                "fr": "Ma famille a quatre personnes.",
+                "ja": "私の家族は四人です。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Đây là bạn của tôi",
+              "translation": {
+                "en": "This is my friend",
+                "es": "Este es mi amigo",
+                "fr": "Voici mon ami",
+                "ja": "こちらは私の友達です"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Gia đình tôi",
+              "translation": {
+                "en": "My family",
+                "es": "Mi familia",
+                "fr": "Ma famille",
+                "ja": "私の家族"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_phu_nu"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "My friend",
+                "es": "Mi amigo",
+                "fr": "Mon ami",
+                "ja": "私の友達"
+              },
+              "answers": [
+                "Bạn của tôi",
+                "Bạn tôi"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u5_l2",
+          "title": {
+            "en": "Parents & siblings",
+            "es": "Padres y hermanos",
+            "fr": "Parents et frères et sœurs",
+            "ja": "両親ときょうだい"
+          },
+          "words": [
+            "vi_bo",
+            "vi_me",
+            "vi_anh_trai",
+            "vi_chi_gai",
+            "vi_giao_vien"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_bo"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_me"
+            },
+            {
+              "type": "fill",
+              "sentence": "Bố và ___ tôi ở nhà.",
+              "answer": "mẹ",
+              "hint": {
+                "en": "My dad and mom are at home.",
+                "es": "Mi padre y mi madre están en casa.",
+                "fr": "Mon père et ma mère sont à la maison.",
+                "ja": "父と母は家にいます。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Anh trai tôi là giáo viên",
+              "translation": {
+                "en": "My older brother is a teacher",
+                "es": "Mi hermano mayor es profesor",
+                "fr": "Mon grand frère est professeur",
+                "ja": "兄は先生です"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Chị gái tôi",
+              "translation": {
+                "en": "My older sister",
+                "es": "Mi hermana mayor",
+                "fr": "Ma grande sœur",
+                "ja": "私の姉"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_giao_vien"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "My mother",
+                "es": "Mi madre",
+                "fr": "Ma mère",
+                "ja": "私の母"
+              },
+              "answers": [
+                "Mẹ tôi",
+                "Mẹ của tôi"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u6",
+      "topic": "numbers",
+      "level": "A1",
+      "title": {
+        "en": "Numbers",
+        "es": "Números",
+        "fr": "Nombres",
+        "ja": "数字"
+      },
+      "lessons": [
+        {
+          "id": "vi_u6_l1",
+          "title": {
+            "en": "Counting 1-5",
+            "es": "Contar del 1 al 5",
+            "fr": "Compter de 1 à 5",
+            "ja": "1から5まで数える"
+          },
+          "words": [
+            "vi_mot",
+            "vi_hai",
+            "vi_ba",
+            "vi_bon",
+            "vi_nam"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_mot"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_ba"
+            },
+            {
+              "type": "fill",
+              "sentence": "Một, hai, ba, ___, năm.",
+              "answer": "bốn",
+              "hint": {
+                "en": "One, two, three, four, five.",
+                "es": "Uno, dos, tres, cuatro, cinco.",
+                "fr": "Un, deux, trois, quatre, cinq.",
+                "ja": "一、二、三、四、五。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tôi có ba quả táo",
+              "translation": {
+                "en": "I have three apples",
+                "es": "Tengo tres manzanas",
+                "fr": "J'ai trois pommes",
+                "ja": "私はりんごを三つ持っています"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Hai và bốn",
+              "translation": {
+                "en": "Two and four",
+                "es": "Dos y cuatro",
+                "fr": "Deux et quatre",
+                "ja": "二と四"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_nam"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Four",
+                "es": "Cuatro",
+                "fr": "Quatre",
+                "ja": "四"
+              },
+              "answers": [
+                "Bốn"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u6_l2",
+          "title": {
+            "en": "Big numbers",
+            "es": "Números grandes",
+            "fr": "Grands nombres",
+            "ja": "大きい数"
+          },
+          "words": [
+            "vi_muoi",
+            "vi_hai_muoi",
+            "vi_mot_tram",
+            "vi_thu_nhat",
+            "vi_so"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_muoi"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_mot_tram"
+            },
+            {
+              "type": "fill",
+              "sentence": "Hai mươi cộng mười là ba ___.",
+              "answer": "mươi",
+              "hint": {
+                "en": "Twenty plus ten is thirty.",
+                "es": "Veinte más diez son treinta.",
+                "fr": "Vingt plus dix font trente.",
+                "ja": "二十足す十は三十です。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Cuốn sách có một trăm trang",
+              "translation": {
+                "en": "The book has one hundred pages",
+                "es": "El libro tiene cien páginas",
+                "fr": "Le livre a cent pages",
+                "ja": "その本は百ページあります"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Hai mươi người",
+              "translation": {
+                "en": "Twenty people",
+                "es": "Veinte personas",
+                "fr": "Vingt personnes",
+                "ja": "二十人"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_so"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "One hundred",
+                "es": "Cien",
+                "fr": "Cent",
+                "ja": "百"
+              },
+              "answers": [
+                "Một trăm"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u7",
+      "topic": "time",
+      "level": "A1",
+      "title": {
+        "en": "Days & time",
+        "es": "Días y hora",
+        "fr": "Jours et heure",
+        "ja": "曜日と時間"
+      },
+      "lessons": [
+        {
+          "id": "vi_u7_l1",
+          "title": {
+            "en": "Days & weeks",
+            "es": "Días y semanas",
+            "fr": "Jours et semaines",
+            "ja": "日と週"
+          },
+          "words": [
+            "vi_ngay",
+            "vi_tuan",
+            "vi_thang",
+            "vi_hom_nay",
+            "vi_ngay_mai"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_ngay"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_tuan"
+            },
+            {
+              "type": "fill",
+              "sentence": "Một ___ có bảy ngày.",
+              "answer": "tuần",
+              "hint": {
+                "en": "A week has seven days.",
+                "es": "Una semana tiene siete días.",
+                "fr": "Une semaine a sept jours.",
+                "ja": "一週間は七日です。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Ngày mai tôi đi làm",
+              "translation": {
+                "en": "Tomorrow I go to work",
+                "es": "Mañana voy a trabajar",
+                "fr": "Demain je vais travailler",
+                "ja": "明日は仕事に行きます"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Hôm nay trời đẹp",
+              "translation": {
+                "en": "The weather is nice today",
+                "es": "Hoy hace buen tiempo",
+                "fr": "Il fait beau aujourd'hui",
+                "ja": "今日はいい天気です"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_hom_nay"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Tomorrow",
+                "es": "Mañana",
+                "fr": "Demain",
+                "ja": "明日"
+              },
+              "answers": [
+                "Ngày mai"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u7_l2",
+          "title": {
+            "en": "Time of day",
+            "es": "Momentos del día",
+            "fr": "Moments de la journée",
+            "ja": "時間帯"
+          },
+          "words": [
+            "vi_hom_qua",
+            "vi_gio",
+            "vi_thu_hai",
+            "vi_chu_nhat",
+            "vi_som"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_hom_qua"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_gio"
+            },
+            {
+              "type": "fill",
+              "sentence": "Bây giờ là ba ___.",
+              "answer": "giờ",
+              "hint": {
+                "en": "It is three o'clock now.",
+                "es": "Ahora son las tres.",
+                "fr": "Il est trois heures maintenant.",
+                "ja": "今、三時です。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Chủ nhật tôi dậy sớm",
+              "translation": {
+                "en": "On Sunday I get up early",
+                "es": "El domingo me levanto temprano",
+                "fr": "Le dimanche je me lève tôt",
+                "ja": "日曜日は早く起きます"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Thứ hai tôi đi học",
+              "translation": {
+                "en": "On Monday I go to school",
+                "es": "El lunes voy a la escuela",
+                "fr": "Le lundi je vais à l'école",
+                "ja": "月曜日は学校に行きます"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_chu_nhat"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Yesterday",
+                "es": "Ayer",
+                "fr": "Hier",
+                "ja": "昨日"
+              },
+              "answers": [
+                "Hôm qua"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u8",
+      "topic": "shopping",
+      "level": "A2",
+      "title": {
+        "en": "Shopping",
+        "es": "Compras",
+        "fr": "Achats",
+        "ja": "買い物"
+      },
+      "lessons": [
+        {
+          "id": "vi_u8_l1",
+          "title": {
+            "en": "Shops & prices",
+            "es": "Tiendas y precios",
+            "fr": "Magasins et prix",
+            "ja": "店と値段"
+          },
+          "words": [
+            "vi_cua_hang",
+            "vi_cho",
+            "vi_gia",
+            "vi_re",
+            "vi_dat"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_cua_hang"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_cho"
+            },
+            {
+              "type": "fill",
+              "sentence": "Cái này rẻ, nhưng cái kia ___.",
+              "answer": "đắt",
+              "hint": {
+                "en": "This one is cheap, but that one is expensive.",
+                "es": "Este es barato, pero aquel es caro.",
+                "fr": "Celui-ci est bon marché, mais celui-là est cher.",
+                "ja": "これは安いですが、あれは高いです。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Giá ở chợ rất rẻ",
+              "translation": {
+                "en": "Prices at the market are very cheap",
+                "es": "Los precios en el mercado son muy baratos",
+                "fr": "Les prix au marché sont très bas",
+                "ja": "市場は値段がとても安いです"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Cửa hàng ở đâu",
+              "translation": {
+                "en": "Where is the shop?",
+                "es": "¿Dónde está la tienda?",
+                "fr": "Où est le magasin ?",
+                "ja": "店はどこですか？"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_gia"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Expensive",
+                "es": "Caro",
+                "fr": "Cher",
+                "ja": "高い"
+              },
+              "answers": [
+                "Đắt"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u8_l2",
+          "title": {
+            "en": "Paying",
+            "es": "Pagar",
+            "fr": "Payer",
+            "ja": "支払い"
+          },
+          "words": [
+            "vi_mua",
+            "vi_tien",
+            "vi_tui",
+            "vi_the",
+            "vi_ao_phong"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_mua"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_tien"
+            },
+            {
+              "type": "fill",
+              "sentence": "Tôi muốn ___ một cái áo phông.",
+              "answer": "mua",
+              "hint": {
+                "en": "I want to buy a T-shirt.",
+                "es": "Quiero comprar una camiseta.",
+                "fr": "Je veux acheter un t-shirt.",
+                "ja": "Tシャツを一枚買いたいです。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tôi mua áo phông bằng thẻ",
+              "translation": {
+                "en": "I buy a T-shirt by card",
+                "es": "Compro una camiseta con tarjeta",
+                "fr": "J'achète un t-shirt par carte",
+                "ja": "私はカードでTシャツを買います"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Tôi có nhiều tiền",
+              "translation": {
+                "en": "I have a lot of money",
+                "es": "Tengo mucho dinero",
+                "fr": "J'ai beaucoup d'argent",
+                "ja": "私はお金をたくさん持っています"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_the"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I buy a bag.",
+                "es": "Compro una bolsa.",
+                "fr": "J'achète un sac.",
+                "ja": "私は袋を買います。"
+              },
+              "answers": [
+                "Tôi mua túi",
+                "Tôi mua cái túi"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u9",
+      "topic": "weather",
+      "level": "A2",
+      "title": {
+        "en": "Weather",
+        "es": "El tiempo",
+        "fr": "Météo",
+        "ja": "天気"
+      },
+      "lessons": [
+        {
+          "id": "vi_u9_l1",
+          "title": {
+            "en": "Sun & rain",
+            "es": "Sol y lluvia",
+            "fr": "Soleil et pluie",
+            "ja": "太陽と雨"
+          },
+          "words": [
+            "vi_thoi_tiet",
+            "vi_mat_troi",
+            "vi_mua_rain",
+            "vi_may",
+            "vi_gio_wind"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_mat_troi"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_mua_rain"
+            },
+            {
+              "type": "fill",
+              "sentence": "Hôm nay trời ___, tôi mang ô.",
+              "answer": "mưa",
+              "hint": {
+                "en": "It's raining today, I take an umbrella.",
+                "es": "Hoy llueve, llevo paraguas.",
+                "fr": "Il pleut aujourd'hui, je prends un parapluie.",
+                "ja": "今日は雨なので、傘を持っていきます。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Hôm nay trời có gió",
+              "translation": {
+                "en": "There is wind today",
+                "es": "Hoy hay viento",
+                "fr": "Il y a du vent aujourd'hui",
+                "ja": "今日は風があります"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Mặt trời và mây",
+              "translation": {
+                "en": "The sun and clouds",
+                "es": "El sol y las nubes",
+                "fr": "Le soleil et les nuages",
+                "ja": "太陽と雲"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_may"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Sun",
+                "es": "Sol",
+                "fr": "Soleil",
+                "ja": "太陽"
+              },
+              "answers": [
+                "Mặt trời"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u9_l2",
+          "title": {
+            "en": "Hot & cold",
+            "es": "Calor y frío",
+            "fr": "Chaud et froid",
+            "ja": "暑さと寒さ"
+          },
+          "words": [
+            "vi_tuyet",
+            "vi_nong",
+            "vi_lanh",
+            "vi_bao",
+            "vi_nhieu_may"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_tuyet"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_nong"
+            },
+            {
+              "type": "fill",
+              "sentence": "Mùa đông trời rất ___.",
+              "answer": "lạnh",
+              "hint": {
+                "en": "In winter it is very cold.",
+                "es": "En invierno hace mucho frío.",
+                "fr": "En hiver, il fait très froid.",
+                "ja": "冬はとても寒いです。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Hôm nay trời nóng quá",
+              "translation": {
+                "en": "It is so hot today",
+                "es": "Hoy hace mucho calor",
+                "fr": "Il fait si chaud aujourd'hui",
+                "ja": "今日はとても暑いです"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Trời có bão",
+              "translation": {
+                "en": "There is a storm",
+                "es": "Hay una tormenta",
+                "fr": "Il y a une tempête",
+                "ja": "嵐が来ています"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_lanh"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "It is hot.",
+                "es": "Hace calor.",
+                "fr": "Il fait chaud.",
+                "ja": "暑いです。"
+              },
+              "answers": [
+                "Trời nóng",
+                "Nóng"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vi_u10",
+      "topic": "hobbies",
+      "level": "A2",
+      "title": {
+        "en": "Hobbies",
+        "es": "Aficiones",
+        "fr": "Loisirs",
+        "ja": "趣味"
+      },
+      "lessons": [
+        {
+          "id": "vi_u10_l1",
+          "title": {
+            "en": "Fun things",
+            "es": "Cosas divertidas",
+            "fr": "Choses amusantes",
+            "ja": "楽しいこと"
+          },
+          "words": [
+            "vi_doc",
+            "vi_sach",
+            "vi_am_nhac",
+            "vi_khieu_vu",
+            "vi_hat"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_doc"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_sach"
+            },
+            {
+              "type": "fill",
+              "sentence": "Tôi thích ___ sách.",
+              "answer": "đọc",
+              "hint": {
+                "en": "I like reading books.",
+                "es": "Me gusta leer libros.",
+                "fr": "J'aime lire des livres.",
+                "ja": "私は本を読むのが好きです。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tôi thích nghe âm nhạc",
+              "translation": {
+                "en": "I like listening to music",
+                "es": "Me gusta escuchar música",
+                "fr": "J'aime écouter de la musique",
+                "ja": "私は音楽を聞くのが好きです"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Cô ấy hát hay",
+              "translation": {
+                "en": "She sings well",
+                "es": "Ella canta bien",
+                "fr": "Elle chante bien",
+                "ja": "彼女は歌が上手です"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_am_nhac"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I like to sing.",
+                "es": "Me gusta cantar.",
+                "fr": "J'aime chanter.",
+                "ja": "私は歌うのが好きです。"
+              },
+              "answers": [
+                "Tôi thích hát"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vi_u10_l2",
+          "title": {
+            "en": "Sports & games",
+            "es": "Deportes y juegos",
+            "fr": "Sports et jeux",
+            "ja": "スポーツとゲーム"
+          },
+          "words": [
+            "vi_the_thao",
+            "vi_bong_da",
+            "vi_boi",
+            "vi_ve_tranh",
+            "vi_tro_choi"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "vi_bong_da"
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_boi"
+            },
+            {
+              "type": "fill",
+              "sentence": "Anh ấy chơi ___ đá mỗi tuần.",
+              "answer": "bóng",
+              "hint": {
+                "en": "He plays football every week.",
+                "es": "Él juega al fútbol cada semana.",
+                "fr": "Il joue au football chaque semaine.",
+                "ja": "彼は毎週サッカーをします。"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Cuối tuần tôi đi bơi",
+              "translation": {
+                "en": "I go swimming on weekends",
+                "es": "Los fines de semana voy a nadar",
+                "fr": "Le week-end, je vais nager",
+                "ja": "週末は泳ぎに行きます"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Tôi thích vẽ",
+              "translation": {
+                "en": "I like painting",
+                "es": "Me gusta pintar",
+                "fr": "J'aime peindre",
+                "ja": "私は絵を描くのが好きです"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "vi_tro_choi"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I like sports.",
+                "es": "Me gusta el deporte.",
+                "fr": "J'aime le sport.",
+                "ja": "私はスポーツが好きです。"
+              },
+              "answers": [
+                "Tôi thích thể thao"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

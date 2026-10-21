@@ -1,19 +1,25 @@
 {
   "lang": "es",
-  "version": 2,
+  "version": 3,
   "units": [
     {
       "id": "es_u1",
       "topic": "greetings",
       "level": "A1",
       "title": {
-        "en": "Greetings"
+        "en": "Greetings",
+        "fr": "Salutations",
+        "ja": "あいさつ",
+        "vi": "Chào hỏi"
       },
       "lessons": [
         {
           "id": "es_u1_l1",
           "title": {
-            "en": "Hello & goodbye"
+            "en": "Hello & goodbye",
+            "fr": "Bonjour et au revoir",
+            "ja": "こんにちはとさようなら",
+            "vi": "Chào và tạm biệt"
           },
           "words": [
             "es_hola",
@@ -36,21 +42,30 @@
               "sentence": "Buenos ___, ¿cómo está?",
               "answer": "días",
               "hint": {
-                "en": "Good morning, how are you?"
+                "en": "Good morning, how are you?",
+                "fr": "Bonjour, comment allez-vous ?",
+                "ja": "おはようございます、お元気ですか？",
+                "vi": "Chào buổi sáng, bạn khỏe không?"
               }
             },
             {
               "type": "order",
               "answer": "Hola, buenos días, ¿cómo estás?",
               "translation": {
-                "en": "Hello, good morning, how are you?"
+                "en": "Hello, good morning, how are you?",
+                "fr": "Salut, bonjour, comment ça va ?",
+                "ja": "こんにちは、おはよう、元気ですか？",
+                "vi": "Xin chào, chào buổi sáng, bạn khỏe không?"
               }
             },
             {
               "type": "listen",
               "text": "Buenas noches",
               "translation": {
-                "en": "Good night"
+                "en": "Good night",
+                "fr": "Bonne nuit",
+                "ja": "おやすみなさい",
+                "vi": "Chúc ngủ ngon"
               }
             },
             {
@@ -60,7 +75,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "Goodbye!"
+                "en": "Goodbye!",
+                "fr": "Au revoir !",
+                "ja": "さようなら！",
+                "vi": "Tạm biệt!"
               },
               "answers": [
                 "Adiós"
@@ -71,7 +89,10 @@
         {
           "id": "es_u1_l2",
           "title": {
-            "en": "Please & thanks"
+            "en": "Please & thanks",
+            "fr": "S'il vous plaît et merci",
+            "ja": "お願いとお礼",
+            "vi": "Làm ơn và cảm ơn"
           },
           "words": [
             "es_por_favor",
@@ -94,21 +115,30 @@
               "sentence": "Un café, por ___.",
               "answer": "favor",
               "hint": {
-                "en": "A coffee, please."
+                "en": "A coffee, please.",
+                "fr": "Un café, s'il vous plaît.",
+                "ja": "コーヒーをお願いします。",
+                "vi": "Làm ơn cho một ly cà phê."
               }
             },
             {
               "type": "order",
               "answer": "Perdón, ¿dónde está el baño?",
               "translation": {
-                "en": "Excuse me, where is the bathroom?"
+                "en": "Excuse me, where is the bathroom?",
+                "fr": "Excusez-moi, où sont les toilettes ?",
+                "ja": "すみません、トイレはどこですか？",
+                "vi": "Xin lỗi, nhà vệ sinh ở đâu?"
               }
             },
             {
               "type": "listen",
               "text": "Bienvenido a casa",
               "translation": {
-                "en": "Welcome home"
+                "en": "Welcome home",
+                "fr": "Bienvenue à la maison",
+                "ja": "おかえりなさい",
+                "vi": "Chào mừng về nhà"
               }
             },
             {
@@ -118,7 +148,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "You're welcome."
+                "en": "You're welcome.",
+                "fr": "De rien.",
+                "ja": "どういたしまして。",
+                "vi": "Không có gì."
               },
               "answers": [
                 "De nada"
@@ -133,13 +166,19 @@
       "topic": "food",
       "level": "A1",
       "title": {
-        "en": "Food"
+        "en": "Food",
+        "fr": "Nourriture",
+        "ja": "食べ物",
+        "vi": "Đồ ăn"
       },
       "lessons": [
         {
           "id": "es_u2_l1",
           "title": {
-            "en": "Basic foods"
+            "en": "Basic foods",
+            "fr": "Aliments de base",
+            "ja": "基本の食べ物",
+            "vi": "Thức ăn cơ bản"
           },
           "words": [
             "es_el_pan",
@@ -162,21 +201,30 @@
               "sentence": "Me gusta el ___.",
               "answer": "queso",
               "hint": {
-                "en": "I like cheese."
+                "en": "I like cheese.",
+                "fr": "J'aime le fromage.",
+                "ja": "私はチーズが好きです。",
+                "vi": "Tôi thích phô mai."
               }
             },
             {
               "type": "order",
               "answer": "Quiero pan con queso",
               "translation": {
-                "en": "I want bread with cheese"
+                "en": "I want bread with cheese",
+                "fr": "Je veux du pain avec du fromage",
+                "ja": "チーズをのせたパンがほしいです",
+                "vi": "Tôi muốn bánh mì với phô mai"
               }
             },
             {
               "type": "listen",
               "text": "Un vaso de agua",
               "translation": {
-                "en": "A glass of water"
+                "en": "A glass of water",
+                "fr": "Un verre d'eau",
+                "ja": "コップ一杯の水",
+                "vi": "Một ly nước"
               }
             },
             {
@@ -186,7 +234,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "The apple"
+                "en": "The apple",
+                "fr": "La pomme",
+                "ja": "りんご",
+                "vi": "Quả táo"
               },
               "answers": [
                 "La manzana"
@@ -197,7 +248,10 @@
         {
           "id": "es_u2_l2",
           "title": {
-            "en": "Meals & drinks"
+            "en": "Meals & drinks",
+            "fr": "Repas et boissons",
+            "ja": "食事と飲み物",
+            "vi": "Bữa ăn và đồ uống"
           },
           "words": [
             "es_el_pollo",
@@ -220,21 +274,30 @@
               "sentence": "Hoy comemos pollo con ___.",
               "answer": "arroz",
               "hint": {
-                "en": "Today we eat chicken with rice."
+                "en": "Today we eat chicken with rice.",
+                "fr": "Aujourd'hui, nous mangeons du poulet avec du riz.",
+                "ja": "今日は鶏肉とごはんを食べます。",
+                "vi": "Hôm nay chúng tôi ăn thịt gà với cơm."
               }
             },
             {
               "type": "order",
               "answer": "No como carne",
               "translation": {
-                "en": "I don't eat meat"
+                "en": "I don't eat meat",
+                "fr": "Je ne mange pas de viande",
+                "ja": "私は肉を食べません",
+                "vi": "Tôi không ăn thịt"
               }
             },
             {
               "type": "listen",
               "text": "Un café, por favor",
               "translation": {
-                "en": "A coffee, please"
+                "en": "A coffee, please",
+                "fr": "Un café, s'il vous plaît",
+                "ja": "コーヒーをお願いします",
+                "vi": "Làm ơn cho một ly cà phê"
               }
             },
             {
@@ -244,7 +307,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "The fish"
+                "en": "The fish",
+                "fr": "Le poisson",
+                "ja": "魚",
+                "vi": "Con cá"
               },
               "answers": [
                 "El pescado"
@@ -259,13 +325,19 @@
       "topic": "travel",
       "level": "A1",
       "title": {
-        "en": "Travel"
+        "en": "Travel",
+        "fr": "Voyage",
+        "ja": "旅行",
+        "vi": "Du lịch"
       },
       "lessons": [
         {
           "id": "es_u3_l1",
           "title": {
-            "en": "At the airport"
+            "en": "At the airport",
+            "fr": "À l'aéroport",
+            "ja": "空港で",
+            "vi": "Ở sân bay"
           },
           "words": [
             "es_el_hotel",
@@ -288,21 +360,30 @@
               "sentence": "El ___ sale a las ocho.",
               "answer": "tren",
               "hint": {
-                "en": "The train leaves at eight."
+                "en": "The train leaves at eight.",
+                "fr": "Le train part à huit heures.",
+                "ja": "電車は八時に出ます。",
+                "vi": "Tàu hỏa khởi hành lúc tám giờ."
               }
             },
             {
               "type": "order",
               "answer": "¿Dónde está el aeropuerto?",
               "translation": {
-                "en": "Where is the airport?"
+                "en": "Where is the airport?",
+                "fr": "Où est l'aéroport ?",
+                "ja": "空港はどこですか？",
+                "vi": "Sân bay ở đâu?"
               }
             },
             {
               "type": "listen",
               "text": "Mi maleta es pesada",
               "translation": {
-                "en": "My suitcase is heavy"
+                "en": "My suitcase is heavy",
+                "fr": "Ma valise est lourde",
+                "ja": "私のスーツケースは重いです",
+                "vi": "Vali của tôi nặng"
               }
             },
             {
@@ -312,7 +393,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "The ticket"
+                "en": "The ticket",
+                "fr": "Le billet",
+                "ja": "切符",
+                "vi": "Vé"
               },
               "answers": [
                 "El billete"
@@ -323,7 +407,10 @@
         {
           "id": "es_u3_l2",
           "title": {
-            "en": "Getting around"
+            "en": "Getting around",
+            "fr": "Se déplacer",
+            "ja": "移動",
+            "vi": "Đi lại"
           },
           "words": [
             "es_el_autobus",
@@ -346,21 +433,30 @@
               "sentence": "¿Dónde está la ___?",
               "answer": "estación",
               "hint": {
-                "en": "Where is the station?"
+                "en": "Where is the station?",
+                "fr": "Où est la gare ?",
+                "ja": "駅はどこですか？",
+                "vi": "Nhà ga ở đâu?"
               }
             },
             {
               "type": "order",
               "answer": "Tomo el autobús al trabajo",
               "translation": {
-                "en": "I take the bus to work"
+                "en": "I take the bus to work",
+                "fr": "Je prends le bus pour aller au travail",
+                "ja": "バスで仕事に行きます",
+                "vi": "Tôi đi xe buýt đến chỗ làm"
               }
             },
             {
               "type": "listen",
               "text": "La calle es larga",
               "translation": {
-                "en": "The street is long"
+                "en": "The street is long",
+                "fr": "La rue est longue",
+                "ja": "その道は長いです",
+                "vi": "Con đường dài"
               }
             },
             {
@@ -370,7 +466,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "The map"
+                "en": "The map",
+                "fr": "La carte",
+                "ja": "地図",
+                "vi": "Bản đồ"
               },
               "answers": [
                 "El mapa"
@@ -385,13 +484,19 @@
       "topic": "home",
       "level": "A1",
       "title": {
-        "en": "At home"
+        "en": "At home",
+        "fr": "À la maison",
+        "ja": "家",
+        "vi": "Ở nhà"
       },
       "lessons": [
         {
           "id": "es_u4_l1",
           "title": {
-            "en": "Around the house"
+            "en": "Around the house",
+            "fr": "Dans la maison",
+            "ja": "家の中",
+            "vi": "Quanh nhà"
           },
           "words": [
             "es_la_casa",
@@ -414,21 +519,30 @@
               "sentence": "Mi madre está en la ___.",
               "answer": "cocina",
               "hint": {
-                "en": "My mother is in the kitchen."
+                "en": "My mother is in the kitchen.",
+                "fr": "Ma mère est dans la cuisine.",
+                "ja": "母は台所にいます。",
+                "vi": "Mẹ tôi đang ở trong nhà bếp."
               }
             },
             {
               "type": "order",
               "answer": "Por favor, cierra la puerta",
               "translation": {
-                "en": "Please close the door"
+                "en": "Please close the door",
+                "fr": "Fermez la porte, s'il vous plaît",
+                "ja": "ドアを閉めてください",
+                "vi": "Làm ơn đóng cửa lại"
               }
             },
             {
               "type": "listen",
               "text": "Mi casa es pequeña",
               "translation": {
-                "en": "My house is small"
+                "en": "My house is small",
+                "fr": "Ma maison est petite",
+                "ja": "私の家は小さいです",
+                "vi": "Nhà tôi nhỏ"
               }
             },
             {
@@ -438,7 +552,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "The window"
+                "en": "The window",
+                "fr": "La fenêtre",
+                "ja": "窓",
+                "vi": "Cửa sổ"
               },
               "answers": [
                 "La ventana"
@@ -449,7 +566,10 @@
         {
           "id": "es_u4_l2",
           "title": {
-            "en": "Rooms & furniture"
+            "en": "Rooms & furniture",
+            "fr": "Pièces et meubles",
+            "ja": "部屋と家具",
+            "vi": "Phòng và đồ đạc"
           },
           "words": [
             "es_la_silla",
@@ -472,21 +592,30 @@
               "sentence": "Mi ___ es grande.",
               "answer": "habitación",
               "hint": {
-                "en": "My room is big."
+                "en": "My room is big.",
+                "fr": "Ma chambre est grande.",
+                "ja": "私の部屋は広いです。",
+                "vi": "Phòng của tôi rộng."
               }
             },
             {
               "type": "order",
               "answer": "La cama es muy cómoda",
               "translation": {
-                "en": "The bed is very comfortable"
+                "en": "The bed is very comfortable",
+                "fr": "Le lit est très confortable",
+                "ja": "ベッドはとても快適です",
+                "vi": "Cái giường rất thoải mái"
               }
             },
             {
               "type": "listen",
               "text": "¿Dónde está el baño?",
               "translation": {
-                "en": "Where is the bathroom?"
+                "en": "Where is the bathroom?",
+                "fr": "Où est la salle de bain ?",
+                "ja": "トイレはどこですか？",
+                "vi": "Nhà vệ sinh ở đâu?"
               }
             },
             {
@@ -496,7 +625,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "The chair"
+                "en": "The chair",
+                "fr": "La chaise",
+                "ja": "いす",
+                "vi": "Cái ghế"
               },
               "answers": [
                 "La silla"
@@ -511,13 +643,19 @@
       "topic": "people",
       "level": "A1",
       "title": {
-        "en": "People"
+        "en": "People",
+        "fr": "Les gens",
+        "ja": "人々",
+        "vi": "Con người"
       },
       "lessons": [
         {
           "id": "es_u5_l1",
           "title": {
-            "en": "Friends & family"
+            "en": "Friends & family",
+            "fr": "Amis et famille",
+            "ja": "友達と家族",
+            "vi": "Bạn bè và gia đình"
           },
           "words": [
             "es_el_amigo",
@@ -540,21 +678,30 @@
               "sentence": "El ___ habla con su hijo.",
               "answer": "hombre",
               "hint": {
-                "en": "The man talks with his son."
+                "en": "The man talks with his son.",
+                "fr": "L'homme parle avec son fils.",
+                "ja": "男の人は息子と話しています。",
+                "vi": "Người đàn ông nói chuyện với con trai."
               }
             },
             {
               "type": "order",
               "answer": "Mi amigo es simpático",
               "translation": {
-                "en": "My friend is nice"
+                "en": "My friend is nice",
+                "fr": "Mon ami est sympa",
+                "ja": "私の友達は親切です",
+                "vi": "Bạn tôi dễ mến"
               }
             },
             {
               "type": "listen",
               "text": "La mujer lee un libro",
               "translation": {
-                "en": "The woman reads a book"
+                "en": "The woman reads a book",
+                "fr": "La femme lit un livre",
+                "ja": "女の人は本を読んでいます",
+                "vi": "Người phụ nữ đang đọc sách"
               }
             },
             {
@@ -564,7 +711,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "The boy"
+                "en": "The boy",
+                "fr": "Le garçon",
+                "ja": "男の子",
+                "vi": "Cậu bé"
               },
               "answers": [
                 "El niño"
@@ -575,7 +725,10 @@
         {
           "id": "es_u5_l2",
           "title": {
-            "en": "Parents & siblings"
+            "en": "Parents & siblings",
+            "fr": "Parents et fratrie",
+            "ja": "両親と兄弟姉妹",
+            "vi": "Bố mẹ và anh chị em"
           },
           "words": [
             "es_el_padre",
@@ -598,21 +751,30 @@
               "sentence": "Mi ___ cocina muy bien.",
               "answer": "madre",
               "hint": {
-                "en": "My mother cooks very well."
+                "en": "My mother cooks very well.",
+                "fr": "Ma mère cuisine très bien.",
+                "ja": "母は料理がとても上手です。",
+                "vi": "Mẹ tôi nấu ăn rất ngon."
               }
             },
             {
               "type": "order",
               "answer": "Tengo un hermano mayor",
               "translation": {
-                "en": "I have an older brother"
+                "en": "I have an older brother",
+                "fr": "J'ai un grand frère",
+                "ja": "私には兄がいます",
+                "vi": "Tôi có một người anh trai"
               }
             },
             {
               "type": "listen",
               "text": "Mi hermana estudia",
               "translation": {
-                "en": "My sister studies"
+                "en": "My sister studies",
+                "fr": "Ma sœur étudie",
+                "ja": "姉は勉強しています",
+                "vi": "Chị gái tôi đang học"
               }
             },
             {
@@ -622,7 +784,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "My father"
+                "en": "My father",
+                "fr": "Mon père",
+                "ja": "父",
+                "vi": "Bố tôi"
               },
               "answers": [
                 "Mi padre"
@@ -637,13 +802,19 @@
       "topic": "numbers",
       "level": "A1",
       "title": {
-        "en": "Numbers"
+        "en": "Numbers",
+        "fr": "Les nombres",
+        "ja": "数字",
+        "vi": "Các con số"
       },
       "lessons": [
         {
           "id": "es_u6_l1",
           "title": {
-            "en": "Counting 1-5"
+            "en": "Counting 1-5",
+            "fr": "Compter de 1 à 5",
+            "ja": "1から5まで数える",
+            "vi": "Đếm từ 1 đến 5"
           },
           "words": [
             "es_uno",
@@ -666,21 +837,30 @@
               "sentence": "Tengo ___ hermanos.",
               "answer": "dos",
               "hint": {
-                "en": "I have two brothers."
+                "en": "I have two brothers.",
+                "fr": "J'ai deux frères.",
+                "ja": "私には兄弟が二人います。",
+                "vi": "Tôi có hai anh em trai."
               }
             },
             {
               "type": "order",
               "answer": "Tengo tres amigos aquí",
               "translation": {
-                "en": "I have three friends here"
+                "en": "I have three friends here",
+                "fr": "J'ai trois amis ici",
+                "ja": "ここに友達が三人います",
+                "vi": "Tôi có ba người bạn ở đây"
               }
             },
             {
               "type": "listen",
               "text": "Cuatro sillas y una mesa",
               "translation": {
-                "en": "Four chairs and one table"
+                "en": "Four chairs and one table",
+                "fr": "Quatre chaises et une table",
+                "ja": "いすが四つとテーブルが一つ",
+                "vi": "Bốn cái ghế và một cái bàn"
               }
             },
             {
@@ -690,7 +870,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "I have one brother"
+                "en": "I have one brother",
+                "fr": "J'ai un frère",
+                "ja": "私には兄弟が一人います",
+                "vi": "Tôi có một người anh em trai"
               },
               "answers": [
                 "Tengo un hermano"
@@ -701,7 +884,10 @@
         {
           "id": "es_u6_l2",
           "title": {
-            "en": "Big numbers"
+            "en": "Big numbers",
+            "fr": "Grands nombres",
+            "ja": "大きな数",
+            "vi": "Số lớn"
           },
           "words": [
             "es_diez",
@@ -724,21 +910,30 @@
               "sentence": "Diez más diez son ___.",
               "answer": "veinte",
               "hint": {
-                "en": "Ten plus ten is twenty."
+                "en": "Ten plus ten is twenty.",
+                "fr": "Dix plus dix font vingt.",
+                "ja": "十足す十は二十です。",
+                "vi": "Mười cộng mười là hai mươi."
               }
             },
             {
               "type": "order",
               "answer": "Es el primero de mayo",
               "translation": {
-                "en": "It is the first of May"
+                "en": "It is the first of May",
+                "fr": "C'est le premier mai",
+                "ja": "五月一日です",
+                "vi": "Hôm nay là mồng một tháng Năm"
               }
             },
             {
               "type": "listen",
               "text": "Mi número de teléfono",
               "translation": {
-                "en": "My phone number"
+                "en": "My phone number",
+                "fr": "Mon numéro de téléphone",
+                "ja": "私の電話番号",
+                "vi": "Số điện thoại của tôi"
               }
             },
             {
@@ -748,7 +943,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "What is your number?"
+                "en": "What is your number?",
+                "fr": "Quel est ton numéro ?",
+                "ja": "あなたの番号は何番ですか？",
+                "vi": "Số của bạn là gì?"
               },
               "answers": [
                 "¿Cuál es tu número?"
@@ -763,13 +961,19 @@
       "topic": "time",
       "level": "A1",
       "title": {
-        "en": "Days & time"
+        "en": "Days & time",
+        "fr": "Jours et heures",
+        "ja": "曜日と時間",
+        "vi": "Ngày và giờ"
       },
       "lessons": [
         {
           "id": "es_u7_l1",
           "title": {
-            "en": "Days & weeks"
+            "en": "Days & weeks",
+            "fr": "Jours et semaines",
+            "ja": "日と週",
+            "vi": "Ngày và tuần"
           },
           "words": [
             "es_el_dia",
@@ -792,21 +996,30 @@
               "sentence": "Una ___ tiene siete días.",
               "answer": "semana",
               "hint": {
-                "en": "A week has seven days."
+                "en": "A week has seven days.",
+                "fr": "Une semaine a sept jours.",
+                "ja": "一週間は七日です。",
+                "vi": "Một tuần có bảy ngày."
               }
             },
             {
               "type": "order",
               "answer": "Hoy trabajo en casa",
               "translation": {
-                "en": "Today I work at home"
+                "en": "Today I work at home",
+                "fr": "Aujourd'hui, je travaille à la maison",
+                "ja": "今日は家で仕事をします",
+                "vi": "Hôm nay tôi làm việc ở nhà"
               }
             },
             {
               "type": "listen",
               "text": "Buenos días, hasta mañana",
               "translation": {
-                "en": "Good morning, see you tomorrow"
+                "en": "Good morning, see you tomorrow",
+                "fr": "Bonjour, à demain",
+                "ja": "おはようございます、また明日",
+                "vi": "Chào buổi sáng, hẹn mai gặp lại"
               }
             },
             {
@@ -816,7 +1029,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "Today is a nice day"
+                "en": "Today is a nice day",
+                "fr": "Aujourd'hui, c'est une belle journée",
+                "ja": "今日はいい日です",
+                "vi": "Hôm nay là một ngày đẹp"
               },
               "answers": [
                 "Hoy es un día bonito",
@@ -828,7 +1044,10 @@
         {
           "id": "es_u7_l2",
           "title": {
-            "en": "Time of day"
+            "en": "Time of day",
+            "fr": "Moments de la journée",
+            "ja": "一日の時間帯",
+            "vi": "Các buổi trong ngày"
           },
           "words": [
             "es_ayer",
@@ -851,21 +1070,30 @@
               "sentence": "Me levanto ___ por la mañana.",
               "answer": "temprano",
               "hint": {
-                "en": "I get up early in the morning."
+                "en": "I get up early in the morning.",
+                "fr": "Je me lève tôt le matin.",
+                "ja": "私は朝早く起きます。",
+                "vi": "Tôi dậy sớm vào buổi sáng."
               }
             },
             {
               "type": "order",
               "answer": "El domingo visito a mi familia",
               "translation": {
-                "en": "On Sunday I visit my family"
+                "en": "On Sunday I visit my family",
+                "fr": "Le dimanche, je rends visite à ma famille",
+                "ja": "日曜日は家族に会いに行きます",
+                "vi": "Chủ nhật tôi đi thăm gia đình"
               }
             },
             {
               "type": "listen",
               "text": "¿Qué hora es?",
               "translation": {
-                "en": "What time is it?"
+                "en": "What time is it?",
+                "fr": "Quelle heure est-il ?",
+                "ja": "今、何時ですか？",
+                "vi": "Mấy giờ rồi?"
               }
             },
             {
@@ -875,7 +1103,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "On Monday I work"
+                "en": "On Monday I work",
+                "fr": "Le lundi, je travaille",
+                "ja": "月曜日は仕事をします",
+                "vi": "Thứ Hai tôi đi làm"
               },
               "answers": [
                 "El lunes trabajo"
@@ -890,13 +1121,19 @@
       "topic": "shopping",
       "level": "A2",
       "title": {
-        "en": "Shopping"
+        "en": "Shopping",
+        "fr": "Shopping",
+        "ja": "買い物",
+        "vi": "Mua sắm"
       },
       "lessons": [
         {
           "id": "es_u8_l1",
           "title": {
-            "en": "Shops & prices"
+            "en": "Shops & prices",
+            "fr": "Magasins et prix",
+            "ja": "お店と値段",
+            "vi": "Cửa hàng và giá cả"
           },
           "words": [
             "es_la_tienda",
@@ -919,21 +1156,30 @@
               "sentence": "Cuesta mil euros: es muy ___.",
               "answer": "caro",
               "hint": {
-                "en": "It costs a thousand euros: it is very expensive."
+                "en": "It costs a thousand euros: it is very expensive.",
+                "fr": "Ça coûte mille euros : c'est très cher.",
+                "ja": "千ユーロです。とても高いです。",
+                "vi": "Giá một nghìn euro: đắt lắm."
               }
             },
             {
               "type": "order",
               "answer": "¿Cuál es el precio?",
               "translation": {
-                "en": "What is the price?"
+                "en": "What is the price?",
+                "fr": "Quel est le prix ?",
+                "ja": "値段はいくらですか？",
+                "vi": "Giá bao nhiêu?"
               }
             },
             {
               "type": "listen",
               "text": "La tienda está cerrada",
               "translation": {
-                "en": "The shop is closed"
+                "en": "The shop is closed",
+                "fr": "Le magasin est fermé",
+                "ja": "店は閉まっています",
+                "vi": "Cửa hàng đã đóng cửa"
               }
             },
             {
@@ -943,7 +1189,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "I like the shop"
+                "en": "I like the shop",
+                "fr": "J'aime le magasin",
+                "ja": "私はその店が好きです",
+                "vi": "Tôi thích cửa hàng này"
               },
               "answers": [
                 "Me gusta la tienda"
@@ -954,7 +1203,10 @@
         {
           "id": "es_u8_l2",
           "title": {
-            "en": "Paying"
+            "en": "Paying",
+            "fr": "Payer",
+            "ja": "支払い",
+            "vi": "Thanh toán"
           },
           "words": [
             "es_comprar",
@@ -977,21 +1229,30 @@
               "sentence": "Quiero ___ una camiseta.",
               "answer": "comprar",
               "hint": {
-                "en": "I want to buy a T-shirt."
+                "en": "I want to buy a T-shirt.",
+                "fr": "Je veux acheter un T-shirt.",
+                "ja": "Tシャツを買いたいです。",
+                "vi": "Tôi muốn mua một chiếc áo phông."
               }
             },
             {
               "type": "order",
               "answer": "Pago con tarjeta en la tienda",
               "translation": {
-                "en": "I pay by card in the shop"
+                "en": "I pay by card in the shop",
+                "fr": "Je paie par carte dans le magasin",
+                "ja": "店でカードで払います",
+                "vi": "Tôi trả bằng thẻ ở cửa hàng"
               }
             },
             {
               "type": "listen",
               "text": "Necesito una bolsa",
               "translation": {
-                "en": "I need a bag"
+                "en": "I need a bag",
+                "fr": "J'ai besoin d'un sac",
+                "ja": "袋が必要です",
+                "vi": "Tôi cần một cái túi"
               }
             },
             {
@@ -1001,7 +1262,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "I don't have money"
+                "en": "I don't have money",
+                "fr": "Je n'ai pas d'argent",
+                "ja": "お金がありません",
+                "vi": "Tôi không có tiền"
               },
               "answers": [
                 "No tengo dinero"
@@ -1016,13 +1280,19 @@
       "topic": "weather",
       "level": "A2",
       "title": {
-        "en": "Weather"
+        "en": "Weather",
+        "fr": "Météo",
+        "ja": "天気",
+        "vi": "Thời tiết"
       },
       "lessons": [
         {
           "id": "es_u9_l1",
           "title": {
-            "en": "Sun & rain"
+            "en": "Sun & rain",
+            "fr": "Soleil et pluie",
+            "ja": "晴れと雨",
+            "vi": "Nắng và mưa"
           },
           "words": [
             "es_el_tiempo",
@@ -1045,21 +1315,30 @@
               "sentence": "Hoy hace ___ y no hay nubes.",
               "answer": "sol",
               "hint": {
-                "en": "Today it is sunny and there are no clouds."
+                "en": "Today it is sunny and there are no clouds.",
+                "fr": "Aujourd'hui, il y a du soleil et pas de nuages.",
+                "ja": "今日は晴れていて、雲がありません。",
+                "vi": "Hôm nay trời nắng và không có mây."
               }
             },
             {
               "type": "order",
               "answer": "¿Qué tiempo hace hoy?",
               "translation": {
-                "en": "What is the weather like today?"
+                "en": "What is the weather like today?",
+                "fr": "Quel temps fait-il aujourd'hui ?",
+                "ja": "今日はどんな天気ですか？",
+                "vi": "Hôm nay thời tiết thế nào?"
               }
             },
             {
               "type": "listen",
               "text": "Hay una nube grande",
               "translation": {
-                "en": "There is a big cloud"
+                "en": "There is a big cloud",
+                "fr": "Il y a un gros nuage",
+                "ja": "大きな雲があります",
+                "vi": "Có một đám mây lớn"
               }
             },
             {
@@ -1069,7 +1348,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "It is windy"
+                "en": "It is windy",
+                "fr": "Il y a du vent",
+                "ja": "風が強いです",
+                "vi": "Trời có gió"
               },
               "answers": [
                 "Hace viento",
@@ -1081,7 +1363,10 @@
         {
           "id": "es_u9_l2",
           "title": {
-            "en": "Hot & cold"
+            "en": "Hot & cold",
+            "fr": "Chaud et froid",
+            "ja": "暑さと寒さ",
+            "vi": "Nóng và lạnh"
           },
           "words": [
             "es_la_nieve",
@@ -1104,21 +1389,30 @@
               "sentence": "En verano hace mucho ___.",
               "answer": "calor",
               "hint": {
-                "en": "In summer it is very hot."
+                "en": "In summer it is very hot.",
+                "fr": "En été, il fait très chaud.",
+                "ja": "夏はとても暑いです。",
+                "vi": "Mùa hè trời rất nóng."
               }
             },
             {
               "type": "order",
               "answer": "En invierno hace mucho frío",
               "translation": {
-                "en": "In winter it is very cold"
+                "en": "In winter it is very cold",
+                "fr": "En hiver, il fait très froid",
+                "ja": "冬はとても寒いです",
+                "vi": "Mùa đông trời rất lạnh"
               }
             },
             {
               "type": "listen",
               "text": "El cielo está nublado",
               "translation": {
-                "en": "The sky is cloudy"
+                "en": "The sky is cloudy",
+                "fr": "Le ciel est nuageux",
+                "ja": "空が曇っています",
+                "vi": "Bầu trời nhiều mây"
               }
             },
             {
@@ -1128,7 +1422,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "There is a storm"
+                "en": "There is a storm",
+                "fr": "Il y a un orage",
+                "ja": "嵐が来ています",
+                "vi": "Có bão"
               },
               "answers": [
                 "Hay una tormenta"
@@ -1143,13 +1440,19 @@
       "topic": "hobbies",
       "level": "A2",
       "title": {
-        "en": "Hobbies"
+        "en": "Hobbies",
+        "fr": "Loisirs",
+        "ja": "趣味",
+        "vi": "Sở thích"
       },
       "lessons": [
         {
           "id": "es_u10_l1",
           "title": {
-            "en": "Fun things"
+            "en": "Fun things",
+            "fr": "Activités amusantes",
+            "ja": "楽しいこと",
+            "vi": "Những điều vui"
           },
           "words": [
             "es_leer",
@@ -1172,21 +1475,30 @@
               "sentence": "Me gusta ___ por la noche.",
               "answer": "leer",
               "hint": {
-                "en": "I like to read at night."
+                "en": "I like to read at night.",
+                "fr": "J'aime lire le soir.",
+                "ja": "夜に本を読むのが好きです。",
+                "vi": "Tôi thích đọc sách vào buổi tối."
               }
             },
             {
               "type": "order",
               "answer": "Me gusta la música",
               "translation": {
-                "en": "I like music"
+                "en": "I like music",
+                "fr": "J'aime la musique",
+                "ja": "私は音楽が好きです",
+                "vi": "Tôi thích âm nhạc"
               }
             },
             {
               "type": "listen",
               "text": "Escucho música en casa",
               "translation": {
-                "en": "I listen to music at home"
+                "en": "I listen to music at home",
+                "fr": "J'écoute de la musique à la maison",
+                "ja": "家で音楽を聞きます",
+                "vi": "Tôi nghe nhạc ở nhà"
               }
             },
             {
@@ -1196,7 +1508,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "I like to dance"
+                "en": "I like to dance",
+                "fr": "J'aime danser",
+                "ja": "私は踊るのが好きです",
+                "vi": "Tôi thích nhảy"
               },
               "answers": [
                 "Me gusta bailar"
@@ -1207,7 +1522,10 @@
         {
           "id": "es_u10_l2",
           "title": {
-            "en": "Sports & games"
+            "en": "Sports & games",
+            "fr": "Sports et jeux",
+            "ja": "スポーツとゲーム",
+            "vi": "Thể thao và trò chơi"
           },
           "words": [
             "es_el_deporte",
@@ -1230,21 +1548,30 @@
               "sentence": "Juego al ___ con mis amigos.",
               "answer": "fútbol",
               "hint": {
-                "en": "I play soccer with my friends."
+                "en": "I play soccer with my friends.",
+                "fr": "Je joue au football avec mes amis.",
+                "ja": "友達とサッカーをします。",
+                "vi": "Tôi chơi bóng đá với bạn bè."
               }
             },
             {
               "type": "order",
               "answer": "Los domingos voy a nadar",
               "translation": {
-                "en": "On Sundays I go swimming"
+                "en": "On Sundays I go swimming",
+                "fr": "Le dimanche, je vais nager",
+                "ja": "日曜日は泳ぎに行きます",
+                "vi": "Chủ nhật tôi đi bơi"
               }
             },
             {
               "type": "listen",
               "text": "Este juego es divertido",
               "translation": {
-                "en": "This game is fun"
+                "en": "This game is fun",
+                "fr": "Ce jeu est amusant",
+                "ja": "このゲームは楽しいです",
+                "vi": "Trò chơi này vui"
               }
             },
             {
@@ -1254,7 +1581,10 @@
             {
               "type": "translate",
               "source": {
-                "en": "I play soccer"
+                "en": "I play soccer",
+                "fr": "Je joue au football",
+                "ja": "私はサッカーをします",
+                "vi": "Tôi chơi bóng đá"
               },
               "answers": [
                 "Juego al fútbol"

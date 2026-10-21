@@ -1,0 +1,1815 @@
+{
+  "lang": "ja",
+  "version": 1,
+  "units": [
+    {
+      "id": "ja_u1",
+      "topic": "greetings",
+      "level": "A1",
+      "title": {
+        "en": "Greetings",
+        "es": "Saludos",
+        "fr": "Salutations",
+        "vi": "Chào hỏi"
+      },
+      "lessons": [
+        {
+          "id": "ja_u1_l1",
+          "title": {
+            "en": "Hello & goodbye",
+            "es": "Hola y adiós",
+            "fr": "Bonjour et au revoir",
+            "vi": "Xin chào và tạm biệt"
+          },
+          "words": [
+            "ja_konnichiwa",
+            "ja_sayounara",
+            "ja_ohayou",
+            "ja_oyasumi",
+            "ja_arigatou"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_konnichiwa"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_ohayou"
+            },
+            {
+              "type": "fill",
+              "sentence": "___、お元気ですか。",
+              "answer": "こんにちは",
+              "hint": {
+                "en": "Hello, how are you?",
+                "es": "Hola, ¿cómo estás?",
+                "fr": "Bonjour, comment allez-vous ?",
+                "vi": "Xin chào, bạn khỏe không?"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "こんにちは、私は山田です",
+              "translation": {
+                "en": "Hello, I am Yamada.",
+                "es": "Hola, soy Yamada.",
+                "fr": "Bonjour, je suis Yamada.",
+                "vi": "Xin chào, tôi là Yamada."
+              },
+              "chips": [
+                "こんにちは、",
+                "私は",
+                "山田",
+                "です"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "おやすみなさい",
+              "translation": {
+                "en": "Good night",
+                "es": "Buenas noches",
+                "fr": "Bonne nuit",
+                "vi": "Chúc ngủ ngon"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_arigatou"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Goodbye!",
+                "es": "¡Adiós!",
+                "fr": "Au revoir !",
+                "vi": "Tạm biệt!"
+              },
+              "answers": [
+                "さようなら"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u1_l2",
+          "title": {
+            "en": "Please & thanks",
+            "es": "Por favor y gracias",
+            "fr": "S'il vous plaît et merci",
+            "vi": "Làm ơn và cảm ơn"
+          },
+          "words": [
+            "ja_onegai",
+            "ja_sumimasen",
+            "ja_youkoso",
+            "ja_matane",
+            "ja_douitashimashite"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_onegai"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_sumimasen"
+            },
+            {
+              "type": "fill",
+              "sentence": "すみません、トイレは___ですか。",
+              "answer": "どこ",
+              "hint": {
+                "en": "Excuse me, where is the bathroom?",
+                "es": "Perdón, ¿dónde está el baño?",
+                "fr": "Excusez-moi, où sont les toilettes ?",
+                "vi": "Xin lỗi, nhà vệ sinh ở đâu?"
+              }
+            },
+            {
+              "type": "order",
+              "answer": "ようこそ私の家へ",
+              "translation": {
+                "en": "Welcome to my house.",
+                "es": "Bienvenido a mi casa.",
+                "fr": "Bienvenue chez moi.",
+                "vi": "Chào mừng đến nhà tôi."
+              },
+              "chips": [
+                "ようこそ",
+                "私の",
+                "家へ"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "どういたしまして",
+              "translation": {
+                "en": "You're welcome",
+                "es": "De nada",
+                "fr": "De rien",
+                "vi": "Không có gì"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_matane"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "See you later!",
+                "es": "¡Hasta luego!",
+                "fr": "À plus tard !",
+                "vi": "Hẹn gặp lại!"
+              },
+              "answers": [
+                "またね"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u2",
+      "topic": "food",
+      "level": "A1",
+      "title": {
+        "en": "Food",
+        "es": "Comida",
+        "fr": "Nourriture",
+        "vi": "Đồ ăn"
+      },
+      "lessons": [
+        {
+          "id": "ja_u2_l1",
+          "title": {
+            "en": "Basic foods",
+            "es": "Alimentos básicos",
+            "fr": "Aliments de base",
+            "vi": "Thực phẩm cơ bản"
+          },
+          "words": [
+            "ja_pan",
+            "ja_mizu",
+            "ja_gyuunyuu",
+            "ja_ringo",
+            "ja_chiizu"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_mizu"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_ringo"
+            },
+            {
+              "type": "fill",
+              "sentence": "___は赤いです。",
+              "answer": "りんご",
+              "hint": {
+                "en": "The apple is red.",
+                "es": "La manzana es roja.",
+                "fr": "La pomme est rouge.",
+                "vi": "Quả táo màu đỏ."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "私は水を飲みます",
+              "translation": {
+                "en": "I drink water.",
+                "es": "Bebo agua.",
+                "fr": "Je bois de l'eau.",
+                "vi": "Tôi uống nước."
+              },
+              "chips": [
+                "私は",
+                "水を",
+                "飲みます"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "パンとチーズ",
+              "translation": {
+                "en": "Bread and cheese",
+                "es": "Pan y queso",
+                "fr": "Du pain et du fromage",
+                "vi": "Bánh mì và phô mai"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_pan"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I like cheese.",
+                "es": "Me gusta el queso.",
+                "fr": "J'aime le fromage.",
+                "vi": "Tôi thích phô mai."
+              },
+              "answers": [
+                "私はチーズが好きです",
+                "わたしはチーズがすきです",
+                "チーズが好きです"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u2_l2",
+          "title": {
+            "en": "Meals & drinks",
+            "es": "Comidas y bebidas",
+            "fr": "Repas et boissons",
+            "vi": "Bữa ăn và đồ uống"
+          },
+          "words": [
+            "ja_toriniku",
+            "ja_gohan",
+            "ja_koohii",
+            "ja_niku",
+            "ja_sakana"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_toriniku"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_koohii"
+            },
+            {
+              "type": "fill",
+              "sentence": "私は___を食べません。",
+              "answer": "肉",
+              "hint": {
+                "en": "I don't eat meat.",
+                "es": "No como carne.",
+                "fr": "Je ne mange pas de viande.",
+                "vi": "Tôi không ăn thịt."
+              },
+              "accept": [
+                "にく"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "魚とご飯を食べます",
+              "translation": {
+                "en": "I eat fish and rice.",
+                "es": "Como pescado y arroz.",
+                "fr": "Je mange du poisson et du riz.",
+                "vi": "Tôi ăn cá và cơm."
+              },
+              "chips": [
+                "魚と",
+                "ご飯を",
+                "食べます"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "コーヒーをください",
+              "translation": {
+                "en": "Coffee, please",
+                "es": "Un café, por favor",
+                "fr": "Un café, s'il vous plaît",
+                "vi": "Cho tôi cà phê"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_sakana"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Coffee, please.",
+                "es": "Un café, por favor.",
+                "fr": "Un café, s'il vous plaît.",
+                "vi": "Cho tôi cà phê."
+              },
+              "answers": [
+                "コーヒーをください",
+                "コーヒーをお願いします",
+                "コーヒーをおねがいします"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u3",
+      "topic": "travel",
+      "level": "A1",
+      "title": {
+        "en": "Travel",
+        "es": "Viajes",
+        "fr": "Voyage",
+        "vi": "Du lịch"
+      },
+      "lessons": [
+        {
+          "id": "ja_u3_l1",
+          "title": {
+            "en": "At the airport",
+            "es": "En el aeropuerto",
+            "fr": "À l'aéroport",
+            "vi": "Ở sân bay"
+          },
+          "words": [
+            "ja_hoteru",
+            "ja_kuukou",
+            "ja_kippu",
+            "ja_suutsukeesu",
+            "ja_densha"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_hoteru"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_kippu"
+            },
+            {
+              "type": "fill",
+              "sentence": "___はどこで買いますか。",
+              "answer": "切符",
+              "hint": {
+                "en": "Where do I buy the ticket?",
+                "es": "¿Dónde compro el billete?",
+                "fr": "Où puis-je acheter le billet ?",
+                "vi": "Tôi mua vé ở đâu?"
+              },
+              "accept": [
+                "きっぷ"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "電車は八時に出ます",
+              "translation": {
+                "en": "The train leaves at eight.",
+                "es": "El tren sale a las ocho.",
+                "fr": "Le train part à huit heures.",
+                "vi": "Tàu điện khởi hành lúc tám giờ."
+              },
+              "chips": [
+                "電車は",
+                "八時に",
+                "出ます"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "空港はどこですか",
+              "translation": {
+                "en": "Where is the airport?",
+                "es": "¿Dónde está el aeropuerto?",
+                "fr": "Où est l'aéroport ?",
+                "vi": "Sân bay ở đâu?"
+              },
+              "accept": [
+                "くうこうはどこですか"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_densha"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "This suitcase is heavy.",
+                "es": "Esta maleta es pesada.",
+                "fr": "Cette valise est lourde.",
+                "vi": "Chiếc vali này nặng."
+              },
+              "answers": [
+                "このスーツケースは重いです",
+                "このスーツケースはおもいです"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u3_l2",
+          "title": {
+            "en": "Getting around",
+            "es": "Moverse por la ciudad",
+            "fr": "Se déplacer",
+            "vi": "Đi lại"
+          },
+          "words": [
+            "ja_basu",
+            "ja_michi",
+            "ja_chizu",
+            "ja_takushii",
+            "ja_eki"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_basu"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_chizu"
+            },
+            {
+              "type": "fill",
+              "sentence": "___はどこですか。",
+              "answer": "駅",
+              "hint": {
+                "en": "Where is the station?",
+                "es": "¿Dónde está la estación?",
+                "fr": "Où est la gare ?",
+                "vi": "Nhà ga ở đâu?"
+              },
+              "accept": [
+                "えき"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "バスで会社へ行きます",
+              "translation": {
+                "en": "I go to work by bus.",
+                "es": "Voy al trabajo en autobús.",
+                "fr": "Je vais au travail en bus.",
+                "vi": "Tôi đi làm bằng xe buýt."
+              },
+              "chips": [
+                "バスで",
+                "会社へ",
+                "行きます"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "タクシーを呼んでください",
+              "translation": {
+                "en": "Please call a taxi",
+                "es": "Por favor, llame a un taxi",
+                "fr": "Appelez un taxi, s'il vous plaît",
+                "vi": "Làm ơn gọi taxi"
+              },
+              "accept": [
+                "タクシーをよんでください"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_eki"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "This street is long.",
+                "es": "Esta calle es larga.",
+                "fr": "Cette rue est longue.",
+                "vi": "Con đường này dài."
+              },
+              "answers": [
+                "この道は長いです",
+                "このみちはながいです"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u4",
+      "topic": "home",
+      "level": "A1",
+      "title": {
+        "en": "At home",
+        "es": "En casa",
+        "fr": "À la maison",
+        "vi": "Ở nhà"
+      },
+      "lessons": [
+        {
+          "id": "ja_u4_l1",
+          "title": {
+            "en": "Around the house",
+            "es": "Por la casa",
+            "fr": "Dans la maison",
+            "vi": "Quanh nhà"
+          },
+          "words": [
+            "ja_ie",
+            "ja_daidokoro",
+            "ja_doa",
+            "ja_mado",
+            "ja_teeburu"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_ie"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_doa"
+            },
+            {
+              "type": "fill",
+              "sentence": "母は___にいます。",
+              "answer": "台所",
+              "hint": {
+                "en": "My mother is in the kitchen.",
+                "es": "Mi madre está en la cocina.",
+                "fr": "Ma mère est dans la cuisine.",
+                "vi": "Mẹ tôi ở trong bếp."
+              },
+              "accept": [
+                "だいどころ"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "本はテーブルの上です",
+              "translation": {
+                "en": "The book is on the table.",
+                "es": "El libro está sobre la mesa.",
+                "fr": "Le livre est sur la table.",
+                "vi": "Quyển sách ở trên bàn."
+              },
+              "chips": [
+                "本は",
+                "テーブルの",
+                "上です"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "窓を開けます",
+              "translation": {
+                "en": "I open the window",
+                "es": "Abro la ventana",
+                "fr": "J'ouvre la fenêtre",
+                "vi": "Tôi mở cửa sổ"
+              },
+              "accept": [
+                "まどをあけます"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_mado"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "My house is small.",
+                "es": "Mi casa es pequeña.",
+                "fr": "Ma maison est petite.",
+                "vi": "Nhà của tôi nhỏ."
+              },
+              "answers": [
+                "私の家は小さいです",
+                "わたしのいえはちいさいです",
+                "家は小さいです"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u4_l2",
+          "title": {
+            "en": "Rooms & furniture",
+            "es": "Habitaciones y muebles",
+            "fr": "Pièces et meubles",
+            "vi": "Phòng và đồ nội thất"
+          },
+          "words": [
+            "ja_isu",
+            "ja_beddo",
+            "ja_toire",
+            "ja_sofa",
+            "ja_heya"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_beddo"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_toire"
+            },
+            {
+              "type": "fill",
+              "sentence": "私の___は広いです。",
+              "answer": "部屋",
+              "hint": {
+                "en": "My room is spacious.",
+                "es": "Mi habitación es grande.",
+                "fr": "Ma chambre est spacieuse.",
+                "vi": "Phòng của tôi rộng."
+              },
+              "accept": [
+                "へや"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "猫がソファで寝ています",
+              "translation": {
+                "en": "The cat is sleeping on the sofa.",
+                "es": "El gato duerme en el sofá.",
+                "fr": "Le chat dort sur le canapé.",
+                "vi": "Con mèo đang ngủ trên ghế sofa."
+              },
+              "chips": [
+                "猫が",
+                "ソファで",
+                "寝ています"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "トイレはどこですか",
+              "translation": {
+                "en": "Where is the bathroom?",
+                "es": "¿Dónde está el baño?",
+                "fr": "Où sont les toilettes ?",
+                "vi": "Nhà vệ sinh ở đâu?"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_heya"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The bed is big.",
+                "es": "La cama es grande.",
+                "fr": "Le lit est grand.",
+                "vi": "Cái giường lớn."
+              },
+              "answers": [
+                "ベッドは大きいです",
+                "ベッドはおおきいです"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u5",
+      "topic": "people",
+      "level": "A1",
+      "title": {
+        "en": "People",
+        "es": "Personas",
+        "fr": "Personnes",
+        "vi": "Con người"
+      },
+      "lessons": [
+        {
+          "id": "ja_u5_l1",
+          "title": {
+            "en": "Friends & family",
+            "es": "Amigos y familia",
+            "fr": "Amis et famille",
+            "vi": "Bạn bè và gia đình"
+          },
+          "words": [
+            "ja_tomodachi",
+            "ja_kazoku",
+            "ja_kodomo",
+            "ja_onna_no_hito",
+            "ja_otoko_no_hito"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_tomodachi"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_kazoku"
+            },
+            {
+              "type": "fill",
+              "sentence": "私の___は五人です。",
+              "answer": "家族",
+              "hint": {
+                "en": "My family has five people.",
+                "es": "Mi familia tiene cinco personas.",
+                "fr": "Ma famille compte cinq personnes.",
+                "vi": "Gia đình tôi có năm người."
+              },
+              "accept": [
+                "かぞく"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "友達はとても親切です",
+              "translation": {
+                "en": "My friend is very kind.",
+                "es": "Mi amigo es muy amable.",
+                "fr": "Mon ami est très gentil.",
+                "vi": "Bạn tôi rất tốt bụng."
+              },
+              "chips": [
+                "友達は",
+                "とても",
+                "親切です"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "子供が遊びます",
+              "translation": {
+                "en": "The child plays",
+                "es": "El niño juega",
+                "fr": "L'enfant joue",
+                "vi": "Đứa trẻ chơi"
+              },
+              "accept": [
+                "こどもがあそびます"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_onna_no_hito"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "The woman reads a book.",
+                "es": "La mujer lee un libro.",
+                "fr": "La femme lit un livre.",
+                "vi": "Người phụ nữ đọc sách."
+              },
+              "answers": [
+                "女の人が本を読みます",
+                "女の人は本を読みます",
+                "おんなのひとがほんをよみます"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u5_l2",
+          "title": {
+            "en": "Parents & siblings",
+            "es": "Padres y hermanos",
+            "fr": "Parents, frères et sœurs",
+            "vi": "Bố mẹ và anh chị em"
+          },
+          "words": [
+            "ja_chichi",
+            "ja_haha",
+            "ja_ani",
+            "ja_ane",
+            "ja_sensei"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_chichi"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_ani"
+            },
+            {
+              "type": "fill",
+              "sentence": "___は銀行で働きます。",
+              "answer": "父",
+              "hint": {
+                "en": "My father works at a bank.",
+                "es": "Mi padre trabaja en un banco.",
+                "fr": "Mon père travaille dans une banque.",
+                "vi": "Bố tôi làm việc ở ngân hàng."
+              },
+              "accept": [
+                "ちち"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "母は料理が上手です",
+              "translation": {
+                "en": "My mother cooks well.",
+                "es": "Mi madre cocina muy bien.",
+                "fr": "Ma mère cuisine très bien.",
+                "vi": "Mẹ tôi nấu ăn rất giỏi."
+              },
+              "chips": [
+                "母は",
+                "料理が",
+                "上手です"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "兄は大学生です",
+              "translation": {
+                "en": "My older brother is a university student",
+                "es": "Mi hermano mayor es estudiante universitario",
+                "fr": "Mon grand frère est étudiant",
+                "vi": "Anh trai tôi là sinh viên đại học"
+              },
+              "accept": [
+                "あにはだいがくせいです"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_sensei"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "My older sister is a teacher.",
+                "es": "Mi hermana mayor es profesora.",
+                "fr": "Ma grande sœur est professeure.",
+                "vi": "Chị gái tôi là giáo viên."
+              },
+              "answers": [
+                "姉は先生です",
+                "あねはせんせいです",
+                "私の姉は先生です"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u6",
+      "topic": "numbers",
+      "level": "A1",
+      "title": {
+        "en": "Numbers",
+        "es": "Números",
+        "fr": "Nombres",
+        "vi": "Số đếm"
+      },
+      "lessons": [
+        {
+          "id": "ja_u6_l1",
+          "title": {
+            "en": "Counting 1-5",
+            "es": "Contar del 1 al 5",
+            "fr": "Compter de 1 à 5",
+            "vi": "Đếm từ 1 đến 5"
+          },
+          "words": [
+            "ja_ichi",
+            "ja_ni",
+            "ja_san",
+            "ja_yon",
+            "ja_go"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_ichi"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_san"
+            },
+            {
+              "type": "fill",
+              "sentence": "友達が___人来ます。",
+              "answer": "三",
+              "hint": {
+                "en": "Three friends are coming.",
+                "es": "Vienen tres amigos.",
+                "fr": "Trois amis viennent.",
+                "vi": "Ba người bạn sẽ đến."
+              },
+              "accept": [
+                "さん"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "いすが四つあります",
+              "translation": {
+                "en": "There are four chairs.",
+                "es": "Hay cuatro sillas.",
+                "fr": "Il y a quatre chaises.",
+                "vi": "Có bốn cái ghế."
+              },
+              "chips": [
+                "いすが",
+                "四つ",
+                "あります"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "五分待ってください",
+              "translation": {
+                "en": "Please wait five minutes",
+                "es": "Espere cinco minutos, por favor",
+                "fr": "Attendez cinq minutes, s'il vous plaît",
+                "vi": "Làm ơn đợi năm phút"
+              },
+              "accept": [
+                "ごふんまってください"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_go"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Two coffees, please.",
+                "es": "Dos cafés, por favor.",
+                "fr": "Deux cafés, s'il vous plaît.",
+                "vi": "Cho tôi hai ly cà phê."
+              },
+              "answers": [
+                "コーヒーを二つください",
+                "コーヒーをふたつください"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u6_l2",
+          "title": {
+            "en": "Big numbers",
+            "es": "Números grandes",
+            "fr": "Grands nombres",
+            "vi": "Số lớn"
+          },
+          "words": [
+            "ja_juu",
+            "ja_nijuu",
+            "ja_hyaku",
+            "ja_saisho",
+            "ja_bangou"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_juu"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_hyaku"
+            },
+            {
+              "type": "fill",
+              "sentence": "このパンは___円です。",
+              "answer": "百",
+              "hint": {
+                "en": "This bread is one hundred yen.",
+                "es": "Este pan cuesta cien yenes.",
+                "fr": "Ce pain coûte cent yens.",
+                "vi": "Bánh mì này giá một trăm yên."
+              },
+              "accept": [
+                "ひゃく"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "今十時です",
+              "translation": {
+                "en": "It is ten o'clock now.",
+                "es": "Ahora son las diez.",
+                "fr": "Il est dix heures maintenant.",
+                "vi": "Bây giờ là mười giờ."
+              },
+              "chips": [
+                "今",
+                "十時",
+                "です"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "最初に水を飲みます",
+              "translation": {
+                "en": "First, I drink water",
+                "es": "Primero, bebo agua",
+                "fr": "D'abord, je bois de l'eau",
+                "vi": "Đầu tiên, tôi uống nước"
+              },
+              "accept": [
+                "さいしょにみずをのみます"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_bangou"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "What is the phone number?",
+                "es": "¿Cuál es el número de teléfono?",
+                "fr": "Quel est le numéro de téléphone ?",
+                "vi": "Số điện thoại là gì?"
+              },
+              "answers": [
+                "電話番号は何ですか",
+                "でんわばんごうはなんですか"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u7",
+      "topic": "time",
+      "level": "A1",
+      "title": {
+        "en": "Days & time",
+        "es": "Días y tiempo",
+        "fr": "Jours et heure",
+        "vi": "Ngày và giờ"
+      },
+      "lessons": [
+        {
+          "id": "ja_u7_l1",
+          "title": {
+            "en": "Days & weeks",
+            "es": "Días y semanas",
+            "fr": "Jours et semaines",
+            "vi": "Ngày và tuần"
+          },
+          "words": [
+            "ja_hi",
+            "ja_konshuu",
+            "ja_kongetsu",
+            "ja_kyou",
+            "ja_ashita"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_konshuu"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_kyou"
+            },
+            {
+              "type": "fill",
+              "sentence": "___は家で働きます。",
+              "answer": "今日",
+              "hint": {
+                "en": "Today I work at home.",
+                "es": "Hoy trabajo en casa.",
+                "fr": "Aujourd'hui, je travaille à la maison.",
+                "vi": "Hôm nay tôi làm việc ở nhà."
+              },
+              "accept": [
+                "きょう"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "明日市場へ行きます",
+              "translation": {
+                "en": "Tomorrow I go to the market.",
+                "es": "Mañana voy al mercado.",
+                "fr": "Demain, je vais au marché.",
+                "vi": "Ngày mai tôi đi chợ."
+              },
+              "chips": [
+                "明日",
+                "市場へ",
+                "行きます"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "今週は忙しいです",
+              "translation": {
+                "en": "I am busy this week",
+                "es": "Esta semana estoy ocupado",
+                "fr": "Je suis occupé cette semaine",
+                "vi": "Tuần này tôi bận"
+              },
+              "accept": [
+                "こんしゅうはいそがしいです"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_ashita"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "This month I go to Tokyo.",
+                "es": "Este mes voy a Tokio.",
+                "fr": "Ce mois-ci, je vais à Tokyo.",
+                "vi": "Tháng này tôi đi Tokyo."
+              },
+              "answers": [
+                "今月東京へ行きます",
+                "こんげつとうきょうへいきます"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u7_l2",
+          "title": {
+            "en": "Time of day",
+            "es": "Momentos del día",
+            "fr": "Moments de la journée",
+            "vi": "Thời gian trong ngày"
+          },
+          "words": [
+            "ja_kinou",
+            "ja_jikan",
+            "ja_getsuyoubi",
+            "ja_nichiyoubi",
+            "ja_hayai"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_kinou"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_getsuyoubi"
+            },
+            {
+              "type": "fill",
+              "sentence": "___は家族と会います。",
+              "answer": "日曜日",
+              "hint": {
+                "en": "On Sunday I see my family.",
+                "es": "El domingo veo a mi familia.",
+                "fr": "Le dimanche, je vois ma famille.",
+                "vi": "Chủ nhật tôi gặp gia đình."
+              },
+              "accept": [
+                "にちようび"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "昨日魚を食べました",
+              "translation": {
+                "en": "I ate fish yesterday.",
+                "es": "Ayer comí pescado.",
+                "fr": "Hier, j'ai mangé du poisson.",
+                "vi": "Hôm qua tôi đã ăn cá."
+              },
+              "chips": [
+                "昨日",
+                "魚を",
+                "食べました"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "時間がありません",
+              "translation": {
+                "en": "I have no time",
+                "es": "No tengo tiempo",
+                "fr": "Je n'ai pas le temps",
+                "vi": "Tôi không có thời gian"
+              },
+              "accept": [
+                "じかんがありません"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_hayai"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I get up early every day.",
+                "es": "Me levanto temprano todos los días.",
+                "fr": "Je me lève tôt tous les jours.",
+                "vi": "Ngày nào tôi cũng dậy sớm."
+              },
+              "answers": [
+                "毎日早く起きます",
+                "まいにちはやくおきます"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u8",
+      "topic": "shopping",
+      "level": "A2",
+      "title": {
+        "en": "Shopping",
+        "es": "Compras",
+        "fr": "Achats",
+        "vi": "Mua sắm"
+      },
+      "lessons": [
+        {
+          "id": "ja_u8_l1",
+          "title": {
+            "en": "Shops & prices",
+            "es": "Tiendas y precios",
+            "fr": "Magasins et prix",
+            "vi": "Cửa hàng và giá cả"
+          },
+          "words": [
+            "ja_mise",
+            "ja_ichiba",
+            "ja_nedan",
+            "ja_yasui",
+            "ja_takai"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_mise"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_nedan"
+            },
+            {
+              "type": "fill",
+              "sentence": "あの時計は___です。",
+              "answer": "高い",
+              "hint": {
+                "en": "That watch is expensive.",
+                "es": "Ese reloj es caro.",
+                "fr": "Cette montre est chère.",
+                "vi": "Chiếc đồng hồ kia đắt."
+              },
+              "accept": [
+                "たかい"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "市場で果物を買います",
+              "translation": {
+                "en": "I buy fruit at the market.",
+                "es": "Compro fruta en el mercado.",
+                "fr": "J'achète des fruits au marché.",
+                "vi": "Tôi mua trái cây ở chợ."
+              },
+              "chips": [
+                "市場で",
+                "果物を",
+                "買います"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "値段はいくらですか",
+              "translation": {
+                "en": "How much is the price?",
+                "es": "¿Cuánto cuesta?",
+                "fr": "Combien ça coûte ?",
+                "vi": "Giá bao nhiêu?"
+              },
+              "accept": [
+                "ねだんはいくらですか"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_yasui"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "This coat is very cheap.",
+                "es": "Este abrigo es muy barato.",
+                "fr": "Ce manteau est très bon marché.",
+                "vi": "Chiếc áo khoác này rất rẻ."
+              },
+              "answers": [
+                "このコートはとても安いです",
+                "このコートはとてもやすいです"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u8_l2",
+          "title": {
+            "en": "Paying",
+            "es": "Pagar",
+            "fr": "Payer",
+            "vi": "Thanh toán"
+          },
+          "words": [
+            "ja_kau",
+            "ja_okane",
+            "ja_fukuro",
+            "ja_kaado",
+            "ja_tishatsu"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_kau"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_okane"
+            },
+            {
+              "type": "fill",
+              "sentence": "今日は___がありません。",
+              "answer": "お金",
+              "hint": {
+                "en": "I have no money today.",
+                "es": "Hoy no tengo dinero.",
+                "fr": "Aujourd'hui, je n'ai pas d'argent.",
+                "vi": "Hôm nay tôi không có tiền."
+              },
+              "accept": [
+                "おかね"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "この青いTシャツが好きです",
+              "translation": {
+                "en": "I like this blue T-shirt.",
+                "es": "Me gusta esta camiseta azul.",
+                "fr": "J'aime ce T-shirt bleu.",
+                "vi": "Tôi thích chiếc áo phông xanh này."
+              },
+              "chips": [
+                "この",
+                "青い",
+                "Tシャツが",
+                "好きです"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "袋をください",
+              "translation": {
+                "en": "A bag, please",
+                "es": "Una bolsa, por favor",
+                "fr": "Un sac, s'il vous plaît",
+                "vi": "Cho tôi một cái túi"
+              },
+              "accept": [
+                "ふくろをください"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_kaado"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Can I pay by card?",
+                "es": "¿Puedo pagar con tarjeta?",
+                "fr": "Puis-je payer par carte ?",
+                "vi": "Tôi có thể trả bằng thẻ không?"
+              },
+              "answers": [
+                "カードで払えますか",
+                "カードではらえますか"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u9",
+      "topic": "weather",
+      "level": "A2",
+      "title": {
+        "en": "Weather",
+        "es": "El tiempo",
+        "fr": "Météo",
+        "vi": "Thời tiết"
+      },
+      "lessons": [
+        {
+          "id": "ja_u9_l1",
+          "title": {
+            "en": "Sun & rain",
+            "es": "Sol y lluvia",
+            "fr": "Soleil et pluie",
+            "vi": "Nắng và mưa"
+          },
+          "words": [
+            "ja_tenki",
+            "ja_taiyou",
+            "ja_ame",
+            "ja_kumo",
+            "ja_kaze"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_tenki"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_ame"
+            },
+            {
+              "type": "fill",
+              "sentence": "今日の___はどうですか。",
+              "answer": "天気",
+              "hint": {
+                "en": "How is the weather today?",
+                "es": "¿Qué tiempo hace hoy?",
+                "fr": "Quel temps fait-il aujourd'hui ?",
+                "vi": "Hôm nay thời tiết thế nào?"
+              },
+              "accept": [
+                "てんき"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "今日は風が強いです",
+              "translation": {
+                "en": "It is windy today.",
+                "es": "Hoy hay mucho viento.",
+                "fr": "Il y a beaucoup de vent aujourd'hui.",
+                "vi": "Hôm nay gió mạnh."
+              },
+              "chips": [
+                "今日は",
+                "風が",
+                "強いです"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "太陽が出ています",
+              "translation": {
+                "en": "The sun is out",
+                "es": "Hace sol",
+                "fr": "Le soleil brille",
+                "vi": "Mặt trời đã lên"
+              },
+              "accept": [
+                "たいようがでています"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_kaze"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "It is raining.",
+                "es": "Está lloviendo.",
+                "fr": "Il pleut.",
+                "vi": "Trời đang mưa."
+              },
+              "answers": [
+                "雨が降っています",
+                "あめがふっています"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u9_l2",
+          "title": {
+            "en": "Hot & cold",
+            "es": "Calor y frío",
+            "fr": "Chaud et froid",
+            "vi": "Nóng và lạnh"
+          },
+          "words": [
+            "ja_yuki",
+            "ja_atsui",
+            "ja_samui",
+            "ja_arashi",
+            "ja_kumori"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_atsui"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_arashi"
+            },
+            {
+              "type": "fill",
+              "sentence": "冬はとても___です。",
+              "answer": "寒い",
+              "hint": {
+                "en": "Winter is very cold.",
+                "es": "En invierno hace mucho frío.",
+                "fr": "En hiver, il fait très froid.",
+                "vi": "Mùa đông rất lạnh."
+              },
+              "accept": [
+                "さむい"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "夏はとても暑いです",
+              "translation": {
+                "en": "Summer is very hot.",
+                "es": "El verano es muy caluroso.",
+                "fr": "L'été est très chaud.",
+                "vi": "Mùa hè rất nóng."
+              },
+              "chips": [
+                "夏は",
+                "とても",
+                "暑いです"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "今夜は嵐です",
+              "translation": {
+                "en": "There is a storm tonight",
+                "es": "Esta noche hay tormenta",
+                "fr": "Il y a une tempête ce soir",
+                "vi": "Tối nay có bão"
+              },
+              "accept": [
+                "こんやはあらしです"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_kumori"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "It is cloudy today.",
+                "es": "Hoy está nublado.",
+                "fr": "Il est nuageux aujourd'hui.",
+                "vi": "Hôm nay trời nhiều mây."
+              },
+              "answers": [
+                "今日は曇りです",
+                "きょうはくもりです"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ja_u10",
+      "topic": "hobbies",
+      "level": "A2",
+      "title": {
+        "en": "Hobbies",
+        "es": "Aficiones",
+        "fr": "Loisirs",
+        "vi": "Sở thích"
+      },
+      "lessons": [
+        {
+          "id": "ja_u10_l1",
+          "title": {
+            "en": "Fun things",
+            "es": "Cosas divertidas",
+            "fr": "Choses amusantes",
+            "vi": "Điều thú vị"
+          },
+          "words": [
+            "ja_yomu",
+            "ja_hon",
+            "ja_ongaku",
+            "ja_odoru",
+            "ja_utau"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_yomu"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_ongaku"
+            },
+            {
+              "type": "fill",
+              "sentence": "バスで___を聞きます。",
+              "answer": "音楽",
+              "hint": {
+                "en": "I listen to music on the bus.",
+                "es": "Escucho música en el autobús.",
+                "fr": "J'écoute de la musique dans le bus.",
+                "vi": "Tôi nghe nhạc trên xe buýt."
+              },
+              "accept": [
+                "おんがく"
+              ]
+            },
+            {
+              "type": "order",
+              "answer": "夜に本を読みます",
+              "translation": {
+                "en": "I read a book at night.",
+                "es": "Leo un libro por la noche.",
+                "fr": "Je lis un livre le soir.",
+                "vi": "Buổi tối tôi đọc sách."
+              },
+              "chips": [
+                "夜に",
+                "本を",
+                "読みます"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "この本はおもしろいです",
+              "translation": {
+                "en": "This book is interesting",
+                "es": "Este libro es interesante",
+                "fr": "Ce livre est intéressant",
+                "vi": "Quyển sách này thú vị"
+              },
+              "accept": [
+                "このほんはおもしろいです"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_utau"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I like singing.",
+                "es": "Me gusta cantar.",
+                "fr": "J'aime chanter.",
+                "vi": "Tôi thích hát."
+              },
+              "answers": [
+                "歌うのが好きです",
+                "うたうのがすきです"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ja_u10_l2",
+          "title": {
+            "en": "Sports & games",
+            "es": "Deportes y juegos",
+            "fr": "Sports et jeux",
+            "vi": "Thể thao và trò chơi"
+          },
+          "words": [
+            "ja_supootsu",
+            "ja_sakkaa",
+            "ja_oyogu",
+            "ja_e_wo_kaku",
+            "ja_geemu"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "ja_sakkaa"
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_oyogu"
+            },
+            {
+              "type": "fill",
+              "sentence": "友達と___をします。",
+              "answer": "サッカー",
+              "hint": {
+                "en": "I play soccer with my friends.",
+                "es": "Juego al fútbol con mis amigos.",
+                "fr": "Je joue au football avec mes amis.",
+                "vi": "Tôi chơi bóng đá với bạn."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "日曜日に泳ぎに行きます",
+              "translation": {
+                "en": "On Sundays I go swimming.",
+                "es": "Los domingos voy a nadar.",
+                "fr": "Le dimanche, je vais nager.",
+                "vi": "Chủ nhật tôi đi bơi."
+              },
+              "chips": [
+                "日曜日に",
+                "泳ぎに",
+                "行きます"
+              ]
+            },
+            {
+              "type": "listen",
+              "text": "どんなスポーツが好きですか",
+              "translation": {
+                "en": "What sport do you like?",
+                "es": "¿Qué deporte te gusta?",
+                "fr": "Quel sport aimes-tu ?",
+                "vi": "Bạn thích môn thể thao nào?"
+              },
+              "accept": [
+                "どんなスポーツがすきですか"
+              ]
+            },
+            {
+              "type": "mc",
+              "wordId": "ja_geemu"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "This game is fun.",
+                "es": "Este juego es divertido.",
+                "fr": "Ce jeu est amusant.",
+                "vi": "Trò chơi này thú vị."
+              },
+              "answers": [
+                "このゲームはおもしろいです",
+                "このゲームは楽しいです",
+                "このゲームはたのしいです"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

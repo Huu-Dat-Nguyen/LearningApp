@@ -256,7 +256,7 @@ private fun FeedbackPanel(result: CheckResult, ex: Exercise) {
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         Text(if (right) "Correct!" else "Not quite", style = MaterialTheme.typography.titleMedium, color = if (right) appColors.rightInk else appColors.wrongInk)
-        result.note?.let { Text(it, style = MaterialTheme.typography.bodyMedium, color = appColors.rightInk) }
+        result.expected?.let { Text("Watch the accent: $it", style = MaterialTheme.typography.bodyMedium, color = appColors.rightInk) }
         if (!right) Text("Answer: ${ex.solution}", style = MaterialTheme.typography.bodyMedium, color = appColors.wrongInk)
         if (!right) Text("You'll see this one again at the end.", style = MaterialTheme.typography.labelMedium, color = appColors.wrongInk.copy(alpha = 0.8f))
     }

@@ -24,6 +24,8 @@ sealed interface Exercise {
         val after: String,
         val answer: String,
         val hint: String,
+        /** Other accepted spellings (e.g. kana for a kanji answer). */
+        val accept: List<String> = emptyList(),
         override val instruction: String = "Fill in the blank",
     ) : Exercise {
         override val solution: String get() = answer
@@ -34,15 +36,19 @@ sealed interface Exercise {
         val chips: List<String>,
         val answer: List<String>,
         val translation: String,
+        /** How chips join into a sentence: a space, or nothing for Japanese. */
+        val joiner: String = " ",
         override val instruction: String = "Put the words in order",
     ) : Exercise {
-        override val solution: String get() = answer.joinToString(" ")
+        override val solution: String get() = answer.joinToString(joiner)
     }
 
     /** Listen (text-to-speech) and type what you hear. */
     data class Listen(
         val text: String,
         val translation: String,
+        /** Other accepted spellings (e.g. kana for kanji). */
+        val accept: List<String> = emptyList(),
         override val instruction: String = "Type what you hear",
     ) : Exercise {
         override val solution: String get() = text

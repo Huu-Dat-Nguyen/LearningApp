@@ -33,13 +33,28 @@ sealed interface ContentExercise {
     data class Mc(val wordId: String) : ContentExercise
 
     @Serializable @SerialName("fill")
-    data class Fill(val sentence: String, val answer: String, val hint: Map<String, String>) : ContentExercise
+    data class Fill(
+        val sentence: String,
+        val answer: String,
+        val hint: Map<String, String>,
+        /** Other accepted answers, e.g. kana for kanji. */
+        val accept: List<String> = emptyList(),
+    ) : ContentExercise
 
     @Serializable @SerialName("order")
-    data class Order(val answer: String, val translation: Map<String, String>) : ContentExercise
+    data class Order(
+        val answer: String,
+        val translation: Map<String, String>,
+        /** Chips in order, for languages without spaces (Japanese); default: [answer] split on spaces. */
+        val chips: List<String>? = null,
+    ) : ContentExercise
 
     @Serializable @SerialName("listen")
-    data class Listen(val text: String, val translation: Map<String, String>) : ContentExercise
+    data class Listen(
+        val text: String,
+        val translation: Map<String, String>,
+        val accept: List<String> = emptyList(),
+    ) : ContentExercise
 
     @Serializable @SerialName("translate")
     data class Translate(val source: Map<String, String>, val answers: List<String>) : ContentExercise

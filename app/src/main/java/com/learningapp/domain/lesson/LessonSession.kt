@@ -4,7 +4,7 @@ package com.learningapp.domain.lesson
  * Runs one lesson: shows exercises in order, and each one answered wrong
  * comes back once at the end. Pure state, no Android.
  */
-class LessonSession(private val exercises: List<Exercise>) {
+class LessonSession(private val exercises: List<Exercise>, private val targetLang: String = "es") {
 
     private data class Item(val index: Int, val isRetry: Boolean)
 
@@ -36,7 +36,7 @@ class LessonSession(private val exercises: List<Exercise>) {
     /** Checks [answer] for the current exercise. Call [next] after showing feedback. */
     fun submit(answer: Answer): CheckResult {
         val item = current ?: error("Lesson finished")
-        val result = AnswerChecker.check(exercises[item.index], answer)
+        val result = AnswerChecker.check(exercises[item.index], answer, targetLang)
         answered++
         if (result.isCorrect) {
             correct++

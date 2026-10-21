@@ -35,7 +35,7 @@ class LessonEngineTest {
         val r = AnswerChecker.checkText("adios", listOf("Adiós"))
         assertEquals(Verdict.AccentSlip, r.verdict)
         assertTrue(r.isCorrect)
-        assertEquals("Watch the accent: Adiós", r.note)
+        assertEquals("Adiós", r.expected)
     }
 
     @Test

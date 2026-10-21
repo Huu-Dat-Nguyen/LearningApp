@@ -83,7 +83,7 @@ class OnboardingRepository @Inject constructor(
         return units.flatMapIndexed { index, unitLessons ->
             val wordIds = unitLessons.flatMap { LessonParser.wordIds(it) }.distinct()
             val cards = wordDao.cardsByIds(wordIds, main)
-            val builder = ExerciseBuilder(cards, main, random)
+            val builder = ExerciseBuilder(cards, main, random, target)
             cards.shuffled(random).take(Placement.QUESTIONS_PER_UNIT).mapNotNull { card ->
                 (builder.build(ContentExercise.Mc(card.wordId)) as? Exercise.MultipleChoice)?.let { PlacementQuestion(index, it) }
             }

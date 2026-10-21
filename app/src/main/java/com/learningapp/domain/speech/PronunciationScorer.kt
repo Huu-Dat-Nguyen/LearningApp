@@ -1,6 +1,7 @@
 package com.learningapp.domain.speech
 
 import com.learningapp.domain.lesson.AnswerChecker
+import com.learningapp.domain.lesson.LanguageRules
 import kotlin.math.roundToInt
 
 enum class WordMark { Right, Close, Missed }
@@ -34,7 +35,10 @@ data class SpeechScore(
  */
 object PronunciationScorer {
 
-    private fun words(s: String): List<String> = AnswerChecker.fold(s).split(" ").filter { it.isNotEmpty() }
+    /** Words for spaced languages; single characters for Japanese (no spaces). */
+    private fun tokens(s: String, lang: String): List<String> =
+        if (LanguageRules.of(lang).spaced) AnswerChecker.fold(s, lang).split(" ").filter { it.isNotEmpty() }
+        else AnswerChecker.normalize(s, lang).map { it.toString() }
 
     /** Letters-level edit distance between two words. */
     internal fun letterDistance(a: String, b: String): Int {
@@ -55,10 +59,11 @@ object PronunciationScorer {
     private fun isClose(target: String, heard: String) = target.length >= 4 && letterDistance(target, heard) == 1
 
     /** Scores one recognizer guess. */
-    fun score(target: String, heard: String): SpeechScore {
-        val shown = target.split(" ").filter { it.isNotBlank() }
-        val t = words(target)
-        val h = words(heard)
+    fun score(target: String, heard: String, lang: String = "es"): SpeechScore {
+        val spaced = LanguageRules.of(lang).spaced
+        val shown = if (spaced) target.split(" ").filter { it.isNotBlank() } else tokens(target, lang)
+        val t = tokens(target, lang)
+        val h = tokens(heard, lang)
         if (t.isEmpty()) return SpeechScore(0, emptyList(), heard)
 
         // cost[i][j]: best cost aligning t[0 until i] with h[0 until j]
@@ -106,6 +111,6 @@ object PronunciationScorer {
     }
 
     /** Scores every recognizer guess and keeps the best. */
-    fun best(target: String, guesses: List<String>): SpeechScore =
-        guesses.map { score(target, it) }.maxByOrNull { it.score } ?: score(target, "")
+    fun best(target: String, guesses: List<String>, lang: String = "es"): SpeechScore =
+        guesses.map { score(target, it, lang) }.maxByOrNull { it.score } ?: score(target, "", lang)
 }

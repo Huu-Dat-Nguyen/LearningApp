@@ -12,7 +12,10 @@ class ExerciseBuilder(
     private val unitWords: List<CardRow>,
     private val mainLang: String,
     private val random: Random = Random.Default,
+    private val targetLang: String = "es",
 ) {
+    private val rules = LanguageRules.of(targetLang)
+
     private val byId = unitWords.associateBy { it.wordId }
 
     fun build(content: List<ContentExercise>): List<Exercise> = content.mapNotNull(::build)
@@ -21,13 +24,13 @@ class ExerciseBuilder(
         is ContentExercise.Mc -> multipleChoice(e.wordId)
         is ContentExercise.Fill -> {
             val (before, after) = e.sentence.split("___", limit = 2).let { it[0] to it.getOrElse(1) { "" } }
-            Exercise.FillBlank(before, after, e.answer, text(e.hint))
+            Exercise.FillBlank(before, after, e.answer, text(e.hint), e.accept)
         }
         is ContentExercise.Order -> {
-            val words = e.answer.split(" ").filter { it.isNotBlank() }
-            Exercise.WordOrder(shuffledNotSame(words), words, text(e.translation))
+            val words = e.chips ?: e.answer.split(" ").filter { it.isNotBlank() }
+            Exercise.WordOrder(shuffledNotSame(words), words, text(e.translation), joiner = if (rules.spaced) " " else "")
         }
-        is ContentExercise.Listen -> Exercise.Listen(e.text, text(e.translation))
+        is ContentExercise.Listen -> Exercise.Listen(e.text, text(e.translation), e.accept)
         is ContentExercise.Translate -> Exercise.Translate(text(e.source), e.answers)
     }
 

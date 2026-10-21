@@ -77,8 +77,8 @@ class LessonViewModel internal constructor(
                 return@launch
             }
             data = lesson
-            val exercises = ExerciseBuilder(lesson.unitWords, lesson.mainLang, random).build(lesson.exercises)
-            session = LessonSession(exercises)
+            val exercises = ExerciseBuilder(lesson.unitWords, lesson.mainLang, random, lesson.targetLang).build(lesson.exercises)
+            session = LessonSession(exercises, lesson.targetLang)
             showCurrent()
         }
     }

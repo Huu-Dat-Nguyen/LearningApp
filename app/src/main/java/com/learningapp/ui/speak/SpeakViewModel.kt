@@ -101,7 +101,7 @@ class SpeakViewModel @Inject constructor(
             is SpeechEvent.Partial -> _state.update { it.copy(partial = event.text) }
             is SpeechEvent.Results -> {
                 val sentence = _state.value.sentence ?: return
-                val score = PronunciationScorer.best(sentence.text, event.guesses)
+                val score = PronunciationScorer.best(sentence.text, event.guesses, _state.value.targetLang)
                 _state.update { it.copy(phase = SpeakPhase.Result, score = score, level = 0f) }
                 viewModelScope.launch {
                     val xp = store.recordAttempt(sentence.text, score.score)

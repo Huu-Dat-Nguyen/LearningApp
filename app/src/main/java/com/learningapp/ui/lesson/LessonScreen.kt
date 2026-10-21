@@ -1,5 +1,7 @@
 package com.learningapp.ui.lesson
 
+import com.learningapp.data.content.languageNameRes
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -83,7 +85,12 @@ fun LessonScreen(onClose: () -> Unit, viewModel: LessonViewModel = hiltViewModel
         TopBar(state.progress, onClose)
         when {
             state.loading -> Unit
-            state.notFound -> MessageCard("Lesson not found", "This lesson is not available.", "Back", onClose)
+            state.notFound -> MessageCard(
+                stringResource(R.string.lesson_not_found_title),
+                stringResource(R.string.lesson_not_found_body),
+                stringResource(R.string.common_back),
+                onClose,
+            )
             state.result != null -> LessonDone(state.title, state.result!!, onClose)
             state.exercise != null -> ExerciseArea(state, speaker, viewModel, Modifier.weight(1f))
         }
@@ -92,9 +99,10 @@ fun LessonScreen(onClose: () -> Unit, viewModel: LessonViewModel = hiltViewModel
 
 @Composable
 private fun TopBar(progress: Float, onClose: () -> Unit) {
+    val closeLabel = stringResource(R.string.lesson_close)
     Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(14.dp)) {
         Box(
-            Modifier.size(36.dp).clip(CircleShape).clickable(onClick = onClose).semantics { contentDescription = "Close lesson" },
+            Modifier.size(36.dp).clip(CircleShape).clickable(onClick = onClose).semantics { contentDescription = closeLabel },
             contentAlignment = Alignment.Center,
         ) { Icon(painterResource(R.drawable.ic_close), contentDescription = null, tint = Muted) }
         Box(Modifier.weight(1f).height(8.dp).clip(CircleShape).background(Track)) {
@@ -107,14 +115,24 @@ private fun TopBar(progress: Float, onClose: () -> Unit) {
 private fun ExerciseArea(state: LessonUiState, speaker: Speaker, vm: LessonViewModel, modifier: Modifier) {
     val ex = state.exercise ?: return
     val locked = state.feedback != null
+    val instruction = stringResource(
+        when (ex) {
+            is Exercise.MultipleChoice -> R.string.ex_instruction_mc
+            is Exercise.FillBlank -> R.string.ex_instruction_fill
+            is Exercise.WordOrder -> R.string.ex_instruction_order
+            is Exercise.Listen -> R.string.ex_instruction_listen
+            is Exercise.Translate -> R.string.ex_instruction_translate
+        },
+    ).uppercase()
     Column(modifier.fillMaxWidth().verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(14.dp)) {
         Text(
-            (if (state.isRetry) "Try again · " else "") + ex.instruction.uppercase(),
+            if (state.isRetry) stringResource(R.string.lesson_retry_prefix, instruction) else instruction,
             style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold, letterSpacing = 0.6.sp),
         )
         when (ex) {
             is Exercise.MultipleChoice -> {
                 Text("\"${ex.prompt}\"", style = MaterialTheme.typography.headlineSmall)
+                ex.reading?.let { Text(it, style = MaterialTheme.typography.bodyMedium, color = Muted) }
                 ex.options.forEachIndexed { i, option ->
                     OptionCard(option, selected = state.selected == i, enabled = !locked) { vm.select(i) }
                 }
@@ -122,37 +140,37 @@ private fun ExerciseArea(state: LessonUiState, speaker: Speaker, vm: LessonViewM
             is Exercise.FillBlank -> {
                 Text("${ex.before}____${ex.after}", style = MaterialTheme.typography.headlineSmall)
                 Text(ex.hint, style = MaterialTheme.typography.bodyMedium, color = Muted)
-                AnswerField(state.text, !locked, "Missing word", vm::type, vm::check)
+                AnswerField(state.text, !locked, stringResource(R.string.lesson_missing_word), vm::type, vm::check)
             }
             is Exercise.WordOrder -> {
                 Text(ex.translation, style = MaterialTheme.typography.headlineSmall)
-                ChipLine(state.placed, placeholder = "Tap the words below", enabled = !locked, onTap = vm::unplace, answerLine = true)
+                ChipLine(state.placed, placeholder = stringResource(R.string.lesson_tap_words), enabled = !locked, onTap = vm::unplace, answerLine = true)
                 ChipLine(state.pool, placeholder = "", enabled = !locked, onTap = vm::place, answerLine = false)
             }
             is Exercise.Listen -> {
                 // Play once when the exercise appears.
                 LaunchedEffect(ex, speaker.ready) { if (speaker.ready) speaker.speak(ex.text) }
                 Row(horizontalArrangement = Arrangement.spacedBy(14.dp), verticalAlignment = Alignment.CenterVertically) {
-                    PlayButton(80, speaker, "Play") { speaker.speak(ex.text) }
-                    PlayButton(52, speaker, "Play slowly") { speaker.speak(ex.text, slow = true) }
-                    Text("Slow", style = MaterialTheme.typography.labelMedium)
+                    PlayButton(80, speaker, stringResource(R.string.lesson_play)) { speaker.speak(ex.text) }
+                    PlayButton(52, speaker, stringResource(R.string.lesson_play_slowly)) { speaker.speak(ex.text, slow = true) }
+                    Text(stringResource(R.string.lesson_slow), style = MaterialTheme.typography.labelMedium)
                 }
                 if (speaker.missingVoice) {
-                    Text("No voice for this language on the phone. Add one in Settings › Text-to-speech.", style = MaterialTheme.typography.labelMedium)
+                    Text(stringResource(R.string.lesson_no_voice), style = MaterialTheme.typography.labelMedium)
                 }
-                AnswerField(state.text, !locked, "Type what you hear", vm::type, vm::check)
+                AnswerField(state.text, !locked, stringResource(R.string.lesson_type_what_you_hear), vm::type, vm::check)
             }
             is Exercise.Translate -> {
                 Text(ex.source, style = MaterialTheme.typography.headlineSmall)
-                val language = java.util.Locale.forLanguageTag(state.targetLang).getDisplayLanguage(java.util.Locale.ENGLISH)
-                AnswerField(state.text, !locked, "In $language", vm::type, vm::check)
+                val language = stringResource(languageNameRes(state.targetLang))
+                AnswerField(state.text, !locked, stringResource(R.string.lesson_in_language, language), vm::type, vm::check)
             }
         }
     }
     val feedback = state.feedback
     if (feedback != null) {
         FeedbackPanel(feedback, ex)
-        GradientButton("Continue", vm::next)
+        GradientButton(stringResource(R.string.common_continue), vm::next)
     } else {
         CheckButton(enabled = state.canCheck, onClick = vm::check)
     }
@@ -240,10 +258,10 @@ private fun PlayButton(sizeDp: Int, speaker: Speaker, description: String, onCli
 @Composable
 private fun CheckButton(enabled: Boolean, onClick: () -> Unit) {
     if (enabled) {
-        GradientButton("Check", onClick)
+        GradientButton(stringResource(R.string.lesson_check), onClick)
     } else {
         Box(Modifier.fillMaxWidth().clip(CircleShape).background(Track).padding(vertical = 16.dp), contentAlignment = Alignment.Center) {
-            Text("CHECK", style = MaterialTheme.typography.labelLarge, color = Muted)
+            Text(stringResource(R.string.lesson_check).uppercase(), style = MaterialTheme.typography.labelLarge, color = Muted)
         }
     }
 }
@@ -255,26 +273,26 @@ private fun FeedbackPanel(result: CheckResult, ex: Exercise) {
         Modifier.fillMaxWidth().clip(RoundedCornerShape(18.dp)).background(if (right) appColors.rightBg else appColors.wrongBg).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
-        Text(if (right) "Correct!" else "Not quite", style = MaterialTheme.typography.titleMedium, color = if (right) appColors.rightInk else appColors.wrongInk)
-        result.expected?.let { Text("Watch the accent: $it", style = MaterialTheme.typography.bodyMedium, color = appColors.rightInk) }
-        if (!right) Text("Answer: ${ex.solution}", style = MaterialTheme.typography.bodyMedium, color = appColors.wrongInk)
-        if (!right) Text("You'll see this one again at the end.", style = MaterialTheme.typography.labelMedium, color = appColors.wrongInk.copy(alpha = 0.8f))
+        Text(stringResource(if (right) R.string.lesson_correct else R.string.lesson_not_quite), style = MaterialTheme.typography.titleMedium, color = if (right) appColors.rightInk else appColors.wrongInk)
+        result.expected?.let { Text(stringResource(R.string.lesson_watch_accent, it), style = MaterialTheme.typography.bodyMedium, color = appColors.rightInk) }
+        if (!right) Text(stringResource(R.string.lesson_answer, ex.solution), style = MaterialTheme.typography.bodyMedium, color = appColors.wrongInk)
+        if (!right) Text(stringResource(R.string.lesson_see_again), style = MaterialTheme.typography.labelMedium, color = appColors.wrongInk.copy(alpha = 0.8f))
     }
 }
 
 @Composable
 private fun LessonDone(title: String, result: LessonResult, onClose: () -> Unit) {
     MessageCard(
-        title = "Lesson complete!",
+        title = stringResource(R.string.lesson_complete),
         body = title,
-        button = "Continue",
+        button = stringResource(R.string.common_continue),
         onClick = onClose,
         extra = {
             Row(Modifier.fillMaxWidth().padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                Stat("+${result.xp}", "XP", Modifier.weight(1f))
-                Stat("${(result.accuracy * 100).roundToInt()}%", "Accuracy", Modifier.weight(1f))
+                Stat(stringResource(R.string.lesson_xp_gain, result.xp), stringResource(R.string.lesson_xp_label), Modifier.weight(1f))
+                Stat("${(result.accuracy * 100).roundToInt()}%", stringResource(R.string.lesson_accuracy_label), Modifier.weight(1f))
             }
-            Text("New words added to your flashcards.", style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center)
+            Text(stringResource(R.string.lesson_words_added), style = MaterialTheme.typography.labelMedium, textAlign = TextAlign.Center)
         },
     )
 }

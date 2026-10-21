@@ -1,5 +1,7 @@
 package com.learningapp.ui.learn
 
+import com.learningapp.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -45,7 +47,7 @@ fun LearnScreen(onOpenLesson: (String) -> Unit, viewModel: LearnViewModel = hilt
         Modifier.fillMaxSize().statusBarsPadding().padding(horizontal = 18.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
     ) {
-        item { Text("Learn", style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(top = 18.dp, bottom = 4.dp)) }
+        item { Text(stringResource(R.string.learn_title), style = MaterialTheme.typography.titleLarge, modifier = Modifier.padding(top = 18.dp, bottom = 4.dp)) }
         units?.forEach { unit ->
             item(key = unit.id) {
                 Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(top = 10.dp)) {
@@ -88,10 +90,13 @@ private fun LessonRow(lesson: LessonItem, onClick: () -> Unit) {
             modifier = Modifier.weight(1f),
         )
         val (label, color) = when (lesson.state) {
-            LessonState.Done -> (if (lesson.testedOut) "TESTED OUT" else "DONE · ${((lesson.bestAccuracy ?: 0.0) * 100).roundToInt()}%") to Muted
-            LessonState.Next -> "START" to Violet
-            LessonState.Locked -> "LOCKED" to appColors.lockedText
+            LessonState.Done -> (
+                if (lesson.testedOut) stringResource(R.string.learn_tested_out)
+                else stringResource(R.string.learn_done_accuracy, ((lesson.bestAccuracy ?: 0.0) * 100).roundToInt())
+            ) to Muted
+            LessonState.Next -> stringResource(R.string.learn_start) to Violet
+            LessonState.Locked -> stringResource(R.string.learn_locked) to appColors.lockedText
         }
-        Text(label, style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.ExtraBold), color = color)
+        Text(label.uppercase(), style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.ExtraBold), color = color)
     }
 }

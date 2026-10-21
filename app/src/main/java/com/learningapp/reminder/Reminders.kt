@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.content.res.Resources
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -18,7 +19,7 @@ import androidx.work.WorkManager
 import androidx.work.WorkerParameters
 import com.learningapp.MainActivity
 import com.learningapp.R
-import com.learningapp.data.content.languageName
+import com.learningapp.data.content.languageNameRes
 import com.learningapp.data.db.ActivityDao
 import com.learningapp.data.repo.UserPrefs
 import com.learningapp.data.repo.WordRepository
@@ -43,11 +44,31 @@ fun delayUntilNext(now: ZonedDateTime, minuteOfDay: Int): Duration {
     return Duration.between(now, next)
 }
 
+/** Reminder wording, kept behind an interface so [reminderText] can be tested without Android. */
+interface ReminderStrings {
+    fun withDueCards(goalMinutes: Int, language: String, cardsDue: Int): String
+    fun keepStreak(goalMinutes: Int, language: String): String
+}
+
+class ResourceReminderStrings(private val resources: Resources) : ReminderStrings {
+    override fun withDueCards(goalMinutes: Int, language: String, cardsDue: Int): String =
+        resources.getQuantityString(R.plurals.reminder_with_due_cards, cardsDue, goalMinutes, language, cardsDue)
+
+    override fun keepStreak(goalMinutes: Int, language: String): String =
+        resources.getString(R.string.reminder_keep_streak, goalMinutes, language)
+}
+
 /** The reminder text, or null when the user already studied today. */
-fun reminderText(studiedToday: Boolean, targetLanguage: String, cardsDue: Int, goalMinutes: Int): String? = when {
+fun reminderText(
+    studiedToday: Boolean,
+    targetLanguage: String,
+    cardsDue: Int,
+    goalMinutes: Int,
+    strings: ReminderStrings,
+): String? = when {
     studiedToday -> null
-    cardsDue > 0 -> "$goalMinutes minutes of $targetLanguage today? $cardsDue ${if (cardsDue == 1) "card is" else "cards are"} due."
-    else -> "$goalMinutes minutes of $targetLanguage today? Keep your streak going."
+    cardsDue > 0 -> strings.withDueCards(goalMinutes, targetLanguage, cardsDue)
+    else -> strings.keepStreak(goalMinutes, targetLanguage)
 }
 
 /** Schedules one WorkManager job for the next reminder time; the job schedules the next one. */
@@ -76,8 +97,10 @@ class ReminderScheduler @Inject constructor(
         const val NOTIFICATION_ID = 1001
 
         fun createChannel(context: Context) {
-            val channel = NotificationChannel(CHANNEL_ID, "Daily reminder", NotificationManager.IMPORTANCE_DEFAULT).apply {
-                description = "A daily nudge to practise"
+            val channel = NotificationChannel(
+                CHANNEL_ID, context.getString(R.string.reminder_channel_name), NotificationManager.IMPORTANCE_DEFAULT,
+            ).apply {
+                description = context.getString(R.string.reminder_channel_description)
             }
             context.getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
         }
@@ -107,7 +130,13 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
         val target = prefs.targetLang.first()
         val today = LocalDate.now(deps.clock()).toEpochDay()
         val studied = (deps.activityDao().day(today, target)?.xp ?: 0) > 0
-        val text = reminderText(studied, languageName(target), deps.words().dueCount().first(), prefs.dailyGoalMinutes.first())
+        val text = reminderText(
+            studied,
+            applicationContext.getString(languageNameRes(target)),
+            deps.words().dueCount().first(),
+            prefs.dailyGoalMinutes.first(),
+            ResourceReminderStrings(applicationContext.resources),
+        )
         if (text != null && ReminderScheduler.canNotify(applicationContext)) show(text)
         deps.scheduler().apply(true, prefs.reminderMinuteOfDay.first())
         return Result.success()
@@ -121,7 +150,7 @@ class ReminderWorker(context: Context, params: WorkerParameters) : CoroutineWork
         )
         val n = NotificationCompat.Builder(applicationContext, ReminderScheduler.CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_notification)
-            .setContentTitle("Time to practise")
+            .setContentTitle(applicationContext.getString(R.string.reminder_title))
             .setContentText(text)
             .setStyle(NotificationCompat.BigTextStyle().bigText(text))
             .setContentIntent(open)

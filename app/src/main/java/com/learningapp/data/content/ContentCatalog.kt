@@ -1,5 +1,7 @@
 package com.learningapp.data.content
 
+import com.learningapp.R
+import androidx.annotation.StringRes
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -17,6 +19,16 @@ val SUPPORTED_LANGUAGES = listOf(
 )
 
 fun languageName(code: String): String = SUPPORTED_LANGUAGES.firstOrNull { it.code == code }?.englishName ?: code
+
+/** Localised name of a supported language code; only supported codes are ever stored, so others fall back to English. */
+@StringRes
+fun languageNameRes(code: String): Int = when (code) {
+    "es" -> R.string.lang_es
+    "fr" -> R.string.lang_fr
+    "ja" -> R.string.lang_ja
+    "vi" -> R.string.lang_vi
+    else -> R.string.lang_en
+}
 
 /**
  * Which language pairs have content: a target language needs assets/content/<target>/words.json,

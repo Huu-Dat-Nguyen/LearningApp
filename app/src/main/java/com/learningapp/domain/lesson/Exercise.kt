@@ -2,9 +2,6 @@ package com.learningapp.domain.lesson
 
 /** One exercise ready to show. Built from lesson content by [ExerciseBuilder]. */
 sealed interface Exercise {
-    /** Short instruction shown above the exercise. */
-    val instruction: String
-
     /** The right answer, shown in the feedback panel. */
     val solution: String
 
@@ -13,7 +10,8 @@ sealed interface Exercise {
         val prompt: String,
         val options: List<String>,
         val correctIndex: Int,
-        override val instruction: String = "Choose the correct translation",
+        /** How to read [prompt] (Japanese: "みず (mizu)"), shown under it. */
+        val reading: String? = null,
     ) : Exercise {
         override val solution: String get() = options[correctIndex]
     }
@@ -26,7 +24,6 @@ sealed interface Exercise {
         val hint: String,
         /** Other accepted spellings (e.g. kana for a kanji answer). */
         val accept: List<String> = emptyList(),
-        override val instruction: String = "Fill in the blank",
     ) : Exercise {
         override val solution: String get() = answer
     }
@@ -38,7 +35,6 @@ sealed interface Exercise {
         val translation: String,
         /** How chips join into a sentence: a space, or nothing for Japanese. */
         val joiner: String = " ",
-        override val instruction: String = "Put the words in order",
     ) : Exercise {
         override val solution: String get() = answer.joinToString(joiner)
     }
@@ -49,7 +45,6 @@ sealed interface Exercise {
         val translation: String,
         /** Other accepted spellings (e.g. kana for kanji). */
         val accept: List<String> = emptyList(),
-        override val instruction: String = "Type what you hear",
     ) : Exercise {
         override val solution: String get() = text
     }
@@ -58,7 +53,6 @@ sealed interface Exercise {
     data class Translate(
         val source: String,
         val answers: List<String>,
-        override val instruction: String = "Translate this sentence",
     ) : Exercise {
         override val solution: String get() = answers.first()
     }

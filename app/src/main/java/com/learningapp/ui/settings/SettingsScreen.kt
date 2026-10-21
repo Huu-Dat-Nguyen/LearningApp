@@ -1,5 +1,8 @@
 package com.learningapp.ui.settings
 
+import com.learningapp.data.content.languageNameRes
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import com.learningapp.R
 import androidx.compose.ui.res.painterResource
 import androidx.compose.material3.Icon
@@ -50,7 +53,6 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.learningapp.data.content.SUPPORTED_LANGUAGES
-import com.learningapp.data.content.languageName
 import com.learningapp.data.repo.UserPrefs
 import com.learningapp.ui.components.AppCard
 import com.learningapp.ui.components.rememberNotificationPermission
@@ -69,6 +71,7 @@ private enum class Dialog { Main, Target, Goal, Time, Licenses }
 fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewModel()) {
     val s by viewModel.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
+    val backLabel = stringResource(R.string.common_back)
     var dialog by remember { mutableStateOf<Dialog?>(null) }
     var notificationsBlocked by remember { mutableStateOf(false) }
     val askNotifications = rememberNotificationPermission { granted ->
@@ -82,26 +85,26 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
     ) {
         Row(verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             Box(
-                Modifier.size(36.dp).clip(CircleShape).clickable(onClick = onBack).semantics { contentDescription = "Back" },
+                Modifier.size(36.dp).clip(CircleShape).clickable(onClick = onBack).semantics { contentDescription = backLabel },
                 contentAlignment = Alignment.Center,
             ) { Icon(painterResource(R.drawable.ic_arrow_back), contentDescription = null, tint = Ink) }
-            Text("Settings", style = MaterialTheme.typography.titleLarge)
+            Text(stringResource(R.string.common_settings), style = MaterialTheme.typography.titleLarge)
         }
         val st = s ?: return@Column
 
-        Section("LANGUAGES") {
-            Item("Main language", languageName(st.mainLang)) { dialog = Dialog.Main }
+        Section(stringResource(R.string.settings_languages)) {
+            Item(stringResource(R.string.common_main_language), stringResource(languageNameRes(st.mainLang))) { dialog = Dialog.Main }
             Divider()
-            Item("Learning", languageName(st.targetLang)) { dialog = Dialog.Target }
-            Text("Progress is kept for each language you learn.", style = MaterialTheme.typography.labelSmall, color = Muted)
+            Item(stringResource(R.string.settings_learning), stringResource(languageNameRes(st.targetLang))) { dialog = Dialog.Target }
+            Text(stringResource(R.string.settings_progress_kept), style = MaterialTheme.typography.labelSmall, color = Muted)
         }
-        Section("PRACTICE") {
-            Item("Daily goal", "${st.goalMinutes} min a day") { dialog = Dialog.Goal }
+        Section(stringResource(R.string.settings_practice)) {
+            Item(stringResource(R.string.common_daily_goal), pluralStringResource(R.plurals.common_minutes_per_day, st.goalMinutes, st.goalMinutes)) { dialog = Dialog.Goal }
             Divider()
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(Modifier.weight(1f)) {
-                    Text("Daily reminder", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold), color = Ink)
-                    Text(if (st.reminderEnabled) "At ${formatTime(st.reminderMinuteOfDay)}" else "Off", style = MaterialTheme.typography.labelMedium)
+                    Text(stringResource(R.string.common_daily_reminder), style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold), color = Ink)
+                    Text(if (st.reminderEnabled) stringResource(R.string.common_at_time, formatTime(st.reminderMinuteOfDay)) else stringResource(R.string.common_off), style = MaterialTheme.typography.labelMedium)
                 }
                 Switch(
                     checked = st.reminderEnabled,
@@ -111,49 +114,49 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
             }
             if (notificationsBlocked && !st.reminderEnabled) {
                 Text(
-                    "Notifications are blocked for this app. Allow them in the phone's settings to get reminders.",
+                    stringResource(R.string.settings_notifications_blocked),
                     style = MaterialTheme.typography.labelMedium,
                     color = Muted,
                 )
             }
             if (st.reminderEnabled) {
                 Divider()
-                Item("Reminder time", formatTime(st.reminderMinuteOfDay)) { dialog = Dialog.Time }
+                Item(stringResource(R.string.settings_reminder_time), formatTime(st.reminderMinuteOfDay)) { dialog = Dialog.Time }
             }
         }
-        Section("SOUND") {
-            Item("Text-to-speech voices", "Add or change voices in the phone's settings") { openTtsSettings(context) }
+        Section(stringResource(R.string.settings_sound)) {
+            Item(stringResource(R.string.settings_tts_voices), stringResource(R.string.settings_tts_voices_hint)) { openTtsSettings(context) }
         }
-        Section("ABOUT") {
-            Item("Version", appVersion(context)) {}
+        Section(stringResource(R.string.settings_about)) {
+            Item(stringResource(R.string.settings_version), appVersion(context)) {}
             Divider()
-            Item("Open-source licences", "Libraries used by this app") { dialog = Dialog.Licenses }
+            Item(stringResource(R.string.settings_licences), stringResource(R.string.settings_licences_hint)) { dialog = Dialog.Licenses }
             Divider()
-            Item("Source code", "github.com/Huu-Dat-Nguyen/LearningApp") { open(context, Intent(Intent.ACTION_VIEW, Uri.parse(REPO_URL))) }
+            Item(stringResource(R.string.settings_source_code), "github.com/Huu-Dat-Nguyen/LearningApp") { open(context, Intent(Intent.ACTION_VIEW, Uri.parse(REPO_URL))) }
         }
     }
 
     val st = s ?: return
     when (dialog) {
         Dialog.Main -> Picker(
-            title = "Main language",
-            options = SUPPORTED_LANGUAGES.map { it.code to it.englishName },
+            title = stringResource(R.string.common_main_language),
+            options = SUPPORTED_LANGUAGES.map { it.code to stringResource(languageNameRes(it.code)) },
             selected = st.mainLang,
             enabled = { code -> st.pairs[st.targetLang].orEmpty().contains(code) && code != st.targetLang },
             onPick = { viewModel.setLanguages(it, st.targetLang) },
             onDismiss = { dialog = null },
         )
         Dialog.Target -> Picker(
-            title = "Language to learn",
-            options = SUPPORTED_LANGUAGES.filter { it.code != st.mainLang }.map { it.code to it.englishName },
+            title = stringResource(R.string.settings_language_to_learn),
+            options = SUPPORTED_LANGUAGES.filter { it.code != st.mainLang }.map { it.code to stringResource(languageNameRes(it.code)) },
             selected = st.targetLang,
             enabled = { code -> st.mainLang in st.pairs[code].orEmpty() },
             onPick = { viewModel.setLanguages(st.mainLang, it) },
             onDismiss = { dialog = null },
         )
         Dialog.Goal -> Picker(
-            title = "Daily goal",
-            options = UserPrefs.GOALS.map { "$it" to "$it min a day" },
+            title = stringResource(R.string.common_daily_goal),
+            options = UserPrefs.GOALS.map { "$it" to pluralStringResource(R.plurals.common_minutes_per_day, it, it) },
             selected = "${st.goalMinutes}",
             enabled = { true },
             onPick = { viewModel.setGoal(it.toInt()) },
@@ -163,19 +166,19 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
             val state = rememberTimePickerState(st.reminderMinuteOfDay / 60, st.reminderMinuteOfDay % 60)
             AlertDialog(
                 onDismissRequest = { dialog = null },
-                confirmButton = { TextButton({ viewModel.setReminder(true, state.hour * 60 + state.minute); dialog = null }) { Text("OK") } },
-                dismissButton = { TextButton({ dialog = null }) { Text("Cancel") } },
+                confirmButton = { TextButton({ viewModel.setReminder(true, state.hour * 60 + state.minute); dialog = null }) { Text(stringResource(R.string.common_ok)) } },
+                dismissButton = { TextButton({ dialog = null }) { Text(stringResource(R.string.common_cancel)) } },
                 text = { TimePicker(state) },
             )
         }
         Dialog.Licenses -> AlertDialog(
             onDismissRequest = { dialog = null },
-            confirmButton = { TextButton({ dialog = null }) { Text("Close") } },
-            title = { Text("Open-source licences") },
+            confirmButton = { TextButton({ dialog = null }) { Text(stringResource(R.string.common_close)) } },
+            title = { Text(stringResource(R.string.settings_licences)) },
             text = {
                 Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                     LICENSES.forEach { (name, licence) ->
-                        Text("$name — $licence", style = MaterialTheme.typography.bodyMedium)
+                        Text(stringResource(R.string.settings_license_entry, stringResource(name), stringResource(licence)), style = MaterialTheme.typography.bodyMedium)
                     }
                 }
             },
@@ -185,16 +188,16 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
 }
 
 private val LICENSES = listOf(
-    "AndroidX, Jetpack Compose, Room, Navigation, DataStore, WorkManager" to "Apache 2.0",
-    "Dagger / Hilt" to "Apache 2.0",
-    "Kotlin, kotlinx.coroutines, kotlinx.serialization" to "Apache 2.0",
-    "Material icons" to "Apache 2.0",
-    "Plus Jakarta Sans font (Tokotype)" to "SIL Open Font License 1.1",
+    R.string.settings_license_androidx to R.string.settings_license_apache,
+    R.string.settings_license_dagger to R.string.settings_license_apache,
+    R.string.settings_license_kotlin to R.string.settings_license_apache,
+    R.string.settings_license_icons to R.string.settings_license_apache,
+    R.string.settings_license_font to R.string.settings_license_ofl,
 )
 
 @Composable
 private fun Section(title: String, content: @Composable () -> Unit) {
-    Text(title, style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold, letterSpacing = 0.6.sp))
+    Text(title.uppercase(), style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold, letterSpacing = 0.6.sp))
     AppCard(Modifier.fillMaxWidth()) { content() }
 }
 
@@ -222,7 +225,7 @@ private fun Picker(
 ) {
     AlertDialog(
         onDismissRequest = onDismiss,
-        confirmButton = { TextButton(onDismiss) { Text("Close") } },
+        confirmButton = { TextButton(onDismiss) { Text(stringResource(R.string.common_close)) } },
         title = { Text(title) },
         text = {
             Column {
@@ -234,7 +237,7 @@ private fun Picker(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         RadioButton(selected = code == selected, onClick = null, enabled = on, colors = RadioButtonDefaults.colors(selectedColor = Violet))
-                        Text(if (on || code == selected) label else "$label · coming soon", color = if (on) Ink else Muted, modifier = Modifier.padding(start = 8.dp))
+                        Text(if (on || code == selected) label else stringResource(R.string.common_coming_soon_suffix, label), color = if (on) Ink else Muted, modifier = Modifier.padding(start = 8.dp))
                     }
                 }
             }

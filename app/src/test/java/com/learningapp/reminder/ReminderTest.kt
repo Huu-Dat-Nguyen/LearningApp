@@ -11,6 +11,15 @@ class ReminderTest {
     private val zone = ZoneId.of("Asia/Ho_Chi_Minh")
     private fun at(h: Int, m: Int) = ZonedDateTime.of(2026, 10, 21, h, m, 0, 0, zone)
 
+    // English wording, same as values/strings.xml.
+    private val english = object : ReminderStrings {
+        override fun withDueCards(goalMinutes: Int, language: String, cardsDue: Int) =
+            "$goalMinutes minutes of $language today? $cardsDue ${if (cardsDue == 1) "card is" else "cards are"} due."
+
+        override fun keepStreak(goalMinutes: Int, language: String) =
+            "$goalMinutes minutes of $language today? Keep your streak going."
+    }
+
     @Test
     fun laterTodayWhenStillAhead() {
         assertEquals(Duration.ofHours(10), delayUntilNext(at(9, 0), 19 * 60))
@@ -41,13 +50,13 @@ class ReminderTest {
 
     @Test
     fun noReminderAfterStudying() {
-        assertNull(reminderText(studiedToday = true, targetLanguage = "Spanish", cardsDue = 5, goalMinutes = 10))
+        assertNull(reminderText(studiedToday = true, targetLanguage = "Spanish", cardsDue = 5, goalMinutes = 10, strings = english))
     }
 
     @Test
     fun textMentionsDueCards() {
-        assertEquals("10 minutes of Spanish today? 12 cards are due.", reminderText(false, "Spanish", 12, 10))
-        assertEquals("5 minutes of Spanish today? 1 card is due.", reminderText(false, "Spanish", 1, 5))
-        assertEquals("10 minutes of Spanish today? Keep your streak going.", reminderText(false, "Spanish", 0, 10))
+        assertEquals("10 minutes of Spanish today? 12 cards are due.", reminderText(false, "Spanish", 12, 10, english))
+        assertEquals("5 minutes of Spanish today? 1 card is due.", reminderText(false, "Spanish", 1, 5, english))
+        assertEquals("10 minutes of Spanish today? Keep your streak going.", reminderText(false, "Spanish", 0, 10, english))
     }
 }

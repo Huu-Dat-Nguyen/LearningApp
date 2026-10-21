@@ -16,6 +16,8 @@ data class WordEntity(
     val level: String,
     /** Position in the content file; new cards are introduced in this order. */
     val sortOrder: Int,
+    /** How to read the word, for scripts learners can't sound out yet (Japanese: "みず (mizu)"). */
+    val reading: String? = null,
 )
 
 /** Translation of a word into one main (native) language. */
@@ -73,6 +75,7 @@ data class CardRow(
     val repetitions: Int?,
     val lapses: Int?,
     val dueEpochDay: Long?,
+    val reading: String? = null,
 ) {
     val isNew: Boolean get() = dueEpochDay == null
 }

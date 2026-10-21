@@ -1,5 +1,8 @@
 package com.learningapp.ui.review
 
+import com.learningapp.data.content.languageNameRes
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
@@ -60,7 +63,6 @@ import com.learningapp.ui.theme.TagBg
 import com.learningapp.ui.theme.Track
 import com.learningapp.ui.theme.Violet
 import com.learningapp.ui.theme.VioletGradient
-import java.util.Locale
 
 @Composable
 fun ReviewScreen(onDone: () -> Unit, viewModel: ReviewViewModel = hiltViewModel()) {
@@ -83,22 +85,22 @@ private fun ReviewContent(
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Review", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.review_title), style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
             if (state.card != null) Text(state.positionLabel, style = MaterialTheme.typography.labelMedium)
         }
         val card = state.card
         when {
             state.loading -> Unit
             state.isEmpty -> MessageCard(
-                title = "Nothing to review",
-                body = "No cards are due right now. Come back tomorrow.",
-                button = "Back to Home",
+                title = stringResource(R.string.review_nothing_title),
+                body = stringResource(R.string.review_nothing_body),
+                button = stringResource(R.string.common_back_to_home),
                 onClick = onDone,
             )
             state.finished -> MessageCard(
-                title = "All done for today",
-                body = "You reviewed ${state.reviewed} ${if (state.reviewed == 1) "card" else "cards"}.",
-                button = "Back to Home",
+                title = stringResource(R.string.review_all_done_title),
+                body = pluralStringResource(R.plurals.review_all_done_body, state.reviewed, state.reviewed),
+                button = stringResource(R.string.common_back_to_home),
                 onClick = onDone,
             )
             card != null -> {
@@ -109,7 +111,7 @@ private fun ReviewContent(
                 if (state.isFlipped) {
                     GradeRow(state.intervals, onGrade)
                 } else {
-                    GradientButton("Show answer", onFlip)
+                    GradientButton(stringResource(R.string.review_show_answer), onFlip)
                 }
             }
         }
@@ -157,15 +159,17 @@ private fun FlashCard(
 @Composable
 private fun CardFront(card: CardRow) {
     Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(14.dp)) {
-        if (card.isNew) Tag("NEW")
+        if (card.isNew) Tag(stringResource(R.string.review_new).uppercase())
         Text(card.text, fontSize = 34.sp, fontWeight = FontWeight.ExtraBold, color = Ink, textAlign = TextAlign.Center)
-        Text("Tap to flip", style = MaterialTheme.typography.labelMedium)
+        card.reading?.let { Text(it, style = MaterialTheme.typography.bodyLarge, color = Muted, textAlign = TextAlign.Center) }
+        Text(stringResource(R.string.review_tap_to_flip), style = MaterialTheme.typography.labelMedium)
     }
 }
 
 @Composable
 private fun ColumnScope.CardBack(card: CardRow, langTag: String, speaker: Speaker) {
-    Text(card.text, style = MaterialTheme.typography.labelLarge, color = Muted)
+    val playLabel = stringResource(R.string.review_play_audio)
+    Text(card.text + (card.reading?.let { "  ·  $it" } ?: ""), style = MaterialTheme.typography.labelLarge, color = Muted)
     Spacer(Modifier.size(6.dp))
     Text(card.translation, fontSize = 30.sp, fontWeight = FontWeight.ExtraBold, color = Ink, textAlign = TextAlign.Center)
     HorizontalDivider(Modifier.padding(vertical = 18.dp).fillMaxWidth(0.4f), color = Line)
@@ -178,15 +182,15 @@ private fun ColumnScope.CardBack(card: CardRow, langTag: String, speaker: Speake
             .clip(CircleShape)
             .background(TagBg)
             .clickable { speaker.speak("${card.text}. ${card.example}") }
-            .semantics { contentDescription = "Play audio" },
+            .semantics { contentDescription = playLabel },
         contentAlignment = Alignment.Center,
     ) {
         Icon(painterResource(R.drawable.ic_volume), contentDescription = null, tint = if (speaker.ready) Violet else Muted)
     }
     if (speaker.missingVoice) {
-        val language = Locale.forLanguageTag(langTag).getDisplayLanguage(Locale.ENGLISH)
+        val language = stringResource(languageNameRes(langTag))
         Text(
-            "No $language voice on this phone. Add one in Settings › Text-to-speech.",
+            stringResource(R.string.common_voice_missing, language),
             style = MaterialTheme.typography.labelMedium,
             textAlign = TextAlign.Center,
             modifier = Modifier.padding(top = 8.dp),
@@ -215,20 +219,37 @@ private fun GradeRow(intervals: Map<Grade, Int>, onGrade: (Grade) -> Unit) {
 
 @Composable
 private fun RowScope.GradeButton(grade: Grade, days: Int, onGrade: (Grade) -> Unit) {
+    val gradeLabel = stringResource(
+        when (grade) {
+            Grade.Again -> R.string.review_grade_again
+            Grade.Hard -> R.string.review_grade_hard
+            Grade.Good -> R.string.review_grade_good
+            Grade.Easy -> R.string.review_grade_easy
+        },
+    )
     val primary = grade == Grade.Good
     val shape = RoundedCornerShape(16.dp)
-    val interval = Sm2Scheduler.formatInterval(days)
+    val interval = intervalLabel(days)
+    val description = stringResource(R.string.review_grade_description, gradeLabel, interval)
     Column(
         Modifier
             .weight(1f)
             .clip(shape)
             .then(if (primary) Modifier.background(VioletGradient) else Modifier.background(CardBg).border(1.dp, Track, shape))
             .clickable { onGrade(grade) }
-            .semantics(mergeDescendants = true) { contentDescription = "${grade.name} · $interval" }
+            .semantics(mergeDescendants = true) { contentDescription = description }
             .padding(vertical = 10.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text(grade.name, style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 0.3.sp), color = if (primary) Color.White else Ink)
+        Text(gradeLabel, style = MaterialTheme.typography.labelLarge.copy(letterSpacing = 0.3.sp), color = if (primary) Color.White else Ink)
         Text(interval, style = MaterialTheme.typography.labelMedium, color = if (primary) Color.White.copy(alpha = 0.85f) else Muted)
     }
+}
+
+/** "6d", "3mo", "1.5y" in the app language (same thresholds as Sm2Scheduler.formatInterval). */
+@Composable
+private fun intervalLabel(days: Int): String = when {
+    days < 30 -> stringResource(R.string.review_interval_days, days)
+    days < 365 -> stringResource(R.string.review_interval_months, kotlin.math.round(days / 30.0).toInt())
+    else -> stringResource(R.string.review_interval_years, "%.1f".format(java.util.Locale.ROOT, days / 365.0).removeSuffix(".0"))
 }

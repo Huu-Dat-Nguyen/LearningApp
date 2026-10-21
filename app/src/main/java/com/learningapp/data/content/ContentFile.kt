@@ -18,6 +18,8 @@ data class ContentWord(
     val example: String,
     /** Keyed by main (native) language code. */
     val translations: Map<String, ContentTranslation>,
+    /** Japanese only: "みず (mizu)". */
+    val reading: String? = null,
 )
 
 @Serializable
@@ -30,7 +32,7 @@ object ContentParser {
 
     fun toEntities(file: ContentFile): Pair<List<WordEntity>, List<WordTranslationEntity>> {
         val words = file.words.mapIndexed { i, w ->
-            WordEntity(w.id, file.lang, w.text, w.example, w.topic, w.level, sortOrder = i)
+            WordEntity(w.id, file.lang, w.text, w.example, w.topic, w.level, sortOrder = i, reading = w.reading)
         }
         val translations = file.words.flatMap { w ->
             w.translations.map { (lang, t) -> WordTranslationEntity(w.id, lang, t.text, t.example) }

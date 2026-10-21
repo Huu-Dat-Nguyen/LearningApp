@@ -1,5 +1,6 @@
 package com.learningapp.ui.profile
 
+import androidx.compose.ui.res.stringResource
 import com.learningapp.R
 import androidx.compose.ui.res.painterResource
 import androidx.compose.material3.Icon
@@ -63,34 +64,35 @@ class ProgressViewModel @Inject constructor(progress: ProgressRepository) : View
 @Composable
 fun ProfileScreen(onOpenSettings: () -> Unit, viewModel: ProgressViewModel = hiltViewModel()) {
     val summary by viewModel.summary.collectAsStateWithLifecycle()
+    val settingsLabel = stringResource(R.string.common_settings)
     Column(
         Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(18.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Progress", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.profile_title), style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
             Box(
                 Modifier.size(40.dp).clip(CircleShape).background(TagBg).clickable(onClick = onOpenSettings)
-                    .semantics { contentDescription = "Settings" },
+                    .semantics { contentDescription = settingsLabel },
                 contentAlignment = Alignment.Center,
             ) { Icon(painterResource(R.drawable.ic_settings), contentDescription = null, tint = Violet, modifier = Modifier.size(22.dp)) }
         }
         val s = summary ?: return@Column
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Stat("${s.streak}", "day streak", Modifier.weight(1f))
-            Stat("${s.totalXp}", "total XP", Modifier.weight(1f))
+            Stat("${s.streak}", stringResource(R.string.profile_day_streak), Modifier.weight(1f))
+            Stat("${s.totalXp}", stringResource(R.string.profile_total_xp), Modifier.weight(1f))
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-            Stat("${s.wordsStarted}", "words learned", Modifier.weight(1f))
-            Stat(s.accuracy7d?.let { "${(it * 100).roundToInt()}%" } ?: "–", "accuracy (7 days)", Modifier.weight(1f))
+            Stat("${s.wordsStarted}", stringResource(R.string.profile_words_learned), Modifier.weight(1f))
+            Stat(s.accuracy7d?.let { "${(it * 100).roundToInt()}%" } ?: "–", stringResource(R.string.profile_accuracy_7d), Modifier.weight(1f))
         }
         AppCard(Modifier.fillMaxWidth()) {
-            Text("XP, last 7 days", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
+            Text(stringResource(R.string.profile_xp_last_7), style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
             XpChart(s)
         }
         AppCard(Modifier.fillMaxWidth()) {
-            Text("Today", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
-            Text("${s.todayMinutes} of ${s.dailyGoalMinutes} min studied", style = MaterialTheme.typography.bodyLarge, color = Ink)
+            Text(stringResource(R.string.profile_today), style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
+            Text(stringResource(R.string.profile_minutes_studied, s.todayMinutes, s.dailyGoalMinutes), style = MaterialTheme.typography.bodyLarge, color = Ink)
             Box(Modifier.fillMaxWidth().height(8.dp).clip(RoundedCornerShape(99.dp)).background(Track)) {
                 Box(Modifier.fillMaxWidth(s.goalProgress).height(8.dp).clip(RoundedCornerShape(99.dp)).background(VioletGradient))
             }
@@ -117,8 +119,9 @@ private fun XpChart(s: ProgressSummary) {
     ) {
         s.last7.forEach { day ->
             val label = day.date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault())
+            val description = stringResource(R.string.profile_day_xp_description, label, day.xp)
             Column(
-                Modifier.weight(1f).fillMaxHeight().semantics(mergeDescendants = true) { contentDescription = "$label ${day.xp} XP" },
+                Modifier.weight(1f).fillMaxHeight().semantics(mergeDescendants = true) { contentDescription = description },
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Bottom,
             ) {

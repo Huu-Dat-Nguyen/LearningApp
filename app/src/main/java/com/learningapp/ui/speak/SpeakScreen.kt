@@ -1,5 +1,7 @@
 package com.learningapp.ui.speak
 
+import com.learningapp.data.content.languageNameRes
+import androidx.compose.ui.res.stringResource
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -69,6 +71,8 @@ fun SpeakScreen(viewModel: SpeakViewModel = hiltViewModel()) {
     val state by viewModel.state.collectAsStateWithLifecycle()
     val speaker = rememberSpeaker(state.targetLang)
     val context = LocalContext.current
+    val startRecording = stringResource(R.string.speak_start_recording)
+    val stopRecording = stringResource(R.string.speak_stop_recording)
     TrackStudyTime()
 
     val permission = rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
@@ -84,33 +88,33 @@ fun SpeakScreen(viewModel: SpeakViewModel = hiltViewModel()) {
         verticalArrangement = Arrangement.spacedBy(14.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Speak", style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.speak_title), style = MaterialTheme.typography.titleLarge, modifier = Modifier.weight(1f))
             if (state.total > 0) Text("${state.position} / ${state.total}", style = MaterialTheme.typography.labelMedium)
         }
         val sentence = state.sentence
         if (state.loading) return@Column
         if (sentence == null) {
-            AppCard(Modifier.fillMaxWidth()) { Text("Nothing to practise yet. Start a lesson first.", style = MaterialTheme.typography.bodyMedium) }
+            AppCard(Modifier.fillMaxWidth()) { Text(stringResource(R.string.speak_nothing_yet), style = MaterialTheme.typography.bodyMedium) }
             return@Column
         }
 
         AppCard(Modifier.fillMaxWidth()) {
-            Text("SAY THIS SENTENCE", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
+            Text(stringResource(R.string.speak_say_this).uppercase(), style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
             Text(sentence.text, style = MaterialTheme.typography.headlineSmall)
             Text(sentence.translation, style = MaterialTheme.typography.bodyMedium, color = Muted)
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp), verticalAlignment = Alignment.CenterVertically, modifier = Modifier.padding(top = 6.dp)) {
-                SmallSpeaker(speaker, "Listen") { speaker.speak(sentence.text) }
-                SmallSpeaker(speaker, "Listen slowly") { speaker.speak(sentence.text, slow = true) }
-                Text("Listen · slow", style = MaterialTheme.typography.labelMedium)
+                SmallSpeaker(speaker, stringResource(R.string.speak_listen)) { speaker.speak(sentence.text) }
+                SmallSpeaker(speaker, stringResource(R.string.speak_listen_slowly)) { speaker.speak(sentence.text, slow = true) }
+                Text(stringResource(R.string.speak_listen_slow_label), style = MaterialTheme.typography.labelMedium)
             }
         }
 
         if (state.recognitionAvailable) {
-            MicButton(state.phase == SpeakPhase.Listening, state.level, ::onMic)
+            MicButton(state.phase == SpeakPhase.Listening, state.level, if (state.phase == SpeakPhase.Listening) stopRecording else startRecording, ::onMic)
             Text(
                 when (state.phase) {
-                    SpeakPhase.Listening -> "Listening… tap to stop"
-                    else -> "Tap the mic and read the sentence aloud"
+                    SpeakPhase.Listening -> stringResource(R.string.speak_listening)
+                    else -> stringResource(R.string.speak_tap_mic)
                 },
                 style = MaterialTheme.typography.labelMedium,
                 textAlign = TextAlign.Center,
@@ -119,7 +123,7 @@ fun SpeakScreen(viewModel: SpeakViewModel = hiltViewModel()) {
         } else {
             AppCard(Modifier.fillMaxWidth()) {
                 Text(
-                    "This phone has no speech recognition, so you can listen and repeat, but the app can't score you.",
+                    stringResource(R.string.speak_no_recognition),
                     style = MaterialTheme.typography.bodyMedium,
                 )
             }
@@ -130,20 +134,20 @@ fun SpeakScreen(viewModel: SpeakViewModel = hiltViewModel()) {
         }
 
         state.score?.let { ResultCard(it, state.xpGained) }
-        state.error?.let { ErrorCard(it, onOpenSettings = {
+        state.error?.let { ErrorCard(it, state.targetLang, onOpenSettings = {
             context.startActivity(Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.fromParts("package", context.packageName, null)))
         }) }
 
         if (state.phase == SpeakPhase.Result || state.phase == SpeakPhase.Error) {
             Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
-                OutlineButton("Try again", viewModel::tryAgain, Modifier.weight(1f))
-                GradientButton("Next", viewModel::next, Modifier.weight(1f))
+                OutlineButton(stringResource(R.string.common_try_again), viewModel::tryAgain, Modifier.weight(1f))
+                GradientButton(stringResource(R.string.common_next), viewModel::next, Modifier.weight(1f))
             }
         } else if (state.phase == SpeakPhase.Idle) {
-            OutlineButton("Skip sentence", viewModel::next)
+            OutlineButton(stringResource(R.string.speak_skip), viewModel::next)
         }
         Text(
-            "The score shows how well the phone understood you, not a full accent check.",
+            stringResource(R.string.speak_score_note),
             style = MaterialTheme.typography.labelSmall,
             color = Muted,
             textAlign = TextAlign.Center,
@@ -163,7 +167,7 @@ private fun SmallSpeaker(speaker: Speaker, description: String, onClick: () -> U
 }
 
 @Composable
-private fun MicButton(listening: Boolean, level: Float, onClick: () -> Unit) {
+private fun MicButton(listening: Boolean, level: Float, description: String, onClick: () -> Unit) {
     val pulse by animateFloatAsState(if (listening) 1f + level * 0.25f else 1f, label = "mic")
     Box(Modifier.fillMaxWidth().padding(vertical = 8.dp), contentAlignment = Alignment.Center) {
         if (listening) {
@@ -175,7 +179,7 @@ private fun MicButton(listening: Boolean, level: Float, onClick: () -> Unit) {
                 .clip(CircleShape)
                 .then(if (listening) Modifier.background(appColors.recording) else Modifier.background(VioletGradient))
                 .clickable(onClick = onClick)
-                .semantics { contentDescription = if (listening) "Stop recording" else "Start recording" },
+                .semantics { contentDescription = description },
             contentAlignment = Alignment.Center,
         ) {
             Icon(painterResource(R.drawable.ic_mic), contentDescription = null, tint = Color.White, modifier = Modifier.size(44.dp))
@@ -187,7 +191,7 @@ private fun MicButton(listening: Boolean, level: Float, onClick: () -> Unit) {
 @Composable
 private fun ResultCard(score: SpeechScore, xp: Int) {
     AppCard(Modifier.fillMaxWidth()) {
-        Text("WHAT YOU SAID", style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
+        Text(stringResource(R.string.speak_what_you_said).uppercase(), style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold))
         Text("\"${score.heard}\"", style = MaterialTheme.typography.bodyLarge, color = Ink)
         FlowRow(horizontalArrangement = Arrangement.spacedBy(6.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
             score.words.forEach { w ->
@@ -201,32 +205,40 @@ private fun ResultCard(score: SpeechScore, xp: Int) {
         Spacer(Modifier.size(4.dp))
         Row(verticalAlignment = Alignment.Bottom) {
             Text("${score.score}", fontSize = 34.sp, fontWeight = FontWeight.ExtraBold, color = Ink)
-            Text(" / 100 · ${score.label}", style = MaterialTheme.typography.bodyLarge, color = Muted, modifier = Modifier.padding(bottom = 5.dp))
+            val label = stringResource(
+                when {
+                    score.score >= SpeechScore.GREAT -> R.string.speak_label_great
+                    score.score >= SpeechScore.ALMOST -> R.string.speak_label_almost
+                    else -> R.string.speak_label_try_again
+                },
+            )
+            Text(" " + stringResource(R.string.speak_score_label, label), style = MaterialTheme.typography.bodyLarge, color = Muted, modifier = Modifier.padding(bottom = 5.dp))
             Spacer(Modifier.weight(1f))
-            if (xp > 0) Text("+$xp XP", style = MaterialTheme.typography.labelLarge, color = Violet)
+            if (xp > 0) Text(stringResource(R.string.speak_xp_gain, xp), style = MaterialTheme.typography.labelLarge, color = Violet)
         }
-        Text("Green = right · amber = close · red = missed", style = MaterialTheme.typography.labelSmall, color = Muted)
+        Text(stringResource(R.string.speak_legend), style = MaterialTheme.typography.labelSmall, color = Muted)
     }
 }
 
 @Composable
-private fun ErrorCard(error: SpeechError, onOpenSettings: () -> Unit) {
+private fun ErrorCard(error: SpeechError, targetLang: String, onOpenSettings: () -> Unit) {
+    val language = stringResource(languageNameRes(targetLang))
     AppCard(Modifier.fillMaxWidth()) {
         Text(
             when (error) {
-                SpeechError.NoMatch -> "Didn't catch that. Try again a little closer to the phone."
-                SpeechError.NoSpeech -> "No speech heard. Tap the mic and start speaking."
-                SpeechError.Network -> "Speech recognition needs a connection, or download the Spanish offline speech pack in the phone's settings."
-                SpeechError.Busy -> "The speech service is busy. Try again in a moment."
-                SpeechError.Permission -> "The app needs the microphone to hear you. You can allow it in the app's settings."
-                SpeechError.NotAvailable -> "Speech recognition for this language isn't available on this phone. Try adding Spanish in the phone's speech or voice-typing settings."
-                SpeechError.Other -> "Something went wrong with speech recognition. Try again."
+                SpeechError.NoMatch -> stringResource(R.string.speak_error_no_match)
+                SpeechError.NoSpeech -> stringResource(R.string.speak_error_no_speech)
+                SpeechError.Network -> stringResource(R.string.speak_error_network, language)
+                SpeechError.Busy -> stringResource(R.string.speak_error_busy)
+                SpeechError.Permission -> stringResource(R.string.speak_error_permission)
+                SpeechError.NotAvailable -> stringResource(R.string.speak_error_not_available, language)
+                SpeechError.Other -> stringResource(R.string.speak_error_other)
             },
             style = MaterialTheme.typography.bodyMedium,
         )
         if (error == SpeechError.Permission) {
             Text(
-                "Open settings",
+                stringResource(R.string.speak_open_settings),
                 style = MaterialTheme.typography.labelLarge,
                 color = Violet,
                 modifier = Modifier.clip(CircleShape).clickable(onClick = onOpenSettings).padding(vertical = 6.dp),

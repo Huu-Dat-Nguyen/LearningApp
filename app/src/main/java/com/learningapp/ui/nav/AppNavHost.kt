@@ -1,5 +1,7 @@
 package com.learningapp.ui.nav
 
+import androidx.compose.ui.res.stringResource
+import androidx.annotation.StringRes
 import com.learningapp.R
 import androidx.compose.ui.res.painterResource
 import androidx.compose.material3.Icon
@@ -47,14 +49,14 @@ import com.learningapp.ui.theme.Muted
 import com.learningapp.ui.theme.ScreenBg
 import kotlin.reflect.KClass
 
-private data class Tab(val label: String, val route: Any, val routeClass: KClass<*>, @DrawableRes val icon: Int)
+private data class Tab(@StringRes val label: Int, val route: Any, val routeClass: KClass<*>, @DrawableRes val icon: Int)
 
 private val tabs = listOf(
-    Tab("Home", HomeRoute, HomeRoute::class, R.drawable.ic_tab_home),
-    Tab("Learn", LearnRoute, LearnRoute::class, R.drawable.ic_tab_learn),
-    Tab("Review", ReviewRoute, ReviewRoute::class, R.drawable.ic_tab_review),
-    Tab("Speak", SpeakRoute, SpeakRoute::class, R.drawable.ic_mic),
-    Tab("Profile", ProfileRoute, ProfileRoute::class, R.drawable.ic_tab_progress),
+    Tab(R.string.nav_home, HomeRoute, HomeRoute::class, R.drawable.ic_tab_home),
+    Tab(R.string.nav_learn, LearnRoute, LearnRoute::class, R.drawable.ic_tab_learn),
+    Tab(R.string.nav_review, ReviewRoute, ReviewRoute::class, R.drawable.ic_tab_review),
+    Tab(R.string.nav_speak, SpeakRoute, SpeakRoute::class, R.drawable.ic_mic),
+    Tab(R.string.nav_profile, ProfileRoute, ProfileRoute::class, R.drawable.ic_tab_progress),
 )
 
 @Composable
@@ -125,7 +127,7 @@ private fun BottomBar(selected: (Tab) -> Boolean, onSelect: (Tab) -> Unit) {
             ) {
                 Icon(painterResource(tab.icon), contentDescription = null, tint = if (on) Ink else Muted, modifier = Modifier.size(24.dp))
                 Text(
-                    tab.label.uppercase(),
+                    stringResource(tab.label).uppercase(),
                     style = MaterialTheme.typography.labelSmall,
                     color = if (on) Ink else Muted,
                     modifier = Modifier.padding(top = 4.dp),

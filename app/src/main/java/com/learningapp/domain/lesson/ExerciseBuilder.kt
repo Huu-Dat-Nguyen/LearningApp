@@ -42,7 +42,7 @@ class ExerciseBuilder(
         val distractors = unitWords.filter { it.wordId != wordId && it.translation != word.translation }
             .map { it.translation }.distinct().shuffled(random).take(3)
         val options = (distractors + word.translation).shuffled(random)
-        return Exercise.MultipleChoice(word.text, options, options.indexOf(word.translation))
+        return Exercise.MultipleChoice(word.text, options, options.indexOf(word.translation), word.reading)
     }
 
     /** Shuffles chips, avoiding handing back the answer already in order. */

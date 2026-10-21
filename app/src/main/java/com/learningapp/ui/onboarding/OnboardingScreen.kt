@@ -1,5 +1,9 @@
 package com.learningapp.ui.onboarding
 
+import com.learningapp.data.content.languageNameRes
+import com.learningapp.R
+import androidx.compose.ui.res.pluralStringResource
+import androidx.compose.ui.res.stringResource
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -90,39 +94,39 @@ private fun ColumnScope.Welcome(onStart: () -> Unit) {
     Box(
         Modifier.fillMaxWidth().height(160.dp).clip(RoundedCornerShape(24.dp)).background(TagBg),
         contentAlignment = Alignment.Center,
-    ) { Text("¡Hola!  Bonjour  こんにちは  Xin chào", style = MaterialTheme.typography.titleMedium, color = Violet, textAlign = TextAlign.Center) }
-    Text("LearningApp", style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
+    ) { Text(stringResource(R.string.onboarding_greetings), style = MaterialTheme.typography.titleMedium, color = Violet, textAlign = TextAlign.Center) }
+    Text(stringResource(R.string.app_name), style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth())
     Text(
-        "Learn a language in a few minutes a day. Free, no ads.",
+        stringResource(R.string.onboarding_tagline),
         style = MaterialTheme.typography.bodyLarge, color = Muted, textAlign = TextAlign.Center, modifier = Modifier.fillMaxWidth(),
     )
     Spacer(Modifier.weight(1f))
-    GradientButton("Get started", onStart)
+    GradientButton(stringResource(R.string.onboarding_get_started), onStart)
 }
 
 @Composable
 private fun ColumnScope.Languages(s: OnboardingUiState, vm: OnboardingViewModel) {
     Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text("Choose languages", style = MaterialTheme.typography.titleLarge)
-        SectionLabel("YOUR MAIN LANGUAGE")
+        Text(stringResource(R.string.onboarding_choose_languages), style = MaterialTheme.typography.titleLarge)
+        SectionLabel(stringResource(R.string.onboarding_your_main_language))
         SUPPORTED_LANGUAGES.forEach { lang ->
             // A main language is usable if some target language has content for it.
             val usable = s.pairs.values.any { lang.code in it }
-            LanguageOption(lang.englishName, lang.nativeName, s.mainLang == lang.code, enabled = usable) { vm.pickMain(lang.code) }
+            LanguageOption(stringResource(languageNameRes(lang.code)), lang.nativeName, s.mainLang == lang.code, enabled = usable) { vm.pickMain(lang.code) }
         }
-        SectionLabel("LANGUAGE TO LEARN")
+        SectionLabel(stringResource(R.string.onboarding_language_to_learn))
         SUPPORTED_LANGUAGES.filter { it.code != s.mainLang }.forEach { lang ->
             val usable = s.mainLang in s.pairs[lang.code].orEmpty()
-            LanguageOption(lang.englishName, lang.nativeName, s.targetLang == lang.code, enabled = usable) { vm.pickTarget(lang.code) }
+            LanguageOption(stringResource(languageNameRes(lang.code)), lang.nativeName, s.targetLang == lang.code, enabled = usable) { vm.pickTarget(lang.code) }
         }
     }
-    if (s.pairAvailable) GradientButton("Continue", vm::confirmLanguages)
-    else DisabledButton(if (s.mainLang == s.targetLang) "Pick two different languages" else "Pick a language to learn")
+    if (s.pairAvailable) GradientButton(stringResource(R.string.common_continue), vm::confirmLanguages)
+    else DisabledButton(stringResource(if (s.mainLang == s.targetLang) R.string.onboarding_pick_two_different else R.string.onboarding_pick_language))
 }
 
 @Composable
 private fun SectionLabel(text: String) {
-    Text(text, style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold, letterSpacing = 0.6.sp), modifier = Modifier.padding(top = 8.dp))
+    Text(text.uppercase(), style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Bold, letterSpacing = 0.6.sp), modifier = Modifier.padding(top = 8.dp))
 }
 
 @Composable
@@ -142,7 +146,7 @@ private fun LanguageOption(name: String, native: String, selected: Boolean, enab
             Text(name, style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold), color = if (enabled) Ink else Muted)
             if (native != name) Text(native, style = MaterialTheme.typography.labelMedium)
         }
-        if (!enabled) Text("COMING SOON", style = MaterialTheme.typography.labelSmall, color = Muted)
+        if (!enabled) Text(stringResource(R.string.onboarding_coming_soon).uppercase(), style = MaterialTheme.typography.labelSmall, color = Muted)
     }
 }
 
@@ -155,22 +159,23 @@ private fun ColumnScope.PlacementQuiz(s: OnboardingUiState, vm: OnboardingViewMo
         }
         Text("${(s.questionIndex + 1).coerceAtMost(total)} / $total", style = MaterialTheme.typography.labelMedium)
     }
-    Text("Quick check", style = MaterialTheme.typography.titleLarge)
-    Text("A few questions to find your starting point.", style = MaterialTheme.typography.bodyMedium, color = BodyText)
+    Text(stringResource(R.string.onboarding_quick_check), style = MaterialTheme.typography.titleLarge)
+    Text(stringResource(R.string.onboarding_quick_check_body), style = MaterialTheme.typography.bodyMedium, color = BodyText)
     val q = s.question
     Column(Modifier.weight(1f), verticalArrangement = Arrangement.spacedBy(10.dp)) {
         if (q != null) {
-            Text("What does \"${q.exercise.prompt}\" mean?", style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 8.dp))
+            Text(stringResource(R.string.onboarding_what_does_mean, q.exercise.prompt), style = MaterialTheme.typography.headlineSmall, modifier = Modifier.padding(top = 8.dp))
+            q.exercise.reading?.let { Text(it, style = MaterialTheme.typography.bodyMedium, color = Muted) }
             q.exercise.options.forEachIndexed { i, option ->
                 LanguageOption(option, option, s.selected == i, enabled = true) { vm.select(i) }
             }
         } else if (!s.loadingQuestions) {
-            Text("No quiz for this language yet.", style = MaterialTheme.typography.bodyMedium)
+            Text(stringResource(R.string.onboarding_no_quiz), style = MaterialTheme.typography.bodyMedium)
         }
     }
-    OutlineButton("I'm a beginner, skip", vm::skipPlacement)
-    if (s.selected != null) GradientButton(if (s.questionIndex + 1 >= s.questions.size) "Finish quiz" else "Next", vm::nextQuestion)
-    else DisabledButton("Next")
+    OutlineButton(stringResource(R.string.onboarding_skip_beginner), vm::skipPlacement)
+    if (s.selected != null) GradientButton(stringResource(if (s.questionIndex + 1 >= s.questions.size) R.string.onboarding_finish_quiz else R.string.common_next), vm::nextQuestion)
+    else DisabledButton(stringResource(R.string.common_next))
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -183,23 +188,25 @@ private fun ColumnScope.Goal(s: OnboardingUiState, vm: OnboardingViewModel) {
         vm.finish()
     }
     Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-        Text("Daily goal", style = MaterialTheme.typography.titleLarge)
+        Text(stringResource(R.string.common_daily_goal), style = MaterialTheme.typography.titleLarge)
         if (s.startUnitIndex > 0) {
             AppCard(Modifier.fillMaxWidth()) {
-                Text("Nice! You'll start at unit ${s.startUnitIndex + 1}.", style = MaterialTheme.typography.bodyLarge, color = Ink)
-                Text("Earlier lessons are unlocked, and their words are in your flashcards.", style = MaterialTheme.typography.labelMedium)
+                Text(stringResource(R.string.onboarding_start_at_unit, s.startUnitIndex + 1), style = MaterialTheme.typography.bodyLarge, color = Ink)
+                Text(stringResource(R.string.onboarding_earlier_unlocked), style = MaterialTheme.typography.labelMedium)
             }
         }
-        Text("How much time a day?", style = MaterialTheme.typography.bodyMedium, color = BodyText)
+        Text(stringResource(R.string.onboarding_how_much_time), style = MaterialTheme.typography.bodyMedium, color = BodyText)
         UserPrefs.GOALS.forEach { minutes ->
-            val label = when (minutes) { 5 -> "Casual"; 10 -> "Regular"; else -> "Serious" }
-            LanguageOption("$minutes min a day", label, s.goalMinutes == minutes, enabled = true) { vm.pickGoal(minutes) }
+            val label = stringResource(
+                when (minutes) { 5 -> R.string.onboarding_goal_casual; 10 -> R.string.onboarding_goal_regular; else -> R.string.onboarding_goal_serious },
+            )
+            LanguageOption(pluralStringResource(R.plurals.common_minutes_per_day, minutes, minutes), label, s.goalMinutes == minutes, enabled = true) { vm.pickGoal(minutes) }
         }
         AppCard(Modifier.fillMaxWidth()) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Column(Modifier.weight(1f)) {
-                    Text("Daily reminder", style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold), color = Ink)
-                    Text(if (s.reminderEnabled) "At ${formatTime(s.reminderMinuteOfDay)}" else "Off", style = MaterialTheme.typography.labelMedium)
+                    Text(stringResource(R.string.common_daily_reminder), style = MaterialTheme.typography.bodyLarge.copy(fontWeight = FontWeight.Bold), color = Ink)
+                    Text(if (s.reminderEnabled) stringResource(R.string.common_at_time, formatTime(s.reminderMinuteOfDay)) else stringResource(R.string.common_off), style = MaterialTheme.typography.labelMedium)
                 }
                 Switch(
                     checked = s.reminderEnabled,
@@ -209,7 +216,7 @@ private fun ColumnScope.Goal(s: OnboardingUiState, vm: OnboardingViewModel) {
             }
             if (s.reminderEnabled) {
                 Text(
-                    "Change time",
+                    stringResource(R.string.onboarding_change_time),
                     style = MaterialTheme.typography.labelLarge,
                     color = Violet,
                     modifier = Modifier.clip(CircleShape).clickable { picking = true }.padding(vertical = 6.dp),
@@ -217,14 +224,14 @@ private fun ColumnScope.Goal(s: OnboardingUiState, vm: OnboardingViewModel) {
             }
         }
     }
-    GradientButton(if (s.finishing) "Setting up…" else "Start learning", { if (s.reminderEnabled) askNotifications() else vm.finish() })
+    GradientButton(stringResource(if (s.finishing) R.string.onboarding_setting_up else R.string.onboarding_start_learning), { if (s.reminderEnabled) askNotifications() else vm.finish() })
 
     if (picking) {
         val state = rememberTimePickerState(s.reminderMinuteOfDay / 60, s.reminderMinuteOfDay % 60)
         AlertDialog(
             onDismissRequest = { picking = false },
-            confirmButton = { TextButton({ vm.setReminderTime(state.hour * 60 + state.minute); picking = false }) { Text("OK") } },
-            dismissButton = { TextButton({ picking = false }) { Text("Cancel") } },
+            confirmButton = { TextButton({ vm.setReminderTime(state.hour * 60 + state.minute); picking = false }) { Text(stringResource(R.string.common_ok)) } },
+            dismissButton = { TextButton({ picking = false }) { Text(stringResource(R.string.common_cancel)) } },
             text = { TimePicker(state) },
         )
     }

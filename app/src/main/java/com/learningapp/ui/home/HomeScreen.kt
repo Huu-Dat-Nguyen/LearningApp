@@ -1,5 +1,7 @@
 package com.learningapp.ui.home
 
+import com.learningapp.R
+import androidx.compose.ui.res.stringResource
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -64,17 +66,18 @@ fun HomeScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text("Hi there", style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))
+            Text(stringResource(R.string.home_greeting), style = MaterialTheme.typography.headlineLarge, modifier = Modifier.weight(1f))
             Box(Modifier.size(40.dp).clip(CircleShape).background(TagBg)) // profile picture placeholder
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             StatCard(
-                "Daily goal", "${summary?.todayMinutes ?: 0}", "/${summary?.dailyGoalMinutes ?: 10} min",
+                stringResource(R.string.common_daily_goal), "${summary?.todayMinutes ?: 0}",
+                stringResource(R.string.home_daily_goal_unit, summary?.dailyGoalMinutes ?: 10),
                 summary?.goalProgress ?: 0f, Pink, Modifier.weight(1f),
             )
             // Ring fills over a week of streak.
             StatCard(
-                "Day streak", "$streak", "${summary?.totalXp ?: 0} XP",
+                stringResource(R.string.home_day_streak), "$streak", stringResource(R.string.common_xp_value, summary?.totalXp ?: 0),
                 (streak / 7f).coerceAtMost(1f), Teal, Modifier.weight(1f),
             )
         }
@@ -84,22 +87,22 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
-            Text("READY TO LEARN?", style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
+            Text(stringResource(R.string.home_ready_to_learn).uppercase(), style = MaterialTheme.typography.headlineSmall, textAlign = TextAlign.Center)
             Text(
-                if (nextLessonTitle != null) "Next lesson: $nextLessonTitle" else "All lessons done. Keep reviewing!",
+                if (nextLessonTitle != null) stringResource(R.string.home_next_lesson, nextLessonTitle) else stringResource(R.string.home_all_lessons_done),
                 style = MaterialTheme.typography.labelMedium,
             )
             Spacer(Modifier.size(4.dp))
-            GradientButton(if (nextLessonTitle != null) "Continue lesson" else "See lessons", onContinueLesson)
+            GradientButton(stringResource(if (nextLessonTitle != null) R.string.home_continue_lesson else R.string.home_see_lessons), onContinueLesson)
         }
         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
             AppCard(Modifier.weight(1f), onClick = onReview) {
                 Text("$cardsDue", style = MaterialTheme.typography.titleMedium)
-                Text("Cards due", style = MaterialTheme.typography.labelMedium)
+                Text(stringResource(R.string.home_cards_due), style = MaterialTheme.typography.labelMedium)
             }
             AppCard(Modifier.weight(1f), onClick = onSpeak) {
-                Text("Speak", style = MaterialTheme.typography.titleMedium)
-                Text("Pronunciation", style = MaterialTheme.typography.labelMedium)
+                Text(stringResource(R.string.home_speak), style = MaterialTheme.typography.titleMedium)
+                Text(stringResource(R.string.home_pronunciation), style = MaterialTheme.typography.labelMedium)
             }
         }
     }

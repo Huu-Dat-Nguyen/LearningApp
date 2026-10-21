@@ -51,9 +51,10 @@ fun HomeScreen(
     summary: ProgressSummary? = null,
 ) {
     val today = summary?.today ?: LocalDate.now()
+    val locale = androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
     val monday = today.with(DayOfWeek.MONDAY)
     val week = (0..6).map { monday.plusDays(it.toLong()) }
-        .map { it.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault()) to it.dayOfMonth }
+        .map { it.dayOfWeek.getDisplayName(TextStyle.SHORT, locale) to it.dayOfMonth }
     val practiced = summary?.week.orEmpty().mapIndexedNotNull { i, d -> if (d.active) i else null }.toSet()
     val streak = summary?.streak ?: 0
 

@@ -140,7 +140,7 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
     when (dialog) {
         Dialog.Main -> Picker(
             title = stringResource(R.string.common_main_language),
-            options = SUPPORTED_LANGUAGES.map { it.code to stringResource(languageNameRes(it.code)) },
+            options = SUPPORTED_LANGUAGES.filter { it.code != st.targetLang }.map { it.code to stringResource(languageNameRes(it.code)) },
             selected = st.mainLang,
             enabled = { code -> st.pairs[st.targetLang].orEmpty().contains(code) && code != st.targetLang },
             onPick = { viewModel.setLanguages(it, st.targetLang) },

@@ -42,7 +42,8 @@ data class ProgressSummary(
  * (so the streak doesn't look broken first thing in the morning).
  */
 fun streak(activeDaysDesc: List<Long>, today: Long): Int {
-    val days = activeDaysDesc.toSortedSet().reversed()
+    // A plain set: SortedSet.reversed() only exists on Android 15+.
+    val days = activeDaysDesc.toHashSet()
     var cursor = if (today in days) today else today - 1
     var count = 0
     while (cursor in days) { count++; cursor-- }

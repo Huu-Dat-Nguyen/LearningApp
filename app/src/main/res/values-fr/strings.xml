@@ -1,0 +1,218 @@
+<resources>
+    <string name="app_name">LearningApp</string>
+
+    <!-- Common -->
+    <string name="common_continue">Continuer</string>
+    <string name="common_back">Retour</string>
+    <string name="common_close">Fermer</string>
+    <string name="common_ok">OK</string>
+    <string name="common_cancel">Annuler</string>
+    <string name="common_next">Suivant</string>
+    <string name="common_try_again">Réessayer</string>
+    <string name="common_off">Désactivé</string>
+    <string name="common_at_time">À %1$s</string>
+    <string name="common_xp_value">%1$d XP</string>
+    <string name="common_back_to_home">Retour à l\'accueil</string>
+    <string name="common_settings">Réglages</string>
+    <string name="common_daily_goal">Objectif quotidien</string>
+    <string name="common_daily_reminder">Rappel quotidien</string>
+    <string name="common_main_language">Langue principale</string>
+    <string name="common_coming_soon_suffix">%1$s · bientôt disponible</string>
+    <string name="common_voice_missing">Aucune voix en %1$s sur ce téléphone. Ajoutes-en une dans Réglages › Synthèse vocale.</string>
+    <plurals name="common_minutes_per_day">
+        <item quantity="one">%1$d min par jour</item>
+        <item quantity="other">%1$d min par jour</item>
+        <item quantity="many">%1$d min par jour</item>
+    </plurals>
+
+    <!-- Languages -->
+    <string name="lang_en">anglais</string>
+    <string name="lang_es">espagnol</string>
+    <string name="lang_fr">français</string>
+    <string name="lang_ja">japonais</string>
+    <string name="lang_vi">vietnamien</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Accueil</string>
+    <string name="nav_learn">Apprendre</string>
+    <string name="nav_review">Réviser</string>
+    <string name="nav_speak">Parler</string>
+    <string name="nav_profile">Profil</string>
+
+    <!-- Home -->
+    <string name="home_greeting">Coucou</string>
+    <string name="home_daily_goal_unit">/%1$d min</string>
+    <string name="home_day_streak">Jours d\'affilée</string>
+    <string name="home_ready_to_learn">Prêt à apprendre ?</string>
+    <string name="home_next_lesson">Prochaine leçon : %1$s</string>
+    <string name="home_all_lessons_done">Toutes les leçons sont terminées. Continue à réviser !</string>
+    <string name="home_continue_lesson">Reprendre la leçon</string>
+    <string name="home_see_lessons">Voir les leçons</string>
+    <string name="home_cards_due">Cartes à revoir</string>
+    <string name="home_speak">Parler</string>
+    <string name="home_pronunciation">Prononciation</string>
+
+    <!-- Learn -->
+    <string name="learn_title">Apprendre</string>
+    <string name="learn_tested_out">Validé par le test</string>
+    <string name="learn_done_accuracy">Terminé · %1$d %%</string>
+    <string name="learn_start">Commencer</string>
+    <string name="learn_locked">Verrouillé</string>
+
+    <!-- Lesson -->
+    <string name="ex_instruction_mc">Choisis la bonne traduction</string>
+    <string name="ex_instruction_fill">Complète la phrase</string>
+    <string name="ex_instruction_order">Remets les mots dans l\'ordre</string>
+    <string name="ex_instruction_listen">Écris ce que tu entends</string>
+    <string name="ex_instruction_translate">Traduis cette phrase</string>
+    <string name="lesson_retry_prefix">Réessaie · %1$s</string>
+    <string name="lesson_not_found_title">Leçon introuvable</string>
+    <string name="lesson_not_found_body">Cette leçon n\'est pas disponible.</string>
+    <string name="lesson_close">Fermer la leçon</string>
+    <string name="lesson_missing_word">Mot manquant</string>
+    <string name="lesson_tap_words">Touche les mots ci-dessous</string>
+    <string name="lesson_play">Écouter</string>
+    <string name="lesson_play_slowly">Écouter lentement</string>
+    <string name="lesson_slow">Lent</string>
+    <string name="lesson_no_voice">Aucune voix pour cette langue sur le téléphone. Ajoutes-en une dans Réglages › Synthèse vocale.</string>
+    <string name="lesson_type_what_you_hear">Écris ce que tu entends</string>
+    <string name="lesson_in_language">En %1$s</string>
+    <string name="lesson_check">Vérifier</string>
+    <string name="lesson_correct">Bravo !</string>
+    <string name="lesson_not_quite">Pas tout à fait</string>
+    <string name="lesson_watch_accent">Attention à l\'accent : %1$s</string>
+    <string name="lesson_answer">Réponse : %1$s</string>
+    <string name="lesson_see_again">Tu reverras celle-ci à la fin.</string>
+    <string name="lesson_complete">Leçon terminée !</string>
+    <string name="lesson_xp_gain">+%1$d</string>
+    <string name="lesson_xp_label">XP</string>
+    <string name="lesson_accuracy_label">Précision</string>
+    <string name="lesson_words_added">Les nouveaux mots ont été ajoutés à tes cartes.</string>
+
+    <!-- Review -->
+    <string name="review_title">Réviser</string>
+    <string name="review_nothing_title">Rien à réviser</string>
+    <string name="review_nothing_body">Aucune carte à revoir pour l\'instant. Reviens demain.</string>
+    <string name="review_all_done_title">Terminé pour aujourd\'hui</string>
+    <plurals name="review_all_done_body">
+        <item quantity="one">Tu as révisé %1$d carte.</item>
+        <item quantity="other">Tu as révisé %1$d cartes.</item>
+        <item quantity="many">Tu as révisé %1$d cartes.</item>
+    </plurals>
+    <string name="review_show_answer">Voir la réponse</string>
+    <string name="review_new">Nouveau</string>
+    <string name="review_tap_to_flip">Touche pour retourner</string>
+    <string name="review_play_audio">Écouter l\'audio</string>
+    <string name="review_grade_again">Encore</string>
+    <string name="review_grade_hard">Difficile</string>
+    <string name="review_grade_good">Bien</string>
+    <string name="review_grade_easy">Facile</string>
+    <string name="review_grade_description">%1$s · %2$s</string>
+    <!-- Short next-review intervals on the grade buttons. -->
+    <string name="review_interval_days">%1$d j</string>
+    <string name="review_interval_months">%1$d mois</string>
+    <string name="review_interval_years">%1$s an</string>
+
+    <!-- Speak -->
+    <string name="speak_title">Parler</string>
+    <string name="speak_nothing_yet">Rien à pratiquer pour l\'instant. Commence d\'abord une leçon.</string>
+    <string name="speak_say_this">Dis cette phrase</string>
+    <string name="speak_listen">Écouter</string>
+    <string name="speak_listen_slowly">Écouter lentement</string>
+    <string name="speak_listen_slow_label">Écouter · lent</string>
+    <string name="speak_listening">J\'écoute… touche pour arrêter</string>
+    <string name="speak_tap_mic">Touche le micro et lis la phrase à voix haute</string>
+    <string name="speak_no_recognition">Ce téléphone n\'a pas de reconnaissance vocale : tu peux écouter et répéter, mais l\'appli ne peut pas te noter.</string>
+    <string name="speak_skip">Passer la phrase</string>
+    <string name="speak_score_note">Le score indique à quel point le téléphone t\'a compris, pas une vraie vérification de l\'accent.</string>
+    <string name="speak_stop_recording">Arrêter l\'enregistrement</string>
+    <string name="speak_start_recording">Démarrer l\'enregistrement</string>
+    <string name="speak_what_you_said">Ce que tu as dit</string>
+    <string name="speak_score_label">/ 100 · %1$s</string>
+    <string name="speak_xp_gain">+%1$d XP</string>
+    <string name="speak_legend">Vert = juste · orange = presque · rouge = raté</string>
+    <string name="speak_label_great">Super</string>
+    <string name="speak_label_almost">Presque</string>
+    <string name="speak_label_try_again">Réessaie</string>
+    <string name="speak_error_no_match">Je n\'ai pas compris. Réessaie un peu plus près du téléphone.</string>
+    <string name="speak_error_no_speech">Aucune voix détectée. Touche le micro et commence à parler.</string>
+    <string name="speak_error_network">La reconnaissance vocale nécessite une connexion, ou télécharge le pack vocal hors ligne pour %1$s dans les réglages du téléphone.</string>
+    <string name="speak_error_busy">Le service vocal est occupé. Réessaie dans un instant.</string>
+    <string name="speak_error_permission">L\'appli a besoin du micro pour t\'entendre. Tu peux l\'autoriser dans les réglages de l\'appli.</string>
+    <string name="speak_error_not_available">La reconnaissance vocale pour cette langue n\'est pas disponible sur ce téléphone. Essaie d\'ajouter %1$s dans les réglages vocaux ou de saisie vocale du téléphone.</string>
+    <string name="speak_error_other">La reconnaissance vocale a rencontré un problème. Réessaie.</string>
+    <string name="speak_open_settings">Ouvrir les réglages</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Progression</string>
+    <string name="profile_day_streak">jours d\'affilée</string>
+    <string name="profile_total_xp">XP au total</string>
+    <string name="profile_words_learned">mots appris</string>
+    <string name="profile_accuracy_7d">précision (7 jours)</string>
+    <string name="profile_xp_last_7">XP, 7 derniers jours</string>
+    <string name="profile_today">Aujourd\'hui</string>
+    <string name="profile_minutes_studied">%1$d min sur %2$d étudiées</string>
+    <string name="profile_day_xp_description">%1$s %2$d XP</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_greetings">¡Hola!  Bonjour  こんにちは  Xin chào</string>
+    <string name="onboarding_tagline">Apprends une langue en quelques minutes par jour. Gratuit, sans pub.</string>
+    <string name="onboarding_get_started">C\'est parti</string>
+    <string name="onboarding_choose_languages">Choisir les langues</string>
+    <string name="onboarding_your_main_language">Ta langue principale</string>
+    <string name="onboarding_language_to_learn">Langue à apprendre</string>
+    <string name="onboarding_pick_two_different">Choisis deux langues différentes</string>
+    <string name="onboarding_pick_language">Choisis une langue à apprendre</string>
+    <string name="onboarding_coming_soon">Bientôt disponible</string>
+    <string name="onboarding_quick_check">Petit test</string>
+    <string name="onboarding_quick_check_body">Quelques questions pour trouver ton point de départ.</string>
+    <string name="onboarding_what_does_mean">Que signifie « %1$s » ?</string>
+    <string name="onboarding_no_quiz">Pas encore de quiz pour cette langue.</string>
+    <string name="onboarding_skip_beginner">Je débute, passer</string>
+    <string name="onboarding_finish_quiz">Terminer le quiz</string>
+    <string name="onboarding_start_at_unit">Bravo ! Tu commenceras à l\'unité %1$d.</string>
+    <string name="onboarding_earlier_unlocked">Les leçons précédentes sont débloquées et leurs mots sont dans tes cartes.</string>
+    <string name="onboarding_how_much_time">Combien de temps par jour ?</string>
+    <string name="onboarding_goal_casual">Détendu</string>
+    <string name="onboarding_goal_regular">Régulier</string>
+    <string name="onboarding_goal_serious">Sérieux</string>
+    <string name="onboarding_change_time">Changer l\'heure</string>
+    <string name="onboarding_setting_up">Préparation…</string>
+    <string name="onboarding_start_learning">Commencer à apprendre</string>
+
+    <!-- Settings -->
+    <string name="settings_languages">Langues</string>
+    <string name="settings_learning">Apprentissage</string>
+    <string name="settings_progress_kept">Ta progression est conservée pour chaque langue que tu apprends.</string>
+    <string name="settings_practice">Pratique</string>
+    <string name="settings_notifications_blocked">Les notifications sont bloquées pour cette appli. Autorise-les dans les réglages du téléphone pour recevoir des rappels.</string>
+    <string name="settings_reminder_time">Heure du rappel</string>
+    <string name="settings_sound">Son</string>
+    <string name="settings_tts_voices">Voix de synthèse vocale</string>
+    <string name="settings_tts_voices_hint">Ajoute ou change des voix dans les réglages du téléphone</string>
+    <string name="settings_about">À propos</string>
+    <string name="settings_version">Version</string>
+    <string name="settings_licences">Licences open source</string>
+    <string name="settings_licences_hint">Bibliothèques utilisées par cette appli</string>
+    <string name="settings_source_code">Code source</string>
+    <string name="settings_language_to_learn">Langue à apprendre</string>
+    <string name="settings_license_entry">%1$s — %2$s</string>
+    <string name="settings_license_androidx">AndroidX, Jetpack Compose, Room, Navigation, DataStore, WorkManager</string>
+    <string name="settings_license_dagger">Dagger / Hilt</string>
+    <string name="settings_license_kotlin">Kotlin, kotlinx.coroutines, kotlinx.serialization</string>
+    <string name="settings_license_icons">Icônes Material</string>
+    <string name="settings_license_font">Police Plus Jakarta Sans (Tokotype)</string>
+    <string name="settings_license_apache">Apache 2.0</string>
+    <string name="settings_license_ofl">SIL Open Font License 1.1</string>
+
+    <!-- Reminder notification -->
+    <string name="reminder_channel_name">Rappel quotidien</string>
+    <string name="reminder_channel_description">Un petit rappel quotidien pour pratiquer</string>
+    <string name="reminder_title">C\'est l\'heure de pratiquer</string>
+    <plurals name="reminder_with_due_cards">
+        <item quantity="one">%1$d minutes en %2$s aujourd\'hui ? %3$d carte est à revoir.</item>
+        <item quantity="other">%1$d minutes en %2$s aujourd\'hui ? %3$d cartes sont à revoir.</item>
+        <item quantity="many">%1$d minutes en %2$s aujourd\'hui ? %3$d cartes sont à revoir.</item>
+    </plurals>
+    <string name="reminder_keep_streak">%1$d minutes en %2$s aujourd\'hui ? Garde ta série en cours.</string>
+</resources>

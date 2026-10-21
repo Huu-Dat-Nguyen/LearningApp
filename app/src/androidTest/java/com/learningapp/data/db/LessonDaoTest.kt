@@ -74,6 +74,20 @@ class LessonDaoTest {
     }
 
     @Test
+    fun migrationFrom3AddsReadingAndKeepsWords() {
+        helper.createDatabase("migration-test-3", 3).use { v3 ->
+            v3.execSQL("INSERT INTO words (id, lang, text, example, topic, level, sortOrder) VALUES ('ja_mizu','ja','水','水を飲みます。','food','A1',0)")
+        }
+        helper.runMigrationsAndValidate("migration-test-3", 4, true).use { v4 ->
+            v4.query("SELECT text, reading FROM words WHERE id = 'ja_mizu'").use { c ->
+                assertTrue(c.moveToFirst())
+                assertEquals("水", c.getString(0))
+                assertTrue(c.isNull(1)) // filled when the content re-imports
+            }
+        }
+    }
+
+    @Test
     fun migrationFrom2KeepsLessonProgress() {
         helper.createDatabase("migration-test-2", 2).use { v2 ->
             v2.execSQL("INSERT INTO lesson_progress (lessonId, firstCompletedAtMs, lastCompletedAtMs, bestAccuracy, attempts, xpEarned) VALUES ('es_u1_l1',1,1,0.86,1,16)")

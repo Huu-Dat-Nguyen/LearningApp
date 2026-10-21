@@ -117,8 +117,9 @@ private fun XpChart(s: ProgressSummary) {
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalAlignment = Alignment.Bottom,
     ) {
+    val locale = androidx.compose.ui.platform.LocalConfiguration.current.locales[0]
         s.last7.forEach { day ->
-            val label = day.date.dayOfWeek.getDisplayName(TextStyle.SHORT, Locale.getDefault())
+            val label = day.date.dayOfWeek.getDisplayName(TextStyle.SHORT, locale)
             val description = stringResource(R.string.profile_day_xp_description, label, day.xp)
             Column(
                 Modifier.weight(1f).fillMaxHeight().semantics(mergeDescendants = true) { contentDescription = description },

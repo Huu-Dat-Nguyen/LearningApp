@@ -25,7 +25,14 @@ import javax.inject.Singleton
 
 enum class LessonState { Done, Next, Locked }
 
-data class LessonItem(val id: String, val title: String, val state: LessonState, val bestAccuracy: Double?)
+/** [testedOut]: marked done by the placement quiz, not played. */
+data class LessonItem(
+    val id: String,
+    val title: String,
+    val state: LessonState,
+    val bestAccuracy: Double?,
+    val testedOut: Boolean = false,
+)
 
 data class UnitItem(val id: String, val title: String, val level: String, val lessons: List<LessonItem>)
 
@@ -53,7 +60,7 @@ internal fun toUnits(rows: List<LessonRow>, mainLang: String): List<UnitItem> {
             !nextGiven -> { nextGiven = true; LessonState.Next }
             else -> LessonState.Locked
         }
-        r to LessonItem(r.id, LessonParser.text(r.titleJson, mainLang), state, r.bestAccuracy)
+        r to LessonItem(r.id, LessonParser.text(r.titleJson, mainLang), state, r.bestAccuracy, testedOut = r.completed && r.attempts == 0)
     }
     return items.groupBy { it.first.unitId }.map { (unitId, list) ->
         val first = list.first().first
@@ -120,10 +127,34 @@ class LessonRepository @Inject constructor(
                 )
             )
             activityDao.add(day.toEpochDay(), target, xp = result.xp, answered = result.answered, correct = result.correct)
-            lessonWordIds.forEach { id ->
-                if (wordDao.userWord(id) == null) {
-                    wordDao.upsertUserWord(Sm2Scheduler.review(null, id, target, Grade.Good, day, now))
+            addWordsToFlashcards(lessonWordIds, target, day, now)
+        }
+    }
+
+    /**
+     * Placement result: marks every lesson in units before [startUnitIndex] as done without XP
+     * (attempts = 0 means "tested out") and adds their words to the flashcards.
+     */
+    suspend fun testOut(targetLang: String, startUnitIndex: Int) {
+        if (startUnitIndex <= 0) return
+        val now = clock.millis()
+        val day = today()
+        val lessons = lessonDao.allLessons(targetLang)
+        val unitIds = lessons.map { it.unitId }.distinct().take(startUnitIndex).toSet()
+        db.withTransaction {
+            lessons.filter { it.unitId in unitIds }.forEach { lesson ->
+                if (lessonDao.progress(lesson.id) == null) {
+                    lessonDao.upsertProgress(LessonProgressEntity(lesson.id, now, now, bestAccuracy = 1.0, attempts = 0, xpEarned = 0))
                 }
+                addWordsToFlashcards(LessonParser.wordIds(lesson), targetLang, day, now)
+            }
+        }
+    }
+
+    private suspend fun addWordsToFlashcards(wordIds: List<String>, target: String, day: LocalDate, now: Long) {
+        wordIds.forEach { id ->
+            if (wordDao.userWord(id) == null) {
+                wordDao.upsertUserWord(Sm2Scheduler.review(null, id, target, Grade.Good, day, now))
             }
         }
     }

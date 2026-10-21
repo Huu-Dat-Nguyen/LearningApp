@@ -53,4 +53,6 @@ data class LessonRow(
     val sortOrder: Int,
     val completed: Boolean,
     val bestAccuracy: Double?,
+    /** 0 with [completed] = tested out by the placement quiz. */
+    val attempts: Int = 0,
 )

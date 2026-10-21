@@ -47,6 +47,19 @@ class LessonDaoTest {
     }
 
     @Test
+    fun testedOutLessonsShowAsDoneWithNoAttempts() = runBlocking {
+        val dao = db.lessonDao()
+        dao.upsertLessons(listOf(lesson("l1", "u1", 0), lesson("l2", "u2", 1)))
+        assertEquals(false, dao.hasAnyProgress())
+        dao.upsertProgress(LessonProgressEntity("l1", 1, 1, 1.0, attempts = 0, xpEarned = 0))
+        val rows = dao.lessons("es").first()
+        assertEquals(listOf(true, false), rows.map { it.completed })
+        assertEquals(0, rows.first().attempts)
+        assertEquals(true, dao.hasAnyProgress())
+        assertEquals(listOf("l1", "l2"), dao.allLessons("es").map { it.id })
+    }
+
+    @Test
     fun activityAddsUp() = runBlocking {
         val dao = db.activityDao()
         dao.add(100, "es", xp = 10, seconds = 60, answered = 5, correct = 4)

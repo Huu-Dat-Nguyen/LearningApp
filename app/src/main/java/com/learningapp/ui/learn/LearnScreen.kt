@@ -87,7 +87,7 @@ private fun LessonRow(lesson: LessonItem, onClick: () -> Unit) {
             modifier = Modifier.weight(1f),
         )
         val (label, color) = when (lesson.state) {
-            LessonState.Done -> "DONE · ${((lesson.bestAccuracy ?: 0.0) * 100).roundToInt()}%" to Muted
+            LessonState.Done -> (if (lesson.testedOut) "TESTED OUT" else "DONE · ${((lesson.bestAccuracy ?: 0.0) * 100).roundToInt()}%") to Muted
             LessonState.Next -> "START" to Violet
             LessonState.Locked -> "LOCKED" to Color(0xFFBBB5C9)
         }

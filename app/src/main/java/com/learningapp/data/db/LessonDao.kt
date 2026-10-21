@@ -18,13 +18,20 @@ interface LessonDao {
     @Query(
         """
         SELECT l.id, l.unitId, l.unitTitleJson, l.level, l.titleJson, l.sortOrder,
-               (p.lessonId IS NOT NULL) AS completed, p.bestAccuracy
+               (p.lessonId IS NOT NULL) AS completed, p.bestAccuracy, COALESCE(p.attempts, 0) AS attempts
         FROM lessons l LEFT JOIN lesson_progress p ON p.lessonId = l.id
         WHERE l.lang = :lang
         ORDER BY l.sortOrder
         """
     )
     fun lessons(lang: String): Flow<List<LessonRow>>
+
+    @Query("SELECT * FROM lessons WHERE lang = :lang ORDER BY sortOrder")
+    suspend fun allLessons(lang: String): List<LessonEntity>
+
+    /** True when the user has any lesson or flashcard progress (an install from before onboarding existed). */
+    @Query("SELECT EXISTS(SELECT 1 FROM lesson_progress) OR EXISTS(SELECT 1 FROM user_words)")
+    suspend fun hasAnyProgress(): Boolean
 
     @Query("SELECT * FROM lessons WHERE id = :id")
     suspend fun lesson(id: String): LessonEntity?

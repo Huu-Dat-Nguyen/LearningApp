@@ -2,6 +2,8 @@ package com.learningapp.di
 
 import com.learningapp.data.repo.LessonRepository
 import com.learningapp.data.repo.LessonStore
+import com.learningapp.data.repo.OnboardingRepository
+import com.learningapp.data.repo.OnboardingStore
 import com.learningapp.data.repo.ReviewRepository
 import com.learningapp.data.repo.SpeakRepository
 import com.learningapp.data.repo.SpeakStore
@@ -24,6 +26,9 @@ abstract class RepoModule {
 
     @Binds
     abstract fun speakStore(repo: SpeakRepository): SpeakStore
+
+    @Binds
+    abstract fun onboardingStore(repo: OnboardingRepository): OnboardingStore
 
     // Not a singleton: each Speak screen gets its own recognizer and releases it.
     @Binds

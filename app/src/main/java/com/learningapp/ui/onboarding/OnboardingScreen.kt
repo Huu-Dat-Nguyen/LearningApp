@@ -51,6 +51,7 @@ import com.learningapp.data.repo.UserPrefs
 import com.learningapp.ui.components.AppCard
 import com.learningapp.ui.components.GradientButton
 import com.learningapp.ui.components.OutlineButton
+import com.learningapp.ui.components.rememberNotificationPermission
 import com.learningapp.ui.theme.BodyText
 import com.learningapp.ui.theme.CardBg
 import com.learningapp.ui.theme.Ink
@@ -175,6 +176,11 @@ private fun ColumnScope.PlacementQuiz(s: OnboardingUiState, vm: OnboardingViewMo
 @Composable
 private fun ColumnScope.Goal(s: OnboardingUiState, vm: OnboardingViewModel) {
     var picking by remember { mutableStateOf(false) }
+    // Reminder on: ask for notification permission first; if refused, finish with the reminder off.
+    val askNotifications = rememberNotificationPermission { granted ->
+        if (!granted) vm.setReminder(false)
+        vm.finish()
+    }
     Column(Modifier.weight(1f).verticalScroll(rememberScrollState()), verticalArrangement = Arrangement.spacedBy(10.dp)) {
         Text("Daily goal", style = MaterialTheme.typography.titleLarge)
         if (s.startUnitIndex > 0) {
@@ -210,7 +216,7 @@ private fun ColumnScope.Goal(s: OnboardingUiState, vm: OnboardingViewModel) {
             }
         }
     }
-    GradientButton(if (s.finishing) "Setting up…" else "Start learning", vm::finish)
+    GradientButton(if (s.finishing) "Setting up…" else "Start learning", { if (s.reminderEnabled) askNotifications() else vm.finish() })
 
     if (picking) {
         val state = rememberTimePickerState(s.reminderMinuteOfDay / 60, s.reminderMinuteOfDay % 60)

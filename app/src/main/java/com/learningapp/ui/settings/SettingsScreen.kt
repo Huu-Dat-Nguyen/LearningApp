@@ -50,6 +50,7 @@ import com.learningapp.data.content.SUPPORTED_LANGUAGES
 import com.learningapp.data.content.languageName
 import com.learningapp.data.repo.UserPrefs
 import com.learningapp.ui.components.AppCard
+import com.learningapp.ui.components.rememberNotificationPermission
 import com.learningapp.ui.onboarding.formatTime
 import com.learningapp.ui.theme.Ink
 import com.learningapp.ui.theme.Line
@@ -66,6 +67,11 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
     val s by viewModel.state.collectAsStateWithLifecycle()
     val context = LocalContext.current
     var dialog by remember { mutableStateOf<Dialog?>(null) }
+    var notificationsBlocked by remember { mutableStateOf(false) }
+    val askNotifications = rememberNotificationPermission { granted ->
+        notificationsBlocked = !granted
+        s?.let { if (granted) viewModel.setReminder(true, it.reminderMinuteOfDay) }
+    }
 
     Column(
         Modifier.fillMaxSize().statusBarsPadding().verticalScroll(rememberScrollState()).padding(18.dp),
@@ -96,8 +102,15 @@ fun SettingsScreen(onBack: () -> Unit, viewModel: SettingsViewModel = hiltViewMo
                 }
                 Switch(
                     checked = st.reminderEnabled,
-                    onCheckedChange = { viewModel.setReminder(it, st.reminderMinuteOfDay) },
+                    onCheckedChange = { on -> if (on) askNotifications() else viewModel.setReminder(false, st.reminderMinuteOfDay) },
                     colors = SwitchDefaults.colors(checkedTrackColor = Violet),
+                )
+            }
+            if (notificationsBlocked && !st.reminderEnabled) {
+                Text(
+                    "Notifications are blocked for this app. Allow them in the phone's settings to get reminders.",
+                    style = MaterialTheme.typography.labelMedium,
+                    color = Muted,
                 )
             }
             if (st.reminderEnabled) {

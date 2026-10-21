@@ -5,6 +5,9 @@
     <!-- Speaking practice: the microphone for speech recognition. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
+    <!-- Daily reminder notification (asked at runtime on Android 13+). -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
     <!-- Lets TextToSpeech and SpeechRecognizer find the installed engines (Android 11+ package visibility). -->
     <queries>
         <intent>

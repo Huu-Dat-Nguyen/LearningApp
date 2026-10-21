@@ -1,6 +1,6 @@
 {
   "lang": "es",
-  "version": 1,
+  "version": 2,
   "words": [
     {
       "id": "es_hola",
@@ -500,6 +500,506 @@
       "example": "El profesor explica la lección.",
       "translations": {
         "en": { "text": "teacher", "example": "The teacher explains the lesson." }
+      }
+    },
+    {
+      "id": "es_uno",
+      "text": "uno",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Tengo un hermano, solo uno.",
+      "translations": {
+        "en": { "text": "one", "example": "I have one brother, only one." }
+      }
+    },
+    {
+      "id": "es_dos",
+      "text": "dos",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Quiero dos manzanas, por favor.",
+      "translations": {
+        "en": { "text": "two", "example": "I want two apples, please." }
+      }
+    },
+    {
+      "id": "es_tres",
+      "text": "tres",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Tres amigos vienen a cenar.",
+      "translations": {
+        "en": { "text": "three", "example": "Three friends are coming to dinner." }
+      }
+    },
+    {
+      "id": "es_cuatro",
+      "text": "cuatro",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Hay cuatro sillas en la cocina.",
+      "translations": {
+        "en": { "text": "four", "example": "There are four chairs in the kitchen." }
+      }
+    },
+    {
+      "id": "es_cinco",
+      "text": "cinco",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Tengo cinco euros en el bolsillo.",
+      "translations": {
+        "en": { "text": "five", "example": "I have five euros in my pocket." }
+      }
+    },
+    {
+      "id": "es_diez",
+      "text": "diez",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Son las diez de la noche.",
+      "translations": {
+        "en": { "text": "ten", "example": "It is ten at night." }
+      }
+    },
+    {
+      "id": "es_veinte",
+      "text": "veinte",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Mi madre tiene veinte libros.",
+      "translations": {
+        "en": { "text": "twenty", "example": "My mother has twenty books." }
+      }
+    },
+    {
+      "id": "es_cien",
+      "text": "cien",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "La camisa cuesta cien euros.",
+      "translations": {
+        "en": { "text": "one hundred", "example": "The shirt costs one hundred euros." }
+      }
+    },
+    {
+      "id": "es_primero",
+      "text": "primero",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "Es el primero de mayo.",
+      "translations": {
+        "en": { "text": "first", "example": "It is the first of May." }
+      }
+    },
+    {
+      "id": "es_el_numero",
+      "text": "el número",
+      "topic": "numbers",
+      "level": "A1",
+      "example": "¿Cuál es tu número de teléfono?",
+      "translations": {
+        "en": { "text": "number", "example": "What is your phone number?" }
+      }
+    },
+    {
+      "id": "es_el_dia",
+      "text": "el día",
+      "topic": "time",
+      "level": "A1",
+      "example": "Hoy es un día muy bonito.",
+      "translations": {
+        "en": { "text": "day", "example": "Today is a very nice day." }
+      }
+    },
+    {
+      "id": "es_la_semana",
+      "text": "la semana",
+      "topic": "time",
+      "level": "A1",
+      "example": "Una semana tiene siete días.",
+      "translations": {
+        "en": { "text": "week", "example": "A week has seven days." }
+      }
+    },
+    {
+      "id": "es_el_mes",
+      "text": "el mes",
+      "topic": "time",
+      "level": "A1",
+      "example": "Este mes viajo a Madrid.",
+      "translations": {
+        "en": { "text": "month", "example": "This month I am traveling to Madrid." }
+      }
+    },
+    {
+      "id": "es_hoy",
+      "text": "hoy",
+      "topic": "time",
+      "level": "A1",
+      "example": "Hoy trabajo en casa.",
+      "translations": {
+        "en": { "text": "today", "example": "Today I work at home." }
+      }
+    },
+    {
+      "id": "es_manana",
+      "text": "mañana",
+      "topic": "time",
+      "level": "A1",
+      "example": "Mañana voy al mercado.",
+      "translations": {
+        "en": { "text": "tomorrow", "example": "Tomorrow I am going to the market." }
+      }
+    },
+    {
+      "id": "es_ayer",
+      "text": "ayer",
+      "topic": "time",
+      "level": "A1",
+      "example": "Ayer comí pescado con arroz.",
+      "translations": {
+        "en": { "text": "yesterday", "example": "Yesterday I ate fish with rice." }
+      }
+    },
+    {
+      "id": "es_la_hora",
+      "text": "la hora",
+      "topic": "time",
+      "level": "A1",
+      "example": "¿Qué hora es ahora?",
+      "translations": {
+        "en": { "text": "hour", "example": "What time is it now?" }
+      }
+    },
+    {
+      "id": "es_el_lunes",
+      "text": "el lunes",
+      "topic": "time",
+      "level": "A1",
+      "example": "El lunes empiezo las clases.",
+      "translations": {
+        "en": { "text": "Monday", "example": "On Monday I start classes." }
+      }
+    },
+    {
+      "id": "es_el_domingo",
+      "text": "el domingo",
+      "topic": "time",
+      "level": "A1",
+      "example": "El domingo visito a mi familia.",
+      "translations": {
+        "en": { "text": "Sunday", "example": "On Sunday I visit my family." }
+      }
+    },
+    {
+      "id": "es_temprano",
+      "text": "temprano",
+      "topic": "time",
+      "level": "A1",
+      "example": "Me levanto temprano todos los días.",
+      "translations": {
+        "en": { "text": "early", "example": "I get up early every day." }
+      }
+    },
+    {
+      "id": "es_la_tienda",
+      "text": "la tienda",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "La tienda abre a las nueve.",
+      "translations": {
+        "en": { "text": "shop", "example": "The shop opens at nine." }
+      }
+    },
+    {
+      "id": "es_el_mercado",
+      "text": "el mercado",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "Compro fruta en el mercado.",
+      "translations": {
+        "en": { "text": "market", "example": "I buy fruit at the market." }
+      }
+    },
+    {
+      "id": "es_el_precio",
+      "text": "el precio",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "¿Cuál es el precio del pan?",
+      "translations": {
+        "en": { "text": "price", "example": "What is the price of the bread?" }
+      }
+    },
+    {
+      "id": "es_barato",
+      "text": "barato",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "Este abrigo es muy barato.",
+      "translations": {
+        "en": { "text": "cheap", "example": "This coat is very cheap." }
+      }
+    },
+    {
+      "id": "es_caro",
+      "text": "caro",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "Ese reloj es demasiado caro.",
+      "translations": {
+        "en": { "text": "expensive", "example": "That watch is too expensive." }
+      }
+    },
+    {
+      "id": "es_comprar",
+      "text": "comprar",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "Quiero comprar un regalo.",
+      "translations": {
+        "en": { "text": "to buy", "example": "I want to buy a gift." }
+      }
+    },
+    {
+      "id": "es_el_dinero",
+      "text": "el dinero",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "No tengo mucho dinero hoy.",
+      "translations": {
+        "en": { "text": "money", "example": "I don't have much money today." }
+      }
+    },
+    {
+      "id": "es_la_bolsa",
+      "text": "la bolsa",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "Necesito una bolsa para la fruta.",
+      "translations": {
+        "en": { "text": "bag", "example": "I need a bag for the fruit." }
+      }
+    },
+    {
+      "id": "es_la_tarjeta",
+      "text": "la tarjeta",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "¿Puedo pagar con tarjeta?",
+      "translations": {
+        "en": { "text": "card", "example": "Can I pay by card?" }
+      }
+    },
+    {
+      "id": "es_la_camiseta",
+      "text": "la camiseta",
+      "topic": "shopping",
+      "level": "A2",
+      "example": "Me gusta esta camiseta azul.",
+      "translations": {
+        "en": { "text": "T-shirt", "example": "I like this blue T-shirt." }
+      }
+    },
+    {
+      "id": "es_el_tiempo",
+      "text": "el tiempo",
+      "topic": "weather",
+      "level": "A2",
+      "example": "¿Qué tiempo hace hoy?",
+      "translations": {
+        "en": { "text": "weather", "example": "What is the weather like today?" }
+      }
+    },
+    {
+      "id": "es_el_sol",
+      "text": "el sol",
+      "topic": "weather",
+      "level": "A2",
+      "example": "Hoy hace sol en la playa.",
+      "translations": {
+        "en": { "text": "sun", "example": "Today it is sunny at the beach." }
+      }
+    },
+    {
+      "id": "es_la_lluvia",
+      "text": "la lluvia",
+      "topic": "weather",
+      "level": "A2",
+      "example": "La lluvia cae sobre la ciudad.",
+      "translations": {
+        "en": { "text": "rain", "example": "The rain falls over the city." }
+      }
+    },
+    {
+      "id": "es_la_nube",
+      "text": "la nube",
+      "topic": "weather",
+      "level": "A2",
+      "example": "Hay una nube grande en el cielo.",
+      "translations": {
+        "en": { "text": "cloud", "example": "There is a big cloud in the sky." }
+      }
+    },
+    {
+      "id": "es_el_viento",
+      "text": "el viento",
+      "topic": "weather",
+      "level": "A2",
+      "example": "Hoy hay mucho viento.",
+      "translations": {
+        "en": { "text": "wind", "example": "Today it is very windy." }
+      }
+    },
+    {
+      "id": "es_la_nieve",
+      "text": "la nieve",
+      "topic": "weather",
+      "level": "A2",
+      "example": "Los niños juegan en la nieve.",
+      "translations": {
+        "en": { "text": "snow", "example": "The children play in the snow." }
+      }
+    },
+    {
+      "id": "es_el_calor",
+      "text": "el calor",
+      "topic": "weather",
+      "level": "A2",
+      "example": "En verano hace mucho calor.",
+      "translations": {
+        "en": { "text": "heat", "example": "In summer it is very hot." }
+      }
+    },
+    {
+      "id": "es_el_frio",
+      "text": "el frío",
+      "topic": "weather",
+      "level": "A2",
+      "example": "En invierno hace mucho frío.",
+      "translations": {
+        "en": { "text": "cold", "example": "In winter it is very cold." }
+      }
+    },
+    {
+      "id": "es_la_tormenta",
+      "text": "la tormenta",
+      "topic": "weather",
+      "level": "A2",
+      "example": "Esta noche hay una tormenta.",
+      "translations": {
+        "en": { "text": "storm", "example": "Tonight there is a storm." }
+      }
+    },
+    {
+      "id": "es_nublado",
+      "text": "nublado",
+      "topic": "weather",
+      "level": "A2",
+      "example": "El cielo está nublado hoy.",
+      "translations": {
+        "en": { "text": "cloudy", "example": "The sky is cloudy today." }
+      }
+    },
+    {
+      "id": "es_leer",
+      "text": "leer",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Me gusta leer por la noche.",
+      "translations": {
+        "en": { "text": "to read", "example": "I like to read at night." }
+      }
+    },
+    {
+      "id": "es_el_libro",
+      "text": "el libro",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Este libro es muy interesante.",
+      "translations": {
+        "en": { "text": "book", "example": "This book is very interesting." }
+      }
+    },
+    {
+      "id": "es_la_musica",
+      "text": "la música",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Escucho música en el autobús.",
+      "translations": {
+        "en": { "text": "music", "example": "I listen to music on the bus." }
+      }
+    },
+    {
+      "id": "es_bailar",
+      "text": "bailar",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Mi hermana sabe bailar muy bien.",
+      "translations": {
+        "en": { "text": "to dance", "example": "My sister knows how to dance very well." }
+      }
+    },
+    {
+      "id": "es_cantar",
+      "text": "cantar",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Me encanta cantar en la ducha.",
+      "translations": {
+        "en": { "text": "to sing", "example": "I love to sing in the shower." }
+      }
+    },
+    {
+      "id": "es_el_deporte",
+      "text": "el deporte",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "¿Qué deporte practicas tú?",
+      "translations": {
+        "en": { "text": "sport", "example": "What sport do you play?" }
+      }
+    },
+    {
+      "id": "es_el_futbol",
+      "text": "el fútbol",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Juego al fútbol con mis amigos.",
+      "translations": {
+        "en": { "text": "soccer", "example": "I play soccer with my friends." }
+      }
+    },
+    {
+      "id": "es_nadar",
+      "text": "nadar",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Los domingos voy a nadar.",
+      "translations": {
+        "en": { "text": "to swim", "example": "On Sundays I go swimming." }
+      }
+    },
+    {
+      "id": "es_pintar",
+      "text": "pintar",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Mi padre quiere pintar la casa.",
+      "translations": {
+        "en": { "text": "to paint", "example": "My father wants to paint the house." }
+      }
+    },
+    {
+      "id": "es_el_juego",
+      "text": "el juego",
+      "topic": "hobbies",
+      "level": "A2",
+      "example": "Este juego es muy divertido.",
+      "translations": {
+        "en": { "text": "game", "example": "This game is very fun." }
       }
     }
   ]

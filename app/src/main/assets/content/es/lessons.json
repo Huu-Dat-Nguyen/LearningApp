@@ -1,6 +1,6 @@
 {
   "lang": "es",
-  "version": 1,
+  "version": 2,
   "units": [
     {
       "id": "es_u1",
@@ -626,6 +626,638 @@
               },
               "answers": [
                 "Mi padre"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u6",
+      "topic": "numbers",
+      "level": "A1",
+      "title": {
+        "en": "Numbers"
+      },
+      "lessons": [
+        {
+          "id": "es_u6_l1",
+          "title": {
+            "en": "Counting 1-5"
+          },
+          "words": [
+            "es_uno",
+            "es_dos",
+            "es_tres",
+            "es_cuatro",
+            "es_cinco"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_uno"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_tres"
+            },
+            {
+              "type": "fill",
+              "sentence": "Tengo ___ hermanos.",
+              "answer": "dos",
+              "hint": {
+                "en": "I have two brothers."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Tengo tres amigos aquí",
+              "translation": {
+                "en": "I have three friends here"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Cuatro sillas y una mesa",
+              "translation": {
+                "en": "Four chairs and one table"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_cinco"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I have one brother"
+              },
+              "answers": [
+                "Tengo un hermano"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u6_l2",
+          "title": {
+            "en": "Big numbers"
+          },
+          "words": [
+            "es_diez",
+            "es_veinte",
+            "es_cien",
+            "es_primero",
+            "es_el_numero"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_diez"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_cien"
+            },
+            {
+              "type": "fill",
+              "sentence": "Diez más diez son ___.",
+              "answer": "veinte",
+              "hint": {
+                "en": "Ten plus ten is twenty."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Es el primero de mayo",
+              "translation": {
+                "en": "It is the first of May"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Mi número de teléfono",
+              "translation": {
+                "en": "My phone number"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_numero"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "What is your number?"
+              },
+              "answers": [
+                "¿Cuál es tu número?"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u7",
+      "topic": "time",
+      "level": "A1",
+      "title": {
+        "en": "Days & time"
+      },
+      "lessons": [
+        {
+          "id": "es_u7_l1",
+          "title": {
+            "en": "Days & weeks"
+          },
+          "words": [
+            "es_el_dia",
+            "es_la_semana",
+            "es_el_mes",
+            "es_hoy",
+            "es_manana"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_dia"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_semana"
+            },
+            {
+              "type": "fill",
+              "sentence": "Una ___ tiene siete días.",
+              "answer": "semana",
+              "hint": {
+                "en": "A week has seven days."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Hoy trabajo en casa",
+              "translation": {
+                "en": "Today I work at home"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Buenos días, hasta mañana",
+              "translation": {
+                "en": "Good morning, see you tomorrow"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_manana"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "Today is a nice day"
+              },
+              "answers": [
+                "Hoy es un día bonito",
+                "Hoy es un buen día"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u7_l2",
+          "title": {
+            "en": "Time of day"
+          },
+          "words": [
+            "es_ayer",
+            "es_la_hora",
+            "es_el_lunes",
+            "es_el_domingo",
+            "es_temprano"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_ayer"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_hora"
+            },
+            {
+              "type": "fill",
+              "sentence": "Me levanto ___ por la mañana.",
+              "answer": "temprano",
+              "hint": {
+                "en": "I get up early in the morning."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "El domingo visito a mi familia",
+              "translation": {
+                "en": "On Sunday I visit my family"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "¿Qué hora es?",
+              "translation": {
+                "en": "What time is it?"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_temprano"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "On Monday I work"
+              },
+              "answers": [
+                "El lunes trabajo"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u8",
+      "topic": "shopping",
+      "level": "A2",
+      "title": {
+        "en": "Shopping"
+      },
+      "lessons": [
+        {
+          "id": "es_u8_l1",
+          "title": {
+            "en": "Shops & prices"
+          },
+          "words": [
+            "es_la_tienda",
+            "es_el_mercado",
+            "es_el_precio",
+            "es_barato",
+            "es_caro"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_la_tienda"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_mercado"
+            },
+            {
+              "type": "fill",
+              "sentence": "Cuesta mil euros: es muy ___.",
+              "answer": "caro",
+              "hint": {
+                "en": "It costs a thousand euros: it is very expensive."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "¿Cuál es el precio?",
+              "translation": {
+                "en": "What is the price?"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "La tienda está cerrada",
+              "translation": {
+                "en": "The shop is closed"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_barato"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I like the shop"
+              },
+              "answers": [
+                "Me gusta la tienda"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u8_l2",
+          "title": {
+            "en": "Paying"
+          },
+          "words": [
+            "es_comprar",
+            "es_el_dinero",
+            "es_la_bolsa",
+            "es_la_tarjeta",
+            "es_la_camiseta"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_comprar"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_dinero"
+            },
+            {
+              "type": "fill",
+              "sentence": "Quiero ___ una camiseta.",
+              "answer": "comprar",
+              "hint": {
+                "en": "I want to buy a T-shirt."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Pago con tarjeta en la tienda",
+              "translation": {
+                "en": "I pay by card in the shop"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Necesito una bolsa",
+              "translation": {
+                "en": "I need a bag"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_tarjeta"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I don't have money"
+              },
+              "answers": [
+                "No tengo dinero"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u9",
+      "topic": "weather",
+      "level": "A2",
+      "title": {
+        "en": "Weather"
+      },
+      "lessons": [
+        {
+          "id": "es_u9_l1",
+          "title": {
+            "en": "Sun & rain"
+          },
+          "words": [
+            "es_el_tiempo",
+            "es_el_sol",
+            "es_la_lluvia",
+            "es_la_nube",
+            "es_el_viento"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_tiempo"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_sol"
+            },
+            {
+              "type": "fill",
+              "sentence": "Hoy hace ___ y no hay nubes.",
+              "answer": "sol",
+              "hint": {
+                "en": "Today it is sunny and there are no clouds."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "¿Qué tiempo hace hoy?",
+              "translation": {
+                "en": "What is the weather like today?"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Hay una nube grande",
+              "translation": {
+                "en": "There is a big cloud"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_viento"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "It is windy"
+              },
+              "answers": [
+                "Hace viento",
+                "Hay viento"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u9_l2",
+          "title": {
+            "en": "Hot & cold"
+          },
+          "words": [
+            "es_la_nieve",
+            "es_el_calor",
+            "es_el_frio",
+            "es_la_tormenta",
+            "es_nublado"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_la_nieve"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_frio"
+            },
+            {
+              "type": "fill",
+              "sentence": "En verano hace mucho ___.",
+              "answer": "calor",
+              "hint": {
+                "en": "In summer it is very hot."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "En invierno hace mucho frío",
+              "translation": {
+                "en": "In winter it is very cold"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "El cielo está nublado",
+              "translation": {
+                "en": "The sky is cloudy"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_nublado"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "There is a storm"
+              },
+              "answers": [
+                "Hay una tormenta"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "es_u10",
+      "topic": "hobbies",
+      "level": "A2",
+      "title": {
+        "en": "Hobbies"
+      },
+      "lessons": [
+        {
+          "id": "es_u10_l1",
+          "title": {
+            "en": "Fun things"
+          },
+          "words": [
+            "es_leer",
+            "es_el_libro",
+            "es_la_musica",
+            "es_bailar",
+            "es_cantar"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_leer"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_la_musica"
+            },
+            {
+              "type": "fill",
+              "sentence": "Me gusta ___ por la noche.",
+              "answer": "leer",
+              "hint": {
+                "en": "I like to read at night."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Me gusta la música",
+              "translation": {
+                "en": "I like music"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Escucho música en casa",
+              "translation": {
+                "en": "I listen to music at home"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_cantar"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I like to dance"
+              },
+              "answers": [
+                "Me gusta bailar"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "es_u10_l2",
+          "title": {
+            "en": "Sports & games"
+          },
+          "words": [
+            "es_el_deporte",
+            "es_el_futbol",
+            "es_nadar",
+            "es_pintar",
+            "es_el_juego"
+          ],
+          "exercises": [
+            {
+              "type": "mc",
+              "wordId": "es_el_deporte"
+            },
+            {
+              "type": "mc",
+              "wordId": "es_nadar"
+            },
+            {
+              "type": "fill",
+              "sentence": "Juego al ___ con mis amigos.",
+              "answer": "fútbol",
+              "hint": {
+                "en": "I play soccer with my friends."
+              }
+            },
+            {
+              "type": "order",
+              "answer": "Los domingos voy a nadar",
+              "translation": {
+                "en": "On Sundays I go swimming"
+              }
+            },
+            {
+              "type": "listen",
+              "text": "Este juego es divertido",
+              "translation": {
+                "en": "This game is fun"
+              }
+            },
+            {
+              "type": "mc",
+              "wordId": "es_el_juego"
+            },
+            {
+              "type": "translate",
+              "source": {
+                "en": "I play soccer"
+              },
+              "answers": [
+                "Juego al fútbol"
               ]
             }
           ]

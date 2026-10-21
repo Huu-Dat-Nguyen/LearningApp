@@ -17,8 +17,8 @@ class LessonFileTest {
     @Test
     fun structure() {
         assertEquals("es", lessons.lang)
-        assertEquals(5, lessons.units.size)
-        assertEquals(10, allLessons.size)
+        assertEquals(10, lessons.units.size)
+        assertEquals(20, allLessons.size)
         assertEquals(allLessons.size, allLessons.map { it.id }.toSet().size)
         assertEquals(lessons.units.size, lessons.units.map { it.id }.toSet().size)
     }
@@ -79,7 +79,7 @@ class LessonFileTest {
     @Test
     fun entitiesRoundTrip() {
         val entities = LessonParser.toEntities(lessons)
-        assertEquals((0 until 10).toList(), entities.map { it.sortOrder })
+        assertEquals((0 until 20).toList(), entities.map { it.sortOrder })
         val first = entities.first()
         assertEquals(allLessons.first().exercises, LessonParser.exercises(first))
         assertEquals(allLessons.first().words, LessonParser.wordIds(first))

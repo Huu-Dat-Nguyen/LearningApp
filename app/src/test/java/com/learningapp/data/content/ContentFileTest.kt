@@ -15,7 +15,7 @@ class ContentFileTest {
     fun spanishListParsesWithUniqueIds() {
         val file = load("es")
         assertEquals("es", file.lang)
-        assertEquals(50, file.words.size)
+        assertEquals(100, file.words.size)
         assertEquals(file.words.size, file.words.map { it.id }.toSet().size)
     }
 
@@ -32,7 +32,7 @@ class ContentFileTest {
     @Test
     fun entitiesKeepContentOrder() {
         val (words, translations) = ContentParser.toEntities(load("es"))
-        assertEquals((0 until 50).toList(), words.map { it.sortOrder })
-        assertEquals(50, translations.size)
+        assertEquals((0 until 100).toList(), words.map { it.sortOrder })
+        assertEquals(100, translations.size)
     }
 }

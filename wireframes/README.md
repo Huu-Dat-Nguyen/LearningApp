@@ -2,6 +2,8 @@
 
 Clickable wireframes for the Android app, styled with the app theme (see "Theme" below). No mascot.
 
+> **Note (2026-10-21):** the app has moved past these wireframes. The real screens, the light/dark colour tokens (`ui/theme/Color.kt`) and the five UI languages live in the code repo `C:\Users\nguye\repos\LearningApp`. Keep this file as the original design reference.
+
 ## Theme
 Reference: [GEL – Guided E-learning (Dribbble)](https://dribbble.com/shots/25344541-GEL-Guided-E-learning), without the mascot.
 - Background `#efeef3` (soft lavender-grey), cards `#fafafc`, 18px corners, very light shadows.

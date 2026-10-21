@@ -95,10 +95,12 @@ Reports and plans (`report/`) live in the OneDrive folder.
 ## Status and open items (2026-10-21)
 - Working through `report/full-app-plan.md` (OneDrive): everything except AI, phases A–E.
 - **Phase A done 2026-10-21:** onboarding (`ui/onboarding`: languages, placement quiz → start unit, "tested out" lessons = progress row with attempts 0; existing installs skip it), Settings (`ui/settings`, gear on Progress), daily reminder (`reminder/Reminders.kt`: WorkManager job kept in sync with prefs from `LearningApp`, skipped if XP today, POST_NOTIFICATIONS asked when turned on). 86 unit + 10 device tests pass; checked on the emulator, including a forced reminder.
+- **Phase B done 2026-10-21:** dark theme (`ui/theme/Color.kt`: light/dark `AppColors` behind the same token names), Plus Jakarta Sans (`res/font`, OFL in `licenses/`), Material icons + app icon, Spanish grown to 10 units / 100 words.
+- **Phase C done 2026-10-21:** five courses in `assets/content/{en,es,fr,ja,vi}` (100 words, 20 lessons each, meanings in the 4 other languages); UI in 5 languages (`res/values-{es,fr,ja,vi}`), the app follows the main language via `AppLocale` (activity recreates on change); `domain/lesson/LanguageRules.kt` (Japanese: no spaces, chunked chips, char-level speech score; Vietnamese: tone marks required; Spanish/French: missing accent = slip); Japanese words carry `reading` (Room v4). 96 unit + 11 device tests pass, lint passes. All content was written by AI: **needs a native-speaker review per language before release.**
 - Done before: milestones 1–4.
 - Sign-in/sync (Phase D) needs the user's Firebase project.
 - Not checked: real speech recognition with a voice (needs a phone).
-- Small items: Plus Jakarta Sans font file, real tab icons, a native-speaker check of the Spanish content, maybe a longer first gap for Easy on new cards.
+- Small items: native-speaker review of all five courses and the UI translations, maybe a longer first gap for Easy on new cards.
 
 ## Team
 Solo project (one developer). Keep scope small, prefer managed services (Firebase) over custom backend.
@@ -110,7 +112,7 @@ Solo project (one developer). Keep scope small, prefer managed services (Firebas
 - Emulator: AVD `Medium_Phone_API_37.0` (start it in a Terminal tab, not a session-bound task).
 - Install: `adb install -r app/build/outputs/apk/debug/app-debug.apk` (adb in `%LOCALAPPDATA%\Android\Sdk\platform-tools`).
 - Stack: AGP 9.4 (built-in Kotlin), Compose BOM 2026.02, Hilt 2.60, Room 2.8, KSP 2.3, Navigation 2.10 (type-safe routes). Versions in `gradle/libs.versions.toml`.
-- Font: system default for now; Plus Jakarta Sans still to add in `res/font`.
+- Font: Plus Jakarta Sans variable font in `res/font` (SIL OFL, `licenses/PlusJakartaSans-OFL.txt`).
 
 ## Rules for agents
 - Keep secrets in env vars (`.env`, never committed).

@@ -1,5 +1,14 @@
 package com.learningapp.ui.nav
 
+import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.SharingStarted
+import javax.inject.Inject
+import dagger.hilt.android.lifecycle.HiltViewModel
+import com.learningapp.data.repo.UserPrefs
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.ViewModel
 import androidx.compose.ui.res.stringResource
 import androidx.annotation.StringRes
 import com.learningapp.R
@@ -60,8 +69,10 @@ private val tabs = listOf(
 )
 
 @Composable
-fun AppNavHost() {
+fun AppNavHost(languages: LanguagePairViewModel = hiltViewModel()) {
     val nav = rememberNavController()
+    // Review and Speak load their queue once; a new language pair needs a fresh screen state.
+    val pairKey by languages.key.collectAsStateWithLifecycle()
     val backStack by nav.currentBackStackEntryAsState()
     val current = backStack?.destination
 
@@ -97,8 +108,8 @@ fun AppNavHost() {
             }
             composable<LearnRoute> { LearnScreen(onOpenLesson = { nav.navigate(LessonRoute(it)) }) }
             composable<LessonRoute> { LessonScreen(onClose = { nav.popBackStack() }) }
-            composable<ReviewRoute> { ReviewScreen(onDone = { go(HomeRoute) }) }
-            composable<SpeakRoute> { SpeakScreen() }
+            composable<ReviewRoute> { ReviewScreen(onDone = { go(HomeRoute) }, viewModel = hiltViewModel(key = "review-$pairKey")) }
+            composable<SpeakRoute> { SpeakScreen(viewModel = hiltViewModel(key = "speak-$pairKey")) }
             composable<ProfileRoute> { ProfileScreen(onOpenSettings = { nav.navigate(SettingsRoute) }) }
             composable<SettingsRoute> { SettingsScreen(onBack = { nav.popBackStack() }) }
         }
@@ -135,4 +146,11 @@ private fun BottomBar(selected: (Tab) -> Boolean, onSelect: (Tab) -> Unit) {
             }
         }
     }
+}
+
+/** "target|main", so screens can start fresh when the user changes languages. */
+@HiltViewModel
+class LanguagePairViewModel @Inject constructor(prefs: UserPrefs) : ViewModel() {
+    val key: StateFlow<String> = combine(prefs.targetLang, prefs.mainLang) { t, m -> "$t|$m" }
+        .stateIn(viewModelScope, SharingStarted.Eagerly, "")
 }
